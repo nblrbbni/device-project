@@ -1,0 +1,273 @@
+/* style.css (reset) */
+* {
+   box-sizing: border-box;
+  }
+
+body {
+    margin: 0;
+    background: #ffff;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    
+}
+
+:is(.sidebar, .burger, .logo){
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+.sidebar {
+    z-index: 1;
+    left: 0;
+    width: 72px;
+    height: 100%;
+    background-color: #182433;
+    transition:  0.4s;
+   
+}
+.sidebar-header{
+    height: 72px;
+    background: rgba(0, 0, 0, 0, 1);
+}
+.sidebar > nav{display: grid;}
+
+.sidebar > nav:not(last-child){
+    padding-bottom: 1rem;
+    border-bottom:  1px solid #1e3660;
+    margin-bottom:  1rem;
+}
+
+.sidebar > nav > button{
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 60px;
+    padding: 0;
+}
+
+.sidebar > nav > button > span{
+    position: absolute;
+    top: 50%;
+    left: 120%;
+    translate: 0 -50%;
+    padding: 10px;
+    border-radius:  4px;
+    color: #f9f9f9;
+    background: rgba(0, 0, 0, 0, 0.7);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+
+}
+.burger{
+    left: 0;
+    display: grid;
+    place-items: center;
+    width: 72px;
+    height: 72px;
+    background: url("./assets/picture/ic_calender.png") no-repeat center;
+
+}
+body.open.burger{
+    background: url("./assets/picture/ic_calender.png") no-repeat center;
+    
+}
+.logo {
+    top: 18px;
+    left: 52px;
+    width: 38px;
+    scale: 0.8;
+    transition: 0.4s;
+    place-items:center;
+}
+@media (width < 500px) {
+    .sidebar { translate: -100% 0;}
+    body.open .sidebar{
+        translate: 0 0;
+    }
+    body.open > .logo {
+        translate: 28px;
+    }
+}
+
+@media (width >= 500px){
+    .burger {display: none; }
+
+    .sidebar > nav > button:hover > span {
+        opacity: 1;
+        visibility: visible;
+       
+    }
+    .logo { left: 15px; width: 42px; }
+}
+/* login style */
+.login p{
+    font-size:80px;
+    text-align:center;
+}
+.colomn{
+    width:330px;
+    height:500px;
+    background-color:  #182433;
+    position:absolute   ;
+}
+/* login style */
+.rectangle71
+{
+background-color:rgba(217, 217, 217, 0);
+height:410px;
+width:410px;
+border-radius:11px;
+border:3px solid #14274c;
+margin-left:80px;
+}
+.inter{
+background-color:rgba(217, 217, 217, 0);
+height:253px;
+width:350px;
+border-radius:11px;
+border:3px solid #14274c;
+margin-left:30px;
+margin-top: 30px;
+}
+.inter img{
+    margin-top: 30px;
+}
+.inter p{
+    margin-top:20px;
+    font-size:20px;
+}
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px 50px;
+    gap: 15px;
+    background-color: #14274C;
+    outline: 3px #14274C solid;
+    outline-offset: -3px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 400ms;
+    margin-left:140px;
+    margin-top: 12px;
+  }
+  
+  .button .text {
+    color: white;
+    font-weight: 700;
+    font-size: 1em;
+    transition: 400ms;
+    text-align:center;
+    margin-top:10px;
+  }
+  
+  
+  
+  .button:hover {
+    background-color: transparent;
+  }
+  
+  .button:hover .text {
+    color: #14274C;
+  }
+  
+  
+
+  .rectangle74
+  {
+  background-color:#14274c;
+  height:51px;
+  width:600px;
+  border-radius:11px;
+  margin-left:730px;
+  }
+
+  .paragraf {
+    font-size:20px;
+    color: #f9f9f9:
+  }
+ 
+.notiftext{
+   
+    font-size: 40px;
+}
+.notif{
+    background-color:rgba(217, 217, 217, 0);
+    height:200px;
+    width:1000px;
+    border-radius:11px;
+    border:3px solid #14274c;
+   
+}
+.notif h1{
+    font-size:20px;
+    margin-left:20px;
+    margin-top:10px;
+}
+.notif p{
+    margin-left:20px;
+}
+.group{
+    margin-left:300px;
+}
+.next {
+    background-color: #14274C;
+    color: white;
+  }
+  
+  .round {
+    border-radius: 50%;
+  }
+  a {
+   
+  }
+  
+  
+  
+  .balik{
+    margin-left: 60px;
+    margin-top: 60px;
+  }
+
+  .kartu{
+    background-color:rgba(217, 217, 217, 0);
+    height:410px;
+    width:410px;
+    border-radius:11px;
+    border:3px solid #14274c;
+  }
+  .balik a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 24px;
+    font-size: 20px;
+  }
+  .balik a:hover {
+    background-color: #ddd;
+    color: black;
+    transition:0.4s;
+  }
+  .single{
+    background-color:rgba(217, 217, 217, 0);
+    height:300px;
+    width:500px;
+    border-radius:11px;
+    border:3px solid #14274c;
+  }
+   .single img{
+    margin-top:30px;
+    width: 180px;
+    height:180px;
+   }
+   .single p{
+    font-size: 40px;
+   }
