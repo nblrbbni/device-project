@@ -11,10 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
+<<<<<<< Updated upstream
         $table->id();
         $table->fk("peminjaman_id");
         $table->time("waktu_selesai");
         $table->fk("persetujuan_user_id");
+=======
+        Schema::create('pengembalian', function (Blueprint $table) {
+            $table->id();
+            $table->integer("peminjaman_id");
+            $table->time("waktu_selesai");
+            $table->integer("persetujuan_user_id");
+            $table->timestamps();
+        });
+>>>>>>> Stashed changes
     }
 
     /**
@@ -22,6 +32,10 @@ return new class extends Migration
      */
     public function down(): void
     {
+<<<<<<< Updated upstream
         //
+=======
+        Schema::dropIfExists('pengembalian');
+>>>>>>> Stashed changes
     }
 };

@@ -11,8 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
+<<<<<<< Updated upstream
         $table->id();
         $table->string("nama_kategori");
+=======
+        Schema::create('kategori', function (Blueprint $table) {
+            $table->id();
+            $table->string("nama_kategori");
+            $table->timestamps();
+        });
+>>>>>>> Stashed changes
     }
 
     /**
@@ -20,6 +28,10 @@ return new class extends Migration
      */
     public function down(): void
     {
+<<<<<<< Updated upstream
         //
+=======
+        Schema::dropIfExists('kategori');
+>>>>>>> Stashed changes
     }
 };

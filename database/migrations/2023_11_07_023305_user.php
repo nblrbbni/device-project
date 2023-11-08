@@ -11,9 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
+<<<<<<< Updated upstream
         $table->id();
         $table->string("nama_user");
         $table->integer("password");
+=======
+        Schema::create('user', function (Blueprint $table) {
+            $table->id();
+            $table->string("nama_user");
+            $table->integer("password");
+            $table->timestamps();
+        });
+
+>>>>>>> Stashed changes
     }
 
     /**
@@ -21,6 +31,10 @@ return new class extends Migration
      */
     public function down(): void
     {
+<<<<<<< Updated upstream
         //
+=======
+        Schema::dropIfExists('user');
+>>>>>>> Stashed changes
     }
 };

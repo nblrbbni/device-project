@@ -11,8 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
+<<<<<<< Updated upstream
         $table->id();
         $table->string("nama_level");
+=======
+        Schema::create('level', function (Blueprint $table) {
+            $table->id();
+            $table->string("nama_level");
+            $table->timestamps();
+        });
+>>>>>>> Stashed changes
     }
 
     /**
@@ -20,6 +28,10 @@ return new class extends Migration
      */
     public function down(): void
     {
+<<<<<<< Updated upstream
         //
+=======
+        Schema::dropIfExists('level');
+>>>>>>> Stashed changes
     }
 };
