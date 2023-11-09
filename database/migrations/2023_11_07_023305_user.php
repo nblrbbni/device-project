@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("nama_user");
             $table->integer("password");
+            $table->foreign("level_id")->references("id")->on("level");
             $table->timestamps();
         });
 
