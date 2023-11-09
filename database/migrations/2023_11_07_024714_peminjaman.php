@@ -11,16 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $table->id();
-        $table->fk("siswa_id");
-        $table->fk("lab_id");
-        $table->fk("device_id");
-        $table->fk("user_id");
-        $table->string("status_peminjaman");
-        $table->integer("nomor_peminjaman");
-        $table->date("tanggal_peminjaman");
-        $table->time("start_time");
-        $table->time("finish_time");
+
+
+
+        Schema::create('peminjaman', function (Blueprint $table) {
+            $table->id();
+            $table->foreign("siswa_id")->references("id")->on("siswa");
+            $table->foreign("lab_id")->references("id")->on("lab");
+            $table->foreign("device_id")->references("id")->on("device");
+            $table->foreign("user_id")->references("id")->on("user");
+            $table->string("status_peminjaman");
+            $table->integer("nomor_peminjaman");
+            $table->date("tanggal_peminjaman");
+            $table->time("start_time");
+            $table->time("finish_time");
+            $table->timestamps();
+        });
     }
 
     /**
@@ -28,6 +34,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+
+        Schema::dropIfExists('peminjaman');
     }
 };

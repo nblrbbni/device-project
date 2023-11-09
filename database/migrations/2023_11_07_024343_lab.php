@@ -11,8 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $table->id();
-        $table->string("nama");
+
+
+        Schema::create('lab', function (Blueprint $table) {
+            $table->id();
+            $table->string("nama");
+            $table->timestamps();
+        });
+
     }
 
     /**
@@ -20,6 +26,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('lab');
+
     }
 };

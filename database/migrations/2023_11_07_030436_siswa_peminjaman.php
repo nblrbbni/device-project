@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $table->id();
-        $table->integer("siswa_id");
-        $table->integer("peminjaman_id");
+
+        Schema::create('siswa_peminjaman', function (Blueprint $table) {
+            $table->id();
+            $table->foreign("siswa_id")->refereces("id")->on("siswa");
+            $table->integer("peminjaman_id")->references("id")->on("peminjaman");
+            $table->timestamps();
+        });
     }
 
     /**
@@ -21,6 +25,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+
+
+        Schema::dropIfExists('siswa_peminjaman');
     }
 };

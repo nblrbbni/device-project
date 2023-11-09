@@ -11,9 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $table->id();
-        $table->string("nama_user");
-        $table->integer("password");
+
+
+        Schema::create('user', function (Blueprint $table) {
+            $table->id();
+            $table->string("nama_user");
+            $table->integer("password");
+            $table->foreign("level_id")->references("id")->on("level");
+            $table->timestamps();
+        });
+
+
     }
 
     /**
@@ -21,6 +29,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+
+
+        Schema::dropIfExists('user');
+
     }
 };

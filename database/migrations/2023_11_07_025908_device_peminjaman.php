@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $table->id();
-        $table->integer("device_id");
-        $table->integer("peminjaman_id");
+
+        Schema::create('device_peminjaman', function (Blueprint $table) {
+            $table->id();
+            $table->integer("device_id");
+            $table->integer("peminjaman_id");
+            $table->timestamps();
+        });
     }
 
     /**
@@ -21,6 +25,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        
+        Schema::dropIfExists('device_peminjaman');
     }
 };

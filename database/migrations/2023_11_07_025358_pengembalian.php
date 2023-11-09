@@ -11,10 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $table->id();
-        $table->fk("peminjaman_id");
-        $table->time("waktu_selesai");
-        $table->fk("persetujuan_user_id");
+
+
+
+        Schema::create('pengembalian', function (Blueprint $table) {
+            $table->id();
+            $table->foreign("peminjaman_id")->references("id")->on("peminjaman");
+            $table->time("waktu_selesai");
+            $table->foreign("persetujuan_user_id")->references("id")->on("user");
+            $table->timestamps();
+        });
+
     }
 
     /**
@@ -22,6 +29,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+
+
+
+        Schema::dropIfExists('pengembalian');
+
     }
 };

@@ -11,8 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $table->id();
-        $table->string("nama");
+
+
+
+        Schema::create('siswa', function (Blueprint $table) {
+            $table->id();
+            $table->string("nama");
+            $table->foreign("kelas_id")->references("id")->on("kelas");
+            $table->timestamps();
+        });
+
+
     }
 
     /**
@@ -20,6 +29,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+
+        Schema::dropIfExists('siswa');
     }
 };
