@@ -11,8 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-
-
         Schema::create('siswa_peminjaman', function (Blueprint $table) {
             $table->id();
             $table->foreign("siswa_id")->refereces("id")->on("siswa");
@@ -27,7 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-
         Schema::dropIfExists('siswa_peminjaman');
 
     }

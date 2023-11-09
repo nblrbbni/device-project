@@ -11,9 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-
-
-
         Schema::create('peminjaman', function (Blueprint $table) {
             $table->id();
             $table->foreign("siswa_id")->references("id")->on("siswa");

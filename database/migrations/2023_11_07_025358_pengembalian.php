@@ -11,9 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-
-
-
         Schema::create('pengembalian', function (Blueprint $table) {
             $table->id();
             $table->foreign("peminjaman_id")->references("id")->on("peminjaman");
@@ -29,9 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-
-
-
         Schema::dropIfExists('pengembalian');
 
     }
