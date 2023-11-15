@@ -25,12 +25,29 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
+                        {{-- <div class="row mb-3">
                             <label for="class" class="col-md-4 col-form-label text-md-end">Class</label>
 
                             <div class="col-md-6">
                                 <input id="class" type="number" class="form-control @error('class') is-invalid @enderror" name="class" value="{{ old('class') }}" autocomplete="class" min="10" max="12">
 
+                                @error('class')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div> --}}
+
+                        <div class="row mb-3">
+                            <label for="class" class="col-md-4 col-form-label text-md-end">Grade</label>
+                            <div class="col-md-6">
+                                <select id="class" class="form-control @error('class') is-invalid @enderror" name="class" value="{{ old('class') }}" autocomplete="class" min="10" max="12"">
+                                    <option value="12">-- Please choose your grade --</option>
+                                    <option value="12">12</option>
+                                    <option value="11">11</option>
+                                    <option value="10">10</option>
+                                </select>
                                 @error('class')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

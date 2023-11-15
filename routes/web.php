@@ -24,66 +24,68 @@ Route::get('/information', function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/electronic', function () {
-        return view('electronic');
-    });
+    
+});
 
-    Route::get('/returndevice', function () {
-        return view('returndevice');
-    });
+Route::get('/electronic', function () {
+    return view('electronic');
+});
 
-    Route::get('/sp-electronic', function () {
-        return view('sp-electronic');
-    });
+Route::get('/returndevice', function () {
+    return view('returndevice');
+});
 
-    //Laptop
-    Route::get('/sp-laptop', function () {
-        return view('laptop.sp-laptop');
-    });
+Route::get('/sp-electronic', function () {
+    return view('sp-electronic');
+});
 
-    Route::get('/return-laptop', function() {
-        return view('laptop.return-laptop');
-    });
+//Laptop
+Route::get('/sp-laptop', function () {
+    return view('laptop.sp-laptop');
+});
 
-    //Flashdisk
-    Route::get('/sp-flashdisk', function () {
-        return view('flashdisk.sp-flashdisk');
-    });
+Route::get('/return-laptop', function() {
+    return view('laptop.return-laptop');
+});
 
-    //Projector
-    Route::get('/sp-projector', function () {
-        return view('projector.sp-projector');
-    });
+//Flashdisk
+Route::get('/sp-flashdisk', function () {
+    return view('flashdisk.sp-flashdisk');
+});
 
-    //Printer
-    Route::get('/sp-printer', function () {
-        return view('printer.sp-printer');
-    });
+//Projector
+Route::get('/sp-projector', function () {
+    return view('projector.sp-projector');
+});
 
-    //Handphone
-    Route::get('/sp-handphone', function () {
-        return view('handphone.sp-handphone');
-    });
+//Printer
+Route::get('/sp-printer', function () {
+    return view('printer.sp-printer');
+});
 
-    //Tablet
-    Route::get('/sp-tablet', function () {
-        return view('tablet.sp-tablet');
-    });
+//Handphone
+Route::get('/sp-handphone', function () {
+    return view('handphone.sp-handphone');
+});
 
-    //Headphone
-    Route::get('/sp-headset', function () {
-        return view('headphone.sp-headphone');
-    });
+//Tablet
+Route::get('/sp-tablet', function () {
+    return view('tablet.sp-tablet');
+});
 
-    //HDMI
-    Route::get('/sp-hdmi', function () {
-        return view('hdmi.sp-hdmi');
-    });
+//Headphone
+Route::get('/sp-headset', function () {
+    return view('headphone.sp-headphone');
+});
 
-    //Camera
-    Route::get('/sp-camera', function () {
-        return view('camera.sp-camera');
-    });
+//HDMI
+Route::get('/sp-hdmi', function () {
+    return view('hdmi.sp-hdmi');
+});
+
+//Camera
+Route::get('/sp-camera', function () {
+    return view('camera.sp-camera');
 });
 
 //CRUD Student
