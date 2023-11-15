@@ -1,10 +1,18 @@
 @extends('layout.master')
 
 @section('judul')
-    Notification
+    Information
 @endsection
 
+@push('styles')
+<link rel="stylesheet" href="{{ asset('style/style.css') }}">
+<link rel="stylesheet" href="{{ asset('js/java.js') }}">
+<link rel="stylesheet" href="{{ asset('style/responsive.css') }}">
+@endpush
+
 @section('content')
+<br>
+<br>
 <div class="page-wrapper">
     <!-- Page header -->
     <div class="page-header d-print-none">
@@ -32,7 +40,7 @@
                 </h2>
                 <div id="collapse-1" class="accordion-collapse collapse " data-bs-parent="#accordion-example" >
                   <div class="accordion-body pt-0">
-                    Bagi siswa-siswa SMK TI BAZMA yang meminjam barang elektronik dilarang membuka <br> sosmed dan game jika ada yang melanggar terkena hukum di blacklist selama 2 bulan
+                    Bagi siswa-siswa SMK TI BAZMA yang meminjam barang elektronik dilarang membuka <br> <b>sosmed </b>dan <b>game</b> jika ada yang melanggar terkena hukuman di <b>blacklist selama 2 bulan</b>.
                   </div>
                 </div>
               </div>
@@ -44,7 +52,7 @@
                 </h2>
                 <div id="collapse-2" class="accordion-collapse collapse" data-bs-parent="#accordion-example" >
                   <div class="accordion-body pt-0">
-                    Bagi siswa-siswa SMK TI BAZMA yang terlambat mengumpulkan barang elektronik akan mendapatkan hukum blacklist selama 1 bulan
+                    Bagi siswa-siswa SMK TI BAZMA yang <b>terlambat mengumpulkan barang elektronik</b> akan mendapatkan hukuman <b>blacklist selama 1 bulan</b>.
                   </div>
                 </div>
               </div>
@@ -56,7 +64,7 @@
                 </h2>
                 <div id="collapse-3" class="accordion-collapse collapse" data-bs-parent="#accordion-example" >
                   <div class="accordion-body pt-0">
-                    Bagi siswa-siswa SMK TI BAZMA yang meminjam barang elektronik tanpa mengisi forum, akan terkena hukuman yang sangat panjang di blacklist selama 6 bulan dilarang meminjam barang elektronik. (jika ingin meminjam harus membuat surat perijinan)
+                    Bagi siswa-siswa SMK TI BAZMA yang meminjam barang elektronik <b>tanpa mengisi forum</b>, akan terkena hukuman yang sangat panjang di <b>blacklist selama 6 bulan</b> dilarang meminjam barang elektronik, jika ingin meminjam harus membuat <b>surat perizinan</b>.
                   </div>
                 </div>
               </div>

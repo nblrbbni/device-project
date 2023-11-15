@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,12 +19,17 @@ Route::get('/', function () {
 });
 
 Route::get('/information', function () {
-    return view('information');
+    return view('information
+    ');
 });
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/electronic', function () {
         return view('electronic');
+    });
+
+    Route::get('/returndevice', function () {
+        return view('returndevice');
     });
 
     Route::get('/sp-electronic', function () {
@@ -33,6 +39,10 @@ Route::middleware(['auth'])->group(function () {
     //Laptop
     Route::get('/sp-laptop', function () {
         return view('laptop.sp-laptop');
+    });
+
+    Route::get('/return-laptop', function() {
+        return view('laptop.return-laptop');
     });
 
     //Flashdisk
@@ -75,5 +85,20 @@ Route::middleware(['auth'])->group(function () {
         return view('camera.sp-camera');
     });
 });
+
+//CRUD Student
+//Create
+Route::get('/student/create' , [StudentController::class, 'create']);
+Route::post('/student', [StudentController::class, 'store']);
+
+//Read
+Route::get('/student', [StudentController::class, 'index']);
+
+//Update
+Route::get('/student/{student_id}/edit', [StudentController::class, 'edit']);
+Route::put('/student/{student_id}', [StudentController::class, 'update']);
+
+//Delet
+Route::delete('/student/{student_id}', [StudentController::class, 'delete']);
 
 Auth::routes();
