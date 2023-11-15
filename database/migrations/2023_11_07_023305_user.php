@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('create_device', function (Blueprint $table) {
+        Schema::create('user', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('kondisi');
-            $table->integer('jumlah');
+            $table->string("nama_user");
+            $table->integer("password");
+            $table->foreign("level_id")->references("id")->on("level");
             $table->timestamps();
         });
+
+
     }
 
     /**
@@ -25,6 +27,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('create_device');
+
+
+        Schema::dropIfExists('user');
+
     }
 };

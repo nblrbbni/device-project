@@ -11,7 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
+<<<<<<< HEAD:database/migrations/2023_11_09_005610_create_student_table.php
         Schema::create('student', function (Blueprint $table) {
+=======
+        Schema::create('create_siswa', function (Blueprint $table) {
+>>>>>>> vincent:database/migrations/2023_11_07_032412_create_siswa_table.php
             $table->id();
             $table->string('name');
             $table->integer('class');
@@ -26,6 +30,10 @@ return new class extends Migration
      */
     public function down(): void
     {
+<<<<<<< HEAD:database/migrations/2023_11_09_005610_create_student_table.php
         Schema::dropIfExists('student');
+=======
+        Schema::dropIfExists('create_siswa');
+>>>>>>> vincent:database/migrations/2023_11_07_032412_create_siswa_table.php
     }
 };

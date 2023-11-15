@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('create_device', function (Blueprint $table) {
+        Schema::create('pengembalian', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('kondisi');
-            $table->integer('jumlah');
+            $table->foreign("peminjaman_id")->references("id")->on("peminjaman");
+            $table->time("waktu_selesai");
+            $table->foreign("persetujuan_user_id")->references("id")->on("user");
             $table->timestamps();
         });
+
     }
 
     /**
@@ -25,6 +26,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('create_device');
+        Schema::dropIfExists('pengembalian');
+
     }
 };
