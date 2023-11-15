@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('siswa_peminjaman', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('siswa_id');
             $table->foreign("siswa_id")->refereces("id")->on("siswa");
             $table->integer("peminjaman_id")->references("id")->on("peminjaman");
             $table->timestamps();

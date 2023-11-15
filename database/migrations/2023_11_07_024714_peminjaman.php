@@ -13,9 +13,13 @@ return new class extends Migration
     {
         Schema::create('peminjaman', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('siswa_id');
             $table->foreign("siswa_id")->references("id")->on("siswa");
+            $table->unsignedBigInteger('lab_id');
             $table->foreign("lab_id")->references("id")->on("lab");
+            $table->unsignedBigInteger('device_id');
             $table->foreign("device_id")->references("id")->on("device");
+            $table->unsignedBigInteger('user_id');
             $table->foreign("user_id")->references("id")->on("user");
             $table->string("status_peminjaman");
             $table->integer("nomor_peminjaman");

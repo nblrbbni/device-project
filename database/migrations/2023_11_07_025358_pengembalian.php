@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('pengembalian', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('peminjaman_id');
             $table->foreign("peminjaman_id")->references("id")->on("peminjaman");
             $table->time("waktu_selesai");
-            $table->foreign("persetujuan_user_id")->references("id")->on("user");
+            // $table->foreign("persetujuan_user_id")->references("id")->on("user");
             $table->timestamps();
         });
 

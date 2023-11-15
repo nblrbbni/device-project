@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,15 +25,10 @@ Route::get('/information', function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    
 });
 
 Route::get('/electronic', function () {
     return view('electronic');
-});
-
-Route::get('/returndevice', function () {
-    return view('returndevice');
 });
 
 Route::get('/sp-electronic', function () {
@@ -44,9 +40,7 @@ Route::get('/sp-laptop', function () {
     return view('laptop.sp-laptop');
 });
 
-Route::get('/return-laptop', function() {
-    return view('laptop.return-laptop');
-});
+
 
 //Flashdisk
 Route::get('/sp-flashdisk', function () {
@@ -88,9 +82,76 @@ Route::get('/sp-camera', function () {
     return view('camera.sp-camera');
 });
 
+// return device
+Route::get('/returndevice', function () {
+    return view('returndevice');
+});
+
+// return-laptop
+Route::get('/return-laptop', function () {
+    return view('laptop.return-laptop');
+});
+
+// return-hp
+Route::get('/return-hp', function () {
+    return view('handphone.retrurn-handphone');
+});
+
+// return-hdmi
+Route::get('/return-HDMI', function () {
+    return view('hdmi.return-hdmi');
+});
+
+// return-headphone
+Route::get('/return-headphone', function () {
+    return view('headphone.return-headphone');
+});
+
+// return-pc
+Route::get('/return-computer', function () {
+    return view('computer.return-pc');
+});
+
+// return-tablet
+Route::get('/return-tablet', function () {
+    return view('tablet.return-tablet');
+});
+
+// return-projector
+Route::get('/return-projector', function () {
+    return view('projector.return-projector');
+});
+
+// return-lan
+Route::get('/return-lan', function () {
+    return view('Lan.return-lan');
+});
+
+// return-flashdisk
+Route::get('/return-flasdisk', function () {
+    return view('flashdisk.return-flashdisk');
+});
+
+// return-printer
+Route::get('/return-printer', function () {
+    return view('printer.return-printer');
+});
+
+// return-camera
+Route::get('/return-camera', function () {
+    return view('camera.return-camera');
+});
+
+// return-hardisk
+Route::get('/return-hardisk', function () {
+    return view('hardisk.return-hardisk');
+});
+
+
+
 //CRUD Student
 //Create
-Route::get('/student/create' , [StudentController::class, 'create']);
+Route::get('/student/create', [StudentController::class, 'create']);
 Route::post('/student', [StudentController::class, 'store']);
 
 //Read
@@ -102,5 +163,3 @@ Route::put('/student/{student_id}', [StudentController::class, 'update']);
 
 //Delet
 Route::delete('/student/{student_id}', [StudentController::class, 'delete']);
-
-Auth::routes();

@@ -18,8 +18,6 @@ return new class extends Migration
             $table->foreign("level_id")->references("id")->on("level");
             $table->timestamps();
         });
-
-
     }
 
     /**
@@ -27,9 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-
-
         Schema::dropIfExists('user');
-
     }
 };
