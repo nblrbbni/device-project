@@ -1,0 +1,139 @@
+
+  
+   @media screen and (max-width : 1440px  ){
+    
+
+    .grid-container{
+    display: grid;
+    gap: 50px  ;
+    grid-template-columns: auto auto  auto auto;
+    padding: 70px;
+    }
+    .sectionCard{
+      display: grid;
+      gap: 30px;
+      grid-template-columns: auto auto;
+    }
+   }
+
+ 
+   
+   @media screen and (max-width : 1024px){
+    .sectionCard{
+      margin: 10px 20rem  ;
+    }
+    
+    .grid-container{
+      display: grid;
+      gap: 50px  ;
+      grid-template-columns: auto auto  auto ;
+      padding: 70px;
+      }
+    .rectangle71
+    {
+    background-color:rgba(217, 217, 217, 0);
+    width: 263px;
+    height: 263px;
+    border-radius:11px;
+    border:3px solid #14274c;
+
+    }
+    .inter{
+    background-color:rgba(217, 217, 217, 0);
+    width: 194px;
+    height: 135px;
+    border-radius:11px;
+    border:3px solid #14274c;
+    margin-left:30px;
+    margin-top: 30px;
+    }
+    .inter img{
+      width: 50px;
+      margin: 1px 70px;
+      margin-top: 20px;
+    }
+      
+   }
+   @media screen and (max-width : 999px){
+    
+    header{
+      display: none;
+    }
+    
+      
+   }
+   @media screen and (max-width : 920px) {
+    .sectionCard{
+      display: grid;
+      grid-template-columns: auto auto auto;
+      margin: 1px 20px;
+    }
+   }
+   @media screen and (max-width : 820px) {
+    .sectionCard{
+      margin: 1px 120px;
+    }
+   }
+   @media screen and (max-width : 768px){
+    .sectionCard{
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+    .grid-container{
+      display: grid;
+      gap: 50px  ;
+      grid-template-columns: auto auto  ;
+      padding: 70px;
+   }
+  }
+   @media screen and (max-width : 540px) {
+   .sectionCard{
+    margin: 1px 3px;
+   }
+   }
+
+   @media screen and (max-width : 425px){
+    .sectionCard{
+      display: grid;
+      grid-template-columns: auto;
+      margin: 1px 85px;
+    }
+      .grid-container{
+        display: grid;
+        gap: 50px  ;
+        grid-template-columns: auto  ;
+        padding: 70px;
+        margin-left: 20px;
+     }
+     .title h1{
+      font-size: 30px;
+     }
+     .title h2{
+      font-size:20px ;
+      margin-top: -5px  ;
+     }
+   }
+
+   
+   @media screen and (max-width : 375px){
+      .sectionCard{
+        margin: 1px 55px;
+      }
+      .grid-container{
+        margin-left: -5px;
+      }
+      
+   }
+   @media screen and (max-width : 320px){
+    .sectionCard{
+      margin: 1px 30px;
+    }
+    .grid-container{
+      margin-left: -2rem;
+    }
+    
+   }
+   @media screen and (max-width : 280px){
+    
+   }    
+   

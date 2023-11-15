@@ -61,11 +61,7 @@
         </table>
     </div>
     <br>
-    <div class="container">
-        <div class="row">
-          <div class="col text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-        </div>
-      </div>
+    <div class="buttonSp text-center">
+        <input class="btn btn-lg" type="submit" value="Confirm" style="background-color:#18244c; color:white">
+    </div>
 @endsection

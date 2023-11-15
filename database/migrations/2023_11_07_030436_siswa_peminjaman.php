@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('siswa_peminjaman', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->foreign("siswa_id")->refereces("id")->on("siswa");
+            $table->integer("peminjaman_id")->references("id")->on("peminjaman");
             $table->timestamps();
         });
+
     }
 
     /**
@@ -27,6 +25,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('siswa_peminjaman');
+
     }
 };
