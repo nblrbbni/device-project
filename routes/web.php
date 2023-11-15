@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\kategoriController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -75,3 +75,27 @@ Route::get('/sp-camera', function () {
 });
 
 Auth::routes();
+
+//CRUD KATEGORI
+
+//Create
+//Form tambah kategori
+Route::get("/kategori/create", [kategoriController::class, "create"]);
+//Store data dari form ke database
+Route::post("/kategori", [kategoriController::class, "kategori"]);
+
+//Read
+//Tampilkan semua data kategori
+Route::get("/kategori", [kategoriController::class, "data"]);
+//Detail kategori berdasarkan id
+Route::get("/kategori/{kategori_id}",[kategoriController::class, "show"]);
+
+//Update
+//Form update kategori
+Route::get("/kategori/{kategori_id}/edit",[kategoriController::class, "edit"]);
+//Update data ke database berdasarkan id
+Route::put("/kategori/{kategori_id}",[kategoriController::class, "update"]);
+
+//Delete
+//delete berdasarkan id
+Route::delete("/kategori/{kategori_id}", [kategoriController::class, "destroy"]);
