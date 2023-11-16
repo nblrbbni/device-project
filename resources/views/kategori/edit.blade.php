@@ -1,4 +1,4 @@
-@extends("layouts.app")
+@extends("layout.master")
 @section("judul")
 Halaman Edit Kategori
 @endsection

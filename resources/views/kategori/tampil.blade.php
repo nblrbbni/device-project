@@ -1,4 +1,4 @@
-@extends("layouts.app")
+@extends("layout.master")
 @section("judul")
 Halaman List Kategori
 @endsection
