@@ -8,6 +8,9 @@ Dashboard
 @push('styles')
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+@endpush
+
+@push('styles-2')
 <link rel="stylesheet" href="{{ asset('style/dasboard.css') }}">
 <link rel="stylesheet" href="{{ asset('style/responsive.css') }}">
 @endpush
@@ -23,7 +26,7 @@ Dashboard
                             <img src="{{ asset('asset/picture/Laptop.png') }}" alt="">
                         </div>
                         <div class="name-profession">
-                            <span class="name">Sisa Laptop</span>
+                            <span class="name">sisa laptop</span>
                             <span class="profession">09</span>
                         </div>
                     </div>
@@ -89,7 +92,7 @@ Dashboard
                             <img src="{{ asset('asset/picture/Camera.png') }}" alt="">
                         </div>
                         <div class="name-profession">
-                            <span class="name">Sisa Camera</span>
+                            <span class="name">Sisa Kamera</span>
                             <span class="profession">01</span>
                         </div>
                     </div>
@@ -128,13 +131,29 @@ Dashboard
     </div>
 
     <div class="cardinfo">
-        <div class="content">
-            <img src="asset/picture/user.png" alt="">
+        <div class="contentInfo">
+            <img src="{{ asset('asset/picture/Laptop.png') }}" alt="">
+            <p>Laptop </p>
         </div>
-        <div class="desctext">
-            <h1>Nama</h1>
-            <p>Peminjaman barang elektronik telah berhasil meminjam, selamat mengerjakan tugas bagi semua siswa <br> SMK TI BAZMA yang sedang mengerjakan tugas masing - masing, semoga cepat selesai <br> tugasnya jangan di tunda - tunda agar tugas kalian
-                cepat selesai.</p>
+        <div class="table text-center">
+            <table>
+                <tr>
+                    <th>Tggl,Bln,Tahun</th>
+                    <th>Nama</th>
+                    <th>Mapel</th>
+                    <th>Nomor Device</th>
+                    <th>Nomor Lab</th>
+                    <th>Waktu Peminjaman</th>
+                </tr>
+                <tr>
+                    <td>22-09-2023</td>
+                    <td>Roland Mendel</td>
+                    <td>MKK</td>
+                    <td>14</td>
+                    <td>02</td>
+                    <td>15:00-17:00</td>
+                </tr>
+            </table>
         </div>
     </div>
 @endsection

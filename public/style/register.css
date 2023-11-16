@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-    background: linear-gradient(90deg, rgb(64, 83, 121), #14274c);
+    background: linear-gradient(90deg, rgb(64, 83, 121), #14274C);
 }
 
 .container {
@@ -18,11 +18,11 @@ body {
 }
 
 .screen {
-    background: linear-gradient(90deg, #364f81, #14274c);
+    background: linear-gradient(90deg, #364f81, #14274C);
     position: relative;
     height: 600px;
     width: 360px;
-    box-shadow: 0px 0px 24px #14274c;
+    box-shadow: 0px 0px 24px #14274C;
     border-radius: 10px;
 }
 
@@ -51,34 +51,46 @@ body {
 .screen__background__shape1 {
     height: 520px;
     width: 520px;
-    background: #fff;
-    top: -50px;
-    right: 120px;
+    background: #FFF;
+    top: 5px;
+    right: 70px;
     border-radius: 0 72px 0 0;
+    -webkit-border-radius: 0 72px 0 0;
+    -moz-border-radius: 0 72px 0 0;
+    -ms-border-radius: 0 72px 0 0;
+    -o-border-radius: 0 72px 0 0;
 }
 
 .screen__background__shape2 {
     height: 220px;
     width: 220px;
-    background: #14274c;
+    background: #14274C;
     top: -172px;
     right: 0;
     border-radius: 32px;
+    -webkit-border-radius: 32px;
+    -moz-border-radius: 32px;
+    -ms-border-radius: 32px;
+    -o-border-radius: 32px;
 }
 
 .screen__background__shape3 {
     height: 540px;
     width: 190px;
-    background: linear-gradient(270deg, #4769ad, #14274c);
+    background: linear-gradient(270deg, #4769ad, #14274C);
     top: -24px;
     right: 0;
     border-radius: 32px;
+    -webkit-border-radius: 32px;
+    -moz-border-radius: 32px;
+    -ms-border-radius: 32px;
+    -o-border-radius: 32px;
 }
 
 .screen__background__shape4 {
     height: 400px;
     width: 200px;
-    background: #14274c;
+    background: #14274C;
     top: 420px;
     right: 50px;
     border-radius: 60px;
@@ -87,8 +99,12 @@ body {
 .login {
     width: 320px;
     padding: 30px;
-    padding-top: 156px;
+    padding-top: 50px;
     border-radius: 10px;
+    -webkit-border-radius: ;
+    -moz-border-radius: ;
+    -ms-border-radius: ;
+    -o-border-radius: ;
 }
 
 .login__field {
@@ -99,25 +115,25 @@ body {
 .login__icon {
     position: absolute;
     top: 30px;
-    color: #14274c;
+    color: #14274C;
 }
 
 .login__input {
     border: none;
-    border-bottom: 2px solid #14274c;
+    border-bottom: 2px solid #14274C;
     background: none;
     padding: 10px;
     padding-left: 24px;
     font-weight: 700;
     width: 75%;
-    transition: 0.2s;
+    transition: .2s;
 }
 
 .login__input:active,
 .login__input:focus,
 .login__input:hover {
     outline: none;
-    border-bottom-color: #14274c;
+    border-bottom-color: #14274C;
 }
 
 .login__submit {
@@ -126,29 +142,29 @@ body {
     margin-top: 30px;
     padding: 16px 20px;
     border-radius: 26px;
-    border: 1px solid #14274c;
+    border: 1px solid #14274C;
     text-transform: uppercase;
     font-weight: 700;
     display: flex;
     align-items: center;
     width: 100%;
-    color: #14274c;
-    box-shadow: 0px 2px 2px #14274c;
+    color: #14274C;
+    box-shadow: 0px 2px 2px #14274C;
     cursor: pointer;
-    transition: 0.2s;
+    transition: .2s;
 }
 
 .login__submit:active,
 .login__submit:focus,
 .login__submit:hover {
-    border-color: #14274c;
+    border-color: #14274C;
     outline: none;
 }
 
 .button__icon {
     font-size: 24px;
     margin-left: auto;
-    color: #14274c;
+    color: #14274C;
 }
 
 .social-login {
@@ -171,7 +187,7 @@ body {
     padding: 20px 10px;
     color: #fff;
     text-decoration: none;
-    text-shadow: 0px 0px 8px #14274c;
+    text-shadow: 0px 0px 8px #14274C;
 }
 
 .social-login__icon:hover {

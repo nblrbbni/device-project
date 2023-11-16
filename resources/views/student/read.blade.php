@@ -17,10 +17,9 @@ Data Siswa
         <div class="row g-2 align-items-center">
           <div class="col">
             <h2 class="page-title">
-              Tambah Data Siswa
+              Data Siswa
             </h2>
             <br>
-            <a href="/student/create" class="btn" style="background-color:#14274c; color:white">Tambah Siswa</a>
           </div>
         </div>
       </div>
@@ -58,6 +57,7 @@ Data Siswa
                         <tr>
                             <td>Tidak Ada Data</td>
                         </tr>
+                
                     @endforelse
                 </tbody>
               </table>
