@@ -107,8 +107,8 @@
                 </a>
             </li>
             <hr>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
+            <li class="nav-item {{ 'team' == request()->path() ? 'active' : '' }}">
+                <a class="nav-link" href="/team">
                 <span
                     class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
