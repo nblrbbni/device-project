@@ -9,5 +9,5 @@ class Device extends Model
 {
     use HasFactory;
     protected $table = "device";
-    protected $fillable = ["nama"];
+    protected $fillable = ["nama_perangkat","kondisi_perangkat","stok","device_id"];
 }

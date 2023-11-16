@@ -30,7 +30,10 @@ class deviceController extends Controller
         }
 
         Device::create([
-            "nama"=>$request->nama
+            "nama"=>$request->nama_perangkat,
+            "kondisi"=>$request->kondisi_perangkat,
+            "stok"=>$request->stok,
+            "device_id"=>$request->device_id
         ]);
         return response()->json([
             "code"=>201,
@@ -47,11 +50,14 @@ class deviceController extends Controller
                 ], 404);
             }
             $findDevice->update([
-                "nama"=>$request->nama
+                "nama"=>$request->nama_perangkat,
+                "kondisi"=>$request->kondisi_perangkat,
+                "stok"=>$request->stok,
+                "device_id"=>$request->device_id
             ]);
         return response()->json([
             "code"=>201,
-            "message"=>"add new edit" . $findDevice->nama . "success"
+            "message"=>"add new edit" . $findDevice->nama_perangkat . $findDevice->kondisi_perangkat . $findDevice->stok . $findDevice->device_id . "success"
         ],201);
     }
 
@@ -66,7 +72,7 @@ class deviceController extends Controller
         $findDevice->delete();
         return response()->json([
             "code"=>200,
-            "message"=>"delete" . $findDevice->nama . "success"
+            "message"=>"delete" . $findDevice->nama_perangkat . $findDevice->kondisi_perangkat . $findDevice->stok . $findDevice->device_id . "success"
         ],200);
     }
 }
