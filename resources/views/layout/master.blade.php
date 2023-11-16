@@ -8,12 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @stack('styles')
     <link href="{{ asset('dist/css/tabler.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('dist/css/tabler-flags.min.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('dist/css/tabler-flags.min.css') }}" rel="stylesheet">
     <link href="{{ asset('dist/css/tabler-payments.min.css') }}" rel="stylesheet">
     <link href="{{ asset('dist/css/tabler-vendors.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('dist/css/demo.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('dist/css/demo.min.css') }}" rel="stylesheet"> --}}
     @stack('styles-2')
-    <script src="{{ asset('dist/js/demo-theme.min.js') }}"></script>
 
     {{-- Another CSS --}}
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -21,10 +20,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     @stack('scripts')
-    {{-- <script defer src="{{ asset('dist/js/script.js') }}"></script> --}}
 </head>
 
 <body>
+    <script src="{{ asset('dist/js/demo-theme.min.js') }}"></script>
     {{-- Sidebar --}}
     @include('partial.sidebar')
 
@@ -34,13 +33,10 @@
     @yield('content')
 
     <!-- script -->
-    @stack('script')
-    {{-- <script type="text/javascript">
-        const toogleSidebar = () =>
-        document.body.classList.toggle("open");
-        </script>
+    @stack('scripts-2')
+
     <script src="{{ asset('dist/js/tabler.min.js') }}" defer></script>
-    <script src="{{ asset('dist/js/demo.min.js') }}" defer></script> --}}
+    <script src="{{ asset('dist/js/demo.min.js') }}" defer></script>
 </body>
 
 </html>

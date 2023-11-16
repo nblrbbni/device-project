@@ -247,7 +247,7 @@
                         </span> --}}
                     </label>
                     <div class="input-group input-group-flat">
-                        <input id="password" type="password" class="form-control text-dark @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Your password">
+                        <input id="password" type="password" class="form-control text-dark @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Your password (minimum 8 characters)">
                         {{-- <span class="input-group-text" style="cursor:pointer" onclick="password_show_hide();">
                             <i class="fas fa-eye" id="show_eye"></i>
                             <i class="fas fa-eye-slash d-none" id="hide_eye"></i>

@@ -9,6 +9,14 @@ Data Siswa
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
 @endpush
 
+@push('scripts')
+<script defer src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script defer src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script defer src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+
+<script defer src="{{ asset('js/scripts.js') }}"></script>
+@endpush
+
 @section('content')
 <div class="page-wrapper">
     <!-- Page header -->
@@ -29,7 +37,7 @@ Data Siswa
       <div class="container-xl">
         <div class="card">
           <div class="card-body">
-            <table class="table table-striped" id="myTable">
+            <table class="table table-striped" id="table-id">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -55,9 +63,8 @@ Data Siswa
                         </tr>
                     @empty
                         <tr>
-                            <td>Tidak Ada Data</td>
+                            <td>Tidak Ada Data.</td>
                         </tr>
-                
                     @endforelse
                 </tbody>
               </table>
@@ -67,9 +74,3 @@ Data Siswa
     </div>
 </div>
 @endsection
-
-@push('scripts')
-<script defer src="https://code.jquery.com/jquery-3.7.0.js"></script>
-<script defer src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-<script defer src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
-@endpush

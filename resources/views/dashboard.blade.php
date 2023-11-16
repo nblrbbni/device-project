@@ -158,7 +158,7 @@ Dashboard
     </div>
 @endsection
 
-@push('script')
+@push('scripts-2')
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 <script>
