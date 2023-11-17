@@ -99,3 +99,7 @@ Route::put("/kategori/{kategori_id}",[kategoriController::class, "update"]);
 //Delete
 //delete berdasarkan id
 Route::delete("/kategori/{kategori_id}", [kategoriController::class, "destroy"]);
+
+
+//CRUD Device
+//Form tambah device
