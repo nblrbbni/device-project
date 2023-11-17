@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('siswa_peminjaman', function (Blueprint $table) {
+        Schema::create('printer_penembalian', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('siswa_id');
-            $table->foreign("siswa_id")->refereces("id")->on("siswa");
-            $table->integer("peminjaman_id")->references("id")->on("peminjaman");
-            $table->timestamps();
+            $table->date("tanggal_peminjaman");
+            $table->string("nama");
+            $table->string("kondisi_printer");
+            $table->time("waktu_pengembalian");
         });
-
     }
 
     /**
@@ -26,7 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('siswa_peminjaman');
-
+        Schema::dropIfExists('printer_penembalian');
     }
 };

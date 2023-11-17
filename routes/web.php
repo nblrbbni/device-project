@@ -1,8 +1,12 @@
-<?php
+    <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\StudentController;
+use App\Models\post;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\laptopController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\ReturnDeviceControll;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 
 Route::get('/', function () {
     return view('dashboard');
@@ -84,13 +89,12 @@ Route::get('/sp-camera', function () {
 
 // return device
 Route::get('/returndevice', function () {
-    return view('returndevice');
+    return view('return-device.index');
 });
 
 // return-laptop
-Route::get('/return-laptop', function () {
-    return view('laptop.return-laptop');
-});
+Route::get('/return-laptop', [laptopController::class, 'laptop']);
+Route::get('/return-laptop/store', [laptopController::class, 'laptopstr']);
 
 // return-hp
 Route::get('/return-hp', function () {
@@ -148,7 +152,6 @@ Route::get('/return-hardisk', function () {
 });
 
 
-
 //CRUD Student
 //Create
 Route::get('/student/create', [StudentController::class, 'create']);
@@ -163,3 +166,6 @@ Route::put('/student/{student_id}', [StudentController::class, 'update']);
 
 //Delet
 Route::delete('/student/{student_id}', [StudentController::class, 'delete']);
+
+//pengembalian sistem
+// crate

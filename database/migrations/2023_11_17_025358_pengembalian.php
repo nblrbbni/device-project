@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-
-        Schema::create('create_student', function (Blueprint $table) {
+        Schema::create('pengembalian', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('class');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('peminjaman_id');
+            $table->foreign("peminjaman_id")->references("id")->on("peminjaman");
+            $table->time("waktu_selesai");
             $table->timestamps();
         });
+
     }
 
     /**
@@ -27,7 +26,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('create_student');
-      
+        Schema::dropIfExists('pengembalian');
+
     }
 };

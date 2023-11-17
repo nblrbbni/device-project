@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pengembalian', function (Blueprint $table) {
+        Schema::create('siswa_peminjaman', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('peminjaman_id');
-            $table->foreign("peminjaman_id")->references("id")->on("peminjaman");
-            $table->time("waktu_selesai");
-            // $table->foreign("persetujuan_user_id")->references("id")->on("user");
+            // $table->unsignedBigInteger('siswa_id');
+            // $table->foreign("siswa_id")->refereces("id")->on("siswa");
+            $table->integer("peminjaman_id")->references("id")->on("peminjaman");
             $table->timestamps();
         });
 
@@ -27,7 +26,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pengembalian');
+        Schema::dropIfExists('siswa_peminjaman');
 
     }
 };

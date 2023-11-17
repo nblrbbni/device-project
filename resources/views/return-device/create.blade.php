@@ -1,28 +1,31 @@
 @extends('layout.master-2')
+@section('content-2')
+    @extends('layout.master-2')
 
 @section('content-2')
     <div class="balik">
         <a href="/returndevice" class="next round" style="text-decoration: none;">
             < </a>
-    </div>
+    </div>+
 
     <br>
     <br>
     <div class="container text-center">
         <div class="row row-card">
             <div class="col-md-4">
-
             </div>
             <div class="col-md-4">
                 <div class='single'>
-                    <img src="asset/picture/Laptop.png" class="gambar" alt="...">
-                    <p>Laptop</p>
+                    <img src="{{ asset('asset/picture/'.$kategori->icon) }}" class="gambar" alt="...">
+                    <p>{{ $kategori->nama }}</p>
                 </div>
             </div>
         </div>
-    </div><br><br>
-    {{-- main content --}}
-    <form action="/return-laptop/store" method="post">
+    </div>
+    <br>
+    <br>
+    <form action="/return-laptop" method="POST">
+        @csrf
         <div class="table text-center">
             <table class="table">
                 <thead>
@@ -35,7 +38,6 @@
                         <th scope="col">Waktu pengembalian</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     <tr>
                         <th scope="row">
@@ -79,7 +81,10 @@
         </div>
         <br>
         <div class="buttonSp text-center">
-            <a href="/return-laptop/store" style="text-decoration: none"><b>Confirm</b></a>
+            <input class="btn btn-lg" type="submit" style="background-color:#18244c; color:white">
         </div>
     </form>
+@endsection
+
+
 @endsection
