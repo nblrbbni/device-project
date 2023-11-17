@@ -4,6 +4,6 @@ Detail Kategori
 @endsection
 @section("content")
 <h1>{{ $kategori->nama }}</h1>
-<p>{{ $kategori->deskripsi}}</p>
+<p>{{ $kategori->icon}}</p>
 <a href="/kategori" class="btn btn-secondary btn-sm">Kembali</a>
 @endsection

@@ -16,7 +16,7 @@ Halaman Edit Kategori
 @enderror
     <div class="mb-3">
       <label >Deskripsi</label>
-      <textarea name="deskripsi" class="form-controll" cols="30" rows="10">{{ $kategori->deskripsi }}</textarea>
+      <textarea name="deskripsi" class="form-controll" cols="30" rows="10">{{ $kategori->icon }}</textarea>
       <input type="text" class="form-control">
     </div>
     @error('deskripsi')

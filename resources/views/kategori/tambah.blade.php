@@ -13,7 +13,7 @@ Halaman Create Kategori
     <div class="alert alert-danger">{{ $message }}</div>
 @enderror
     <div class="mb-3">
-      <label >Deskripsi</label>
+      <label >Icon</label>
       <textarea name="deskripsi" class="form-controll" cols="30" rows="10"></textarea>
       <input type="text" class="form-control">
     </div>
