@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @stack('styles')
     <link href="{{ asset('dist/css/tabler.min.css') }}" rel="stylesheet">
-    {{-- <link href="{{ asset('dist/css/tabler-flags.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('dist/css/tabler-flags.min.css') }}" rel="stylesheet">
     <link href="{{ asset('dist/css/tabler-payments.min.css') }}" rel="stylesheet">
     <link href="{{ asset('dist/css/tabler-vendors.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('dist/css/demo.min.css') }}" rel="stylesheet"> --}}
+    <link href="{{ asset('dist/css/demo.min.css') }}" rel="stylesheet">
     @stack('styles-2')
 
     {{-- Another CSS --}}

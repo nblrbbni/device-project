@@ -5,22 +5,18 @@
 @endsection
 
 @push('styles')
-<link rel="stylesheet" href="{{ asset('style/responsive.css') }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+<link rel="stylesheet" href="{{ asset('style/responsive.css') }}">
 @endpush
 
 @push('scripts')
 <script defer src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script defer src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 <script defer src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
-
-<script defer src="{{ asset('js/scripts.js') }}"></script>
-@endpush
-
-@push('scripts')
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+<script defer src="{{ asset('js/scripts.js') }}"></script>
 @endpush
 
 @section('content')
