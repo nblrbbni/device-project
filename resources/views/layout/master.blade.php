@@ -39,5 +39,30 @@
     <script src="{{ asset('dist/js/demo.min.js') }}" defer></script>
 </body>
 
+<script>
+    $('.delete').click( function(){
+        var siswaid = $(this).attr('data-id');
+        var studentname = $(this).attr('data-name');
+
+        swal({
+            title: "Are you sure?",
+            text: "You will delete data with the name "+studentname+" ",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+            })
+            .then((willDelete) => {
+            if (willDelete) {
+                window.location = "/student/"+siswaid+"/delete"
+                swal("Student data successfully deleted!", {
+                icon: "success",
+                });
+            } else {
+                swal("Ok! The data was not deleted!");
+            }
+        });
+    });
+</script>
+
 </html>
 

@@ -102,6 +102,6 @@ Route::get('/student/{student_id}/edit', [StudentController::class, 'edit']);
 Route::put('/student/{student_id}', [StudentController::class, 'update']);
 
 //Delet
-Route::delete('/student/{student_id}', [StudentController::class, 'delete']);
+Route::get('/student/{student_id}/delete', [StudentController::class, 'delete']);
 
 Auth::routes();
