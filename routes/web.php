@@ -4,13 +4,17 @@ use App\Http\Controllers\cameraController;
 use App\Http\Controllers\earphoneController;
 use App\Http\Controllers\flashdiskController;
 use App\Http\Controllers\handphoneController;
+use App\Http\Controllers\hardiskController;
+use App\Http\Controllers\hdmiController;
 use App\Models\post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LanController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\laptopController;
 use App\Http\Controllers\PcController;
 use App\Http\Controllers\printerController;
+use App\Http\Controllers\projectorController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ReturnDeviceControll;
 use App\Http\Controllers\tabletController;
@@ -109,9 +113,9 @@ Route::post('/return-hp/store', [handphoneController::class, 'handphonestr']);
 
 
 // return-hdmi
-Route::get('/return-HDMI', function () {
-    return view('hdmi.return-hdmi');
-});
+Route::get('/return-HDMI', [hdmiController::class, 'HDMI']);
+Route::post('/return-HDMI/store', [hdmiController::class, 'HDMIstr']);
+
 
 // return-headphone
 Route::get('/return-headphone', [earphoneController::class, 'earphone']);
@@ -129,14 +133,14 @@ Route::post('/return-tablet/store', [tabletController::class, 'tabletstr']);
 
 
 // return-projector
-Route::get('/return-projector', function () {
-    return view('projector.return-projector');
-});
+Route::get('/return-projector', [projectorController::class, 'projector']);
+Route::post('/return-projector/store', [projectorController::class, 'projectorstr']);
+
 
 // return-lan
-Route::get('/return-lan', function () {
-    return view('Lan.return-lan');
-});
+Route::get('/return-lan', [LanController::class, 'lan']);
+Route::post('/return-lan/store', [LanController::class, 'lanstr']);
+
 
 // return-flashdisk
 Route::get('/return-flasdisk', [flashdiskController::class, 'flasdisk']);
@@ -154,9 +158,9 @@ Route::post('/return-camera/sotore', [cameraController::class, 'camerastr']);
 
 
 // return-hardisk
-Route::get('/return-hardisk', function () {
-    return view('hardisk.return-hardisk');
-});
+Route::get('/return-hardisk', [hardiskController::class, 'hardisk']);
+Route::post('/return-hardisk/store', [hardiskController::class, 'hardiskstr']);
+
 
 
 //CRUD Student

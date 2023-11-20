@@ -7,6 +7,9 @@
 
     <br />
     <br />
+    {{-- main content --}}
+    <form action="/return-lan/store" method="post">
+        @csrf
     <div class="container text-center">
         <div class="row row-card">
             <div class="col-md-4"></div>
@@ -34,19 +37,19 @@
             <tbody>
                 <tr>
                     <th scope="row">
-                        <input type="date" />
+                        <input type="date" name="tanggal_peminjaman"/>
                     </th>
                     <td>
-                        <input type="text" />
+                        <input type="text" name="nama"/>
                     </td>
                     <td>
-                        <input type="number" />
+                        <input type="number" name="nomor_LAN"/>
                     </td>
                     <td>
-                        <input type="text" />
+                        <input type="text" name="kondisi_LAN"/>
                     </td>
                     <td>
-                        <input type="time" />
+                        <input type="time" name="waktu_pengembalian"   />
                     </td>
                 </tr>
             </tbody>
@@ -54,6 +57,7 @@
     </div>
     <br />
     <div class="buttonSp text-center">
-        <a href="" style="text-decoration: none"><b>Confirm</b></a>
+        <input type="submit" value="confirm">
     </div>
+</form>
 @endsection
