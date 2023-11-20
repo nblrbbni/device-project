@@ -135,7 +135,7 @@ Route::delete("/kategori/{kategori_id}", [kategoriController::class, "destroy"])
 //Form tambah device
 Route::get("/device/create", [deviceController::class, "create"]);
 //Store data dari form ke database
-Route::post("/device", [deviceController::class, "kategori"]);
+Route::post("/device", [deviceController::class, "device"]);
 
 //Read
 //Tampilkan semua data device

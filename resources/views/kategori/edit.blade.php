@@ -2,26 +2,58 @@
 @section("judul")
 Halaman Edit Kategori
 @endsection
-@section("content")
-<form action="/kategori/{{ $kategori->id }}" method="POST">
-    @csrf
-    @method("PUT")
-    <div class="mb-3">
-      <label>Nama Kategori</label>
-      <input type="text" name="nama" class="form-control" value="{{ $kategori->nama }}">
 
+@push('styles')
+<link rel="stylesheet" href="{{ asset('style/style.css') }}">
+<link rel="stylesheet" href="{{ asset('js/java.js') }}">
+<link rel="stylesheet" href="{{ asset('style/responsive.css') }}">
+@endpush
+
+@section("content")
+
+  <div class="page-wrapper">
+    <!-- Page header -->
+    <div class="page-header d-print-none">
+      <div class="container-xl">
+        <div class="row g-2 align-items-center">
+          <div class="col">
+            <h2 class="page-title">
+              Edit Kategori
+            </h2>
+          </div>
+        </div>
+      </div>
     </div>
-    @error('nama')
-    <div class="alert alert-danger">{{ $message }}</div>
-@enderror
-    <div class="mb-3">
-      <label >Deskripsi</label>
-      <textarea name="deskripsi" class="form-controll" cols="30" rows="10">{{ $kategori->icon }}</textarea>
-      <input type="text" class="form-control">
+    <!-- Page body -->
+    <div class="page-body">
+      <div class="container-xl">
+        <div class="card">
+          <div class="card-body">
+            <form action="/kategori/{{ $kategori->id }}" method="POST">
+                @csrf
+                @method("PUT")
+                <div class="mb-3">
+                  <label>Nama Kategori</label>
+                  <input type="text" name="nama" class="form-control" value="{{ $kategori->nama }}">
+
+                </div>
+                @error('nama')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+                <div class="mb-3">
+                  <label >Deskripsi</label>
+                  <textarea name="deskripsi" class="form-controll" cols="30" rows="10">{{ $kategori->icon }}</textarea>
+                  <input type="text" class="form-control">
+                </div>
+                @error('deskripsi')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+
+          </div>
+        </div>
+      </div>
     </div>
-    @error('deskripsi')
-    <div class="alert alert-danger">{{ $message }}</div>
-@enderror
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+</div>
 @endsection

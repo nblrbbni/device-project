@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class kategoriController extends Controller
@@ -22,6 +23,7 @@ class kategoriController extends Controller
         ]);
 
         return redirect("/kategori");
+        
     }
 
     public function data(){

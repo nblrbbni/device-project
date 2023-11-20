@@ -2,8 +2,34 @@
 @section("judul")
 Halaman List Kategori
 @endsection
+
+@push('styles')
+<link rel="stylesheet" href="{{ asset('style/style.css') }}">
+<link rel="stylesheet" href="{{ asset('js/java.js') }}">
+<link rel="stylesheet" href="{{ asset('style/responsive.css') }}">
+@endpush
+
 @section("content")
-<a href="/kategori/create" class="btn btn-primary btn-sm">Tambah</a>
+
+  <div class="page-wrapper">
+    <!-- Page header -->
+    <div class="page-header d-print-none">
+      <div class="container-xl">
+        <div class="row g-2 align-items-center">
+          <div class="col">
+            <h2 class="page-title">
+              Daftar Kategori
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Page body -->
+    <div class="page-body">
+      <div class="container-xl">
+        <div class="card">
+          <div class="card-body">
+            <a href="/kategori/create" class="btn btn-primary btn-sm">Tambah</a>
   <table class="table">
     <thead>
         <th scope="col"></th>
@@ -34,4 +60,10 @@ Halaman List Kategori
         @endforelse
     </tbody>
   </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
 @endsection

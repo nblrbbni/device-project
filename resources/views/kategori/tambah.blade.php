@@ -2,23 +2,54 @@
 @section("judul")
 Halaman Create Kategori
 @endsection
+
+@push('styles')
+<link rel="stylesheet" href="{{ asset('style/style.css') }}">
+<link rel="stylesheet" href="{{ asset('js/java.js') }}">
+<link rel="stylesheet" href="{{ asset('style/responsive.css') }}">
+@endpush
+
 @section("content")
-<form action="/kategori" method="POST">
-    @csrf
-    <div class="mb-3">
-      <label>Nama Kategori</label>
-      <input type="text" name="nama" class="form-control" >
+
+  <div class="page-wrapper">
+    <!-- Page header -->
+    <div class="page-header d-print-none">
+      <div class="container-xl">
+        <div class="row g-2 align-items-center">
+          <div class="col">
+            <h2 class="page-title">
+              Buat Kategori
+            </h2>
+          </div>
+        </div>
+      </div>
     </div>
-    @error('nama')
-    <div class="alert alert-danger">{{ $message }}</div>
-@enderror
-    <div class="mb-3">
-      <label >Icon</label>
-      <input type="text" class="form-control" >
+    <!-- Page body -->
+    <div class="page-body">
+      <div class="container-xl">
+        <div class="card">
+          <div class="card-body">
+            <form action="/kategori" method="POST">
+                @csrf
+                <div class="mb-3">
+                  <label>Nama Kategori</label>
+                  <input type="text" name="nama" class="form-control" >
+                </div>
+                @error('nama')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+                <div class="mb-3">
+                  <label >Icon</label>
+                  <input type="text" class="form-control" >
+                </div>
+                @error('kondisi')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+          </div>
+        </div>
+      </div>
     </div>
-    @error('kondisi')
-    <div class="alert alert-danger">{{ $message }}</div>
-@enderror
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+</div>
 @endsection
