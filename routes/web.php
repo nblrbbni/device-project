@@ -103,3 +103,23 @@ Route::delete("/kategori/{kategori_id}", [kategoriController::class, "destroy"])
 
 //CRUD Device
 //Form tambah device
+Route::get("/device/create", [deviceController::class, "create"]);
+//Store data dari form ke database
+Route::post("/device", [deviceController::class, "kategori"]);
+
+//Read
+//Tampilkan semua data device
+Route::get("/device", [deviceController::class, "data"]);
+//Detail device berdasarkan id
+Route::get("/device/{device_id}",[deviceController::class, "show"]);
+
+//Update
+//Form update device
+Route::get("/device/{device_id}/edit",[deviceController::class, "edit"]);
+//Update data ke database berdasarkan id
+Route::put("/device/{device_id}",[deviceController::class, "update"]);
+
+//Delete
+//delete berdasarkan id
+Route::delete("/device/{device_id}", [deviceController::class, "destroy"]);
+
