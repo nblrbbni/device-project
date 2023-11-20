@@ -14,8 +14,7 @@ Halaman Create Kategori
 @enderror
     <div class="mb-3">
       <label >Icon</label>
-      <textarea name="deskripsi" class="form-controll" cols="30" rows="10"></textarea>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" >
     </div>
     @error('kondisi')
     <div class="alert alert-danger">{{ $message }}</div>

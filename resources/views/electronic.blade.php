@@ -4,106 +4,126 @@
 Electronic
 @endsection
 
+@push('styles')
+<link rel="stylesheet" href="{{ asset('style/style.css') }}">
+<link rel="stylesheet" href="{{ asset('js/java.js') }}">
+<link rel="stylesheet" href="{{ asset('style/responsive.css') }}">
+@endpush
+
 @section('content')
-    <div class="container text-center">
-        <div class="row row-cards">
-        <div class="col-md-4">
-            <div id='rectangle71' class='rectangle71'>
-            <div class="inter">
-                <img src="{{ asset('asset/picture/Laptop.png') }}" class="gambar" alt="...">
-                <p>Laptop</p>
-            </div>
-            <button class="button"><a href="/sp-laptop" style="text-decoration: none;">
-                <p class="text">Pilih</p>
-                </a>
-            </button>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div id='rectangle71' class='rectangle71'>
-            <div class="inter">
-                <img src="{{ asset('asset/picture/Flashdisk.png') }}" class="gambar" alt="...">
-                <p>Flashdisk</p>
-            </div>
-            <a href="sp-flashdisk">
-                <button class="button">
-                <p class="text">Pilih</p>
-                </button>
-            </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div id='rectangle71' class='rectangle71'>
-            <div class="inter">
-                <img src="{{ asset('asset/picture/Projector.png') }}" class="gambar" alt="...">
-                <p>Projector</p>
-            </div>
-            <a href="/sp-projector">
-                <button class="button">
-                <p class="text">Pilih</p>
-                </button>
-            </a>
-            </div>
-        </div>
-        </div>
+<br>
+<br>
+<!-- card -->
+<div class="sectionCard">
+  <div id='rectangle71' class='rectangle71'>
+    <div class="inter">
+      <img src="asset/picture/Laptop.png" class="gambar" alt="...">
+      <p>Laptop</p>
     </div>
-    <br>
-    <br>
-    <div class="container text-center">
-        <div class="row row-cards">
-        <div class="col-md-4">
-            <div id='rectangle71' class='rectangle71'>
-            <div class="inter">
-                <img src="{{ asset('asset/picture/Printer.png') }}" class="gambar" alt="...">
-                <p>Printer</p>
-            </div>
-            <a href="/sp-printer">
-                <button class="button">
-                <p class="text">Pilih</p>
-                </button>
-            </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div id='rectangle71' class='rectangle71'>
-            <div class="inter">
-                <img src="{{ asset('asset/picture/Smartphone.png') }}" class="gambar" alt="...">
-                <p>Handphone</p>
-            </div>
-            <a href="/sp-handphone">
-                <button class="button">
-                <p class="text">Pilih</p>
-                </button>
-            </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div id='rectangle71' class='rectangle71'>
-            <div class="inter">
-                <img src="{{ asset('asset/picture/Tablet.png') }}" class="gambar" alt="...">
-                <p>Tablet</p>
-            </div>
-            <a href="/sp-tablet">
-                <button class="button">
-                <p class="text">Pilih</p>
-                </button>
-            </a>
-            </div>
-        </div>
-        </div>
+    <div class="link">
+      <a href="/sp-laptop">Pilih</a>
     </div>
+  </div>
+  <div id='rectangle71' class='rectangle71'>
+    <div class="inter">
+      <img src="asset/picture/Headphones.png" class="gambar" alt="...">
+      <p>Earphone</p>
     </div>
-    <br>
-    <br>
-
-
-    <button class='rectangle74'>
-        <a href="/sp-electronic" style="text-decoration: none;">
-        <div class="paragraf" style="color: aliceblue;">
-            Lihat elektronik yang lain
-        </div>
-        </a>
-    </button>
-    <br>
-    <br>
+    <div class="link">
+      <a href="SP-headset.html">Pilih</a>
+    </div>
+  </div>
+  <div id='rectangle71' class='rectangle71'>
+    <div class="inter">
+      <img src="asset/picture/Projector.png" class="gambar" alt="...">
+      <p>Projector</p>
+    </div>
+    <div class="link">
+      <a href="SP-projector.html">Pilih</a>
+    </div>
+  </div>
+  <div id='rectangle71' class='rectangle71'>
+    <div class="inter">
+      <img src="asset/picture/Tablet.png" class="gambar" alt="...">
+      <p>Tablet</p>
+    </div>
+    <div class="link">
+      <a href="SP-tablet.html">Pilih</a>
+    </div>
+  </div>
+  <div id='rectangle71' class='rectangle71'>
+    <div class="inter">
+      <img src="asset/picture/Camera.png" class="gambar" alt="...">
+      <p>Camera</p>
+    </div>
+    <div class="link">
+      <a href="SP-camera.html">Pilih</a>
+    </div>
+  </div>
+  <div id='rectangle71' class='rectangle71'>
+    <div class="inter">
+      <img src="asset/picture/Smartphone.png" class="gambar" alt="...">
+      <p>Handphone</p>
+    </div>
+    <div class="link">
+      <a href="SP-handphone.html">Pilih</a>
+    </div>
+  </div>
+  <div id='rectangle71' class='rectangle71'>
+    <div class="inter">
+      <img src="asset/picture/Gaming.png" class="gambar" alt="...">
+      <p>PC</p>
+    </div>
+    <div class="link">
+      <a href="SP-pc.html">Pilih</a>
+    </div>
+  </div>
+  <div id='rectangle71' class='rectangle71'>
+    <div class="inter">
+      <img src="asset/picture/Flashdisk.png" class="gambar" alt="...">
+      <p>Flashdisk</p>
+    </div>
+    <div class="link">
+      <a href="SP-flashdisk.html">Pilih</a>
+    </div>
+  </div>
+  <div id='rectangle71' class='rectangle71'>
+    <div class="inter">
+      <img src="asset/picture/Hard disk.png" class="gambar" alt="...">
+      <p>Hardisk</p>
+    </div>
+    <div class="link">
+      <a href="">Pilih</a>
+    </div>
+  </div>
+  <div id='rectangle71' class='rectangle71'>
+    <div class="inter">
+      <img src="asset/picture/Printer.png" class="gambar" alt="...">
+      <p>Printer</p>
+    </div>
+    <div class="link">
+      <a href="Sp-printer.html">Pilih</a>
+    </div>
+  </div>
+  <div id='rectangle71' class='rectangle71'>
+    <div class="inter">
+      <img src="asset/picture/Rj45.png" class="gambar" alt="...">
+      <p>LAN</p>
+    </div>
+    <div class="link">
+      <a href="SP-kabelRoll.html">Pilih</a>
+    </div>
+  </div>
+  <div id='rectangle71' class='rectangle71'>
+    <div class="inter">
+      <img src="asset/picture/Hdmi.png" class="gambar" alt="...">
+      <p>HDMI</p>
+    </div>
+    <div class="link">
+      <a href="SP-hdmi.html">Pilih</a>
+    </div>
+  </div>
+</div>
+<br>
+<br>
 @endsection

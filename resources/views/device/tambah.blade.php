@@ -14,8 +14,7 @@ Halaman Create Device
 @enderror
     <div class="mb-3">
       <label >Kondisi</label>
-      <textarea name="kondisi" class="form-controll" cols="30" rows="10"></textarea>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" name="kondisi">
     </div>
     @error('kondisi')
     <div class="alert alert-danger">{{ $message }}</div>

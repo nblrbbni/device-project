@@ -15,11 +15,17 @@ return new class extends Migration
             $table->id();
             $table->string("nama_user");
             $table->integer("password");
+<<<<<<< Updated upstream
             $table->foreign("level_id")->references("id")->on("level");
             $table->timestamps();
         });
 
 
+=======
+            $table->timestamps();
+        });
+
+>>>>>>> Stashed changes
     }
 
     /**
@@ -27,9 +33,13 @@ return new class extends Migration
      */
     public function down(): void
     {
+<<<<<<< Updated upstream
 
 
         Schema::dropIfExists('user');
 
+=======
+        Schema::dropIfExists('user');
+>>>>>>> Stashed changes
     }
 };

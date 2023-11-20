@@ -16,7 +16,10 @@ return new class extends Migration
             $table->string("nama");
             $table->timestamps();
         });
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }
 
     /**
@@ -24,8 +27,12 @@ return new class extends Migration
      */
     public function down(): void
     {
+<<<<<<< Updated upstream
 
         Schema::dropIfExists('lab');
 
+=======
+        Schema::dropIfExists('lab');
+>>>>>>> Stashed changes
     }
 };

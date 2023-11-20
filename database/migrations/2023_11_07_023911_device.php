@@ -16,11 +16,18 @@ return new class extends Migration
             $table->string("nama_perangkat");
             $table->string("kondisi_perangkat");
             $table->integer("stok");
+<<<<<<< Updated upstream
             $table->foreign("kategori_id")->references("id")->on("kategori");
             $table->timestamps();
         });
 
 
+=======
+            $table->integer("kategori_id");
+            $table->timestamps();
+        });
+
+>>>>>>> Stashed changes
     }
 
     /**
@@ -28,7 +35,10 @@ return new class extends Migration
      */
     public function down(): void
     {
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         Schema::dropIfExists('device');
     }
 };

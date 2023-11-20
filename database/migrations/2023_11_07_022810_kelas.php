@@ -18,7 +18,10 @@ return new class extends Migration
             $table->timestamps();
         });
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }
 
     /**
@@ -26,7 +29,10 @@ return new class extends Migration
      */
     public function down(): void
     {
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         Schema::dropIfExists('kelas');
     }
 };
