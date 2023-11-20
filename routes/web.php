@@ -1,12 +1,19 @@
     <?php
 
+use App\Http\Controllers\cameraController;
+use App\Http\Controllers\earphoneController;
+use App\Http\Controllers\flashdiskController;
+use App\Http\Controllers\handphoneController;
 use App\Models\post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\laptopController;
+use App\Http\Controllers\PcController;
+use App\Http\Controllers\printerController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ReturnDeviceControll;
+use App\Http\Controllers\tabletController;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,12 +101,12 @@ Route::get('/returndevice', function () {
 
 // return-laptop
 Route::get('/return-laptop', [laptopController::class, 'laptop']);
-Route::get('/return-laptop/store', [laptopController::class, 'laptopstr']);
+Route::post('/return-laptop/store', [laptopController::class, 'laptopstr']);
 
 // return-hp
-Route::get('/return-hp', function () {
-    return view('handphone.retrurn-handphone');
-});
+Route::get('/return-hp', [handphoneController::class, 'handphone']);
+Route::post('/return-hp/store', [handphoneController::class, 'handphonestr']);
+
 
 // return-hdmi
 Route::get('/return-HDMI', function () {
@@ -107,19 +114,19 @@ Route::get('/return-HDMI', function () {
 });
 
 // return-headphone
-Route::get('/return-headphone', function () {
-    return view('headphone.return-headphone');
-});
+Route::get('/return-headphone', [earphoneController::class, 'earphone']);
+Route::post('/return-headphone/store', [earphoneController::class, 'earphonestr']);
+
 
 // return-pc
-Route::get('/return-computer', function () {
-    return view('computer.return-pc');
-});
+Route::get('/return-computer', [PcController::class, 'computer']);
+Route::post('/return-computer/store', [PcController::class, 'computerstr']);
+
 
 // return-tablet
-Route::get('/return-tablet', function () {
-    return view('tablet.return-tablet');
-});
+Route::get('/return-tablet', [tabletController::class, 'tablet']);
+Route::post('/return-tablet/store', [tabletController::class, 'tabletstr']);
+
 
 // return-projector
 Route::get('/return-projector', function () {
@@ -132,19 +139,19 @@ Route::get('/return-lan', function () {
 });
 
 // return-flashdisk
-Route::get('/return-flasdisk', function () {
-    return view('flashdisk.return-flashdisk');
-});
+Route::get('/return-flasdisk', [flashdiskController::class, 'flasdisk']);
+Route::post('/return-flasdisk/store', [flashdiskController::class, 'flasdiskstr']);
+
 
 // return-printer
-Route::get('/return-printer', function () {
-    return view('printer.return-printer');
-});
+Route::get('/return-printer', [printerController::class, 'printer']);
+Route::post('/return-printer/store', [printerController::class, 'printerstr']);
+
 
 // return-camera
-Route::get('/return-camera', function () {
-    return view('camera.return-camera');
-});
+Route::get('/return-camera', [cameraController::class, 'camera']);
+Route::post('/return-camera/sotore', [cameraController::class, 'camerastr']);
+
 
 // return-hardisk
 Route::get('/return-hardisk', function () {

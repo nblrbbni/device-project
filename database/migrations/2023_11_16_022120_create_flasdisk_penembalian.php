@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('flasdisk_penembalian', function (Blueprint $table) {
             $table->id();
             $table->date("tanggal_peminjaman");
-
             $table->string("nama");
             $table->integer("nomor_flashdisk");
             $table->string("kondisi_flashdisk");
             $table->time("waktu_pengembalian");
+            $table->timestamps();
+
         });
     }
 

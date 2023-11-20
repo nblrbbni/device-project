@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string("kondisi_laptop");
             $table->string("kondisi_keybohard");
             $table->time("waktu_pengembalian");
+            $table->timestamps();
 
         });
     }

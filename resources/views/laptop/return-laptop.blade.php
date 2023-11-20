@@ -15,7 +15,7 @@
             </div>
             <div class="col-md-4">
                 <div class='single'>
-                    <img src="asset/picture/Laptop.png" class="gambar" alt="...">
+                    <img src="asset/picture/Laptop.png  " class="gambar" alt="...">
                     <p>Laptop</p>
                 </div>
             </div>
@@ -23,6 +23,7 @@
     </div><br><br>
     {{-- main content --}}
     <form action="/return-laptop/store" method="post">
+        @csrf
         <div class="table text-center">
             <table class="table">
                 <thead>
@@ -40,38 +41,38 @@
                     <tr>
                         <th scope="row">
                             <input type="date" name="tanggal">
-                            @error('tanggal')
+                            {{-- @error('tanggal')
                                 <p class="text-sm text danger">{{ $message }}</p>
-                            @enderror
+                            @enderror --}}
                         </th>
                         <td>
                             <input type="text" name="nama">
-                            @error('nama')
+                            {{-- @error('nama')
                                 <p class="text-sm text danger">{{ $message }}</p>
-                            @enderror
+                            @enderror --}}
                         </td>
                         <td>
                             <input type="text" name="kondisi_mouse">
-                            @error('kondisi_mouse')
+                            {{-- @error('kondisi_mouse')
                                 <p class="text-sm text danger">{{ $message }}</p>
-                            @enderror
+                            @enderror --}}
                         </td>
                         <td>
                             <input type="text" name="kondisi_laptop">
-                            @error('kondisi_laptop')
+                            {{-- @error('kondisi_laptop')
                                 <p class="text-sm text danger">{{ $message }}</p>
-                            @enderror
+                            @enderror --}}
                         </td>
                         <td><input type="text" name="kondisi_keybohard">
-                            @error('kondisi_keybohard')
+                            {{-- @error('kondisi_keybohard')
                                 <p class="text-sm text danger">{{ $message }}</p>
-                            @enderror
+                            @enderror --}}
                         </td>
                         <td>
                             <input type="time" name="waktu_pengembalian">
-                            @error('waktu_pengembalian')
+                            {{-- @error('waktu_pengembalian')
                                 <p class="text-sm text danger">{{ $message }}</p>
-                            @enderror
+                            @enderror --}}
                         </td>
                     </tr>
                 </tbody>
@@ -79,7 +80,7 @@
         </div>
         <br>
         <div class="buttonSp text-center">
-            <a href="/return-laptop/store" style="text-decoration: none"><b>Confirm</b></a>
+            <input type="submit" value="confirm">
         </div>
     </form>
 @endsection

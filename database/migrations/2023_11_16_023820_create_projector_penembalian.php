@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string("kondisi_kabel_power");
             $table->string("kondisi_remote");
             $table->time("waktu_pengembalian");
+            $table->timestamps();
+
         });
     }
 

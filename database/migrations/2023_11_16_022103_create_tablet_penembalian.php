@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string("kondisi_baterai");
             $table->string("kondisi_charger");
             $table->time("waktu_pengembalian");
+            $table->timestamps();
+
 
         });
     }

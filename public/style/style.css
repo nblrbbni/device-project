@@ -301,7 +301,7 @@ aside a:hover {
     margin-top: 50px;
 }
 
-.buttonSp a {
+.buttonSp input {
     text-decoration: none;
     color: #ffffff;
     text-align: center;
@@ -314,10 +314,11 @@ aside a:hover {
     background: linear-gradient(180deg, #14274C 50.59%, rgba(12, 70, 148, 0.80) 100%, #0075FF 100%);
 }
 
-.buttonSp a:hover {
+.buttonSp input:hover {
     font-size: 20px;
     transition: 0.4s;
 }
+
 
 .table {
     padding: 50px;

@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string("kondisi_tempat_kamera");
             $table->string("kelengkapan_atribut");
             $table->time("waktu_pengembalian");
+            $table->timestamps();
+
         });
     }
 

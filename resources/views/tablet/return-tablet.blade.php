@@ -20,42 +20,46 @@
     </div>
     <br />
     <br />
-    <div class="table text-center">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Tanggal Peminjaman</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Kondisi tablet</th>
-                    <th scope="col">Kondisi beterai</th>
-                    <th scope="col">Kondisi charger</th>
-                    <th scope="col">Waktu pengembalian</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">
-                        <input type="date" />
-                    </th>
-                    <td>
-                        <input type="text" />
-                    </td>
-                    <td>
-                        <input type="text" />
-                    </td>
-                    <td>
-                        <input type="text" />
-                    </td>
-                    <td><input type="text" /></td>
-                    <td>
-                        <input type="time" />
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <br />
-    <div class="buttonSp text-center">
-        <a href="" style="text-decoration: none"><b>Confirm</b></a>
-    </div>
+    {{-- main content --}}
+    <form action="/return-tablet/store" method="post">
+        @csrf
+        <div class="table text-center">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Tanggal Peminjaman</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">Kondisi tablet</th>
+                        <th scope="col">Kondisi beterai</th>
+                        <th scope="col">Kondisi charger</th>
+                        <th scope="col">Waktu pengembalian</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            <input type="date" name="tanggal_peminjaman"/>
+                        </th>
+                        <td>
+                            <input type="text" name="nama"/>
+                        </td>
+                        <td>
+                            <input type="text" name="kondisi_tablet"/>
+                        </td>
+                        <td>
+                            <input type="text" name="kondisi_baterai"/>
+                        </td>
+                        <td><input type="text" name="kondisi_charger"/></td>
+                        <td>
+                            <input type="time" name="waktu_pengembalian"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <div class="buttonSp text-center">
+            <input type="submit" value="confirm">
+        </div>
+    </form>
 @endsection

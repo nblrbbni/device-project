@@ -18,6 +18,8 @@ return new class extends Migration
             $table->integer("nomor_hardisk");
             $table->string("kondisi_hardisk");
             $table->time("waktu_pengembalian");
+            $table->timestamps();
+
         });
     }
 

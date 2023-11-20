@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string("kondisi_kardus");
             $table->string("kondisi_suara");
             $table->time("waktu_pengembalian");
+            $table->timestamps();
+
         });
     }
 

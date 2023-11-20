@@ -18,6 +18,8 @@ return new class extends Migration
             $table->integer("nomor_HDMI");
             $table->string("kondisi_HDMI");
             $table->time("waktu_pengembalian");
+            $table->timestamps();
+
         });
     }
 

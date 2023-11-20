@@ -18,6 +18,8 @@ return new class extends Migration
             $table->integer("nomor_LAN");
             $table->string("kondisi_LAN");
             $table->time("waktu_pengembalian");
+            $table->timestamps();
+
         });
     }
 

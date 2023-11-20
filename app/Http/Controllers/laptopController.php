@@ -30,10 +30,10 @@ class laptopController extends Controller
      */
     public function laptopstr(Request $request)
     {
-        return view('laptop.confirm');
+        // return view('laptop.return-laptop');
 
         $request->validate([
-            'tanggal_peminjaman' => 'required',
+            'tanggal' => 'required',
             'nama' => 'required',
             'kondisi_mouse' => 'required',
             'kondisi_laptop' => 'required',
@@ -41,14 +41,18 @@ class laptopController extends Controller
             'waktu_pengembalian' => 'required',
         ]);
 
+        
         $laptopreturn = new laptopreturn;
-        $laptopreturn->tanggal_peminjaman = $request->tanggal_peminjaman;
+
+        $laptopreturn->tanggal_peminjaman = $request->tanggal;
         $laptopreturn->nama = $request->nama;
         $laptopreturn->kondisi_mouse = $request->kondisi_mouse;
         $laptopreturn->kondisi_laptop = $request->kondisi_laptop;
         $laptopreturn->kondisi_keybohard = $request->kondisi_keybohard;
         $laptopreturn->waktu_pengembalian = $request->waktu_pengembalian;
         $laptopreturn->save();
+        return redirect()->to('/');
+
     }
 
     /**

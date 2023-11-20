@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string("nama");
             $table->string("kondisi_printer");
             $table->time("waktu_pengembalian");
+            $table->timestamps();
+
         });
     }
 
