@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 
 class kategoriController extends Controller
 {
@@ -23,12 +24,13 @@ class kategoriController extends Controller
         ]);
 
         return redirect("/kategori");
-        
+
+
     }
 
     public function data(){
         $kategori=DB::table('kategori')->get();
-        dd($kategori);
+        //dd($kategori);
         return view("kategori.tampil", ["kategori"=>$kategori]);
     }
 

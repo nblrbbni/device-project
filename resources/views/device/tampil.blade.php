@@ -64,7 +64,7 @@ Halaman List Device
                         <td>{{ $value->nama }}</td>
                         <td>
 
-                            <form action="/kategori/{{ $value->id }}" method="POST">
+                            <form action="/device/{{ $value->id }}" method="POST">
                             @csrf
                             @method("DELETE")
                             <a href="/device/{{ $value->id }}" class="btn btn-info btn-sm">Detail</a>

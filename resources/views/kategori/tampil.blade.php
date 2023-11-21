@@ -28,8 +28,9 @@ Halaman List Kategori
     <div class="page-body">
       <div class="container-xl">
         <div class="card">
-          <div class="card-body">
             <a href="/kategori/create" class="btn btn-primary btn-sm">Tambah</a>
+          <div class="card-body">
+
   <table class="table">
     <thead>
         <th scope="col"></th>

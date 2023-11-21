@@ -18,7 +18,7 @@ Halaman Create Device
         <div class="row g-2 align-items-center">
           <div class="col">
             <h2 class="page-title">
-              Peraturan Peminjaman Device
+              Halaman menambahkan device
             </h2>
           </div>
         </div>
@@ -52,7 +52,8 @@ Halaman Create Device
               @error('stok')
               <div class="alert alert-danger">{{ $message }}</div>
             @enderror
-                <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn" style="background-color:#18244c; color:white">Submit</button>
+            <a href="/device" class="btn btn-primary">Back</a>
               </form>
           </div>
         </div>

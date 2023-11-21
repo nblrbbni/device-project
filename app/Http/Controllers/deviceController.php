@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
+
 
 class deviceController extends Controller
 {
@@ -29,7 +31,7 @@ class deviceController extends Controller
 
     public function data(){
         $device=DB::table('device')->get();
-        dd($device);
+        //dd($device);
         return view("device.tampil", ["device"=>$device]);
     }
 
@@ -51,7 +53,7 @@ class deviceController extends Controller
         ]);
 
         DB::table('kategori')->where("id", $id)->update(["nama"=>$request->nama, "kondisi"=>$request->kondisi, "stok"=>$request->stok]);
-        return redirect("/kategori");
+        return redirect("/device");
     }
 
     public function destroy($id){

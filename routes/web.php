@@ -3,6 +3,10 @@
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\kategoriController;
+use App\Http\Controllers\UserController;
+use Illuminate\Http\Request;
+use App\Http\Controllers\deviceController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -101,7 +105,7 @@ Route::get('/student', [StudentController::class, 'index']);
 Route::get('/student/{student_id}/edit', [StudentController::class, 'edit']);
 Route::put('/student/{student_id}', [StudentController::class, 'update']);
 
-//Delet
+//Delete
 Route::get('/student/{student_id}/delete', [StudentController::class, 'delete']);
 
 Auth::routes();

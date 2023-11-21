@@ -28,7 +28,7 @@ Halaman Edit Device
       <div class="container-xl">
         <div class="card">
           <div class="card-body">
-            <form action="/kategori/{{ $kategori->id }}" method="POST">
+            <form action="/device/{{ $device->id }}" method="POST">
                 @csrf
                 @method("PUT")
                 <div class="mb-3">
@@ -41,7 +41,6 @@ Halaman Edit Device
             @enderror
                 <div class="mb-3">
                   <label >Kondisi</label>
-                  <textarea name="kondisi" class="form-controll" cols="30" rows="10">{{ $device->kondisi }}</textarea>
                   <input type="text" class="form-control">
                 </div>
                 @error('kondisi')
