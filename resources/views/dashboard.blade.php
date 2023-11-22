@@ -25,7 +25,7 @@ Dashboard
                             <img src="{{ asset('asset/picture/Laptop.png') }}" alt="">
                         </div>
                         <div class="name-profession">
-                            <span class="name">sisa laptop</span>
+                            <span class="name">Sisa Laptop</span>
                             <span class="profession">09</span>
                         </div>
                     </div>

@@ -15,7 +15,7 @@
         </div>
         <div class="col-md-4">
             <div class='single'>
-                <img src="asset/picture/Laptop.png" class="gambar" alt="...">
+                <img src="{{ asset('asset/picture/Laptop.png') }}" class="gambar" alt="...">
                 <p>Laptop</p>
             </div>
         </div>
@@ -40,13 +40,13 @@
             <tbody>
                 <tr>
                     <th scope="row">
-                        <input type="date" name="tanggal">
+                        <input type="date" name="tanggal" value="<?php echo date('Y-m-d'); ?>" readonly>
                         {{-- @error('tanggal')
                             <p class="text-sm text danger">{{ $message }}</p>
                         @enderror --}}
                     </th>
                     <td>
-                        <input type="text" name="nama">
+                        <input type="text" name="nama" value="{{ Auth::user()->name }}" readonly>
                         {{-- @error('nama')
                             <p class="text-sm text danger">{{ $message }}</p>
                         @enderror --}}
@@ -69,7 +69,7 @@
                         @enderror --}}
                     </td>
                     <td>
-                        <input type="time" name="waktu_pengembalian">
+                        <input type="time" name="waktu_pengembalian" id="currentTime" readonly>
                         {{-- @error('waktu_pengembalian')
                             <p class="text-sm text danger">{{ $message }}</p>
                         @enderror --}}

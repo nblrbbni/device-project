@@ -85,7 +85,7 @@
     <div class="cardGrid">
         <div class="interGrid">
             <img src="/asset/picture/Rj45.png" alt="">
-            <p>lan</p>
+            <p>LAN</p>
         </div>
         <div class="cardButton">
             <a href="returnSP-lan.html" style="text-decoration: none;">Pilih</a>
