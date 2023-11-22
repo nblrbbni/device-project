@@ -119,11 +119,12 @@ Dashboard
                     </div>
                 </div>
             </div>
-        </div>
+            </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-pagination"></div>
     </section>
+</div>
 
     <div class="title">
         <h1>Barang yang di pinjam</h1>
