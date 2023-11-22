@@ -38,20 +38,20 @@
       <tbody>
         <tr>
           <th scope="row">
-            <input type="date" value="<?php echo date('Y-m-d'); ?>" disabled>
+            <input type="date" value="<?php echo date('Y-m-d'); ?>" disabled name="tanggal">
           </th>
           <td>
-            <input type="text" value="{{ Auth::user()->name }}" disabled>
+            <input type="text" value="{{ Auth::user()->name }}" disabled name="nama">
           </td>
           <td>
-            <input type="text">
+            <input type="text" name="kondisi_mouse" name="kondisi_laptop">
           </td>
           <td>
-            <input type="number">
+            <input type="text" name="kondisi_keybohard">
           </td>
           <td><input type="text"></td>
           <td>
-            <input type="time" id="currentTime" disabled>
+            <input type="time" id="currentTime" disabled name="waktu_pengembalian">
           </td>
         </tr>
       </tbody>
