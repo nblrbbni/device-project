@@ -32,10 +32,6 @@ Route::middleware(['auth'])->group(function () {
         return view('electronic');
     });
 
-    Route::get('/returndevice', function () {
-        return view('returndevice');
-    });
-
     Route::get('/sp-electronic', function () {
         return view('sp-electronic');
     });
@@ -111,5 +107,12 @@ Route::put('/student/{student_id}', [StudentController::class, 'update']);
 
 //Delete
 Route::get('/student/{student_id}/delete', [StudentController::class, 'delete']);
+
+Route::get('/returndevice', function () {
+    return view('returndevice');
+});
+// return-laptop
+Route::get('/return-laptop', [laptopController::class, 'laptop']);
+Route::post('/return-laptop/store', [laptopController::class, 'laptopstr']);
 
 Auth::routes();
