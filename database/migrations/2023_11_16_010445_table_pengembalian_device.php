@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('create_device', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama');
-            $table->string('kondisi');
-            $table->integer('jumlah');
-            $table->timestamps();
+        Schema::create('table_pengembalian_device', function (Blueprint $table) {
+          $table->id();
+          
         });
     }
 
@@ -25,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('create_device');
+        //
     }
 };

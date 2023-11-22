@@ -6,7 +6,7 @@
         < </a>
 </div>
 <div class="title">
-    <h1><b>Return Device</b</h1>
+    <h1><b>Return Device</b></h1>
     <h2><b>Berikut ini :</b></h2>
 </div>
 <div class="grid-container">
@@ -25,7 +25,7 @@
             <p>Earphone</p>
         </div>
         <div class="cardButton">
-            <a href="returnSP-earphone.html" style="text-decoration: none;">Pilih</a>
+            <a href="/return-headphone" style="text-decoration: none;">Pilih</a>
         </div>
     </div>
     <div class="cardGrid">
@@ -34,7 +34,7 @@
             <p>Tablet</p>
         </div>
         <div class="cardButton">
-            <a href="returnSP-tablet.html" style="text-decoration: none;">Pilih</a>
+            <a href="/return-tablet" style="text-decoration: none;">Pilih</a>
         </div>
     </div>
     <div class="cardGrid">
@@ -43,7 +43,7 @@
             <p>Flashdisk</p>
         </div>
         <div class="cardButton">
-            <a href="returnSP-flashdisk.html" style="text-decoration: none;">Pilih</a>
+            <a href="/return-flasdisk" style="text-decoration: none;">Pilih</a>
         </div>
     </div>
     <div class="cardGrid">
@@ -52,7 +52,7 @@
             <p>Printer</p>
         </div>
         <div class="cardButton">
-            <a href="returnSP-printer.html" style="text-decoration: none;">Pilih</a>
+            <a href="/return-printer" style="text-decoration: none;">Pilih</a>
         </div>
     </div>
     <div class="cardGrid">
@@ -61,7 +61,7 @@
             <p>Camera</p>
         </div>
         <div class="cardButton">
-            <a href="returnSP-camera.html" style="text-decoration: none;">Pilih</a>
+            <a href="/return-camera" style="text-decoration: none;">Pilih</a>
         </div>
     </div>
     <div class="cardGrid">
@@ -70,7 +70,7 @@
             <p>Handphone</p>
         </div>
         <div class="cardButton">
-            <a href="returnSP-handphone.html" style="text-decoration: none;">Pilih</a>
+            <a href="/return-hp" style="text-decoration: none;">Pilih</a>
         </div>
     </div>
     <div class="cardGrid">
@@ -79,7 +79,7 @@
             <p>PC</p>
         </div>
         <div class="cardButton">
-            <a href="returnSP-PC.html" style="text-decoration: none;">Pilih</a>
+            <a href="/return-computer" style="text-decoration: none;">Pilih</a>
         </div>
     </div>
     <div class="cardGrid">
@@ -88,7 +88,7 @@
             <p>lan</p>
         </div>
         <div class="cardButton">
-            <a href="returnSP-lan.html" style="text-decoration: none;">Pilih</a>
+            <a href="/return-lan" style="text-decoration: none;">Pilih</a>
         </div>
     </div>
     <div class="cardGrid">
@@ -97,7 +97,7 @@
             <p>HDMI</p>
         </div>
         <div class="cardButton">
-            <a href="returnSP-HDMI.html" style="text-decoration: none;">Pilih</a>
+            <a href="/return-HDMI" style="text-decoration: none;">Pilih</a>
         </div>
     </div>
     <div class="cardGrid">
@@ -106,7 +106,7 @@
             <p>Projector</p>
         </div>
         <div class="cardButton">
-            <a href="returnSP-projector.html" style="text-decoration: none;">Pilih</a>
+            <a href="/return-projector" style="text-decoration: none;">Pilih</a>
         </div>
     </div>
     <div class="cardGrid">
@@ -115,7 +115,7 @@
             <p>Hardisk</p>
         </div>
         <div class="cardButton">
-            <a href="returnSP-hardisk.html" style="text-decoration: none;">Pilih</a>
+            <a href="/return-hardisk" style="text-decoration: none;">Pilih</a>
         </div>
     </div>
 </div>

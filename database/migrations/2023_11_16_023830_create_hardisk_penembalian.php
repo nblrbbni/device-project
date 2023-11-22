@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-
-        Schema::create('create_student', function (Blueprint $table) {
+        Schema::create('hardisk_penembalian', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('class');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->date("tanggal_peminjaman");
+            $table->string("nama");
+            $table->integer("nomor_hardisk");
+            $table->string("kondisi_hardisk");
+            $table->time("waktu_pengembalian");
             $table->timestamps();
+
         });
     }
 
@@ -27,7 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('create_student');
-      
+        Schema::dropIfExists('hardisk_penembalian');
     }
 };
