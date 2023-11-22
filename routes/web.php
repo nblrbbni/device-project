@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\laptopController;
 use App\Http\Controllers\earphoneController;
 use App\Http\Controllers\tabletController;
+use App\Http\Controllers\flashdiskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -121,5 +122,8 @@ Route::post('/return-headphone/store', [earphoneController::class, 'earphonestr'
 // return-tablet
 Route::get('/return-tablet', [tabletController::class, 'tablet']);
 Route::post('/return-tablet/store', [tabletController::class, 'tabletstr']);
+// return-flashdisk
+Route::get('/return-flasdisk', [flashdiskController::class, 'flasdisk']);
+Route::post('/return-flasdisk/store', [flashdiskController::class, 'flasdiskstr']);
 
 Auth::routes();

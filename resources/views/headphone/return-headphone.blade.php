@@ -45,12 +45,12 @@
                         <input type="text" name="nama" value="{{ Auth::user()->name }}" readonly>
                     </td>
                     <td>
-                        <input type="text" name="kondisi_earphone">
+                        <input type="text" name="kondisi_earphone" required>
                     </td>
                     <td>
-                        <input type="text" name="kondisi_kardus">
+                        <input type="text" name="kondisi_kardus" required>
                     </td>
-                    <td><input type="text" name="kondisi_suara">
+                    <td><input type="text" name="kondisi_suara" required>
                     </td>
                     <td>
                         <input type="time" name="waktu_pengembalian" id="currentTime" readonly>

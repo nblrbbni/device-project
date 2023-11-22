@@ -52,18 +52,18 @@
                         @enderror --}}
                     </td>
                     <td>
-                        <input type="text" name="kondisi_mouse">
+                        <input type="text" name="kondisi_mouse" required>
                         {{-- @error('kondisi_mouse')
                             <p class="text-sm text danger">{{ $message }}</p>
                         @enderror --}}
                     </td>
                     <td>
-                        <input type="text" name="kondisi_laptop">
+                        <input type="text" name="kondisi_laptop" required>
                         {{-- @error('kondisi_laptop')
                             <p class="text-sm text danger">{{ $message }}</p>
                         @enderror --}}
                     </td>
-                    <td><input type="text" name="kondisi_keybohard">
+                    <td><input type="text" name="kondisi_keybohard" required>
                         {{-- @error('kondisi_keybohard')
                             <p class="text-sm text danger">{{ $message }}</p>
                         @enderror --}}
