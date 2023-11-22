@@ -52,7 +52,7 @@
             <p>Printer</p>
         </div>
         <div class="cardButton">
-            <a href="returnSP-printer.html" style="text-decoration: none;">Pilih</a>
+            <a href="/return-printer" style="text-decoration: none;">Pilih</a>
         </div>
     </div>
     <div class="cardGrid">
