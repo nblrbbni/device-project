@@ -98,22 +98,23 @@ Route::middleware(['auth'])->group(function () {
 //Create
 Route::get('/student/create' , [StudentController::class, 'create']);
 Route::post('/student', [StudentController::class, 'store']);
-
 //Read
 Route::get('/student', [StudentController::class, 'index']);
-
 //Update
 Route::get('/student/{student_id}/edit', [StudentController::class, 'edit']);
 Route::put('/student/{student_id}', [StudentController::class, 'update']);
-
 //Delete
 Route::get('/student/{student_id}/delete', [StudentController::class, 'delete']);
 
+//Return Device
 Route::get('/returndevice', function () {
     return view('returndevice');
 });
 // return-laptop
 Route::get('/return-laptop', [laptopController::class, 'laptop']);
 Route::post('/return-laptop/store', [laptopController::class, 'laptopstr']);
+// return-headphone
+Route::get('/return-headphone', [earphoneController::class, 'earphone']);
+Route::post('/return-headphone/store', [earphoneController::class, 'earphonestr']);
 
 Auth::routes();

@@ -25,7 +25,7 @@
             <p>Earphone</p>
         </div>
         <div class="cardButton">
-            <a href="returnSP-earphone.html" style="text-decoration: none;">Pilih</a>
+            <a href="/return-headphone" style="text-decoration: none;">Pilih</a>
         </div>
     </div>
     <div class="cardGrid">
