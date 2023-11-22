@@ -33,6 +33,9 @@
             "Tests\\": "tests/"
         }
     },
+    "config": {
+        "platform-check": false
+    },
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
