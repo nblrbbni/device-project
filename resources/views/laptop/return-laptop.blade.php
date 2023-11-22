@@ -22,8 +22,9 @@
     </div>
 </div><br><br>
 {{-- main content --}}
-<form action="/return-laptop/store" method="post">
+<form action="/return-laptop/store" method="POST">
     @csrf
+    @method('PUT')
     <div class="table text-center">
         <table class="table">
             <thead>
@@ -46,7 +47,7 @@
                         @enderror --}}
                     </th>
                     <td>
-                        <input type="text" name="nama" value="{{ Auth::user()->name }}">
+                        <input type="text" name="nama">
                         {{-- @error('nama')
                             <p class="text-sm text danger">{{ $message }}</p>
                         @enderror --}}
@@ -69,7 +70,7 @@
                         @enderror --}}
                     </td>
                     <td>
-                        <input type="time" name="waktu_pengembalian" id="currentTime">
+                        <input type="time" name="waktu_pengembalian" id="currentTime" disabled>
                         {{-- @error('waktu_pengembalian')
                             <p class="text-sm text danger">{{ $message }}</p>
                         @enderror --}}
@@ -80,7 +81,7 @@
     </div>
     <br>
     <div class="buttonSp text-center">
-        <input type="submit" value="confirm">
+        <input type="submit" class="btn btn-blue" value="confirm">
     </div>
 </form>
 @endsection

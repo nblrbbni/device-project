@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\laptopreturn;
+
 use Illuminate\Http\Request;
 
 class laptopController extends Controller
