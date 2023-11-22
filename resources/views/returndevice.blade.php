@@ -34,7 +34,7 @@
             <p>Tablet</p>
         </div>
         <div class="cardButton">
-            <a href="returnSP-tablet.html" style="text-decoration: none;">Pilih</a>
+            <a href="/return-tablet" style="text-decoration: none;">Pilih</a>
         </div>
     </div>
     <div class="cardGrid">

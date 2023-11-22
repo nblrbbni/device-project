@@ -4,6 +4,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\laptopController;
 use App\Http\Controllers\earphoneController;
+use App\Http\Controllers\tabletController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -117,5 +118,8 @@ Route::post('/return-laptop/store', [laptopController::class, 'laptopstr']);
 // return-headphone
 Route::get('/return-headphone', [earphoneController::class, 'earphone']);
 Route::post('/return-headphone/store', [earphoneController::class, 'earphonestr']);
+// return-tablet
+Route::get('/return-tablet', [tabletController::class, 'tablet']);
+Route::post('/return-tablet/store', [tabletController::class, 'tabletstr']);
 
 Auth::routes();
