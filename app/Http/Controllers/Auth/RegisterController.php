@@ -69,7 +69,7 @@ class RegisterController extends Controller
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => Hash::make($data['password'])
         ]);
 
         Student::create([
@@ -77,7 +77,7 @@ class RegisterController extends Controller
             'class' => $data['class'],
             'user_id' => $user->id,
         ]);
-        
+
         return $user;
     }
 }

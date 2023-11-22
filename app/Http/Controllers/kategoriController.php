@@ -30,7 +30,7 @@ class kategoriController extends Controller
 
     public function data(){
         $kategori=DB::table('kategori')->get();
-        //dd($kategori);
+        dd($kategori);
         return view("kategori.tampil", ["kategori"=>$kategori]);
     }
 

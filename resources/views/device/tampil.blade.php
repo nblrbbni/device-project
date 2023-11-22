@@ -20,7 +20,7 @@ Halaman List Device
         <div class="row g-2 align-items-center">
           <div class="col">
             <h2 class="page-title">
-              Peraturan Peminjaman Device
+              Data List Device
             </h2>
           </div>
         </div>
@@ -38,7 +38,7 @@ Halaman List Device
                     <div class="row g-2 align-items-center">
                       <div class="col">
                         <h2 class="page-title">
-                          Peraturan Peminjaman Device
+                          List Peminjaman Device
                         </h2>
                       </div>
                     </div>
