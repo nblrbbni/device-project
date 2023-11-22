@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\informationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -74,4 +76,20 @@ Route::get('/sp-camera', function () {
     return view('camera.sp-camera');
 });
 
-Auth::routes();
+//CRUD INFORMATION Admin
+//create
+//form information
+Route::get('/information/create', [informationController::class, 'create']);
+//kirim data ke database
+Route::post('/information', [informationController::class, 'store']);
+//Read
+//menampilkan semua data
+Route::get('/information', [informationController::class, 'index']);
+Route::get('/information/{information_id}', [informationController::class, 'show']);
+
+//update
+// form update
+Route::get('/information/{information_id}/edit', [informationController::class, 'edit']);
+Route::put('/information/{information_id}', [informationController::class, 'update']);
+// delete
+Route::delete('/information/{information_id}', [informationController::class, 'destroy']);
