@@ -16,17 +16,22 @@ Dashboard
 @endpush
 
 @section('content')
-<div>
-    <section style="margin-left: 30rem;">
-        <div class="swiper mySwiper container">
-            <div class="swiper-wrapper content">
-                <div class="swiper-slide card">
-                    <div class="card-content">
-                        <div class="image">
-                            <img src="{{ asset('asset/picture/Laptop.png') }}" alt="">
+    <div>
+        <section style="margin-left: 30rem;">
+            <div class="swiper mySwiper container">
+                <div class="swiper-wrapper content">
+                    <div class="swiper-slide card">
+                        <div class="card-content">
+                            <div class="image">
+                                <img src="{{ asset('asset/picture/Laptop.png') }}" alt="">
+                            </div>
+                            <div class="name-profession">
+                                <span class="name">Sisa Laptop</span>
+                                <span class="profession">09</span>
+                            </div>
                         </div>
                         <div class="name-profession">
-                            <span class="name">sisa laptop</span>
+                            <span class="name">Sisa Laptop</span>
                             <span class="profession">09</span>
                         </div>
                     </div>
@@ -85,6 +90,7 @@ Dashboard
                             <span class="profession">07</span>
                         </div>
                     </div>
+<<<<<<<<< Temporary merge branch 1
                 </div>
                 <div class="swiper-slide card">
                     <div class="card-content">
@@ -93,6 +99,21 @@ Dashboard
                         </div>
                         <div class="name-profession">
                             <span class="name">Sisa Kamera</span>
+                            <span class="profession">01</span>
+=========
+                    <div class="swiper-slide card">
+                        <div class="card-content">
+                            <div class="image">
+                                <img src="{{ asset('asset/picture/Camera.png') }}" alt="">
+                            </div>
+                            <div class="name-profession">
+                                <span class="name">Sisa Camera</span>
+                                <span class="profession">01</span>
+                            </div>
+>>>>>>>>> Temporary merge branch 2
+                        </div>
+                        <div class="name-profession">
+                            <span class="name">Sisa Camera</span>
                             <span class="profession">01</span>
                         </div>
                     </div>
@@ -126,57 +147,55 @@ Dashboard
         <div class="swiper-pagination"></div>
     </section>
 
-    <div class="title">
-        <h1>Barang yang di pinjam</h1>
-    </div>
-
+<<<<<<<<< Temporary merge branch 1
     <div class="cardinfo">
-        <div class="contentInfo">
-            <img src="{{ asset('asset/picture/Laptop.png') }}" alt="">
-            <p>Laptop </p>
+        <div class="content">
+            <img src="asset/picture/user.png" alt="">
         </div>
-        <div class="table text-center">
-            <table>
-                <tr>
-                    <th>Tggl,Bln,Tahun</th>
-                    <th>Nama</th>
-                    <th>Mapel</th>
-                    <th>Nomor Device</th>
-                    <th>Nomor Lab</th>
-                    <th>Waktu Peminjaman</th>
-                </tr>
-                <tr>
-                    <td>22-09-2023</td>
-                    <td>Roland Mendel</td>
-                    <td>MKK</td>
-                    <td>14</td>
-                    <td>02</td>
-                    <td>15:00-17:00</td>
-                </tr>
-            </table>
+        <div class="desctext">
+            <h1>Nama</h1>
+            <p>Peminjaman barang elektronik telah berhasil meminjam, selamat mengerjakan tugas bagi semua siswa <br> SMK TI BAZMA yang sedang mengerjakan tugas masing - masing, semoga cepat selesai <br> tugasnya jangan di tunda - tunda agar tugas kalian
+                cepat selesai.</p>
         </div>
     </div>
 @endsection
 
-@push('scripts-2')
+@push('script')
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-<script>
-    var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        slidesPerGroup: 3,
-        loop: true,
-        loopFillGroupWithBlank: true,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-    });
-</script>
-@endpush
+        <div class="cardinfo">
+            <div class="content">
+                <img src="asset/picture/user.png" alt="">
+            </div>
+            <div class="desctext">
+                <h1>Nama</h1>
+                <p>Peminjaman barang elektronik telah berhasil meminjam, selamat mengerjakan tugas bagi semua siswa <br> SMK
+                    TI BAZMA yang sedang mengerjakan tugas masing - masing, semoga cepat selesai <br> tugasnya jangan di
+                    tunda - tunda agar tugas kalian
+                    cepat selesai.</p>
+            </div>
+        </div>
+    @endsection
+>>>>>>>>> Temporary merge branch 2
 
+    @push('script')
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                slidesPerGroup: 3,
+                loop: true,
+                loopFillGroupWithBlank: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+        </script>
+    @endpush
