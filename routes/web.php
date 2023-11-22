@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -87,6 +88,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/sp-camera', function () {
         return view('camera.sp-camera');
     });
+
+    Route::get('user/profile', [UserController::class, 'edit'])->name('user.edit-profile');
+    Route::put('user/profile', [UserController::class, 'update'])->name('user.update-profile');
+
+    Route::get('/profile', function () {
+        return view('profile.index');
+    });
 });
 
 //CRUD Student
@@ -101,7 +109,7 @@ Route::get('/student', [StudentController::class, 'index']);
 Route::get('/student/{student_id}/edit', [StudentController::class, 'edit']);
 Route::put('/student/{student_id}', [StudentController::class, 'update']);
 
-//Delet
+//Delete
 Route::get('/student/{student_id}/delete', [StudentController::class, 'delete']);
 
 Auth::routes();
