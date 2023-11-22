@@ -11,6 +11,7 @@ class earphoneController extends Controller
     {
         return view('headphone.return-headphone');
     }
+    
     public function earphonestr(Request $request)
     {
         $request->validate([

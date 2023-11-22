@@ -15,14 +15,14 @@
         </div>
         <div class="col-md-4">
             <div class='single'>
-                <img src="{{ asset('asset/picture/Laptop.png') }}" class="gambar" alt="...">
-                <p>Laptop</p>
+                <img src="{{ asset('asset/picture/Headphones.png') }}" class="gambar" alt="...">
+                <p>Headphone</p>
             </div>
         </div>
     </div>
 </div><br><br>
 {{-- main content --}}
-<form action="/return-laptop/store" method="post">
+<form action="/return-headphone/store" method="post">
     @csrf
     <div class="table text-center">
         <table class="table">
@@ -30,10 +30,10 @@
                 <tr>
                     <th scope="col">Tanggal Peminjaman</th>
                     <th scope="col">Nama</th>
-                    <th scope="col">Kondisi earphone</th>
-                    <th scope="col">Kondisi kardus</th>
-                    <th scope="col">Kondisi suara</th>
-                    <th scope="col">Waktu pengembalian</th>
+                    <th scope="col">Kondisi Headphone</th>
+                    <th scope="col">Kondisi Kardus</th>
+                    <th scope="col">Kondisi Suara</th>
+                    <th scope="col">Waktu Pengembalian</th>
                 </tr>
             </thead>
             <tbody>

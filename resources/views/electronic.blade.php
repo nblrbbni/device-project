@@ -27,7 +27,7 @@ Electronic
   <div id='rectangle71' class='rectangle71'>
     <div class="inter">
       <img src="asset/picture/Headphones.png" class="gambar" alt="...">
-      <p>Earphone</p>
+      <p>Headphone</p>
     </div>
     <div class="link">
       <a href="SP-headset.html">Pilih</a>

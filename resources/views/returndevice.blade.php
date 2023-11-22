@@ -22,7 +22,7 @@
     <div class="cardGrid">
         <div class="interGrid">
             <img src="/asset/picture/Headphones.png" alt="">
-            <p>Earphone</p>
+            <p>Headphone</p>
         </div>
         <div class="cardButton">
             <a href="/return-headphone" style="text-decoration: none;">Pilih</a>
