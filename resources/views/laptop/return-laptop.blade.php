@@ -38,10 +38,10 @@
       <tbody>
         <tr>
           <th scope="row">
-            <input type="date">
+            <input type="date" value="<?php echo date('Y-m-d'); ?>"/ disabled>
           </th>
           <td>
-            <input type="text">
+            <input type="text" value="{{ Auth::user()->name }}" disabled>
           </td>
           <td>
             <input type="text">
@@ -51,7 +51,7 @@
           </td>
           <td><input type="text"></td>
           <td>
-            <input type="time">
+            <input type="time" id="currentTime">
           </td>
         </tr>
       </tbody>
@@ -62,3 +62,14 @@
     <input class="btn btn-lg" type="submit" value="Confirm" style="background-color:#18244c; color:white">
 </div>
 @endsection
+
+@push('scripts')
+<script>
+function getCurrentTime() {
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      return `${hours}:${minutes}`;
+}
+</script>
+@endpush
