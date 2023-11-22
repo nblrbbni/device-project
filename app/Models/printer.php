@@ -17,3 +17,4 @@ class printer extends Model
         'waktu_pengembalian',
     ];
 }
+
