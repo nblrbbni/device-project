@@ -22,9 +22,8 @@
     </div>
 </div><br><br>
 {{-- main content --}}
-<form action="/return-laptop/store" method="POST">
+<form action="/return-laptop/store" method="post">
     @csrf
-    @method('PUT')
     <div class="table text-center">
         <table class="table">
             <thead>
@@ -41,7 +40,7 @@
             <tbody>
                 <tr>
                     <th scope="row">
-                        <input type="date" name="tanggal" value="<?php echo date('Y-m-d'); ?>" disabled >
+                        <input type="date" name="tanggal">
                         {{-- @error('tanggal')
                             <p class="text-sm text danger">{{ $message }}</p>
                         @enderror --}}
@@ -70,7 +69,7 @@
                         @enderror --}}
                     </td>
                     <td>
-                        <input type="time" name="waktu_pengembalian" id="currentTime" disabled>
+                        <input type="time" name="waktu_pengembalian">
                         {{-- @error('waktu_pengembalian')
                             <p class="text-sm text danger">{{ $message }}</p>
                         @enderror --}}
@@ -81,7 +80,7 @@
     </div>
     <br>
     <div class="buttonSp text-center">
-        <input type="submit" class="btn btn-blue" value="confirm">
+        <input type="submit" class="btn btn-lg" value="Confirm" style="background-color: #14274c; color:white">
     </div>
 </form>
 @endsection
