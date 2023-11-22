@@ -38,7 +38,7 @@
       <tbody>
         <tr>
           <th scope="row">
-            <input type="date" value="<?php echo date('Y-m-d'); ?>"/ disabled>
+            <input type="date" value="<?php echo date('Y-m-d'); ?>" disabled>
           </th>
           <td>
             <input type="text" value="{{ Auth::user()->name }}" disabled>
@@ -51,7 +51,7 @@
           </td>
           <td><input type="text"></td>
           <td>
-            <input type="time" id="currentTime">
+            <input type="time" id="currentTime" disabled>
           </td>
         </tr>
       </tbody>
@@ -65,11 +65,14 @@
 
 @push('scripts')
 <script>
-function getCurrentTime() {
-      const now = new Date();
-      const hours = now.getHours().toString().padStart(2, '0');
-      const minutes = now.getMinutes().toString().padStart(2, '0');
-      return `${hours}:${minutes}`;
-}
+var now = new Date();
+
+// Format the time as HH:mm (hours and minutes)
+var hours = now.getHours().toString().padStart(2, '0');
+var minutes = now.getMinutes().toString().padStart(2, '0');
+var currentTime = hours + ':' + minutes;
+
+// Set the value of the input field
+document.getElementById('currentTime').value = currentTime;
 </script>
 @endpush
