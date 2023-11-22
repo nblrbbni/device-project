@@ -17,7 +17,7 @@ Electronic
 <div class="sectionCard">
   <div id='rectangle71' class='rectangle71'>
     <div class="inter">
-      <img src="asset/picture/Laptop.png" class="gambar" alt="...">
+      <img src="{{ asset('asset/picture/Laptop.png') }}" class="gambar" alt="...">
       <p>Laptop</p>
     </div>
     <div class="link">
@@ -26,7 +26,7 @@ Electronic
   </div>
   <div id='rectangle71' class='rectangle71'>
     <div class="inter">
-      <img src="asset/picture/Headphones.png" class="gambar" alt="...">
+      <img src="{{ asset('asset/picture/Headphones.png') }}" class="gambar" alt="...">
       <p>Headphone</p>
     </div>
     <div class="link">
@@ -35,7 +35,7 @@ Electronic
   </div>
   <div id='rectangle71' class='rectangle71'>
     <div class="inter">
-      <img src="asset/picture/Projector.png" class="gambar" alt="...">
+      <img src="{{ asset('asset/picture/Projector.png') }}" class="gambar" alt="...">
       <p>Projector</p>
     </div>
     <div class="link">
@@ -44,7 +44,7 @@ Electronic
   </div>
   <div id='rectangle71' class='rectangle71'>
     <div class="inter">
-      <img src="asset/picture/Tablet.png" class="gambar" alt="...">
+      <img src="{{ asset('asset/picture/Tablet.png') }}" class="gambar" alt="...">
       <p>Tablet</p>
     </div>
     <div class="link">
@@ -53,7 +53,7 @@ Electronic
   </div>
   <div id='rectangle71' class='rectangle71'>
     <div class="inter">
-      <img src="asset/picture/Camera.png" class="gambar" alt="...">
+      <img src="{{ asset('asset/picture/Camera.png') }}" class="gambar" alt="...">
       <p>Camera</p>
     </div>
     <div class="link">
@@ -62,7 +62,7 @@ Electronic
   </div>
   <div id='rectangle71' class='rectangle71'>
     <div class="inter">
-      <img src="asset/picture/Smartphone.png" class="gambar" alt="...">
+      <img src="{{ asset('asset/picture/Smartphone.png') }}" class="gambar" alt="...">
       <p>Handphone</p>
     </div>
     <div class="link">
@@ -71,7 +71,7 @@ Electronic
   </div>
   <div id='rectangle71' class='rectangle71'>
     <div class="inter">
-      <img src="asset/picture/Gaming.png" class="gambar" alt="...">
+      <img src="{{ asset('asset/picture/Gaming.png') }}" class="gambar" alt="...">
       <p>PC</p>
     </div>
     <div class="link">
@@ -80,7 +80,7 @@ Electronic
   </div>
   <div id='rectangle71' class='rectangle71'>
     <div class="inter">
-      <img src="asset/picture/Flashdisk.png" class="gambar" alt="...">
+      <img src="{{ asset('asset/picture/Flashdisk.png') }}" class="gambar" alt="...">
       <p>Flashdisk</p>
     </div>
     <div class="link">
@@ -89,7 +89,7 @@ Electronic
   </div>
   <div id='rectangle71' class='rectangle71'>
     <div class="inter">
-      <img src="asset/picture/Hard disk.png" class="gambar" alt="...">
+      <img src="{{ asset('asset/picture/Hard disk.png') }}" class="gambar" alt="...">
       <p>Hardisk</p>
     </div>
     <div class="link">
@@ -98,7 +98,7 @@ Electronic
   </div>
   <div id='rectangle71' class='rectangle71'>
     <div class="inter">
-      <img src="asset/picture/Printer.png" class="gambar" alt="...">
+      <img src="{{ asset('asset/picture/Printer.png') }}" class="gambar" alt="...">
       <p>Printer</p>
     </div>
     <div class="link">
@@ -107,7 +107,7 @@ Electronic
   </div>
   <div id='rectangle71' class='rectangle71'>
     <div class="inter">
-      <img src="asset/picture/Rj45.png" class="gambar" alt="...">
+      <img src="{{ asset('asset/picture/Rj45.png') }}" class="gambar" alt="...">
       <p>LAN</p>
     </div>
     <div class="link">
@@ -116,7 +116,7 @@ Electronic
   </div>
   <div id='rectangle71' class='rectangle71'>
     <div class="inter">
-      <img src="asset/picture/Hdmi.png" class="gambar" alt="...">
+      <img src="{{ asset('asset/picture/Hdmi.png') }}" class="gambar" alt="...">
       <p>HDMI</p>
     </div>
     <div class="link">

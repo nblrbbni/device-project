@@ -6,13 +6,13 @@
         < </a>
 </div>
 <div class="title">
-    <h1><b>Return Device</b</h1>
+    <h1><b>Kembalikan Perangkat</b</h1>
     <h2><b>Berikut ini :</b></h2>
 </div>
 <div class="grid-container">
     <div class="cardGrid">
         <div class="interGrid">
-            <img src="/asset/picture/Laptop.png" alt="">
+            <img src="{{ asset('asset/picture/Laptop.png') }}" alt="...">
             <p>Laptop</p>
         </div>
         <div class="cardButton">
@@ -21,7 +21,7 @@
     </div>
     <div class="cardGrid">
         <div class="interGrid">
-            <img src="/asset/picture/Headphones.png" alt="">
+            <img src="{{ asset('asset/picture/Headphones.png') }}" alt="">
             <p>Headphone</p>
         </div>
         <div class="cardButton">
@@ -30,7 +30,7 @@
     </div>
     <div class="cardGrid">
         <div class="interGrid">
-            <img src="/asset/picture/Tablet.png" alt="">
+            <img src="{{ asset('asset/picture/Tablet.png') }}" alt="">
             <p>Tablet</p>
         </div>
         <div class="cardButton">
@@ -39,7 +39,7 @@
     </div>
     <div class="cardGrid">
         <div class="interGrid">
-            <img src="/asset/picture/Flashdisk.png" alt="">
+            <img src="{{ asset('asset/picture/Flashdisk.png') }}" alt="">
             <p>Flashdisk</p>
         </div>
         <div class="cardButton">
@@ -48,7 +48,7 @@
     </div>
     <div class="cardGrid">
         <div class="interGrid">
-            <img src="/asset/picture/Printer.png" alt="">
+            <img src="{{ asset('asset/picture/Printer.png') }}" alt="">
             <p>Printer</p>
         </div>
         <div class="cardButton">
@@ -57,7 +57,7 @@
     </div>
     <div class="cardGrid">
         <div class="interGrid">
-            <img src="/asset/picture/Camera.png" alt="">
+            <img src="{{ asset('asset/picture/Camera.png') }}" alt="">
             <p>Camera</p>
         </div>
         <div class="cardButton">
@@ -66,7 +66,7 @@
     </div>
     <div class="cardGrid">
         <div class="interGrid">
-            <img src="/asset/picture/Smartphone.png" alt="">
+            <img src="{{ asset('asset/picture/Smartphone.png') }}" alt="">
             <p>Handphone</p>
         </div>
         <div class="cardButton">
@@ -75,7 +75,7 @@
     </div>
     <div class="cardGrid">
         <div class="interGrid">
-            <img src="/asset/picture/Gaming.png" alt="">
+            <img src="{{ asset('asset/picture/Gaming.png') }}" alt="">
             <p>PC</p>
         </div>
         <div class="cardButton">
@@ -84,7 +84,7 @@
     </div>
     <div class="cardGrid">
         <div class="interGrid">
-            <img src="/asset/picture/Rj45.png" alt="">
+            <img src="{{ asset('asset/picture/Rj45.png') }}" alt="">
             <p>LAN</p>
         </div>
         <div class="cardButton">
@@ -93,7 +93,7 @@
     </div>
     <div class="cardGrid">
         <div class="interGrid">
-            <img src="/asset/picture/Hdmi.png" alt="">
+            <img src="{{ asset('asset/picture/Hdmi.png') }}" alt="">
             <p>HDMI</p>
         </div>
         <div class="cardButton">
@@ -102,7 +102,7 @@
     </div>
     <div class="cardGrid">
         <div class="interGrid">
-            <img src="/asset/picture/Projector.png" alt="">
+            <img src="{{ asset('asset/picture/Projector.png') }}" alt="">
             <p>Projector</p>
         </div>
         <div class="cardButton">
@@ -111,7 +111,7 @@
     </div>
     <div class="cardGrid">
         <div class="interGrid">
-            <img src="/asset/picture/Hard disk.png" alt="">
+            <img src="{{ asset('asset/picture/Hard disk.png') }}" alt="">
             <p>Hardisk</p>
         </div>
         <div class="cardButton">
