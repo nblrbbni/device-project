@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\laptopreturn;
-
-
 use Illuminate\Http\Request;
 
 class laptopController extends Controller
 {
-    /**
+   /**
      * Display a listing of the resource.
      */
     public function laptop()
