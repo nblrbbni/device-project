@@ -7,6 +7,7 @@ use App\Http\Controllers\earphoneController;
 use App\Http\Controllers\tabletController;
 use App\Http\Controllers\flashdiskController;
 use App\Http\Controllers\printerController;
+use App\Http\Controllers\cameraController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -129,5 +130,8 @@ Route::post('/return-flasdisk/store', [flashdiskController::class, 'flasdiskstr'
 // return-printer
 Route::get('/return-printer', [printerController::class, 'printer']);
 Route::post('/return-printer/store', [printerController::class, 'printerstr']);
+// return-camera
+Route::get('/return-camera', [cameraController::class, 'camera']);
+Route::post('/return-camera/sotore', [cameraController::class, 'camerastr']);
 
 Auth::routes();

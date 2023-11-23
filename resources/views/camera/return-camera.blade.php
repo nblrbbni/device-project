@@ -1,5 +1,4 @@
 @extends('layout.master-2')
-
 @section('content-2')
     <div class="balik">
         <a href="/returndevice" class="next round" style="text-decoration: none">
@@ -9,15 +8,15 @@
     <br />
     <br />
     {{-- main content --}}
-    <form action="/return-flasdisk/store" method="post">
+    <form action="/return-camera/sotore" method="post">
         @csrf
         <div class="container text-center">
             <div class="row row-card">
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
                     <div class="single">
-                        <img src="{{ asset('asset/picture/Flashdisk.png') }}" class="gambar" alt="..." />
-                        <p>Flashdisk</p>
+                        <img src="{{ asset('asset/picture/Camera.png') }}" class="gambar" alt="..." />
+                        <p>Camera</p>
                     </div>
                 </div>
             </div>
@@ -30,8 +29,9 @@
                     <tr>
                         <th scope="col">Tanggal Peminjaman</th>
                         <th scope="col">Nama</th>
-                        <th scope="col">Nomor Flashdisk</th>
-                        <th scope="col">Kondisi Flashdisk</th>
+                        <th scope="col">Kondisi camera</th>
+                        <th scope="col">Kondisi tempat camera</th>
+                        <th scope="col">Kelengkapan atribut kamera</th>
                         <th scope="col">Waktu pengembalian</th>
                     </tr>
                 </thead>
@@ -44,10 +44,13 @@
                             <input type="text" name="nama" value="{{ Auth::user()->name }}" readonly>
                         </td>
                         <td>
-                            <input type="number" name="nomor_flashdisk" required>
+                            <input type="text" name="kondisi_kamera">
                         </td>
                         <td>
-                            <input type="text" name="kondisi_flashdisk" required>
+                            <input type="text" name="kondisi_tempat_kamera">
+                        </td>
+                        <td>
+                            <input type="text" name="kelengkapan_atribut">
                         </td>
                         <td>
                             <input type="time" name="waktu_pengembalian" id="currentTime" readonly>
@@ -76,3 +79,4 @@ var currentTime = hours + ':' + minutes;
 document.getElementById('currentTime').value = currentTime;
 </script>
 @endpush
+

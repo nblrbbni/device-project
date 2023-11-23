@@ -61,7 +61,7 @@
             <p>Camera</p>
         </div>
         <div class="cardButton">
-            <a href="returnSP-camera.html" style="text-decoration: none;">Pilih</a>
+            <a href="/return-camera" style="text-decoration: none;">Pilih</a>
         </div>
     </div>
     <div class="cardGrid">
