@@ -14,6 +14,7 @@ use App\Http\Controllers\LanController;
 use App\Http\Controllers\hdmiController;
 use App\Http\Controllers\projectorController;
 use App\Http\Controllers\hardiskController;
+use App\Http\Controllers\informationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -116,6 +117,24 @@ Route::get('/student/{student_id}/edit', [StudentController::class, 'edit']);
 Route::put('/student/{student_id}', [StudentController::class, 'update']);
 //Delete
 Route::get('/student/{student_id}/delete', [StudentController::class, 'delete']);
+
+//CRUD INFORMATION Admin
+//create
+//form information
+Route::get('/information/create', [informationController::class, 'create']);
+//kirim data ke database
+Route::post('/information', [informationController::class, 'store']);
+//Read
+//menampilkan semua data
+Route::get('/information', [informationController::class, 'index']);
+Route::get('/information/{information_id}', [informationController::class, 'show']);
+
+//update
+// form update
+Route::get('/information/{information_id}/edit', [informationController::class, 'edit']);
+Route::put('/information/{information_id}', [informationController::class, 'update']);
+// delete
+Route::delete('/information/{information_id}', [informationController::class, 'destroy']);
 
 //Return Device
 Route::get('/returndevice', function () {
