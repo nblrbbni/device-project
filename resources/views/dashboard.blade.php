@@ -91,7 +91,7 @@ Dashboard
                             <img src="{{ asset('asset/picture/Camera.png') }}" alt="">
                         </div>
                         <div class="name-profession">
-                            <span class="name">Sisa Kamera</span>
+                            <span class="name">Sisa Camera</span>
                             <span class="profession">01</span>
                         </div>
                     </div>

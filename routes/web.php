@@ -13,6 +13,7 @@ use App\Http\Controllers\PcController;
 use App\Http\Controllers\LanController;
 use App\Http\Controllers\hdmiController;
 use App\Http\Controllers\projectorController;
+use App\Http\Controllers\hardiskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -153,5 +154,8 @@ Route::post('/return-HDMI/store', [hdmiController::class, 'HDMIstr']);
 // return-projector
 Route::get('/return-projector', [projectorController::class, 'projector']);
 Route::post('/return-projector/store', [projectorController::class, 'projectorstr']);
+// return-hardisk
+Route::get('/return-hardisk', [hardiskController::class, 'hardisk']);
+Route::post('/return-hardisk/store', [hardiskController::class, 'hardiskstr']);
 
 Auth::routes();

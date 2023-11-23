@@ -115,7 +115,7 @@
             <p>Hardisk</p>
         </div>
         <div class="cardButton">
-            <a href="returnSP-hardisk.html" style="text-decoration: none;">Pilih</a>
+            <a href="/return-hardisk" style="text-decoration: none;">Pilih</a>
         </div>
     </div>
 </div>
