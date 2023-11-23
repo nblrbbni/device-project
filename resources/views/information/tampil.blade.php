@@ -33,30 +33,49 @@ Information
           <a href="/information/create" class="btn btn-primary btn-sm mb-3">Tambah</a>
             <div class="card">
                 <div class="card-body">
-                    <div class="accordion" id="accordion-example">
-                    @forelse ($information as $key => $value )
-                    <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="false">
-                                    Pasal {{ $value->nama_pasal }}
-                                </button>
-                            </h2>
-                            <div id="collapse-1" class="accordion-collapse collapse " data-bs-parent="#accordion-example" >
-                                <div class="accordion-body pt-0">
-                                    {{ $value->descripsi }}
-                                </div>
-                            </div>
-                        </div>
-                    @empty
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="false">
-                                Tidak ada data
-                            </button>
-                        </h2>
-                    </div>
-                    @endforelse
-                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Pasal</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse ($information as $key => $value )
+                                <tr>
+                                    <td>
+                                        <div class="accordion" id="accordion-example">
+                                            <div class="accordion-item">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="false">
+                                                            Pasal {{ $value->nama_pasal }}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapse-1" class="accordion-collapse collapse " data-bs-parent="#accordion-example" >
+                                                        <div class="accordion-body pt-0">
+                                                            {{ $value->descripsi }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </td>
+                                    <td>
+                                        <form action="/information/{{ $value->id }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            {{-- <a href="/information/{{ $value->id }}" class="btn btn-info btn-sm">Detail</a> --}}
+                                            <a href="/information/{{ $value->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
+                                            <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+                                        </form>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td>Tidak Ada Data</td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
