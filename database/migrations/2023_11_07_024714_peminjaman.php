@@ -13,17 +13,14 @@ return new class extends Migration
     {
         Schema::create('peminjaman', function (Blueprint $table) {
             $table->id();
-<<<<<<< Updated upstream
+            $table->unsignedBigInteger('siswa_id');
             $table->foreign("siswa_id")->references("id")->on("siswa");
+            $table->unsignedBigInteger('lab_id');
             $table->foreign("lab_id")->references("id")->on("lab");
+            $table->unsignedBigInteger('device_id');
             $table->foreign("device_id")->references("id")->on("device");
+            $table->unsignedBigInteger('user_id');
             $table->foreign("user_id")->references("id")->on("user");
-=======
-            $table->integer("siswa_id");
-            $table->integer("lab_id");
-            $table->integer("device_id");
-            $table->integer("user_id");
->>>>>>> Stashed changes
             $table->string("status_peminjaman");
             $table->integer("nomor_peminjaman");
             $table->date("tanggal_peminjaman");
@@ -38,10 +35,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
         Schema::dropIfExists('peminjaman');
     }
 };

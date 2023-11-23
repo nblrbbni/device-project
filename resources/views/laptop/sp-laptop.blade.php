@@ -33,7 +33,7 @@
                     <th scope="col">Tanggal Peminjaman</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Mata Pelajaran</th>
-                    <th scope="col">Nomor Earphone</th>
+                    <th scope="col">Nomor Laptop</th>
                     <th scope="col">Mentoring Mapel</th>
                     <th scope="col">Waktu Peminjaman</th>
                 </tr>

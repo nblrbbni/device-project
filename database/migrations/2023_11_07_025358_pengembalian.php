@@ -13,20 +13,15 @@ return new class extends Migration
     {
         Schema::create('pengembalian', function (Blueprint $table) {
             $table->id();
-<<<<<<< Updated upstream
+            $table->unsignedBigInteger('peminjaman_id');
             $table->foreign("peminjaman_id")->references("id")->on("peminjaman");
             $table->time("waktu_selesai");
+            $table->unsignedBigInteger('persetujuan_user_id');
             $table->foreign("persetujuan_user_id")->references("id")->on("user");
             $table->timestamps();
         });
 
-=======
-            $table->integer("peminjaman_id");
-            $table->time("waktu_selesai");
-            $table->integer("persetujuan_user_id");
-            $table->timestamps();
-        });
->>>>>>> Stashed changes
+
     }
 
     /**
@@ -35,9 +30,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('pengembalian');
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
     }
 };

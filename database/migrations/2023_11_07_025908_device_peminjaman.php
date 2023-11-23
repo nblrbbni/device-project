@@ -11,20 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
         Schema::create('device_peminjaman', function (Blueprint $table) {
             $table->id();
             $table->integer("device_id");
             $table->integer("peminjaman_id");
             $table->timestamps();
         });
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
     }
 
     /**
@@ -33,9 +27,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('device_peminjaman');
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
     }
 };

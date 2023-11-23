@@ -14,18 +14,12 @@ return new class extends Migration
         Schema::create('user', function (Blueprint $table) {
             $table->id();
             $table->string("nama_user");
-            $table->integer("password");
-<<<<<<< Updated upstream
-            $table->foreign("level_id")->references("id")->on("level");
+            $table->string("password");
             $table->timestamps();
         });
 
 
-=======
-            $table->timestamps();
-        });
 
->>>>>>> Stashed changes
     }
 
     /**
@@ -33,13 +27,11 @@ return new class extends Migration
      */
     public function down(): void
     {
-<<<<<<< Updated upstream
+
 
 
         Schema::dropIfExists('user');
 
-=======
-        Schema::dropIfExists('user');
->>>>>>> Stashed changes
+
     }
 };

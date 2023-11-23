@@ -15,14 +15,14 @@ class deviceController extends Controller
 
     public function kategori(Request $request){
         $request->validate([
-            "nama"=>"required",
-            "kondisi"=>"required",
+            "nama_perangkat"=>"required",
+            "kondisi_perangkat"=>"required",
             "stok"=>"required",
 
         ]);
         DB::table('kategori')->insert([
-            "nama"=>$request["nama"],
-            "kondisi"=>$request["kondisi"],
+            "nama_perangkat"=>$request["nama_perangkat"],
+            "kondisi_perangkat"=>$request["kondisi_perangkat"],
             "stok"=>$request["stok"]
 
         ]);
@@ -32,7 +32,7 @@ class deviceController extends Controller
 
     public function data(){
         $device=DB::table('device')->get();
-        dd($device);
+        //dd($device);
         return view("device.tampil", ["device"=>$device]);
     }
 
@@ -48,12 +48,12 @@ class deviceController extends Controller
 
     public function update(Request $request, $id){
         $request->validate([
-            "nama"=>"required",
-            "kondisi"=>"required",
+            "nama_perangkat"=>"required",
+            "kondisi_perangkat"=>"required",
             "stok"=>"required"
         ]);
 
-        DB::table('kategori')->where("id", $id)->update(["nama"=>$request->nama, "kondisi"=>$request->kondisi, "stok"=>$request->stok]);
+        DB::table('device')->where("id", $id)->update(["nama_perangkat"=>$request->nama, "kondisi_perangkat"=>$request->kondisi, "stok"=>$request->stok]);
         return redirect("/device");
     }
 

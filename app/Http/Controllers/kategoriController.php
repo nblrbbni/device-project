@@ -14,12 +14,12 @@ class kategoriController extends Controller
 
     public function kategori(Request $request){
         $request->validate([
-            "nama"=>"required",
+            "nama_kategori"=>"required",
             "icon"=>"required"
 
         ]);
         DB::table('kategori')->insert([
-            "nama"=>$request["nama"],
+            "nama_kategori"=>$request["nama_kategori"],
             "icon"=>$request["icon"]
         ]);
 
@@ -30,7 +30,7 @@ class kategoriController extends Controller
 
     public function data(){
         $kategori=DB::table('kategori')->get();
-        dd($kategori);
+        //dd($kategori);
         return view("kategori.tampil", ["kategori"=>$kategori]);
     }
 
@@ -46,11 +46,11 @@ class kategoriController extends Controller
 
     public function update(Request $request, $id){
         $request->validate([
-            "nama"=>"required",
+            "nama_kategori"=>"required",
             "icon"=>"required"
         ]);
 
-        DB::table('kategori')->where("id", $id)->update(["nama"=>$request->nama, "icon"=>$request->icon]);
+        DB::table('kategori')->where("id", $id)->update(["nama_kategori"=>$request->nama_kategori, "icon"=>$request->icon]);
         return redirect("/kategori");
     }
 

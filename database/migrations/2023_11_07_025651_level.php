@@ -16,10 +16,7 @@ return new class extends Migration
             $table->string("nama_level");
             $table->timestamps();
         });
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
     }
 
     /**
@@ -28,9 +25,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('level');
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
     }
 };

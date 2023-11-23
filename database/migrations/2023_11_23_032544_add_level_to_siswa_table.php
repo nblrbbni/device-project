@@ -11,14 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kategori', function (Blueprint $table) {
-            $table->id();
-            $table->string("nama_kategori");
-            $table->string("icon");
-            $table->timestamps();
+        Schema::table('user', function (Blueprint $table) {
+            $table->unsignedBigInteger('level_id');
+            $table->foreign("level_id")->references("id")->on("level");
         });
-
-
     }
 
     /**
@@ -26,7 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-
-        Schema::dropIfExists('kategori');
+        Schema::table('user', function (Blueprint $table) {
+            $table->dropColumn('level_id');
+        });
     }
 };

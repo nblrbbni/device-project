@@ -14,17 +14,13 @@ return new class extends Migration
         Schema::create('siswa', function (Blueprint $table) {
             $table->id();
             $table->string("nama");
-<<<<<<< Updated upstream
+            $table->unsignedBigInteger('kelas_id');
             $table->foreign("kelas_id")->references("id")->on("kelas");
             $table->timestamps();
         });
 
 
-=======
-            $table->timestamps();
-        });
 
->>>>>>> Stashed changes
     }
 
     /**
@@ -32,10 +28,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
         Schema::dropIfExists('siswa');
     }
 };
