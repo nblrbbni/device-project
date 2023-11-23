@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string("nama_perangkat");
             $table->string("kondisi_perangkat");
             $table->integer("stok");
-            $table->unsignedBigInteger('kategori_id');
-            $table->foreign("kategori_id")->references("id")->on("kategori");
+            $table->unsignedBigInteger('device_id');
+            $table->foreign("device_id")->references("id")->on("device");
             $table->timestamps();
         });
 

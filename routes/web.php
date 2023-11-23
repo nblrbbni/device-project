@@ -113,7 +113,7 @@ Auth::routes();
 
 //Create
 //Form tambah kategori
-Route::get("/kategori/create", [kategoriController::class, "create"]);
+Route::get("/kategori/form", [kategoriController::class, "create"]);
 //Store data dari form ke database
 Route::post("/kategori", [kategoriController::class, "kategori"]);
 
@@ -136,23 +136,23 @@ Route::delete("/kategori/{kategori_id}", [kategoriController::class, "destroy"])
 
 //CRUD Device
 //Form tambah device
-Route::get("/device/create", [deviceController::class, "create"]);
+Route::get("/device/form", [deviceController::class, "created"]);
 //Store data dari form ke database
 Route::post("/device", [deviceController::class, "device"]);
 
 //Read
 //Tampilkan semua data device
-Route::get("/device", [deviceController::class, "data"]);
+Route::get("/device", [deviceController::class, "datas"]);
 //Detail device berdasarkan id
-Route::get("/device/{device_id}",[deviceController::class, "show"]);
+Route::get("/device/{device_id}",[deviceController::class, "shows"]);
 
 //Update
 //Form update device
-Route::get("/device/{device_id}/edit",[deviceController::class, "edit"]);
+Route::get("/device/{device_id}/edit",[deviceController::class, "edits"]);
 //Update data ke database berdasarkan id
-Route::put("/device/{device_id}",[deviceController::class, "update"]);
+Route::put("/device/{device_id}",[deviceController::class, "updated"]);
 
 //Delete
 //delete berdasarkan id
-Route::delete("/device/{device_id}", [deviceController::class, "destroy"]);
+Route::delete("/device/{device_id}", [deviceController::class, "deleted"]);
 

@@ -58,20 +58,24 @@ Halaman List Device
                   <div class="container-xl">
                     <div class="card">
                       <div class="card-body">
-                        <a href="/device/create" class="btn btn-primary btn-sm">Tambah</a>
+                        <a href="/device/form" class="btn btn-primary btn-sm">Tambah</a>
               <table class="table">
                 <thead>
-                    
+                    <th scope="col">Id</th>
                     <th scope="col">Nama Device</th>
                     <th scope="col">Kondisi Device</th>
+                    <th scope="col">Stok</th>
+                    <th scope="col">Device Id</th>
 
                 </thead>
                 <tbody>
-                    @forelse ($device as $key -> $value)
+                    @forelse ($device as $key => $value)
                     <tr>
                         <td>{{ $key+1 }}</td>
                         <td>{{ $value->nama_perangkat }}</td>
                         <td>{{ $value->kondisi_perangkat }}</td>
+                        <td>{{ $value->stok }}</td>
+                        <td>{{ $key->device_id }}</td>
                         <td>
 
                             <form action="/device/{{ $value->id }}" method="POST">

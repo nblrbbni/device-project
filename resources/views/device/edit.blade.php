@@ -33,22 +33,30 @@ Halaman Edit Device
                 @method("PUT")
                 <div class="mb-3">
                   <label>Nama Device</label>
-                  <input type="text" name="nama" class="form-control" value="{{ $device->nama }}">
+                  <input type="text" name="nama_perangkat" class="form-control" value="{{ $device->nama_perangkat }}">
 
                 </div>
-                @error('nama')
+                @error('nama_perangkat')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
                 <div class="mb-3">
                   <label >Kondisi</label>
-                  <input type="text" class="form-control">
+                  <input type="text" class="form-control" name="kondisi_perangkat" value="{{ $device->kondisi_perangkat }}">
                 </div>
-                @error('kondisi')
+                @error('kondisi_perangkat')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
             <div class="mb-3">
                 <label>Stok</label>
                 <input type="text" name="stok" class="form-control" value="{{ $device->stok }}">
+
+              </div>
+              @error('stok')
+              <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+            <div class="mb-3">
+                <label>Device Id</label>
+                <input type="text" name="device_id" class="form-control" value="{{ $device->device_id }}">
 
               </div>
               @error('stok')

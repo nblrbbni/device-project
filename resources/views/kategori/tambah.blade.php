@@ -33,16 +33,16 @@ Halaman Create Kategori
                 @csrf
                 <div class="mb-3">
                   <label>Nama Kategori</label>
-                  <input type="text" name="nama" class="form-control" >
+                  <input type="text" name="nama_kategori" class="form-control" >
                 </div>
-                @error('nama')
+                @error('nama_kategori')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
                 <div class="mb-3">
                   <label >Icon</label>
-                  <input type="text" class="form-control" >
+                  <input type="text" class="form-control" name="icon" >
                 </div>
-                @error('kondisi')
+                @error('icon')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
             <button type="submit" class="btn" style="background-color:#18244c; color:white">Submit</button>

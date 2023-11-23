@@ -9,7 +9,7 @@ use Illuminate\Support\Collection;
 
 class deviceController extends Controller
 {
-    public function create(){
+    public function created(){
         return view("device.tambah");
     }
 
@@ -18,46 +18,49 @@ class deviceController extends Controller
             "nama_perangkat"=>"required",
             "kondisi_perangkat"=>"required",
             "stok"=>"required",
+            //"device_id"=>"required"
 
         ]);
-        DB::table('kategori')->insert([
+        DB::table('device')->insert([
             "nama_perangkat"=>$request["nama_perangkat"],
             "kondisi_perangkat"=>$request["kondisi_perangkat"],
-            "stok"=>$request["stok"]
+            "stok"=>$request["stok"],
+            "device_id"=>$request["device_id"]
 
         ]);
 
         return redirect("/device");
     }
 
-    public function data(){
+    public function datas(){
         $device=DB::table('device')->get();
         //dd($device);
         return view("device.tampil", ["device"=>$device]);
     }
 
-    public function show($id){
+    public function shows($id){
         $device=DB::table('device')->where("id",$id)->first();
         return view("device.detail", ["device"=>$device]);
     }
 
-    public function edit($id){
+    public function edits($id){
         $device=DB::table('device')->where("id",$id)->first();
         return view("device.edit", ["device"=>$device]);
     }
 
-    public function update(Request $request, $id){
+    public function updated(Request $request, $id){
         $request->validate([
             "nama_perangkat"=>"required",
             "kondisi_perangkat"=>"required",
-            "stok"=>"required"
+            "stok"=>"required",
+            "device_id"=>"required"
         ]);
 
-        DB::table('device')->where("id", $id)->update(["nama_perangkat"=>$request->nama, "kondisi_perangkat"=>$request->kondisi, "stok"=>$request->stok]);
+        DB::table('device')->where("id", $id)->update(["nama_perangkat"=>$request->nama_perangkat, "kondisi_perangkat"=>$request->kondisi_perangkat, "stok"=>$request->stok, "device_id"=>$request->device_id]);
         return redirect("/device");
     }
 
-    public function destroy($id){
+    public function deleted($id){
         DB::table('device')->where("id", $id)->delete();
         return redirect("/device");
     }

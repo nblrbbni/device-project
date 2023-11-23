@@ -33,16 +33,16 @@ Halaman Create Device
                 @csrf
                 <div class="mb-3">
                   <label>Nama Device</label>
-                  <input type="text" name="nama" class="form-control" >
+                  <input type="text" name="nama_perangkat" class="form-control" >
                 </div>
                 @error('nama')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
                 <div class="mb-3">
                   <label >Kondisi</label>
-                  <input type="text" class="form-control" name="kondisi">
+                  <input type="text" class="form-control" name="kondisi_perangkat">
                 </div>
-                @error('kondisi')
+                @error('kondisi_perangkat')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
             <div class="mb-3">
@@ -50,6 +50,13 @@ Halaman Create Device
                 <input type="text" name="stok" class="form-control" >
               </div>
               @error('stok')
+              <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+            <div class="mb-3">
+                <label>Device Id</label>
+                <input type="text" name="device_id" class="form-control" >
+              </div>
+              @error('device_id')
               <div class="alert alert-danger">{{ $message }}</div>
             @enderror
             <button type="submit" class="btn" style="background-color:#18244c; color:white">Submit</button>

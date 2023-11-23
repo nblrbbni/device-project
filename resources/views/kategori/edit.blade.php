@@ -34,16 +34,15 @@ Halaman Edit Kategori
                 @method("PUT")
                 <div class="mb-3">
                   <label>Nama Kategori</label>
-                  <input type="text" name="nama" class="form-control" value="{{ $kategori->nama }}">
+                  <input type="text" name="nama_kategori" class="form-control" value="{{ $kategori->nama_kategori }}">
 
                 </div>
                 @error('nama')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
                 <div class="mb-3">
-                  <label >Deskripsi</label>
-                  <textarea name="deskripsi" class="form-controll" cols="30" rows="10">{{ $kategori->icon }}</textarea>
-                  <input type="text" class="form-control">
+                  <label >Icon</label>
+                  <input type="text" class="form-control" name="icon" value="{{ $kategori->icon }}">
                 </div>
                 @error('deskripsi')
                 <div class="alert alert-danger">{{ $message }}</div>

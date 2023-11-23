@@ -28,9 +28,10 @@ Detail Device
       <div class="container-xl">
         <div class="card">
           <div class="card-body">
-            <h1>{{ $device->nama }}</h1>
-            <p>{{ $device->kondisi}}</p>
+            <h1>{{ $device->nama_perangkat }}</h1>
+            <p>{{ $device->kondisi_perangkat}}</p>
             <p>{{ $device->stok }}</p>
+            <p>{{ $device->device_id }}</p>
             <a href="/device" class="btn btn-secondary btn-sm">Kembali</a>
           </div>
         </div>

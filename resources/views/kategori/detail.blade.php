@@ -28,7 +28,7 @@ Detail Kategori
       <div class="container-xl">
         <div class="card">
           <div class="card-body">
-            <h1>{{ $kategori->nama }}</h1>
+            <h1>{{ $kategori->nama_kategori }}</h1>
             <p>{{ $kategori->icon}}</p>
             <a href="/kategori" class="btn btn-secondary btn-sm">Kembali</a>
           </div>

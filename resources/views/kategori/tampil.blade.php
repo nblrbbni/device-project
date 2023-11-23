@@ -37,18 +37,18 @@ Halaman List Kategori
     <div class="page-body">
       <div class="container-xl">
         <div class="card">
-            <a href="/kategori/create" class="btn btn-primary btn-sm">Tambah</a>
+            <a href="/kategori/form" class="btn btn-primary btn-sm">Tambah</a>
           <div class="card-body">
 
   <table class="table">
     <thead>
-        
+        <th scope="col">Id</th>
         <th scope="col">Nama Kategori</th>
         <th scope="col">Icon</th>
 
     </thead>
     <tbody>
-        @forelse ($kategori as $key -> $value)
+        @forelse ($kategori as $key => $value)
         <tr>
             <td>{{ $key+1 }}</td>
             <td>{{ $value->nama_kategori }}</td>
