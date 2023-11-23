@@ -29,15 +29,19 @@ Information
     <!-- Page body -->
     <div class="page-body">
       <div class="container-xl">
+          @if (Auth::user() && !Str::contains(Auth::user()->email, '@example.com'))
           <h1>Halaman Tambah</h1>
           <a href="/information/create" class="btn btn-primary btn-sm mb-3">Tambah</a>
+          @endif
             <div class="card">
                 <div class="card-body">
                     <table class="table">
                         <thead>
                             <tr>
                                 <th scope="col">Pasal</th>
+                                @if (Auth::user() && !Str::contains(Auth::user()->email, '@example.com'))
                                 <th scope="col">Action</th>
+                                @endif
                             </tr>
                         </thead>
                         <tbody>
@@ -59,6 +63,7 @@ Information
                                                 </div>
                                             </div>
                                     </td>
+                                @if (Auth::user() && !Str::contains(Auth::user()->email, '@example.com'))
                                     <td>
                                         <form action="/information/{{ $value->id }}" method="POST">
                                             @csrf
@@ -69,6 +74,7 @@ Information
                                         </form>
                                     </td>
                                 </tr>
+                                @endif
                             @empty
                                 <tr>
                                     <td>Tidak Ada Data</td>
@@ -82,3 +88,5 @@ Information
     </div>
 </div>
 @endsection
+
+

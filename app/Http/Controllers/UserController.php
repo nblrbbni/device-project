@@ -29,9 +29,9 @@ class UserController extends Controller
     //     return redirect()->back();
     // }
 
-    public function up() {
-        Schema::table('user', function (Blueprint $table) {
-            $table->text('password')->nullable();
-        });
-    }
+    // public function up() {
+    //     Schema::table('user', function (Blueprint $table) {
+    //         $table->text('password')->nullable();
+    //     });
+    // }
 }

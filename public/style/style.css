@@ -324,7 +324,7 @@ aside a:hover {
 }
 
 .table tr {
-    border: 1px solid #14274c;
+    /* border: 1px solid #14274c; */
 }
 
 .table tr th {
