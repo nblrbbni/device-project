@@ -41,7 +41,7 @@
                             <input type="date" name="tanggal_peminjaman" value="<?php echo date('Y-m-d'); ?>" readonly>
                         </th>
                         <td>
-                            <input type="text" name="nama" value="{{ Auth::user()->name }}" readonly>
+                            <input type="text" name="nama" value="{{ Auth::user()->name  }}" readonly>
                         </td>
                         <td>
                             <input type="text" name="kondisi_kamera">

@@ -23,6 +23,8 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
+
     <script src="{{ asset('dist/js/demo-theme.min.js') }}"></script>
     {{-- Sidebar --}}
     @include('partial.sidebar')
@@ -35,6 +37,7 @@
     <!-- script -->
     @stack('scripts-2')
 
+    <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
     <script src="{{ asset('dist/js/tabler.min.js') }}" defer></script>
     <script src="{{ asset('dist/js/demo.min.js') }}" defer></script>
 </body>
@@ -44,24 +47,43 @@
         var siswaid = $(this).attr('data-id');
         var studentname = $(this).attr('data-name');
 
-        swal({
-            title: "Are you sure?",
-            text: "You will delete data with the name "+studentname+" ",
+        Swal.fire({
+            title: "Apakah anda yakin?",
+            text: "Data dengan nama "+studentname+" akan dihapus!",
             icon: "warning",
-            buttons: true,
-            dangerMode: true,
-            })
-            .then((willDelete) => {
-            if (willDelete) {
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#14274c",
+            confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+            if (result.isConfirmed) {
                 window.location = "/student/"+siswaid+"/delete"
-                swal("Student data successfully deleted!", {
-                icon: "success",
+                Swal.fire({
+                title: "Dihapus!",
+                text: "Data tersebut berhasil dihapus!",
+                icon: "success"
                 });
-            } else {
-                swal("Ok! The data was not deleted!");
             }
         });
     });
+
+    function submitForm(event) {
+    event.preventDefault(); // Prevent the form from submitting immediately
+
+    Swal.fire({
+        title: 'Apakah anda yakin?',
+        text: "Data akan diperbarui!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#18244c',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, update!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            event.target.closest('form').submit(); // Submit the form after confirmation
+        }
+    });
+}
 </script>
 
 </html>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\laptopreturn;
+use RealRashid\SweetAlert\Facades\Alert;
+// use Alert;
 use Illuminate\Http\Request;
 
 class laptopController extends Controller
@@ -49,6 +51,7 @@ class laptopController extends Controller
         $laptopreturn->kondisi_keybohard = $request->kondisi_keybohard;
         $laptopreturn->waktu_pengembalian = $request->waktu_pengembalian;
         $laptopreturn->save();
+        Alert::success('Success Title', 'Success Message');
         return redirect()->to('/');
 
     }
