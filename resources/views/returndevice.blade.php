@@ -70,7 +70,7 @@
             <p>Handphone</p>
         </div>
         <div class="cardButton">
-            <a href="returnSP-handphone.html" style="text-decoration: none;">Pilih</a>
+            <a href="/return-hp" style="text-decoration: none;">Pilih</a>
         </div>
     </div>
     <div class="cardGrid">

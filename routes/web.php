@@ -8,6 +8,7 @@ use App\Http\Controllers\tabletController;
 use App\Http\Controllers\flashdiskController;
 use App\Http\Controllers\printerController;
 use App\Http\Controllers\cameraController;
+use App\Http\Controllers\handphoneController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -133,5 +134,8 @@ Route::post('/return-printer/store', [printerController::class, 'printerstr']);
 // return-camera
 Route::get('/return-camera', [cameraController::class, 'camera']);
 Route::post('/return-camera/sotore', [cameraController::class, 'camerastr']);
+// return-hp
+Route::get('/return-hp', [handphoneController::class, 'handphone']);
+Route::post('/return-hp/store', [handphoneController::class, 'handphonestr']);
 
 Auth::routes();
