@@ -97,7 +97,7 @@
             <p>HDMI</p>
         </div>
         <div class="cardButton">
-            <a href="returnSP-HDMI.html" style="text-decoration: none;">Pilih</a>
+            <a href="/return-HDMI" style="text-decoration: none;">Pilih</a>
         </div>
     </div>
     <div class="cardGrid">

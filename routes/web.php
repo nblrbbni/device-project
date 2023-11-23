@@ -11,6 +11,7 @@ use App\Http\Controllers\cameraController;
 use App\Http\Controllers\handphoneController;
 use App\Http\Controllers\PcController;
 use App\Http\Controllers\LanController;
+use App\Http\Controllers\hdmiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -145,5 +146,8 @@ Route::post('/return-computer/store', [PcController::class, 'computerstr']);
 // return-lan
 Route::get('/return-lan', [LanController::class, 'lan']);
 Route::post('/return-lan/store', [LanController::class, 'lanstr']);
+// return-hdmi
+Route::get('/return-HDMI', [hdmiController::class, 'HDMI']);
+Route::post('/return-HDMI/store', [hdmiController::class, 'HDMIstr']);
 
 Auth::routes();

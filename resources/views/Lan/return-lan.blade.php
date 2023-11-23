@@ -16,7 +16,7 @@
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 <div class="single">
-                    <img src="{{ asset('asset/picture/Rj45.png') }}" class="gambar" alt="..." />
+                    <img src="{{ asset('asset/picture/Rj45.png') }}" alt="..." />
                     <p>LAN</p>
                 </div>
             </div>
