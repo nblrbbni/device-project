@@ -6,7 +6,6 @@ use App\Http\Controllers\kategoriController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\deviceController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes

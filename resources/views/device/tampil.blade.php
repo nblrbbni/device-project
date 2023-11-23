@@ -61,7 +61,7 @@ Halaman List Device
                         <a href="/device/create" class="btn btn-primary btn-sm">Tambah</a>
               <table class="table">
                 <thead>
-                    <th scope="col"></th>
+                    
                     <th scope="col">Nama Device</th>
                     <th scope="col">Kondisi Device</th>
 

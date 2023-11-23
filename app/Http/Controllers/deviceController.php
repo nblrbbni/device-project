@@ -13,7 +13,7 @@ class deviceController extends Controller
         return view("device.tambah");
     }
 
-    public function kategori(Request $request){
+    public function device(Request $request){
         $request->validate([
             "nama_perangkat"=>"required",
             "kondisi_perangkat"=>"required",

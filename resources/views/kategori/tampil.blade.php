@@ -42,7 +42,7 @@ Halaman List Kategori
 
   <table class="table">
     <thead>
-        <th scope="col"></th>
+        
         <th scope="col">Nama Kategori</th>
         <th scope="col">Icon</th>
 
