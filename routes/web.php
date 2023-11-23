@@ -10,6 +10,7 @@ use App\Http\Controllers\printerController;
 use App\Http\Controllers\cameraController;
 use App\Http\Controllers\handphoneController;
 use App\Http\Controllers\PcController;
+use App\Http\Controllers\LanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -141,5 +142,8 @@ Route::post('/return-hp/store', [handphoneController::class, 'handphonestr']);
 // return-pc
 Route::get('/return-computer', [PcController::class, 'computer']);
 Route::post('/return-computer/store', [PcController::class, 'computerstr']);
+// return-lan
+Route::get('/return-lan', [LanController::class, 'lan']);
+Route::post('/return-lan/store', [LanController::class, 'lanstr']);
 
 Auth::routes();

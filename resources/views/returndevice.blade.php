@@ -88,7 +88,7 @@
             <p>LAN</p>
         </div>
         <div class="cardButton">
-            <a href="returnSP-lan.html" style="text-decoration: none;">Pilih</a>
+            <a href="/return-lan" style="text-decoration: none;">Pilih</a>
         </div>
     </div>
     <div class="cardGrid">
