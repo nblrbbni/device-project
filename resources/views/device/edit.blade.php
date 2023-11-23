@@ -34,7 +34,6 @@ Halaman Edit Device
                 <div class="mb-3">
                   <label>Nama Device</label>
                   <input type="text" name="nama_perangkat" class="form-control" value="{{ $device->nama_perangkat }}">
-
                 </div>
                 @error('nama_perangkat')
                 <div class="alert alert-danger">{{ $message }}</div>
@@ -49,20 +48,12 @@ Halaman Edit Device
             <div class="mb-3">
                 <label>Stok</label>
                 <input type="text" name="stok" class="form-control" value="{{ $device->stok }}">
-
               </div>
               @error('stok')
               <div class="alert alert-danger">{{ $message }}</div>
             @enderror
-            <div class="mb-3">
-                <label>Device Id</label>
-                <input type="text" name="device_id" class="form-control" value="{{ $device->device_id }}">
-
-              </div>
-              @error('stok')
-              <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn" style="background-color:#18244c; color:white">Submit</button>
+                <a href="/device" class="btn btn-primary">Back</a>
               </form>
           </div>
         </div>

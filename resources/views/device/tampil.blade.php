@@ -75,7 +75,7 @@ Halaman List Device
                         <td>{{ $value->nama_perangkat }}</td>
                         <td>{{ $value->kondisi_perangkat }}</td>
                         <td>{{ $value->stok }}</td>
-                        <td>{{ $key->device_id }}</td>
+                        <td>{{ $value->device_id }}</td>
                         <td>
 
                             <form action="/device/{{ $value->id }}" method="POST">

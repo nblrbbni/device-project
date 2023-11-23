@@ -128,7 +128,7 @@
                         <h1>Vincent Rahadian U</h1>
                         <p>Backend 2</p>
                         <div class="iconCard">
-                            <a href="https://www.instagram.com/ilham_alfynsh/" target="_blank" class="fa fa-instagram" style="margin-left: 20px"></a>
+                            <a href="https://www.instagram.com/vncnt_ru/" target="_blank" class="fa fa-instagram" style="margin-left: 20px"></a>
                             <a href="#" target="_blank" class="fa fa-whatsapp"></a>
                             <a href="#" target="_blank" class="fa fa-github"></a>
                         </div>
@@ -136,7 +136,7 @@
                 </div>
                 <br>
                 <div class="contentCard">
-                   <p id="ilham">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolorum odit totam aut a omnis itaque, magni ullam fuga ratione.</p>
+                   <p id="vincent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolorum odit totam aut a omnis itaque, magni ullam fuga ratione.</p>
                 </div>
             </div>
         </div><br><br>

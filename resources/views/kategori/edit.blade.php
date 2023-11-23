@@ -47,7 +47,8 @@ Halaman Edit Kategori
                 @error('deskripsi')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn" style="background-color:#18244c; color:white">Submit</button>
+                <a href="/kategori" class="btn btn-primary">Back</a>
               </form>
 
           </div>

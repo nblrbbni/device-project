@@ -9,7 +9,7 @@ use Illuminate\Support\Collection;
 
 class deviceController extends Controller
 {
-    public function created(){
+    public function create(){
         return view("device.tambah");
     }
 
@@ -18,7 +18,7 @@ class deviceController extends Controller
             "nama_perangkat"=>"required",
             "kondisi_perangkat"=>"required",
             "stok"=>"required",
-            //"device_id"=>"required"
+            "device_id"=>"required"
 
         ]);
         DB::table('device')->insert([
@@ -32,23 +32,23 @@ class deviceController extends Controller
         return redirect("/device");
     }
 
-    public function datas(){
+    public function data(){
         $device=DB::table('device')->get();
         //dd($device);
         return view("device.tampil", ["device"=>$device]);
     }
 
-    public function shows($id){
+    public function show($id){
         $device=DB::table('device')->where("id",$id)->first();
         return view("device.detail", ["device"=>$device]);
     }
 
-    public function edits($id){
+    public function edit($id){
         $device=DB::table('device')->where("id",$id)->first();
         return view("device.edit", ["device"=>$device]);
     }
 
-    public function updated(Request $request, $id){
+    public function update(Request $request, $id){
         $request->validate([
             "nama_perangkat"=>"required",
             "kondisi_perangkat"=>"required",
@@ -60,7 +60,7 @@ class deviceController extends Controller
         return redirect("/device");
     }
 
-    public function deleted($id){
+    public function destroy($id){
         DB::table('device')->where("id", $id)->delete();
         return redirect("/device");
     }
