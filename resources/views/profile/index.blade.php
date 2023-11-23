@@ -63,7 +63,7 @@ Profile
 
                 <div class="mb-3">
                     <label class="form-label">Password </label>
-                    <input type="text" name="password" class="form-control" value="{{ Auth::user()->password }}">
+                    <input type="text" name="password" class="form-control">
                   </div>
                 @error('password')
                     <div class="alert alert-danger">{{ $message }}</div>

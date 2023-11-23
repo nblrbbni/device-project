@@ -79,7 +79,7 @@
             <p>PC</p>
         </div>
         <div class="cardButton">
-            <a href="returnSP-PC.html" style="text-decoration: none;">Pilih</a>
+            <a href="/return-computer" style="text-decoration: none;">Pilih</a>
         </div>
     </div>
     <div class="cardGrid">
