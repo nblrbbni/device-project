@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\camera;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
 
 class cameraController extends Controller
@@ -31,6 +32,7 @@ class cameraController extends Controller
         $camera->kelengkapan_atribut = $request->kelengkapan_atribut;
         $camera->waktu_pengembalian = $request->waktu_pengembalian;
         $camera->save();
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dikembalikan!');
         return redirect()->to('/');
     }
 }

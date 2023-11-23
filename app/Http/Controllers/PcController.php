@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\PC;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
 
 class PcController extends Controller
@@ -31,6 +32,7 @@ class PcController extends Controller
         $PC->kondisi_keybohard = $request->kondisi_keybohard;
         $PC->waktu_pengembalian = $request->waktu_pengembalian;
         $PC->save();
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dikembalikan!');
         return redirect()->to('/');
 
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\HDMI;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
 
 class hdmiController extends Controller
@@ -29,6 +30,7 @@ class hdmiController extends Controller
         $HDMI->kondisi_HDMI = $request->kondisi_HDMI;
         $HDMI->waktu_pengembalian = $request->waktu_pengembalian;
         $HDMI->save();
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dikembalikan!');
         return redirect()->to('/');
     }
 }

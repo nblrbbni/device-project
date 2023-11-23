@@ -35,7 +35,7 @@ Information
           @endif
             <div class="card">
                 <div class="card-body">
-                    <table class="table">
+                    <table class="table" id="information">
                         <thead>
                             <tr>
                                 <th scope="col">Pasal</th>

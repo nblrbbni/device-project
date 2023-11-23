@@ -51,7 +51,7 @@ class laptopController extends Controller
         $laptopreturn->kondisi_keybohard = $request->kondisi_keybohard;
         $laptopreturn->waktu_pengembalian = $request->waktu_pengembalian;
         $laptopreturn->save();
-        Alert::success('Success Title', 'Success Message');
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dikembalikan!');
         return redirect()->to('/');
 
     }

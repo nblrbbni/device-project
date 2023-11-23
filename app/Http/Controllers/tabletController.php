@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\tablet;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 use Laravel\Ui\Presets\React;
 
 class tabletController extends Controller
@@ -31,6 +32,7 @@ class tabletController extends Controller
     $tablet->kondisi_charger = $request->kondisi_charger;
     $tablet->waktu_pengembalian = $request->waktu_pengembalian;
     $tablet->save();
+    Alert::success('Berhasil!', 'Perangkat Anda berhasil dikembalikan!');
     return redirect()->to('/');
     }
 

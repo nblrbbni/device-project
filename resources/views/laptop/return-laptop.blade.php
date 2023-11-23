@@ -25,7 +25,7 @@
 <form action="/return-laptop/store" method="post">
     @csrf
     <div class="table text-center">
-        <table class="table">
+        <table class="table" id="return">
             <thead>
                 <tr>
                     <th scope="col">Tanggal Peminjaman</th>
@@ -80,7 +80,7 @@
     </div>
     <br>
     <div class="buttonSp text-center">
-        <input type="submit" class="btn btn-lg" value="Confirm" style="background-color: #14274c; color:white" onclick="submitForm(event)">
+        <input type="submit" class="btn btn-lg" value="Confirm" style="background-color: #14274c; color:white">
     </div>
 </form>
 @endsection

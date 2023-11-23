@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\printer;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
 
 class printerController extends Controller
@@ -27,6 +28,7 @@ class printerController extends Controller
         $printer->kondisi_printer = $request->kondisi_printer;
         $printer->waktu_pengembalian = $request->waktu_pengembalian;
         $printer->save();
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dikembalikan!');
         return redirect()->to('/');
     }
 

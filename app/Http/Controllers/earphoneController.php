@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\earphone;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
 
 class earphoneController extends Controller
@@ -11,7 +12,7 @@ class earphoneController extends Controller
     {
         return view('headphone.return-headphone');
     }
-    
+
     public function earphonestr(Request $request)
     {
         $request->validate([
@@ -31,6 +32,7 @@ class earphoneController extends Controller
         $earphone->kondisi_suara = $request->kondisi_suara;
         $earphone->waktu_pengembalian = $request->waktu_pengembalian;
         $earphone->save();
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dikembalikan!');
         return redirect()->to('/');
     }
 }

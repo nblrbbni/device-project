@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\flashdisk;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
 
 class flashdiskController extends Controller
@@ -28,6 +29,7 @@ class flashdiskController extends Controller
         $flashdisk->kondisi_flashdisk = $request->kondisi_flashdisk;
         $flashdisk->waktu_pengembalian = $request->waktu_pengembalian;
         $flashdisk->save();
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dikembalikan!');
         return redirect()->to('/');
 
     }

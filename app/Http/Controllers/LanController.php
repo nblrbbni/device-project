@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\lan;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
 
 class LanController extends Controller
@@ -29,6 +30,7 @@ class LanController extends Controller
         $lan->kondisi_LAN = $request->kondisi_LAN;
         $lan->waktu_pengembalian = $request->waktu_pengembalian;
         $lan->save();
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dikembalikan!');
         return redirect()->to('/');
     }
 }

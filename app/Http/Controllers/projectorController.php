@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\projector;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 use Psy\TabCompletion\Matcher\FunctionsMatcher;
 
 class projectorController extends Controller
@@ -32,6 +33,7 @@ class projectorController extends Controller
         $projector->kondisi_remote = $request->kondisi_remote;
         $projector->waktu_pengembalian = $request->waktu_pengembalian;
         $projector->save();
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dikembalikan!');
         return redirect()->to('/');
     }
 }

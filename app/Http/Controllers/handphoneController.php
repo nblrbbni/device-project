@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\handphone;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
 
 class handphoneController extends Controller
@@ -30,6 +31,7 @@ class handphoneController extends Controller
         $handphone->kondisi_charger = $request->kondisi_charger;
         $handphone->waktu_pengembalian = $request->waktu_pengembalian;
         $handphone->save();
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dikembalikan!');
         return redirect()->to('/');
     }
 }

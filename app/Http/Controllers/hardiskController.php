@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\hardisk;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
 
 class hardiskController extends Controller
@@ -29,6 +30,7 @@ class hardiskController extends Controller
         $hardisk->kondisi_hardisk = $request->kondisi_hardisk;
         $hardisk->waktu_pengembalian = $request->waktu_pengembalian;
         $hardisk->save();
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dikembalikan!');
         return redirect()->to('/');
     }
 }

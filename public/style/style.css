@@ -323,7 +323,7 @@ aside a:hover {
     padding: 50px;
 }
 
-.table tr {
+.table#return tr {
     border: 1px solid #14274c;
 }
 

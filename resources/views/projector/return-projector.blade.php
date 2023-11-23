@@ -22,7 +22,7 @@
     <form action="/return-projector/store" method="post">
         @csrf
         <div class="table text-center">
-            <table class="table">
+            <table class="table" id="return">
                 <thead>
                     <tr>
                         <th scope="col">Tanggal Peminjaman</th>
