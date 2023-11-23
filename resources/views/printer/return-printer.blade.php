@@ -15,7 +15,7 @@
         </div>
         <div class="col-md-4">
             <div class='single'>
-                <img src="{{ asset('asset/picture/Printer.png') }}" class="gambar" alt="...">
+                <img src="{{ asset('asset/picture/Printer.png') }}" alt="...">
                 <p>Printer</p>
             </div>
         </div>
@@ -37,10 +37,10 @@
             <tbody>
                 <tr>
                     <th scope="row">
-                        <input type="date" name="tanggal_peminjaman" alue="<?php echo date('Y-m-d'); ?>" readonly>
+                        <input type="date" name="tanggal_peminjaman" Value="<?php echo date('Y-m-d'); ?>" readonly>
                     </th>
                     <td>
-                        <input type="text" name="nama" value="{{ Auth::user()->name }}" readonly>
+                        <input type="text" name="nama">
                     </td>
                     <td>
                         <input type="text" name="kondisi_printer" required>
