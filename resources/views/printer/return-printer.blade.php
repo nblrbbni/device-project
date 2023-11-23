@@ -40,7 +40,7 @@
                         <input type="date" name="tanggal_peminjaman" Value="<?php echo date('Y-m-d'); ?>" readonly>
                     </th>
                     <td>
-                        <input type="text" name="nama">
+                        <input type="text" name="nama" value="{{ Auth::user()->name }}" readonly>
                     </td>
                     <td>
                         <input type="text" name="kondisi_printer" required>
