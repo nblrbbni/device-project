@@ -12,6 +12,7 @@ use App\Http\Controllers\handphoneController;
 use App\Http\Controllers\PcController;
 use App\Http\Controllers\LanController;
 use App\Http\Controllers\hdmiController;
+use App\Http\Controllers\projectorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -149,5 +150,8 @@ Route::post('/return-lan/store', [LanController::class, 'lanstr']);
 // return-hdmi
 Route::get('/return-HDMI', [hdmiController::class, 'HDMI']);
 Route::post('/return-HDMI/store', [hdmiController::class, 'HDMIstr']);
+// return-projector
+Route::get('/return-projector', [projectorController::class, 'projector']);
+Route::post('/return-projector/store', [projectorController::class, 'projectorstr']);
 
 Auth::routes();

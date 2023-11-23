@@ -106,7 +106,7 @@
             <p>Projector</p>
         </div>
         <div class="cardButton">
-            <a href="returnSP-projector.html" style="text-decoration: none;">Pilih</a>
+            <a href="/return-projector" style="text-decoration: none;">Pilih</a>
         </div>
     </div>
     <div class="cardGrid">
