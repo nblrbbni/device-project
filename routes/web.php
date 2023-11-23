@@ -8,10 +8,6 @@ use App\Http\Controllers\hardiskController;
 use App\Http\Controllers\hdmiController;
 use App\Models\post;
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
-use App\Http\Controllers\informationController;
-
-=======
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanController;
 use App\Http\Controllers\PostController;
@@ -22,7 +18,6 @@ use App\Http\Controllers\projectorController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ReturnDeviceControll;
 use App\Http\Controllers\tabletController;
->>>>>>> development
 
 /*
 |--------------------------------------------------------------------------
@@ -191,7 +186,6 @@ Route::put('/student/{student_id}', [StudentController::class, 'update']);
 //Delet
 Route::delete('/student/{student_id}', [StudentController::class, 'delete']);
 
-<<<<<<< HEAD
 //CRUD INFORMATION Admin
 //create
 //form information
@@ -209,7 +203,4 @@ Route::get('/information/{information_id}/edit', [informationController::class, 
 Route::put('/information/{information_id}', [informationController::class, 'update']);
 // delete
 Route::delete('/information/{information_id}', [informationController::class, 'destroy']);
-=======
-//pengembalian sistem
-// crate
->>>>>>> development
+
