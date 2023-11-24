@@ -6,6 +6,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\pinjamLaptop;
 use App\Models\pinjamEarphone;
 use App\Models\pinjamProjector;
+use App\Models\pinjamTablet;
 
 use Illuminate\Http\Request;
 
@@ -69,7 +70,7 @@ class pinjamController extends Controller
         return redirect()->to('/');
     }
 
-    // // Projector
+    // Projector
     public function projector()
     {
         return view('projector.sp-projector');
@@ -94,36 +95,38 @@ class pinjamController extends Controller
         $pinjamProjector->mentoring_mapel = $request->mentoring_mapel;
         $pinjamProjector->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamProjector->save();
+        Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
     }
 
-    // // Tablet
-    // public function tablet()
-    // {
-    //     return view('tablet.sp-tablet');
-    // }
+    // Tablet
+    public function tablet()
+    {
+        return view('tablet.sp-tablet');
+    }
 
-    // public function tabletstr(Request $request)
-    // {
-    //     $request->validate([
-    //         'tanggal_peminjaman' => 'required',
-    //         'nama' => 'required',
-    //         'mata_pelajaran' => 'required',
-    //         'nomor_tablet' => 'required',
-    //         'mentoring_mapel' => 'required',
-    //         'waktu_pengembalian' => 'required',
-    //     ]);
+    public function tabletstr(Request $request)
+    {
+        $request->validate([
+            'tanggal_peminjaman' => 'required',
+            'nama' => 'required',
+            'mata_pelajaran' => 'required',
+            'nomor_tablet' => 'required',
+            'mentoring_mapel' => 'required',
+            'waktu_peminjaman' => 'required',
+        ]);
 
-    //     $pinjamTablet = new pinjamTablet();
-    //     $pinjamTablet->tanggal_peminjaman = $request->tanggal_peminjaman;
-    //     $pinjamTablet->nama = $request->nama;
-    //     $pinjamTablet->mata_pelajaran = $request->mata_pelajaran;
-    //     $pinjamTablet->nomor_tablet = $request->nomor_tablet;
-    //     $pinjamTablet->mentoring_mapel = $request->mentoring_mapel;
-    //     $pinjamTablet->waktu_pengembalian = $request->waktu_pengembalian;
-    //     $pinjamTablet->save();
-    //     return redirect()->to('/');
-    // }
+        $pinjamTablet = new pinjamTablet();
+        $pinjamTablet->tanggal_peminjaman = $request->tanggal_peminjaman;
+        $pinjamTablet->nama = $request->nama;
+        $pinjamTablet->mata_pelajaran = $request->mata_pelajaran;
+        $pinjamTablet->nomor_tablet = $request->nomor_tablet;
+        $pinjamTablet->mentoring_mapel = $request->mentoring_mapel;
+        $pinjamTablet->waktu_peminjaman = $request->waktu_peminjaman;
+        $pinjamTablet->save();
+        Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
+        return redirect()->to('/');
+    }
 
     // // Camera
     // public function camera()

@@ -48,7 +48,7 @@ Electronic
       <p>Tablet</p>
     </div>
     <div class="link">
-      <a href="SP-tablet.html">Pilih</a>
+      <a href="/select-tablet">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
