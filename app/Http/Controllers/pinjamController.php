@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Models\pinjamLan;
 use App\Models\pinjamHdmi;
 use App\Models\pinjamCamera;
+use App\Models\pinjamLaptop;
 use App\Models\pinjamTablet;
+use Illuminate\Http\Request;
 use App\Models\pinjamHardisk;
 use App\Models\pinjamPrinter;
 use App\Models\pinjamEarphone;
@@ -46,7 +46,7 @@ class pinjamController extends Controller
         return redirect()->to('/');
     }
 
-    // // Earphone
+    // Earphone
     // public function headset()
     // {
     //     return view('headphone.sp-headphone');
@@ -355,5 +355,3 @@ class pinjamController extends Controller
     //     return redirect()->to('/');
     // }
 }
-
-
