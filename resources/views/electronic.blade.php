@@ -21,7 +21,7 @@ Electronic
       <p>Laptop</p>
     </div>
     <div class="link">
-      <a href="/sp-laptop">Pilih</a>
+      <a href="/select-laptop">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>

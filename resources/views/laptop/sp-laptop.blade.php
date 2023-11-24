@@ -9,7 +9,7 @@
 <br>
 <br>
 <!-- main content -->
-<form action="/sp-laptop/store" method="post">
+<form action="/select-laptop/store" method="post">
     @csrf
     <div class="container text-center">
         <div class="row row-card">

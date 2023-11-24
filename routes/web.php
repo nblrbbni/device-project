@@ -125,7 +125,7 @@ Route::get('/electronic', function () {
     return view('electronic');
 });
 // pinjam-laptop
-Route::get('/sp-laptop', [pinjamController::class, 'laptop']);
-Route::post('/sp-laptop/store', [pinjamController::class, 'laptopstr']);
+Route::get('/select-laptop', [pinjamController::class, 'laptop']);
+Route::post('/select-laptop/store', [pinjamController::class, 'laptopstr']);
 
 Auth::routes();
