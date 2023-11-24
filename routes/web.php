@@ -144,5 +144,8 @@ Route::post('/select-komputer/store', [pinjamController::class, 'komputerstr']);
 //pinjam-flashdisk
 Route::get('/select-flashdisk', [pinjamController::class, 'flashdisk']);
 Route::post('/select-flashdisk/store', [pinjamController::class, 'flashdiskstr']);
+//pinjam-hardisk
+Route::get('/select-hardisk', [pinjamController::class, 'hardisk']);
+Route::post('/select-hardisk/store', [pinjamController::class, 'hardiskstr']);
 
 Auth::routes();

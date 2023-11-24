@@ -11,6 +11,7 @@ use App\Models\pinjamCamera;
 use App\Models\pinjamHandphone;
 use App\Models\pinjamKomputer;
 use App\Models\pinjamFlashdisk;
+use App\Models\pinjamHardisk;
 
 use Illuminate\Http\Request;
 
@@ -249,33 +250,34 @@ class pinjamController extends Controller
         return redirect()->to('/');
     }
 
-    // // Hardisk
-    // public function hardisk()
-    // {
-    //     return view('hardisk.sp-hardisk');
-    // }
+    // Hardisk
+    public function hardisk()
+    {
+        return view('hardisk.sp-hardisk');
+    }
 
-    // public function hardiskstr(Request $request)
-    // {
-    //     $request->validate([
-    //         'tanggal_peminjaman' => 'required',
-    //         'nama' => 'required',
-    //         'mata_pelajaran' => 'required',
-    //         'nomor_hardisk' => 'required',
-    //         'mentoring_mapel' => 'required',
-    //         'waktu_peminjaman' => 'required',
-    //     ]);
+    public function hardiskstr(Request $request)
+    {
+        $request->validate([
+            'tanggal_peminjaman' => 'required',
+            'nama' => 'required',
+            'mata_pelajaran' => 'required',
+            'nomor_hardisk' => 'required',
+            'mentoring_mapel' => 'required',
+            'waktu_peminjaman' => 'required',
+        ]);
 
-    //     $pinjamHardisk = new pinjamHardisk();
-    //     $pinjamHardisk->tanggal_peminjaman = $request->tanggal_peminjaman;
-    //     $pinjamHardisk->nama = $request->nama;
-    //     $pinjamHardisk->mata_pelajaran = $request->mata_pelajaran;
-    //     $pinjamHardisk->nomor_hardisk = $request->nomor_hardisk;
-    //     $pinjamHardisk->mentoring_mapel = $request->mentoring_mapel;
-    //     $pinjamHardisk->waktu_peminjaman = $request->waktu_peminjaman;
-    //     $pinjamHardisk->save();
-    //     return redirect()->to('/');
-    // }
+        $pinjamHardisk = new pinjamHardisk();
+        $pinjamHardisk->tanggal_peminjaman = $request->tanggal_peminjaman;
+        $pinjamHardisk->nama = $request->nama;
+        $pinjamHardisk->mata_pelajaran = $request->mata_pelajaran;
+        $pinjamHardisk->nomor_hardisk = $request->nomor_hardisk;
+        $pinjamHardisk->mentoring_mapel = $request->mentoring_mapel;
+        $pinjamHardisk->waktu_peminjaman = $request->waktu_peminjaman;
+        $pinjamHardisk->save();
+        Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
+        return redirect()->to('/');
+    }
 
     // // Printer
     // public function printer()

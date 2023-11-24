@@ -93,7 +93,7 @@ Electronic
       <p>Hardisk</p>
     </div>
     <div class="link">
-      <a href="">Pilih</a>
+      <a href="/select-hardisk">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
