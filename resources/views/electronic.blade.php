@@ -84,7 +84,7 @@ Electronic
       <p>Flashdisk</p>
     </div>
     <div class="link">
-      <a href="SP-flashdisk.html">Pilih</a>
+      <a href="/select-flashdisk">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>

@@ -10,6 +10,7 @@ use App\Models\pinjamTablet;
 use App\Models\pinjamCamera;
 use App\Models\pinjamHandphone;
 use App\Models\pinjamKomputer;
+use App\Models\pinjamFlashdisk;
 
 use Illuminate\Http\Request;
 
@@ -219,33 +220,34 @@ class pinjamController extends Controller
         return redirect()->to('/');
     }
 
-    // // Flashdisk
-    // public function flashdisk()
-    // {
-    //     return view('flashdisk.sp-flashdisk');
-    // }
+    // Flashdisk
+    public function flashdisk()
+    {
+        return view('flashdisk.sp-flashdisk');
+    }
 
-    // public function flashdiskstr(Request $request)
-    // {
-    //     $request->validate([
-    //         'tanggal_peminjaman' => 'required',
-    //         'nama' => 'required',
-    //         'mata_pelajaran' => 'required',
-    //         'nomor_flashdisk' => 'required',
-    //         'mentoring_mapel' => 'required',
-    //         'waktu_peminjaman' => 'required',
-    //     ]);
+    public function flashdiskstr(Request $request)
+    {
+        $request->validate([
+            'tanggal_peminjaman' => 'required',
+            'nama' => 'required',
+            'mata_pelajaran' => 'required',
+            'nomor_flashdisk' => 'required',
+            'mentoring_mapel' => 'required',
+            'waktu_peminjaman' => 'required',
+        ]);
 
-    //     $pinjamFlashdisk = new pinjamFlashdisk();
-    //     $pinjamFlashdisk->tanggal_peminjaman = $request->tanggal_peminjaman;
-    //     $pinjamFlashdisk->nama = $request->nama;
-    //     $pinjamFlashdisk->mata_pelajaran = $request->mata_pelajaran;
-    //     $pinjamFlashdisk->nomor_flashdisk = $request->nomor_flashdisk;
-    //     $pinjamFlashdisk->mentoring_mapel = $request->mentoring_mapel;
-    //     $pinjamFlashdisk->waktu_peminjaman = $request->waktu_peminjaman;
-    //     $pinjamFlashdisk->save();
-    //     return redirect()->to('/');
-    // }
+        $pinjamFlashdisk = new pinjamFlashdisk();
+        $pinjamFlashdisk->tanggal_peminjaman = $request->tanggal_peminjaman;
+        $pinjamFlashdisk->nama = $request->nama;
+        $pinjamFlashdisk->mata_pelajaran = $request->mata_pelajaran;
+        $pinjamFlashdisk->nomor_flashdisk = $request->nomor_flashdisk;
+        $pinjamFlashdisk->mentoring_mapel = $request->mentoring_mapel;
+        $pinjamFlashdisk->waktu_peminjaman = $request->waktu_peminjaman;
+        $pinjamFlashdisk->save();
+        Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
+        return redirect()->to('/');
+    }
 
     // // Hardisk
     // public function hardisk()
