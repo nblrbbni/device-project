@@ -30,7 +30,7 @@ Electronic
       <p>Earphone</p>
     </div>
     <div class="link">
-      <a href="SP-headset.html">Pilih</a>
+      <a href="/sp-headset">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
@@ -39,7 +39,7 @@ Electronic
       <p>Projector</p>
     </div>
     <div class="link">
-      <a href="SP-projector.html">Pilih</a>
+      <a href="/sp-projector">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
@@ -48,7 +48,7 @@ Electronic
       <p>Tablet</p>
     </div>
     <div class="link">
-      <a href="SP-tablet.html">Pilih</a>
+      <a href="/sp-tablet">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
@@ -57,7 +57,7 @@ Electronic
       <p>Camera</p>
     </div>
     <div class="link">
-      <a href="SP-camera.html">Pilih</a>
+      <a href="/sp-camera">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
@@ -66,16 +66,16 @@ Electronic
       <p>Handphone</p>
     </div>
     <div class="link">
-      <a href="SP-handphone.html">Pilih</a>
+      <a href="/sp-handphone">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
     <div class="inter">
       <img src="asset/picture/Gaming.png" class="gambar" alt="...">
-      <p>PC</p>
+      <p>Komputer</p>
     </div>
     <div class="link">
-      <a href="SP-pc.html">Pilih</a>
+      <a href="/sp-komputer">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
@@ -84,7 +84,7 @@ Electronic
       <p>Flashdisk</p>
     </div>
     <div class="link">
-      <a href="SP-flashdisk.html">Pilih</a>
+      <a href="/sp-flashdisk">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
@@ -93,7 +93,7 @@ Electronic
       <p>Hardisk</p>
     </div>
     <div class="link">
-      <a href="">Pilih</a>
+      <a href="/sp-hardisk">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
@@ -102,7 +102,7 @@ Electronic
       <p>Printer</p>
     </div>
     <div class="link">
-      <a href="Sp-printer.html">Pilih</a>
+      <a href="/sp-printer">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
@@ -111,7 +111,7 @@ Electronic
       <p>LAN</p>
     </div>
     <div class="link">
-      <a href="SP-kabelRoll.html">Pilih</a>
+      <a href="/sp-lan">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
@@ -120,7 +120,7 @@ Electronic
       <p>HDMI</p>
     </div>
     <div class="link">
-      <a href="SP-hdmi.html">Pilih</a>
+      <a href="/sp-hdmi">Pilih</a>
     </div>
   </div>
 </div>

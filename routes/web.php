@@ -13,6 +13,7 @@ use App\Http\Controllers\LanController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\laptopController;
 use App\Http\Controllers\PcController;
+use App\Http\Controllers\pinjamController;
 use App\Http\Controllers\printerController;
 use App\Http\Controllers\projectorController;
 use App\Http\Controllers\StudentController;
@@ -43,7 +44,7 @@ Route::get('/team', function () {
     return view('team');
 });
 
-Route::middleware(['auth'])->group(function () {
+// Route::middleware(['auth'])->group(function () {
     Route::get('/electronic', function () {
         return view('electronic');
     });
@@ -57,10 +58,7 @@ Route::middleware(['auth'])->group(function () {
     });
 
     //Laptop
-    Route::get('/sp-laptop', function () {
-        return view('laptop.sp-laptop');
-    });
-
+    
     Route::get('/return-laptop', function() {
         return view('laptop.return-laptop');
     });
@@ -90,10 +88,7 @@ Route::middleware(['auth'])->group(function () {
         return view('tablet.sp-tablet');
     });
 
-    //Headphone
-    Route::get('/sp-headset', function () {
-        return view('headphone.sp-headphone');
-    });
+    
 
     //HDMI
     Route::get('/sp-hdmi', function () {
@@ -104,7 +99,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/sp-camera', function () {
         return view('camera.sp-camera');
     });
-});
+
 
 // return device
 Route::get('/returndevice', function () {
@@ -186,5 +181,40 @@ Route::put('/student/{student_id}', [StudentController::class, 'update']);
 //Delet
 Route::delete('/student/{student_id}', [StudentController::class, 'delete']);
 
-//pengembalian sistem
-// crate
+// pinjam-laptop
+Route::get('/sp-laptop', [pinjamController::class, 'laptop']);
+Route::post('/sp-laptop/store', [pinjamController::class, 'laptopstr']);
+
+//pinjam-earphone
+Route::get('/sp-headset', [pinjamController::class, 'headset']);
+Route::post('/sp-headset/store', [pinjamController::class, 'headsetstr']);
+
+Route::get('/sp-projector', [pinjamController::class, 'projector']);
+Route::post('/sp-projector/store', [pinjamController::class, 'projectorstr']);
+
+Route::get('/sp-tablet', [pinjamController::class, 'tablet']);
+Route::post('/sp-tablet/store', [pinjamController::class, 'tabletstr']);
+
+Route::get('/sp-camera', [pinjamController::class, 'camera']);
+Route::post('/sp-camera/store', [pinjamController::class, 'camerastr']);
+
+Route::get('/sp-handphone', [pinjamController::class, 'handphone']);
+Route::post('/sp-handphone/store', [pinjamController::class, 'handphonestr']);
+
+Route::get('/sp-komputer', [pinjamController::class, 'komputer']);
+Route::post('/sp-komputer/store', [pinjamController::class, 'komputerstr']);
+
+Route::get('/sp-flashdisk', [pinjamController::class, 'flashdisk']);
+Route::post('/sp-flashdisk/store', [pinjamController::class, 'flashdiskstr']);
+
+Route::get('/sp-hardisk', [pinjamController::class, 'hardisk']);
+Route::post('/sp-hardisk/store', [pinjamController::class, 'hardiskstr']);
+
+Route::get('/sp-printer', [pinjamController::class, 'printer']);
+Route::post('/sp-printer/store', [pinjamController::class, 'printerstr']);
+
+Route::get('/sp-hdmi', [pinjamController::class, 'hdmi']);
+Route::post('/sp-hdmi/store', [pinjamController::class, 'hdmistr']);
+
+Route::get('/sp-lan', [pinjamController::class, 'lan']);
+Route::post('/sp-lan/store', [pinjamController::class, 'lanstr']);

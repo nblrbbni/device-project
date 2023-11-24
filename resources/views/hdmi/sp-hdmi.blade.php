@@ -8,6 +8,9 @@
 
     <br>
     <br>
+
+    <form action="/sp-hdmi/store" method="post">
+        @csrf
     <div class="container text-center">
         <div class="row row-card">
         <div class="col-md-4">
@@ -30,30 +33,30 @@
             <th scope="col">Tanggal Peminjaman</th>
             <th scope="col">Nama</th>
             <th scope="col">Mata Pelajaran</th>
-            <th scope="col">Nomor Earphone</th>
+            <th scope="col">Nomor HDMI</th>
             <th scope="col">Mentoring Mapel</th>
             <th scope="col">Waktu Peminjaman</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-            <th scope="row">
-                <input type="date">
-            </th>
-            <td>
-                <input type="text">
-            </td>
-            <td>
-                <input type="text">
-            </td>
-            <td>
-                <input type="number">
-            </td>
-            <td><input type="text"></td>
-            <td>
-                <input type="time">
-            </td>
-            </tr>
+        <tr>
+          <th scope="row">
+            <input type="date" name="tanggal_peminjaman">
+          </th>
+          <td>
+            <input type="text" name="nama">
+          </td>
+          <td>
+            <input type="text" name="mata_pelajaran">
+          </td>
+          <td>
+            <input type="number" name="nomor_hdmi"> 
+          </td>
+          <td><input type="text" name="mentoring_mapel"></td>
+          <td>
+            <input type="time" name="waktu_peminjaman">
+          </td>
+        </tr>
         </tbody>
         </table>
     </div>
@@ -65,4 +68,5 @@
           </div>
         </div>
     </div>
+    </form>
 @endsection

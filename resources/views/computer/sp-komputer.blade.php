@@ -9,7 +9,7 @@
   <br>
   <br>
 
-  <form action="/sp-flashdisk/store" method="post">
+  <form action="/sp-komputer/store" method="post">
     @csrf
   <div class="container text-center">
     <div class="row row-card">
@@ -18,9 +18,12 @@
       </div>
       <div class="col-md-4">
         <div class='single'>
-          <img src="{{ asset('asset/picture/Flashdisk.png') }}" class="gambar" alt="...">
-          <p>Flashdisk</p>
+          <img src="{{ asset('asset/picture/Gaming.png') }}" class="gambar" alt="...">
+          <p>Computer</p>
         </div>
+      </div>
+      <div class="col-md-4">
+
       </div>
     </div>
   </div>
@@ -33,7 +36,7 @@
           <th scope="col">Tanggal Peminjaman</th>
           <th scope="col">Nama</th>
           <th scope="col">Mata Pelajaran</th>
-          <th scope="col">Nomor Flashdisk</th>
+          <th scope="col">Nomor Komputer</th>
           <th scope="col">Mentoring Mapel</th>
           <th scope="col">Waktu Peminjaman</th>
         </tr>
@@ -50,7 +53,7 @@
             <input type="text" name="mata_pelajaran">
           </td>
           <td>
-            <input type="number" name="nomor_flashdisk"> 
+            <input type="number" name="nomor_komputer"> 
           </td>
           <td><input type="text" name="mentoring_mapel"></td>
           <td>
@@ -62,11 +65,11 @@
   </div>
   <br>
   <div class="container">
-    <div class="row">
-      <div class="col text-center">
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-    </div>
-</div>
-</form>
+        <div class="row">
+          <div class="col text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+  </div>
+  </form>
 @endsection
