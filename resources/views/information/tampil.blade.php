@@ -14,6 +14,7 @@ Information
 <br>
 <br>
 <div class="page-wrapper">
+
     <!-- Page header -->
     <div class="page-header d-print-none">
       <div class="container-xl">
@@ -26,6 +27,7 @@ Information
         </div>
       </div>
     </div>
+
     <!-- Page body -->
     <div class="page-body">
       <div class="container-xl">
@@ -86,7 +88,6 @@ Information
             </div>
         </div>
     </div>
+
 </div>
 @endsection
-
-
