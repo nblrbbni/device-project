@@ -46,13 +46,13 @@ Halaman Create Device
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
             <div class="mb-3">
-                <label>Stok</label>
+                <label>Jumlah</label>
                 <input type="text" name="stok" class="form-control" >
               </div>
               @error('stok')
               <div class="alert alert-danger">{{ $message }}</div>
             @enderror
-           
+
             <button type="submit" class="btn" style="background-color:#18244c; color:white">Submit</button>
             <a href="/device" class="btn btn-primary">Back</a>
               </form>

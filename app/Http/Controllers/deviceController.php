@@ -18,14 +18,14 @@ class deviceController extends Controller
             "nama_perangkat"=>"required",
             "kondisi_perangkat"=>"required",
             "stok"=>"required",
-            "device_id"=>"required"
+            //"device_id"=>"required"
 
         ]);
         DB::table('device')->insert([
             "nama_perangkat"=>$request["nama_perangkat"],
             "kondisi_perangkat"=>$request["kondisi_perangkat"],
             "stok"=>$request["stok"],
-            "device_id"=>$request["device_id"]
+            //"device_id"=>$request["device_id"]
 
         ]);
 
@@ -53,10 +53,10 @@ class deviceController extends Controller
             "nama_perangkat"=>"required",
             "kondisi_perangkat"=>"required",
             "stok"=>"required",
-            "device_id"=>"required"
+            //"device_id"=>"required"
         ]);
 
-        DB::table('device')->where("id", $id)->update(["nama_perangkat"=>$request->nama_perangkat, "kondisi_perangkat"=>$request->kondisi_perangkat, "stok"=>$request->stok, "device_id"=>$request->device_id]);
+    DB::table('device')->where("id", $id)->update(["nama_perangkat"=>$request->nama_perangkat, "kondisi_perangkat"=>$request->kondisi_perangkat, "stok"=>$request->stok/*, "device_id"=>$request->device_id*/]);
         return redirect("/device");
     }
 

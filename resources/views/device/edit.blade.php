@@ -46,7 +46,7 @@ Halaman Edit Device
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
             <div class="mb-3">
-                <label>Stok</label>
+                <label>Jumlah</label>
                 <input type="text" name="stok" class="form-control" value="{{ $device->stok }}">
               </div>
               @error('stok')

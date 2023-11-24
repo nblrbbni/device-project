@@ -64,8 +64,8 @@ Halaman List Device
                     <th scope="col">Id</th>
                     <th scope="col">Nama Device</th>
                     <th scope="col">Kondisi Device</th>
-                    <th scope="col">Stok</th>
-                    <th scope="col">Device Id</th>
+                    <th scope="col">Jumlah</th>
+
 
                 </thead>
                 <tbody>
