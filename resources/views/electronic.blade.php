@@ -39,7 +39,7 @@ Electronic
       <p>Projector</p>
     </div>
     <div class="link">
-      <a href="SP-projector.html">Pilih</a>
+      <a href="/select-projector">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>

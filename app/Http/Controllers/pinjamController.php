@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\pinjamLaptop;
 use App\Models\pinjamEarphone;
+use App\Models\pinjamProjector;
 
 use Illuminate\Http\Request;
 
@@ -69,32 +70,32 @@ class pinjamController extends Controller
     }
 
     // // Projector
-    // public function projector()
-    // {
-    //     return view('projector.sp-projector');
-    // }
+    public function projector()
+    {
+        return view('projector.sp-projector');
+    }
 
-    // public function projectorstr(Request $request)
-    // {
-    //     $request->validate([
-    //         'tanggal_peminjaman' => 'required',
-    //         'nama' => 'required',
-    //         'mata_pelajaran' => 'required',
-    //         'nomor_projector' => 'required',
-    //         'mentoring_mapel' => 'required',
-    //         'waktu_pengembalian' => 'required',
-    //     ]);
+    public function projectorstr(Request $request)
+    {
+        $request->validate([
+            'tanggal_peminjaman' => 'required',
+            'nama' => 'required',
+            'mata_pelajaran' => 'required',
+            'nomor_projector' => 'required',
+            'mentoring_mapel' => 'required',
+            'waktu_peminjaman' => 'required',
+        ]);
 
-    //     $pinjamProjector = new pinjamProjector();
-    //     $pinjamProjector->tanggal_peminjaman = $request->tanggal_peminjaman;
-    //     $pinjamProjector->nama = $request->nama;
-    //     $pinjamProjector->mata_pelajaran = $request->mata_pelajaran;
-    //     $pinjamProjector->nomor_projector = $request->nomor_projector;
-    //     $pinjamProjector->mentoring_mapel = $request->mentoring_mapel;
-    //     $pinjamProjector->waktu_pengembalian = $request->waktu_pengembalian;
-    //     $pinjamProjector->save();
-    //     return redirect()->to('/');
-    // }
+        $pinjamProjector = new pinjamProjector();
+        $pinjamProjector->tanggal_peminjaman = $request->tanggal_peminjaman;
+        $pinjamProjector->nama = $request->nama;
+        $pinjamProjector->mata_pelajaran = $request->mata_pelajaran;
+        $pinjamProjector->nomor_projector = $request->nomor_projector;
+        $pinjamProjector->mentoring_mapel = $request->mentoring_mapel;
+        $pinjamProjector->waktu_peminjaman = $request->waktu_peminjaman;
+        $pinjamProjector->save();
+        return redirect()->to('/');
+    }
 
     // // Tablet
     // public function tablet()

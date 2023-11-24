@@ -47,13 +47,13 @@
                         <input type="text" name="nama" value="{{ Auth::user()->name }}" readonly>
                     </td>
                     <td>
-                        <input type="text" name="mata_pelajaran">
+                        <input type="text" name="mata_pelajaran" required>
                     </td>
                     <td>
-                        <input type="number" name="nomor_earphone">
+                        <input type="number" name="nomor_earphone" required>
                     </td>
                     <td>
-                        <input type="text" name="mentoring_mapel">
+                        <input type="text" name="mentoring_mapel" required>
                     </td>
                     <td>
                         <input type="time" name="waktu_peminjaman" id="currentTime" readonly>

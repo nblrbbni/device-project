@@ -126,5 +126,8 @@ Route::post('/select-laptop/store', [pinjamController::class, 'laptopstr']);
 //pinjam-earphone
 Route::get('/select-headphone', [pinjamController::class, 'headset']);
 Route::post('/select-headphone/store', [pinjamController::class, 'headsetstr']);
+//pinjam-projector
+Route::get('/select-projector', [pinjamController::class, 'projector']);
+Route::post('/select-projector/store', [pinjamController::class, 'projectorstr']);
 
 Auth::routes();
