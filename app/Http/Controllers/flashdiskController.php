@@ -29,6 +29,7 @@ class flashdiskController extends Controller
         $flashdisk->waktu_pengembalian = $request->waktu_pengembalian;
         $flashdisk->save();
         return redirect()->to('/');
-        
+
     }
 }
+

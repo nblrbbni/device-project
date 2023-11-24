@@ -9,7 +9,7 @@ class handphoneController extends Controller
 {
     public function handphone()
     {
-        return view('handphone.retrurn-handphone');
+        return view('handphone.return-handphone');
     }
     public function handphonestr(Request $request)
     {

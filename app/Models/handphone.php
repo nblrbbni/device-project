@@ -9,7 +9,7 @@ class handphone extends Model
 {
     use HasFactory;
     protected $table = 'handphone_penembalian';
-    protected $fillable = 
+    protected $fillable =
     [
         'tanggal_peminjaman',
         'nama',

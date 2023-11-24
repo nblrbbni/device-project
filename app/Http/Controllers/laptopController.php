@@ -3,13 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\laptopreturn;
-
-
 use Illuminate\Http\Request;
 
 class laptopController extends Controller
 {
-    /**
+   /**
      * Display a listing of the resource.
      */
     public function laptop()
@@ -41,7 +39,7 @@ class laptopController extends Controller
             'waktu_pengembalian' => 'required',
         ]);
 
-        
+
         $laptopreturn = new laptopreturn;
 
         $laptopreturn->tanggal_peminjaman = $request->tanggal;

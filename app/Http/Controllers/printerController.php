@@ -30,5 +30,5 @@ class printerController extends Controller
         return redirect()->to('/');
     }
 
-    
+
 }

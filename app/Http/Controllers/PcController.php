@@ -11,7 +11,7 @@ class PcController extends Controller
     {
         return view('computer.return-pc');
     }
-    
+
     public function computerstr(Request $request)
     {
         $request->validate([

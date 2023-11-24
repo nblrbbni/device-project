@@ -301,7 +301,7 @@ aside a:hover {
     margin-top: 50px;
 }
 
-.buttonSp input {
+.buttonSp a {
     text-decoration: none;
     color: #ffffff;
     text-align: center;
@@ -314,11 +314,10 @@ aside a:hover {
     background: linear-gradient( 180deg, #14274c 50.59%, rgba(12, 70, 148, 0.8) 100%, #0075ff 100%);
 }
 
-.buttonSp input:hover {
+.buttonSp a:hover {
     font-size: 20px;
     transition: 0.4s;
 }
-
 
 .table {
     padding: 50px;
@@ -348,9 +347,9 @@ aside a:hover {
     height: 251px;
     flex-shrink: 0;
     border-radius: 11px;
-    border: 3px solid #14274C;
-    background: #FFF;
-    box-shadow: 0px 4px 22px 0px rgba(0, 0, 0, 0.25);
+    border: 3px solid #14274c;
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .interGrid {
@@ -443,4 +442,103 @@ aside a:hover {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+}
+
+.cardTeam {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: -20rem;
+    margin: 0px 18rem;
+    gap: 100px;
+}
+
+.cardCol {
+    width: 425px;
+    height: 320px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    background: #fff;
+    padding: 38px;
+    box-shadow: 0px 4px 22px 0px rgba(0, 0, 0, 0.25);
+}
+
+.contentCard {
+    display: flex;
+    font-family: "poppins";
+}
+
+.contentCard IMG {
+    border-radius: 50%;
+    width: 150px;
+}
+
+.contentCard p {
+    text-align: justify;
+}
+
+.descCardTeam h1 {
+    color: #14274c;
+    font-family: "Poppins";
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-weight: 800;
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+.descCardTeam p {
+    color: #cecece;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-left: 20px;
+    margin-top: -15px;
+}
+
+.descCardTeam .iconCard .fa {
+    padding-top: 5px;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 15px;
+    margin-left: 5px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.team {
+    margin-left: 50px;
+}
+
+.teamTitle {
+    margin-left: 15rem;
+}
+
+.fa:hover {
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+.fa-whatsapp {
+    background: #14274C;
+    color: white;
+}
+
+.fa-instagram {
+    background: #14274C;
+    color: white;
+}
+
+.fa-github {
+    background: #14274C;
+    color: white;
 }

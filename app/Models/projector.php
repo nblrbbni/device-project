@@ -16,6 +16,6 @@ class projector extends Model
         'kondisi_projector',
         'kondisi_kabel_power',
         'kondisi_remote',
-        'waktu_pengembalian',   
+        'waktu_pengembalian',
     ];
 }

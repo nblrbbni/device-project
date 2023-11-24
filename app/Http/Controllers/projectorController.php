@@ -22,8 +22,8 @@ class projectorController extends Controller
             'kondisi_kabel_power' => 'required',
             'kondisi_remote' => 'required',
             'waktu_pengembalian' => 'required',
-        ]); 
-        
+        ]);
+
         $projector = new projector;
         $projector->tanggal_peminjaman = $request->tanggal_peminjaman;
         $projector->nama = $request->nama;

@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @stack('styles')
     <link href="{{ asset('dist/css/tabler.min.css') }}" rel="stylesheet">
-    {{-- <link href="{{ asset('dist/css/tabler-flags.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('dist/css/tabler-flags.min.css') }}" rel="stylesheet">
     <link href="{{ asset('dist/css/tabler-payments.min.css') }}" rel="stylesheet">
     <link href="{{ asset('dist/css/tabler-vendors.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('dist/css/demo.min.css') }}" rel="stylesheet"> --}}
+    <link href="{{ asset('dist/css/demo.min.css') }}" rel="stylesheet">
     @stack('styles-2')
 
     {{-- Another CSS --}}
@@ -38,6 +38,31 @@
     <script src="{{ asset('dist/js/tabler.min.js') }}" defer></script>
     <script src="{{ asset('dist/js/demo.min.js') }}" defer></script>
 </body>
+
+<script>
+    $('.delete').click( function(){
+        var siswaid = $(this).attr('data-id');
+        var studentname = $(this).attr('data-name');
+
+        swal({
+            title: "Are you sure?",
+            text: "You will delete data with the name "+studentname+" ",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+            })
+            .then((willDelete) => {
+            if (willDelete) {
+                window.location = "/student/"+siswaid+"/delete"
+                swal("Student data successfully deleted!", {
+                icon: "success",
+                });
+            } else {
+                swal("Ok! The data was not deleted!");
+            }
+        });
+    });
+</script>
 
 </html>
 

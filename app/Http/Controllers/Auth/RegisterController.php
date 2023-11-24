@@ -77,7 +77,7 @@ class RegisterController extends Controller
             'class' => $data['class'],
             'user_id' => $user->id,
         ]);
-        
+
         return $user;
     }
 }

@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('judul')
-    Information
+Information
 @endsection
 
 @push('styles')

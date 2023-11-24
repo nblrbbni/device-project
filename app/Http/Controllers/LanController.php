@@ -20,8 +20,8 @@ class LanController extends Controller
             'nomor_LAN' => 'required',
             'kondisi_LAN' => 'required',
             'waktu_pengembalian' => 'required',
-        ]);  
-        
+        ]);
+
         $lan = new lan;
         $lan->tanggal_peminjaman = $request->tanggal_peminjaman;
         $lan->nama = $request->nama;

@@ -2,7 +2,7 @@
 
 @section('content-2')
     <div class="balik">
-        <a href="/electronic" class="next round" style="text-decoration: none;">
+        <a href="/returndevice" class="next round" style="text-decoration: none;">
         < </a>
     </div>
 

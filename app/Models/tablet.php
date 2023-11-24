@@ -20,3 +20,4 @@ class tablet extends Model
         'waktu_pengembalian',
     ];
 }
+

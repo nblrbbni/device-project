@@ -11,7 +11,7 @@ class cameraController extends Controller
     {
         return view('camera.return-camera');
     }
-    
+
     public function camerastr(Request $request)
     {
         $request->validate([
@@ -21,7 +21,7 @@ class cameraController extends Controller
             'kondisi_tempat_kamera' => 'required',
             'kelengkapan_atribut' => 'required',
             'waktu_pengembalian' => 'required',
-        ]);  
+        ]);
 
         $camera = new camera;
         $camera->tanggal_peminjaman = $request->tanggal_peminjaman;

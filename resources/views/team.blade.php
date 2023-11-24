@@ -6,7 +6,7 @@
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('style/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('style/team.css') }}">
+    <link rel="stylesheet" href="{{ asset('style/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('js/java.js') }}">
 @endpush
 
@@ -35,7 +35,7 @@
                 </div>
                 <br>
                 <div class="contentCard">
-                   <p>Bintang, our frontend developer and team leader, successfully completed our project through his outstanding leadership skills.</p>
+                   <p id="bintang">Bintang, our frontend developer and team leader, successfully completed our project through his outstanding leadership skills.</p>
                 </div>
             </div>
             <div class="cardCol">
@@ -55,7 +55,7 @@
                 </div>
                 <br>
                 <div class="contentCard">
-                   <p>Nabil, our smiling backend developer, conceals the stress that comes with the job. Just kidding — he handles it like a pro!</p>
+                   <p id="nabil">Nabil, our smiling backend developer, conceals the stress that comes with the job. Just kidding — he handles it like a pro!</p>
                 </div>
             </div>
             <div class="cardCol">
@@ -75,11 +75,9 @@
                 </div>
                 <br>
                 <div class="contentCard">
-                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolorum odit totam aut a omnis itaque, magni ullam fuga ratione.</p>
+                   <p id="firman">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolorum odit totam aut a omnis itaque, magni ullam fuga ratione.</p>
                 </div>
             </div>
-        </div><br><br><br><br>
-        <div class="cardTeam">
             <div class="cardCol">
                 <div class="contentCard">
                     <div class="img">
@@ -97,27 +95,28 @@
                 </div>
                 <br>
                 <div class="contentCard">
-                   <p>Ilham, our UI designer, is the creative mind behind the web design you see today, meticulously aligning it with his design responsibilities.</p>
+                   <p id="ilham">Ilham, our UI designer, is the creative mind behind the web design you see today, meticulously aligning it with his design.</p>
                 </div>
             </div>
             <div class="cardCol">
                 <div class="contentCard">
-                    <div class="img">
-                        <img src="{{ asset('asset/picture/person.jpg') }}" alt="Avatar" >
+                    <div class="img-syahru">
+                        <img src="{{ asset('asset/picture/ilham.png') }}" alt="Avatar" >
                     </div>
                     <div class="descCardTeam">
-                        <h1>M Syahru R</h1>
+                        <h1 class="syahru">M Syahru</h1>
+                        <h1 class="r">Ramadhan</h1>
                         <p>Frontend 2</p>
                         <div class="iconCard">
-                            <a href="#" target="_blank" class="fa fa-instagram" style="margin-left: 20px"></a>
+                            <a href="https://www.instagram.com/ilham_alfynsh/" target="_blank" class="fa fa-instagram" style="margin-left: 20px"></a>
                             <a href="#" target="_blank" class="fa fa-whatsapp"></a>
-                            <a href="https://github.com/syhruuu" target="_blank" class="fa fa-github"></a>
+                            <a href="#" target="_blank" class="fa fa-github"></a>
                         </div>
                     </div>
                 </div>
                 <br>
                 <div class="contentCard">
-                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolorum odit totam aut a omnis itaque, magni ullam fuga ratione.</p>
+                   <p id="ilham">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolorum odit totam aut a omnis itaque, magni ullam fuga ratione.</p>
                 </div>
             </div>
             <div class="cardCol">
@@ -129,18 +128,18 @@
                         <h1>Vincent Rahadian U</h1>
                         <p>Backend 2</p>
                         <div class="iconCard">
-                            <a href="https://www.instagram.com/vncnt_ru/" target="_blank" class="fa fa-instagram" style="margin-left: 20px"></a>
+                            <a href="https://www.instagram.com/ilham_alfynsh/" target="_blank" class="fa fa-instagram" style="margin-left: 20px"></a>
                             <a href="#" target="_blank" class="fa fa-whatsapp"></a>
-                            <a href="https://github.com/vincentrahadianutama" target="_blank" class="fa fa-github"></a>
+                            <a href="#" target="_blank" class="fa fa-github"></a>
                         </div>
                     </div>
                 </div>
                 <br>
                 <div class="contentCard">
-                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolorum odit totam aut a omnis itaque, magni ullam fuga ratione.</p>
+                   <p id="ilham">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolorum odit totam aut a omnis itaque, magni ullam fuga ratione.</p>
                 </div>
             </div>
-        </div>
+        </div><br><br>
     </div>
 @endsection
 

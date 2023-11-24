@@ -13,7 +13,6 @@ class tabletController extends Controller
         return view('tablet.return-tablet');
     }
 
-
     public function tabletstr(Request $request)
     {
         $request->validate([
@@ -34,5 +33,5 @@ class tabletController extends Controller
     $tablet->save();
     return redirect()->to('/');
     }
-    
+
 }

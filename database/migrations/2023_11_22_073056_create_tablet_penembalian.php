@@ -11,15 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('siswa', function (Blueprint $table) {
+        Schema::create('tablet_penembalian', function (Blueprint $table) {
             $table->id();
+            $table->date("tanggal_peminjaman");
             $table->string("nama");
-            $table->unsignedBigInteger('kelas_id');
-            $table->foreign("kelas_id")->references("id")->on("kelas");
+            $table->string("kondisi_tablet");
+            $table->string("kondisi_baterai");
+            $table->string("kondisi_charger");
+            $table->time("waktu_pengembalian");
             $table->timestamps();
+
         });
-
-
     }
 
     /**
@@ -27,7 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-
-        Schema::dropIfExists('siswa');
+        Schema::dropIfExists('tablet_penembalian');
     }
 };

@@ -9,7 +9,7 @@ class flashdisk extends Model
 {
     use HasFactory;
     protected $table = 'flasdisk_penembalian';
-    protected $fillable = 
+    protected $fillable =
     [
         'tanggal_peminjaman',
         'nama',
@@ -18,3 +18,4 @@ class flashdisk extends Model
         'waktu_pengembalian',
     ];
 }
+

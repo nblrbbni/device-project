@@ -9,7 +9,7 @@ class lan extends Model
 {
     use HasFactory;
     protected $table = 'lan_penembalian';
-    protected $fillable = 
+    protected $fillable =
     [
         'tanggal_peminjaman',
         'nama',

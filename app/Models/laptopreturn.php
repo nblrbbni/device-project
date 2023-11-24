@@ -16,6 +16,6 @@ class laptopreturn extends Model
         'kondisi_mouse',
         'kondisi_laptop',
         'kondisi_keybohard',
-        'waktu_pengembalian',   
+        'waktu_pengembalian',
     ];
 }
