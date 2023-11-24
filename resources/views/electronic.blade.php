@@ -66,7 +66,7 @@ Electronic
       <p>Handphone</p>
     </div>
     <div class="link">
-      <a href="SP-handphone.html">Pilih</a>
+      <a href="/select-handphone">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>

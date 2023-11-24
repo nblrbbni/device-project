@@ -8,6 +8,7 @@ use App\Models\pinjamEarphone;
 use App\Models\pinjamProjector;
 use App\Models\pinjamTablet;
 use App\Models\pinjamCamera;
+use App\Models\pinjamHandphone;
 
 use Illuminate\Http\Request;
 
@@ -158,33 +159,34 @@ class pinjamController extends Controller
         return redirect()->to('/');
     }
 
-    // // Handphone
-    // public function handphone()
-    // {
-    //     return view('handphone.sp-handphone');
-    // }
+    // Handphone
+    public function handphone()
+    {
+        return view('handphone.sp-handphone');
+    }
 
-    // public function handphonestr(Request $request)
-    // {
-    //     $request->validate([
-    //         'tanggal_peminjaman' => 'required',
-    //         'nama' => 'required',
-    //         'mata_pelajaran' => 'required',
-    //         'nomor_handphone' => 'required',
-    //         'mentoring_mapel' => 'required',
-    //         'waktu_pengembalian' => 'required',
-    //     ]);
+    public function handphonestr(Request $request)
+    {
+        $request->validate([
+            'tanggal_peminjaman' => 'required',
+            'nama' => 'required',
+            'mata_pelajaran' => 'required',
+            'nomor_handphone' => 'required',
+            'mentoring_mapel' => 'required',
+            'waktu_peminjaman' => 'required',
+        ]);
 
-    //     $pinjamHandphone = new pinjamHandphone();
-    //     $pinjamHandphone->tanggal_peminjaman = $request->tanggal_peminjaman;
-    //     $pinjamHandphone->nama = $request->nama;
-    //     $pinjamHandphone->mata_pelajaran = $request->mata_pelajaran;
-    //     $pinjamHandphone->nomor_handphone = $request->nomor_handphone;
-    //     $pinjamHandphone->mentoring_mapel = $request->mentoring_mapel;
-    //     $pinjamHandphone->waktu_pengembalian = $request->waktu_pengembalian;
-    //     $pinjamHandphone->save();
-    //     return redirect()->to('/');
-    // }
+        $pinjamHandphone = new pinjamHandphone();
+        $pinjamHandphone->tanggal_peminjaman = $request->tanggal_peminjaman;
+        $pinjamHandphone->nama = $request->nama;
+        $pinjamHandphone->mata_pelajaran = $request->mata_pelajaran;
+        $pinjamHandphone->nomor_handphone = $request->nomor_handphone;
+        $pinjamHandphone->mentoring_mapel = $request->mentoring_mapel;
+        $pinjamHandphone->waktu_peminjaman = $request->waktu_peminjaman;
+        $pinjamHandphone->save();
+        Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
+        return redirect()->to('/');
+    }
 
     // // Komputer/PC
     // public function komputer()

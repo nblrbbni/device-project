@@ -135,5 +135,8 @@ Route::post('/select-tablet/store', [pinjamController::class, 'tabletstr']);
 //pinjam-camera
 Route::get('/select-camera', [pinjamController::class, 'camera']);
 Route::post('/select-camera/store', [pinjamController::class, 'camerastr']);
+//pinjam-handphone
+Route::get('/select-handphone', [pinjamController::class, 'handphone']);
+Route::post('/select-handphone/store', [pinjamController::class, 'handphonestr']);
 
 Auth::routes();
