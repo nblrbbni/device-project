@@ -124,9 +124,6 @@ Route::post('/return-hardisk/store', [hardiskController::class, 'hardiskstr']);
 Route::get('/electronic', function () {
     return view('electronic');
 });
-Route::get('/sp-electronic', function () {
-    return view('sp-electronic');
-});
 // pinjam-laptop
 Route::get('/sp-laptop', [pinjamController::class, 'laptop']);
 Route::post('/sp-laptop/store', [pinjamController::class, 'laptopstr']);

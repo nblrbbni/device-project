@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\pinjamLan;
 use App\Models\pinjamHdmi;
 use App\Models\pinjamCamera;
@@ -43,6 +44,7 @@ class pinjamController extends Controller
         $pinjamLaptop->mentoring_mapel = $request->mentoring_mapel;
         $pinjamLaptop->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamLaptop->save();
+        Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
     }
 

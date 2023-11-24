@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string("mata_pelajaran");
             $table->integer("nomor_laptop");
             $table->string("mentoring_mapel");
-            $table->time("waktu_pengembalian");
+            $table->time("waktu_peminjaman");
 
         });
     }

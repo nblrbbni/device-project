@@ -16,7 +16,7 @@ class pinjamLaptop extends Model
         'mata_pelajaran',
         'nomor_laptop',
         'mentoring_mapel',
-        'waktu_pengembalian',
+        'waktu_peminjaman',
     ];
 
 }
