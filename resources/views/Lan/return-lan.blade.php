@@ -44,10 +44,10 @@
                         <input type="text" name="nama" value="{{ Auth::user()->name }}" readonly>
                     </td>
                     <td>
-                        <input type="number" name="nomor_LAN"/>
+                        <input type="number" name="nomor_LAN" required>
                     </td>
                     <td>
-                        <input type="text" name="kondisi_LAN"/>
+                        <input type="text" name="kondisi_LAN" required>
                     </td>
                     <td>
                         <input type="time" name="waktu_pengembalian" id="currentTime" readonly>

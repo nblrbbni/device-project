@@ -43,10 +43,10 @@
                             <input type="text" name="nama" value="{{ Auth::user()->name }}" readonly>
                         </td>
                         <td>
-                            <input type="number" name="nomor_hardisk"/>
+                            <input type="number" name="nomor_hardisk" required>
                         </td>
                         <td>
-                            <input type="text" name="kondisi_hardisk"/>
+                            <input type="text" name="kondisi_hardisk" required>
                         </td>
                         <td>
                             <input type="time" name="waktu_pengembalian" id="currentTime" readonly>

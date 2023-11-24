@@ -72,7 +72,7 @@ Electronic
   <div id='rectangle71' class='rectangle71'>
     <div class="inter">
       <img src="{{ asset('asset/picture/Gaming.png') }}" class="gambar" alt="...">
-      <p>PC</p>
+      <p>Computer</p>
     </div>
     <div class="link">
       <a href="/select-komputer">Pilih</a>

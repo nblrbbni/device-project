@@ -44,13 +44,13 @@
                             <input type="text" name="nama" value="{{ Auth::user()->name  }}" readonly>
                         </td>
                         <td>
-                            <input type="text" name="kondisi_kamera">
+                            <input type="text" name="kondisi_kamera" required>
                         </td>
                         <td>
-                            <input type="text" name="kondisi_tempat_kamera">
+                            <input type="text" name="kondisi_tempat_kamera" required>
                         </td>
                         <td>
-                            <input type="text" name="kelengkapan_atribut">
+                            <input type="text" name="kelengkapan_atribut" required>
                         </td>
                         <td>
                             <input type="time" name="waktu_pengembalian" id="currentTime" readonly>

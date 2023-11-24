@@ -25,7 +25,7 @@
         <br />
         <br />
         <div class="table text-center">
-            <table class="table" id="return" id="return">
+            <table class="table" id="return">
                 <thead>
                     <tr>
                         <th scope="col">Tanggal Peminjaman</th>
@@ -45,13 +45,13 @@
                             <input type="text" name="nama" value="{{ Auth::user()->name }}" readonly>
                         </td>
                         <td>
-                            <input type="text" name="kondisi_mouse"/>
+                            <input type="text" name="kondisi_mouse" required>
                         </td>
                         <td>
-                            <input type="text" name="kondisi_pc"/>
+                            <input type="text" name="kondisi_pc" required>
                         </td>
                         <td>
-                            <input type="text" name="kondisi_keybohard"/>
+                            <input type="text" name="kondisi_keybohard" required>
                         </td>
                         <td>
                             <input type="time" name="waktu_pengembalian" id="currentTime" readonly>

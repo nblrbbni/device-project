@@ -18,7 +18,7 @@
         </div>
         <div class="col-md-4">
             <div class='single'>
-            <img src="{{ asset('asset/picture/handphone.png') }}" class="gambar" alt="...">
+            <img src="{{ asset('asset/picture/Smartphone.png') }}" class="gambar" alt="...">
             <p>HandPhone</p>
             </div>
         </div>
@@ -27,7 +27,7 @@
     <br>
     <br>
     <div class="table text-center">
-        <table class="table">
+        <table class="table" id="return">
         <thead>
             <tr>
             <th scope="col">Tanggal Peminjaman</th>

@@ -44,10 +44,10 @@
                             <input type="text" name="nama" value="{{ Auth::user()->name }}" readonly>
                         </td>
                         <td>
-                            <input type="number" name="nomor_HDMI"/>
+                            <input type="number" name="nomor_HDMI" required>
                         </td>
                         <td>
-                            <input type="text" name="kondisi_HDMI"/>
+                            <input type="text" name="kondisi_HDMI" required>
                         </td>
                         <td>
                             <input type="time" name="waktu_pengembalian" id="currentTime" readonly>
