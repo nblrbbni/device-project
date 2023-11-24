@@ -15,6 +15,7 @@ use App\Http\Controllers\hdmiController;
 use App\Http\Controllers\projectorController;
 use App\Http\Controllers\hardiskController;
 use App\Http\Controllers\informationController;
+use App\Http\Controllers\pinjamController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,63 +42,6 @@ Route::get('/team', function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/electronic', function () {
-        return view('electronic');
-    });
-
-    Route::get('/sp-electronic', function () {
-        return view('sp-electronic');
-    });
-
-    //Laptop
-    Route::get('/sp-laptop', function () {
-        return view('laptop.sp-laptop');
-    });
-
-    Route::get('/return-laptop', function() {
-        return view('laptop.return-laptop');
-    });
-
-    //Flashdisk
-    Route::get('/sp-flashdisk', function () {
-        return view('flashdisk.sp-flashdisk');
-    });
-
-    //Projector
-    Route::get('/sp-projector', function () {
-        return view('projector.sp-projector');
-    });
-
-    //Printer
-    Route::get('/sp-printer', function () {
-        return view('printer.sp-printer');
-    });
-
-    //Handphone
-    Route::get('/sp-handphone', function () {
-        return view('handphone.sp-handphone');
-    });
-
-    //Tablet
-    Route::get('/sp-tablet', function () {
-        return view('tablet.sp-tablet');
-    });
-
-    //Headphone
-    Route::get('/sp-headset', function () {
-        return view('headphone.sp-headphone');
-    });
-
-    //HDMI
-    Route::get('/sp-hdmi', function () {
-        return view('hdmi.sp-hdmi');
-    });
-
-    //Camera
-    Route::get('/sp-camera', function () {
-        return view('camera.sp-camera');
-    });
-
     Route::get('user/profile', [UserController::class, 'edit'])->name('user.edit-profile');
     Route::put('user/profile', [UserController::class, 'update'])->name('user.update-profile');
 
@@ -176,5 +120,15 @@ Route::post('/return-projector/store', [projectorController::class, 'projectorst
 // return-hardisk
 Route::get('/return-hardisk', [hardiskController::class, 'hardisk']);
 Route::post('/return-hardisk/store', [hardiskController::class, 'hardiskstr']);
+
+Route::get('/electronic', function () {
+    return view('electronic');
+});
+Route::get('/sp-electronic', function () {
+    return view('sp-electronic');
+});
+// pinjam-laptop
+Route::get('/sp-laptop', [pinjamController::class, 'laptop']);
+Route::post('/sp-laptop/store', [pinjamController::class, 'laptopstr']);
 
 Auth::routes();
