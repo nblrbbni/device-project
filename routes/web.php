@@ -153,5 +153,8 @@ Route::post('/select-printer/store', [pinjamController::class, 'printerstr']);
 //pinjam-lan
 Route::get('/select-lan', [pinjamController::class, 'lan']);
 Route::post('/select-lan/store', [pinjamController::class, 'lanstr']);
+//pinjam-hdmi
+Route::get('/select-hdmi', [pinjamController::class, 'hdmi']);
+Route::post('/select-hdmi/store', [pinjamController::class, 'hdmistr']);
 
 Auth::routes();

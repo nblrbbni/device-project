@@ -120,7 +120,7 @@ Electronic
       <p>HDMI</p>
     </div>
     <div class="link">
-      <a href="SP-hdmi.html">Pilih</a>
+      <a href="/select-hdmi">Pilih</a>
     </div>
   </div>
 </div>
