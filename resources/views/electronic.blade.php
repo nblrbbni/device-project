@@ -111,7 +111,7 @@ Electronic
       <p>LAN</p>
     </div>
     <div class="link">
-      <a href="SP-kabelRoll.html">Pilih</a>
+      <a href="/select-lan">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>

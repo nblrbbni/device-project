@@ -150,5 +150,8 @@ Route::post('/select-hardisk/store', [pinjamController::class, 'hardiskstr']);
 //pinjam-printer
 Route::get('/select-printer', [pinjamController::class, 'printer']);
 Route::post('/select-printer/store', [pinjamController::class, 'printerstr']);
+//pinjam-lan
+Route::get('/select-lan', [pinjamController::class, 'lan']);
+Route::post('/select-lan/store', [pinjamController::class, 'lanstr']);
 
 Auth::routes();

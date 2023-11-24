@@ -13,6 +13,7 @@ use App\Models\pinjamKomputer;
 use App\Models\pinjamFlashdisk;
 use App\Models\pinjamHardisk;
 use App\Models\pinjamPrinter;
+use App\Models\pinjamLan;
 
 use Illuminate\Http\Request;
 
@@ -337,31 +338,32 @@ class pinjamController extends Controller
     //     return redirect()->to('/');
     // }
 
-    // // LAN
-    // public function lan()
-    // {
-    //     return view('lan.sp-lan');
-    // }
+    // LAN
+    public function lan()
+    {
+        return view('lan.sp-lan');
+    }
 
-    // public function lanstr(Request $request)
-    // {
-    //     $request->validate([
-    //         'tanggal_peminjaman' => 'required',
-    //         'nama' => 'required',
-    //         'mata_pelajaran' => 'required',
-    //         'nomor_lan' => 'required',
-    //         'mentoring_mapel' => 'required',
-    //         'waktu_peminjaman' => 'required',
-    //     ]);
+    public function lanstr(Request $request)
+    {
+        $request->validate([
+            'tanggal_peminjaman' => 'required',
+            'nama' => 'required',
+            'mata_pelajaran' => 'required',
+            'nomor_lan' => 'required',
+            'mentoring_mapel' => 'required',
+            'waktu_peminjaman' => 'required',
+        ]);
 
-    //     $pinjamLan = new pinjamLan();
-    //     $pinjamLan->tanggal_peminjaman = $request->tanggal_peminjaman;
-    //     $pinjamLan->nama = $request->nama;
-    //     $pinjamLan->mata_pelajaran = $request->mata_pelajaran;
-    //     $pinjamLan->nomor_lan = $request->nomor_lan;
-    //     $pinjamLan->mentoring_mapel = $request->mentoring_mapel;
-    //     $pinjamLan->waktu_peminjaman = $request->waktu_peminjaman;
-    //     $pinjamLan->save();
-    //     return redirect()->to('/');
-    // }
+        $pinjamLan = new pinjamLan();
+        $pinjamLan->tanggal_peminjaman = $request->tanggal_peminjaman;
+        $pinjamLan->nama = $request->nama;
+        $pinjamLan->mata_pelajaran = $request->mata_pelajaran;
+        $pinjamLan->nomor_lan = $request->nomor_lan;
+        $pinjamLan->mentoring_mapel = $request->mentoring_mapel;
+        $pinjamLan->waktu_peminjaman = $request->waktu_peminjaman;
+        $pinjamLan->save();
+        Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
+        return redirect()->to('/');
+    }
 }
