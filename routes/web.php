@@ -33,10 +33,6 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::get('/information', function () {
-    return view('information');
-});
-
 Route::get('/team', function () {
     return view('team');
 });
@@ -72,7 +68,6 @@ Route::post('/information', [informationController::class, 'store']);
 //menampilkan semua data
 Route::get('/information', [informationController::class, 'index']);
 Route::get('/information/{information_id}', [informationController::class, 'show']);
-
 //update
 // form update
 Route::get('/information/{information_id}/edit', [informationController::class, 'edit']);
@@ -121,11 +116,15 @@ Route::post('/return-projector/store', [projectorController::class, 'projectorst
 Route::get('/return-hardisk', [hardiskController::class, 'hardisk']);
 Route::post('/return-hardisk/store', [hardiskController::class, 'hardiskstr']);
 
+//Borrow Electronic
 Route::get('/electronic', function () {
     return view('electronic');
 });
 // pinjam-laptop
 Route::get('/select-laptop', [pinjamController::class, 'laptop']);
 Route::post('/select-laptop/store', [pinjamController::class, 'laptopstr']);
+//pinjam-earphone
+Route::get('/select-headphone', [pinjamController::class, 'headset']);
+Route::post('/select-headphone/store', [pinjamController::class, 'headsetstr']);
 
 Auth::routes();

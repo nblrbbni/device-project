@@ -3,19 +3,10 @@
 namespace App\Http\Controllers;
 
 use RealRashid\SweetAlert\Facades\Alert;
-use App\Models\pinjamLan;
-use App\Models\pinjamHdmi;
-use App\Models\pinjamCamera;
 use App\Models\pinjamLaptop;
-use App\Models\pinjamTablet;
-use Illuminate\Http\Request;
-use App\Models\pinjamHardisk;
-use App\Models\pinjamPrinter;
 use App\Models\pinjamEarphone;
-use App\Models\pinjamKomputer;
-use App\Models\pinjamFlashdisk;
-use App\Models\pinjamHandphone;
-use App\Models\pinjamProjector;
+
+use Illuminate\Http\Request;
 
 class pinjamController extends Controller
 {
@@ -49,32 +40,33 @@ class pinjamController extends Controller
     }
 
     // Earphone
-    // public function headset()
-    // {
-    //     return view('headphone.sp-headphone');
-    // }
+    public function headset()
+    {
+        return view('headphone.sp-headphone');
+    }
 
-    // public function headsetstr(Request $request)
-    // {
-    //     $request->validate([
-    //         'tanggal_peminjaman' => 'required',
-    //         'nama' => 'required',
-    //         'mata_pelajaran' => 'required',
-    //         'nomor_earphone' => 'required',
-    //         'mentoring_mapel' => 'required',
-    //         'waktu_pengembalian' => 'required',
-    //     ]);
+    public function headsetstr(Request $request)
+    {
+        $request->validate([
+            'tanggal_peminjaman' => 'required',
+            'nama' => 'required',
+            'mata_pelajaran' => 'required',
+            'nomor_earphone' => 'required',
+            'mentoring_mapel' => 'required',
+            'waktu_peminjaman' => 'required',
+        ]);
 
-    //     $pinjamEarphone = new pinjamEarphone();
-    //     $pinjamEarphone->tanggal_peminjaman = $request->tanggal_peminjaman;
-    //     $pinjamEarphone->nama = $request->nama;
-    //     $pinjamEarphone->mata_pelajaran = $request->mata_pelajaran;
-    //     $pinjamEarphone->nomor_earphone = $request->nomor_earphone;
-    //     $pinjamEarphone->mentoring_mapel = $request->mentoring_mapel;
-    //     $pinjamEarphone->waktu_pengembalian = $request->waktu_pengembalian;
-    //     $pinjamEarphone->save();
-    //     return redirect()->to('/');
-    // }
+        $pinjamEarphone = new pinjamEarphone();
+        $pinjamEarphone->tanggal_peminjaman = $request->tanggal_peminjaman;
+        $pinjamEarphone->nama = $request->nama;
+        $pinjamEarphone->mata_pelajaran = $request->mata_pelajaran;
+        $pinjamEarphone->nomor_earphone = $request->nomor_earphone;
+        $pinjamEarphone->mentoring_mapel = $request->mentoring_mapel;
+        $pinjamEarphone->waktu_peminjaman = $request->waktu_peminjaman;
+        $pinjamEarphone->save();
+        Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
+        return redirect()->to('/');
+    }
 
     // // Projector
     // public function projector()

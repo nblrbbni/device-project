@@ -30,7 +30,7 @@ Electronic
       <p>Headphone</p>
     </div>
     <div class="link">
-      <a href="SP-headset.html">Pilih</a>
+      <a href="/select-headphone">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
