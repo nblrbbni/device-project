@@ -12,6 +12,7 @@ use App\Models\pinjamHandphone;
 use App\Models\pinjamKomputer;
 use App\Models\pinjamFlashdisk;
 use App\Models\pinjamHardisk;
+use App\Models\pinjamPrinter;
 
 use Illuminate\Http\Request;
 
@@ -279,33 +280,34 @@ class pinjamController extends Controller
         return redirect()->to('/');
     }
 
-    // // Printer
-    // public function printer()
-    // {
-    //     return view('printer.sp-printer');
-    // }
+    // Printer
+    public function printer()
+    {
+        return view('printer.sp-printer');
+    }
 
-    // public function printerstr(Request $request)
-    // {
-    //     $request->validate([
-    //         'tanggal_peminjaman' => 'required',
-    //         'nama' => 'required',
-    //         'mata_pelajaran' => 'required',
-    //         'nomor_printer' => 'required',
-    //         'mentoring_mapel' => 'required',
-    //         'waktu_peminjaman' => 'required',
-    //     ]);
+    public function printerstr(Request $request)
+    {
+        $request->validate([
+            'tanggal_peminjaman' => 'required',
+            'nama' => 'required',
+            'mata_pelajaran' => 'required',
+            'nomor_printer' => 'required',
+            'mentoring_mapel' => 'required',
+            'waktu_peminjaman' => 'required',
+        ]);
 
-    //     $pinjamPrinter = new pinjamPrinter();
-    //     $pinjamPrinter->tanggal_peminjaman = $request->tanggal_peminjaman;
-    //     $pinjamPrinter->nama = $request->nama;
-    //     $pinjamPrinter->mata_pelajaran = $request->mata_pelajaran;
-    //     $pinjamPrinter->nomor_printer = $request->nomor_printer;
-    //     $pinjamPrinter->mentoring_mapel = $request->mentoring_mapel;
-    //     $pinjamPrinter->waktu_peminjaman = $request->waktu_peminjaman;
-    //     $pinjamPrinter->save();
-    //     return redirect()->to('/');
-    // }
+        $pinjamPrinter = new pinjamPrinter();
+        $pinjamPrinter->tanggal_peminjaman = $request->tanggal_peminjaman;
+        $pinjamPrinter->nama = $request->nama;
+        $pinjamPrinter->mata_pelajaran = $request->mata_pelajaran;
+        $pinjamPrinter->nomor_printer = $request->nomor_printer;
+        $pinjamPrinter->mentoring_mapel = $request->mentoring_mapel;
+        $pinjamPrinter->waktu_peminjaman = $request->waktu_peminjaman;
+        $pinjamPrinter->save();
+        Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
+        return redirect()->to('/');
+    }
 
     // // HDMI
     // public function hdmi()

@@ -102,7 +102,7 @@ Electronic
       <p>Printer</p>
     </div>
     <div class="link">
-      <a href="Sp-printer.html">Pilih</a>
+      <a href="/select-printer">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
