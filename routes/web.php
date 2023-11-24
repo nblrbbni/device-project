@@ -129,7 +129,11 @@ Route::post('/select-headphone/store', [pinjamController::class, 'headsetstr']);
 //pinjam-projector
 Route::get('/select-projector', [pinjamController::class, 'projector']);
 Route::post('/select-projector/store', [pinjamController::class, 'projectorstr']);
+//pinjam-tablet
 Route::get('/select-tablet', [pinjamController::class, 'tablet']);
 Route::post('/select-tablet/store', [pinjamController::class, 'tabletstr']);
+//pinjam-camera
+Route::get('/select-camera', [pinjamController::class, 'camera']);
+Route::post('/select-camera/store', [pinjamController::class, 'camerastr']);
 
 Auth::routes();

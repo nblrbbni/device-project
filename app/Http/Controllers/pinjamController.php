@@ -7,6 +7,7 @@ use App\Models\pinjamLaptop;
 use App\Models\pinjamEarphone;
 use App\Models\pinjamProjector;
 use App\Models\pinjamTablet;
+use App\Models\pinjamCamera;
 
 use Illuminate\Http\Request;
 
@@ -128,33 +129,34 @@ class pinjamController extends Controller
         return redirect()->to('/');
     }
 
-    // // Camera
-    // public function camera()
-    // {
-    //     return view('camera.sp-camera');
-    // }
+    // Camera
+    public function camera()
+    {
+        return view('camera.sp-camera');
+    }
 
-    // public function camerastr(Request $request)
-    // {
-    //     $request->validate([
-    //         'tanggal_peminjaman' => 'required',
-    //         'nama' => 'required',
-    //         'mata_pelajaran' => 'required',
-    //         'nomor_camera' => 'required',
-    //         'mentoring_mapel' => 'required',
-    //         'waktu_pengembalian' => 'required',
-    //     ]);
+    public function camerastr(Request $request)
+    {
+        $request->validate([
+            'tanggal_peminjaman' => 'required',
+            'nama' => 'required',
+            'mata_pelajaran' => 'required',
+            'nomor_camera' => 'required',
+            'mentoring_mapel' => 'required',
+            'waktu_peminjaman' => 'required',
+        ]);
 
-    //     $pinjamCamera = new pinjamCamera();
-    //     $pinjamCamera->tanggal_peminjaman = $request->tanggal_peminjaman;
-    //     $pinjamCamera->nama = $request->nama;
-    //     $pinjamCamera->mata_pelajaran = $request->mata_pelajaran;
-    //     $pinjamCamera->nomor_camera = $request->nomor_camera;
-    //     $pinjamCamera->mentoring_mapel = $request->mentoring_mapel;
-    //     $pinjamCamera->waktu_pengembalian = $request->waktu_pengembalian;
-    //     $pinjamCamera->save();
-    //     return redirect()->to('/');
-    // }
+        $pinjamCamera = new pinjamCamera();
+        $pinjamCamera->tanggal_peminjaman = $request->tanggal_peminjaman;
+        $pinjamCamera->nama = $request->nama;
+        $pinjamCamera->mata_pelajaran = $request->mata_pelajaran;
+        $pinjamCamera->nomor_camera = $request->nomor_camera;
+        $pinjamCamera->mentoring_mapel = $request->mentoring_mapel;
+        $pinjamCamera->waktu_peminjaman = $request->waktu_peminjaman;
+        $pinjamCamera->save();
+        Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
+        return redirect()->to('/');
+    }
 
     // // Handphone
     // public function handphone()

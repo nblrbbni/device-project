@@ -57,7 +57,7 @@ Electronic
       <p>Camera</p>
     </div>
     <div class="link">
-      <a href="SP-camera.html">Pilih</a>
+      <a href="/select-camera">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
