@@ -57,23 +57,6 @@ Route::middleware(['auth'])->group(function () {
     //Delete
     Route::get('/student/{student_id}/delete', [StudentController::class, 'delete']);
 
-    //CRUD INFORMATION Admin
-    //create
-    //form information
-    Route::get('/information/create', [informationController::class, 'create']);
-    //kirim data ke database
-    Route::post('/information', [informationController::class, 'store']);
-    //Read
-    //menampilkan semua data
-    Route::get('/information', [informationController::class, 'index']);
-    Route::get('/information/{information_id}', [informationController::class, 'show']);
-    //update
-    // form update
-    Route::get('/information/{information_id}/edit', [informationController::class, 'edit']);
-    Route::put('/information/{information_id}', [informationController::class, 'update']);
-    // delete
-    Route::delete('/information/{information_id}', [informationController::class, 'destroy']);
-
     //Return Device
     Route::get('/returndevice', function () {
         return view('returndevice');
@@ -156,5 +139,22 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/select-hdmi', [pinjamController::class, 'hdmi']);
     Route::post('/select-hdmi/store', [pinjamController::class, 'hdmistr']);
 });
+
+//CRUD INFORMATION Admin
+//create
+//form information
+Route::get('/information/create', [informationController::class, 'create']);
+//kirim data ke database
+Route::post('/information', [informationController::class, 'store']);
+//Read
+//menampilkan semua data
+Route::get('/information', [informationController::class, 'index']);
+Route::get('/information/{information_id}', [informationController::class, 'show']);
+//update
+// form update
+Route::get('/information/{information_id}/edit', [informationController::class, 'edit']);
+Route::put('/information/{information_id}', [informationController::class, 'update']);
+// delete
+Route::delete('/information/{information_id}', [informationController::class, 'destroy']);
 
 Auth::routes();
