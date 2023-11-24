@@ -9,6 +9,7 @@ use App\Models\pinjamProjector;
 use App\Models\pinjamTablet;
 use App\Models\pinjamCamera;
 use App\Models\pinjamHandphone;
+use App\Models\pinjamKomputer;
 
 use Illuminate\Http\Request;
 
@@ -188,34 +189,35 @@ class pinjamController extends Controller
         return redirect()->to('/');
     }
 
-    // // Komputer/PC
-    // public function komputer()
-    // {
-    //     return view('computer.sp-komputer');
-    // }
+    // Komputer/PC
+    public function komputer()
+    {
+        return view('computer.sp-komputer');
+    }
 
-    // public function komputerstr(Request $request)
-    // {
+    public function komputerstr(Request $request)
+    {
 
-    //     $request->validate([
-    //         'tanggal_peminjaman' => 'required',
-    //         'nama' => 'required',
-    //         'mata_pelajaran' => 'required',
-    //         'nomor_komputer' => 'required',
-    //         'mentoring_mapel' => 'required',
-    //         'waktu_peminjaman' => 'required',
-    //     ]);
+        $request->validate([
+            'tanggal_peminjaman' => 'required',
+            'nama' => 'required',
+            'mata_pelajaran' => 'required',
+            'nomor_komputer' => 'required',
+            'mentoring_mapel' => 'required',
+            'waktu_peminjaman' => 'required',
+        ]);
 
-    //     $pinjamKomputer = new pinjamKomputer();
-    //     $pinjamKomputer->tanggal_peminjaman = $request->tanggal_peminjaman;
-    //     $pinjamKomputer->nama = $request->nama;
-    //     $pinjamKomputer->mata_pelajaran = $request->mata_pelajaran;
-    //     $pinjamKomputer->nomor_komputer = $request->nomor_komputer;
-    //     $pinjamKomputer->mentoring_mapel = $request->mentoring_mapel;
-    //     $pinjamKomputer->waktu_peminjaman = $request->waktu_peminjaman;
-    //     $pinjamKomputer->save();
-    //     return redirect()->to('/');
-    // }
+        $pinjamKomputer = new pinjamKomputer();
+        $pinjamKomputer->tanggal_peminjaman = $request->tanggal_peminjaman;
+        $pinjamKomputer->nama = $request->nama;
+        $pinjamKomputer->mata_pelajaran = $request->mata_pelajaran;
+        $pinjamKomputer->nomor_komputer = $request->nomor_komputer;
+        $pinjamKomputer->mentoring_mapel = $request->mentoring_mapel;
+        $pinjamKomputer->waktu_peminjaman = $request->waktu_peminjaman;
+        $pinjamKomputer->save();
+        Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
+        return redirect()->to('/');
+    }
 
     // // Flashdisk
     // public function flashdisk()
