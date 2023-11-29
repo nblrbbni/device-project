@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 
+
 class kategoriController extends Controller
 {
     public function create(){
@@ -22,6 +23,8 @@ class kategoriController extends Controller
             "nama_kategori"=>$request["nama_kategori"],
             "icon"=>$request["icon"]
         ]);
+
+
 
         return redirect("/kategori");
 

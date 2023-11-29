@@ -47,7 +47,7 @@ Halaman List Device
                     <div class="row g-2 align-items-center">
                       <div class="col">
                         <h2 class="page-title">
-                          List Peminjaman Device
+                          List Device
                         </h2>
                       </div>
                     </div>
@@ -75,14 +75,15 @@ Halaman List Device
                         <td>{{ $value->nama_perangkat }}</td>
                         <td>{{ $value->kondisi_perangkat }}</td>
                         <td>{{ $value->stok }}</td>
-                        <td>{{ $value->device_id }}</td>
+
                         <td>
 
                             <form action="/device/{{ $value->id }}" method="POST">
                             @csrf
                             @method("DELETE")
                             <a href="/device/{{ $value->id }}" class="btn btn-info btn-sm">Detail</a>
-                            <a href="/device/{{ $value->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="/device/{{ $value->id }}/edit" class="btn btn-success
+                                 btn-sm">Edit</a>
                             <input type="submit" value="delete" class="btn btn-danger btn-sm">
                         </form>
                         </td>

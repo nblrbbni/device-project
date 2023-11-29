@@ -29,7 +29,7 @@ Detail Kategori
         <div class="card">
           <div class="card-body">
             <h1>{{ $kategori->nama_kategori }}</h1>
-            <p>{{ $kategori->icon}}</p>
+            <h2>{{ $kategori->icon }}</h2>
             <a href="/kategori" class="btn btn-secondary btn-sm">Kembali</a>
           </div>
         </div>

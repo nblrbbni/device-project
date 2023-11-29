@@ -29,7 +29,7 @@ Halaman Create Kategori
       <div class="container-xl">
         <div class="card">
           <div class="card-body">
-            <form action="/kategori" method="POST">
+            <form action="/kategori" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                   <label>Nama Kategori</label>
@@ -39,8 +39,10 @@ Halaman Create Kategori
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
                 <div class="mb-3">
-                  <label >Icon</label>
-                  <input type="text" class="form-control" name="icon" >
+                  <label for="icon" class="form-label">Icon</label>
+
+                  <input type="text" class="form-control" name="icon" id="icon">
+                  
                 </div>
                 @error('icon')
                 <div class="alert alert-danger">{{ $message }}</div>

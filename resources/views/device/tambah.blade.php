@@ -39,7 +39,7 @@ Halaman Create Device
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
                 <div class="mb-3">
-                  <label >Kondisi</label>
+                  <label>Kondisi</label>
                   <input type="text" class="form-control" name="kondisi_perangkat">
                 </div>
                 @error('kondisi_perangkat')

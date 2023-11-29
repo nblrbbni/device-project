@@ -59,11 +59,12 @@ Halaman List Kategori
                 @csrf
                 @method("DELETE")
                 <a href="/kategori/{{ $value->id }}" class="btn btn-info btn-sm">Detail</a>
-                <a href="/kategori/{{ $value->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
+                <a href="/kategori/{{ $value->id }}/edit" class="btn btn-success btn-sm">Edit</a>
                 <input type="submit" value="delete" class="btn btn-danger btn-sm">
             </form>
             </td>
         </tr>
+
         @empty
         <tr>
             <td>Tidak Ada Data</td>
