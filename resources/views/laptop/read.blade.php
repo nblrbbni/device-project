@@ -1,14 +1,12 @@
 @extends('layout.master')
 
 @section('judul')
-Data Siswa
+Data Peminjaman
 @endsection
 
 @push('styles')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
-{{-- <link href="https://cdn.datatables.net/v/dt/jszip-3.10.1/dt-1.13.8/b-2.4.2/b-html5-2.4.2/b-print-2.4.2/r-2.5.0/datatables.min.css" rel="stylesheet"> --}}
-
 {{-- <link rel="stylesheet" href="{{ asset('style/style.css') }}"> --}}
 <link rel="stylesheet" href="{{ asset('js/java.js') }}">
 <link rel="stylesheet" href="{{ asset('style/responsive.css') }}">
@@ -18,14 +16,8 @@ Data Siswa
 <script defer src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script defer src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 <script defer src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
-
-{{-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
-<script defer src="https://cdn.datatables.net/v/dt/jszip-3.10.1/dt-1.13.8/b-2.4.2/b-html5-2.4.2/b-print-2.4.2/r-2.5.0/datatables.min.js"></script> --}}
-
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
-
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script defer src="{{ asset('js/scripts.js') }}"></script>
 @endpush
@@ -38,8 +30,9 @@ Data Siswa
         <div class="row g-2 align-items-center">
           <div class="col">
             <h2 class="page-title">
-              Data Siswa
+              Data Pengembalian Laptop
             </h2>
+            <br>
           </div>
         </div>
       </div>
@@ -53,26 +46,24 @@ Data Siswa
                 <thead>
                   <tr>
                     <th scope="col">#</th>
+                    <th scope="col">Tanggal Peminjaman</th>
                     <th scope="col">Nama</th>
-                    <th scope="col">Kelas</th>
-                    <th scope="col">Aksi</th>
+                    <th scope="col">Kondisi Mouse</th>
+                    <th scope="col">Kondisi Laptop</th>
+                    <th scope="col">Kondisi Keyboard</th>
+                    <th scope="col">Waktu Pengembalian</th>
                   </tr>
                 </thead>
                 <tbody>
-                    @forelse ($student as $key => $value)
+                    @forelse ($laptop_penembalian as $key => $value)
                         <tr>
                             <td>{{ $key + 1 }}</td>
-                            <td>{{ $value->name }}</td>
-                            <td>{{ $value->class }}</td>
-                            <td>
-                                <form action="/student/{{ $value->id }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <a href="/student/{{ $value->id }}/edit" class="btn" style="background-color:#14274c; color:white">Edit</a>
-                                    <a href="#" class="btn btn-danger delete" data-id="{{ $value->id }}" data-name="{{ $value->name }}">Delete</a>
-                                    {{-- <input type="submit" value="Delete" class="btn btn-danger delete" data-id="{{ $value->id }}"> --}}
-                                </form>
-                            </td>
+                            <td>{{ $value->tanggal_peminjaman }}</td>
+                            <td>{{ $value->nama }}</td>
+                            <td>{{ $value->kondisi_mouse }}</td>
+                            <td>{{ $value->kondisi_laptop }}</td>
+                            <td>{{ $value->kondisi_keybohard }}</td>
+                            <td>{{ $value->waktu_pengembalian }}</td>
                         </tr>
                         @empty
                         <tr>

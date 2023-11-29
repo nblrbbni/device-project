@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pinjam_flashdisk', function (Blueprint $table) {
+        Schema::create('peminjaman', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->date("tanggal_peminjaman");
             $table->string("nama");
             $table->string("mata_pelajaran");
-            $table->integer("nomor_flashdisk");
+            $table->string("kode_device");
             $table->string("mentoring_mapel");
             $table->time("waktu_peminjaman");
         });
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pinjam_flashdisk');
+        Schema::dropIfExists('peminjaman');
     }
 };

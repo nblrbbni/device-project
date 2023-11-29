@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\laptopreturn;
 use RealRashid\SweetAlert\Facades\Alert;
 // use Alert;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class laptopController extends Controller
@@ -56,13 +57,6 @@ class laptopController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -86,5 +80,12 @@ class laptopController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function show()
+    {
+        $laptop_penembalian = DB::table('laptop_penembalian')->get();
+
+        return view('laptop.read', ['laptop_penembalian' => $laptop_penembalian]);
     }
 }

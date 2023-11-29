@@ -69,7 +69,7 @@
                         @enderror --}}
                     </td>
                     <td>
-                        <input type="time" name="waktu_pengembalian" id="currentTime" readonly>
+                        <input type="time" name="waktu_pengembalian" id="inputTime" step="1" readonly>
                         {{-- @error('waktu_pengembalian')
                             <p class="text-sm text danger">{{ $message }}</p>
                         @enderror --}}
@@ -87,14 +87,20 @@
 
 @push('scripts')
 <script>
-var now = new Date();
+function setInputTime() {
+ let currentTime = new Date();
+ let hours = currentTime.getHours();
+ let minutes = currentTime.getMinutes();
+ let seconds = currentTime.getSeconds();
 
-// Format the time as HH:mm (hours and minutes)
-var hours = now.getHours().toString().padStart(2, '0');
-var minutes = now.getMinutes().toString().padStart(2, '0');
-var currentTime = hours + ':' + minutes;
+ let formattedTime = hours.toString().padStart(2, '0') + ':' +
+                      minutes.toString().padStart(2, '0') + ':' +
+                      seconds.toString().padStart(2, '0');
 
-// Set the value of the input field
-document.getElementById('currentTime').value = currentTime;
+ // Set the value of the input field with id "inputTime"
+ document.getElementById('inputTime').value = formattedTime;
+}
+
+setInputTime();
 </script>
 @endpush

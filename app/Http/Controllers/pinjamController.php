@@ -2,19 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\peminjaman;
+
 use RealRashid\SweetAlert\Facades\Alert;
-use App\Models\pinjamLaptop;
-use App\Models\pinjamEarphone;
-use App\Models\pinjamProjector;
-use App\Models\pinjamTablet;
-use App\Models\pinjamCamera;
-use App\Models\pinjamHandphone;
-use App\Models\pinjamKomputer;
-use App\Models\pinjamFlashdisk;
-use App\Models\pinjamHardisk;
-use App\Models\pinjamPrinter;
-use App\Models\pinjamLan;
-use App\Models\pinjamHdmi;
+
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -23,7 +15,15 @@ class pinjamController extends Controller
     // Laptop
     public function laptop()
     {
-        return view('laptop.sp-laptop');
+        $mapel = DB::table('mapel')->get();
+        $guru = DB::table('guru')->get();
+        $device = DB::table('device')->get();
+
+        return view('laptop.sp-laptop', [
+            'mapel' => $mapel,
+            'guru' => $guru,
+            'device' => $device,
+        ]);
     }
 
     public function laptopstr(Request $request)
@@ -32,16 +32,16 @@ class pinjamController extends Controller
             'tanggal_peminjaman' => 'required',
             'nama' => 'required',
             'mata_pelajaran' => 'required',
-            'nomor_laptop' => 'required',
+            'kode_device' => 'required',
             'mentoring_mapel' => 'required',
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamLaptop = new pinjamLaptop();
+        $pinjamLaptop = new peminjaman();
         $pinjamLaptop->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamLaptop->nama = $request->nama;
         $pinjamLaptop->mata_pelajaran = $request->mata_pelajaran;
-        $pinjamLaptop->nomor_laptop = $request->nomor_laptop;
+        $pinjamLaptop->kode_device = $request->kode_device;
         $pinjamLaptop->mentoring_mapel = $request->mentoring_mapel;
         $pinjamLaptop->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamLaptop->save();
@@ -52,7 +52,15 @@ class pinjamController extends Controller
     // Earphone
     public function headset()
     {
-        return view('headphone.sp-headphone');
+        $mapel = DB::table('mapel')->get();
+        $guru = DB::table('guru')->get();
+        $device = DB::table('device')->get();
+
+        return view('headphone.sp-headphone', [
+            'mapel' => $mapel,
+            'guru' => $guru,
+            'device' => $device,
+        ]);
     }
 
     public function headsetstr(Request $request)
@@ -61,16 +69,16 @@ class pinjamController extends Controller
             'tanggal_peminjaman' => 'required',
             'nama' => 'required',
             'mata_pelajaran' => 'required',
-            'nomor_earphone' => 'required',
+            'kode_device' => 'required',
             'mentoring_mapel' => 'required',
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamEarphone = new pinjamEarphone();
+        $pinjamEarphone = new peminjaman();
         $pinjamEarphone->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamEarphone->nama = $request->nama;
         $pinjamEarphone->mata_pelajaran = $request->mata_pelajaran;
-        $pinjamEarphone->nomor_earphone = $request->nomor_earphone;
+        $pinjamEarphone->kode_device = $request->kode_device;
         $pinjamEarphone->mentoring_mapel = $request->mentoring_mapel;
         $pinjamEarphone->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamEarphone->save();
@@ -81,7 +89,15 @@ class pinjamController extends Controller
     // Projector
     public function projector()
     {
-        return view('projector.sp-projector');
+        $mapel = DB::table('mapel')->get();
+        $guru = DB::table('guru')->get();
+        $device = DB::table('device')->get();
+
+        return view('projector.sp-projector', [
+            'mapel' => $mapel,
+            'guru' => $guru,
+            'device' => $device,
+        ]);
     }
 
     public function projectorstr(Request $request)
@@ -90,16 +106,16 @@ class pinjamController extends Controller
             'tanggal_peminjaman' => 'required',
             'nama' => 'required',
             'mata_pelajaran' => 'required',
-            'nomor_projector' => 'required',
+            'kode_device' => 'required',
             'mentoring_mapel' => 'required',
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamProjector = new pinjamProjector();
+        $pinjamProjector = new peminjaman();
         $pinjamProjector->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamProjector->nama = $request->nama;
         $pinjamProjector->mata_pelajaran = $request->mata_pelajaran;
-        $pinjamProjector->nomor_projector = $request->nomor_projector;
+        $pinjamProjector->kode_device = $request->kode_device;
         $pinjamProjector->mentoring_mapel = $request->mentoring_mapel;
         $pinjamProjector->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamProjector->save();
@@ -110,7 +126,15 @@ class pinjamController extends Controller
     // Tablet
     public function tablet()
     {
-        return view('tablet.sp-tablet');
+        $mapel = DB::table('mapel')->get();
+        $guru = DB::table('guru')->get();
+        $device = DB::table('device')->get();
+
+        return view('tablet.sp-tablet', [
+            'mapel' => $mapel,
+            'guru' => $guru,
+            'device' => $device,
+        ]);
     }
 
     public function tabletstr(Request $request)
@@ -119,16 +143,16 @@ class pinjamController extends Controller
             'tanggal_peminjaman' => 'required',
             'nama' => 'required',
             'mata_pelajaran' => 'required',
-            'nomor_tablet' => 'required',
+            'kode_device' => 'required',
             'mentoring_mapel' => 'required',
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamTablet = new pinjamTablet();
+        $pinjamTablet = new peminjaman();
         $pinjamTablet->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamTablet->nama = $request->nama;
         $pinjamTablet->mata_pelajaran = $request->mata_pelajaran;
-        $pinjamTablet->nomor_tablet = $request->nomor_tablet;
+        $pinjamTablet->kode_device = $request->kode_device;
         $pinjamTablet->mentoring_mapel = $request->mentoring_mapel;
         $pinjamTablet->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamTablet->save();
@@ -139,7 +163,15 @@ class pinjamController extends Controller
     // Camera
     public function camera()
     {
-        return view('camera.sp-camera');
+        $mapel = DB::table('mapel')->get();
+        $guru = DB::table('guru')->get();
+        $device = DB::table('device')->get();
+
+        return view('camera.sp-camera', [
+            'mapel' => $mapel,
+            'guru' => $guru,
+            'device' => $device,
+        ]);
     }
 
     public function camerastr(Request $request)
@@ -148,16 +180,16 @@ class pinjamController extends Controller
             'tanggal_peminjaman' => 'required',
             'nama' => 'required',
             'mata_pelajaran' => 'required',
-            'nomor_camera' => 'required',
+            'kode_device' => 'required',
             'mentoring_mapel' => 'required',
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamCamera = new pinjamCamera();
+        $pinjamCamera = new peminjaman();
         $pinjamCamera->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamCamera->nama = $request->nama;
         $pinjamCamera->mata_pelajaran = $request->mata_pelajaran;
-        $pinjamCamera->nomor_camera = $request->nomor_camera;
+        $pinjamCamera->kode_device = $request->kode_device;
         $pinjamCamera->mentoring_mapel = $request->mentoring_mapel;
         $pinjamCamera->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamCamera->save();
@@ -168,7 +200,15 @@ class pinjamController extends Controller
     // Handphone
     public function handphone()
     {
-        return view('handphone.sp-handphone');
+        $mapel = DB::table('mapel')->get();
+        $guru = DB::table('guru')->get();
+        $device = DB::table('device')->get();
+
+        return view('handphone.sp-handphone', [
+            'mapel' => $mapel,
+            'guru' => $guru,
+            'device' => $device,
+        ]);
     }
 
     public function handphonestr(Request $request)
@@ -177,16 +217,16 @@ class pinjamController extends Controller
             'tanggal_peminjaman' => 'required',
             'nama' => 'required',
             'mata_pelajaran' => 'required',
-            'nomor_handphone' => 'required',
+            'kode_device' => 'required',
             'mentoring_mapel' => 'required',
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamHandphone = new pinjamHandphone();
+        $pinjamHandphone = new peminjaman();
         $pinjamHandphone->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamHandphone->nama = $request->nama;
         $pinjamHandphone->mata_pelajaran = $request->mata_pelajaran;
-        $pinjamHandphone->nomor_handphone = $request->nomor_handphone;
+        $pinjamHandphone->kode_device = $request->kode_device;
         $pinjamHandphone->mentoring_mapel = $request->mentoring_mapel;
         $pinjamHandphone->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamHandphone->save();
@@ -197,7 +237,15 @@ class pinjamController extends Controller
     // Komputer/PC
     public function komputer()
     {
-        return view('computer.sp-komputer');
+        $mapel = DB::table('mapel')->get();
+        $guru = DB::table('guru')->get();
+        $device = DB::table('device')->get();
+
+        return view('computer.sp-komputer', [
+            'mapel' => $mapel,
+            'guru' => $guru,
+            'device' => $device,
+        ]);
     }
 
     public function komputerstr(Request $request)
@@ -207,16 +255,16 @@ class pinjamController extends Controller
             'tanggal_peminjaman' => 'required',
             'nama' => 'required',
             'mata_pelajaran' => 'required',
-            'nomor_komputer' => 'required',
+            'kode_device' => 'required',
             'mentoring_mapel' => 'required',
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamKomputer = new pinjamKomputer();
+        $pinjamKomputer = new peminjaman();
         $pinjamKomputer->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamKomputer->nama = $request->nama;
         $pinjamKomputer->mata_pelajaran = $request->mata_pelajaran;
-        $pinjamKomputer->nomor_komputer = $request->nomor_komputer;
+        $pinjamKomputer->kode_device = $request->kode_device;
         $pinjamKomputer->mentoring_mapel = $request->mentoring_mapel;
         $pinjamKomputer->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamKomputer->save();
@@ -227,7 +275,15 @@ class pinjamController extends Controller
     // Flashdisk
     public function flashdisk()
     {
-        return view('flashdisk.sp-flashdisk');
+        $mapel = DB::table('mapel')->get();
+        $guru = DB::table('guru')->get();
+        $device = DB::table('device')->get();
+
+        return view('flashdisk.sp-flashdisk', [
+            'mapel' => $mapel,
+            'guru' => $guru,
+            'device' => $device,
+        ]);
     }
 
     public function flashdiskstr(Request $request)
@@ -236,16 +292,16 @@ class pinjamController extends Controller
             'tanggal_peminjaman' => 'required',
             'nama' => 'required',
             'mata_pelajaran' => 'required',
-            'nomor_flashdisk' => 'required',
+            'kode_device' => 'required',
             'mentoring_mapel' => 'required',
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamFlashdisk = new pinjamFlashdisk();
+        $pinjamFlashdisk = new peminjaman();
         $pinjamFlashdisk->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamFlashdisk->nama = $request->nama;
         $pinjamFlashdisk->mata_pelajaran = $request->mata_pelajaran;
-        $pinjamFlashdisk->nomor_flashdisk = $request->nomor_flashdisk;
+        $pinjamFlashdisk->kode_device = $request->kode_device;
         $pinjamFlashdisk->mentoring_mapel = $request->mentoring_mapel;
         $pinjamFlashdisk->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamFlashdisk->save();
@@ -256,7 +312,16 @@ class pinjamController extends Controller
     // Hardisk
     public function hardisk()
     {
-        return view('hardisk.sp-hardisk');
+        $mapel = DB::table('mapel')->get();
+        $guru = DB::table('guru')->get();
+        $device = DB::table('device')->get();
+
+        return view('hardisk.sp-hardisk', [
+            'mapel' => $mapel,
+            'guru' => $guru,
+            'device' => $device,
+        ]);
+
     }
 
     public function hardiskstr(Request $request)
@@ -265,16 +330,16 @@ class pinjamController extends Controller
             'tanggal_peminjaman' => 'required',
             'nama' => 'required',
             'mata_pelajaran' => 'required',
-            'nomor_hardisk' => 'required',
+            'kode_device' => 'required',
             'mentoring_mapel' => 'required',
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamHardisk = new pinjamHardisk();
+        $pinjamHardisk = new peminjaman();
         $pinjamHardisk->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamHardisk->nama = $request->nama;
         $pinjamHardisk->mata_pelajaran = $request->mata_pelajaran;
-        $pinjamHardisk->nomor_hardisk = $request->nomor_hardisk;
+        $pinjamHardisk->kode_device = $request->kode_device;
         $pinjamHardisk->mentoring_mapel = $request->mentoring_mapel;
         $pinjamHardisk->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamHardisk->save();
@@ -285,7 +350,16 @@ class pinjamController extends Controller
     // Printer
     public function printer()
     {
-        return view('printer.sp-printer');
+        $mapel = DB::table('mapel')->get();
+        $guru = DB::table('guru')->get();
+        $device = DB::table('device')->get();
+
+        return view('printer.sp-printer', [
+            'mapel' => $mapel,
+            'guru' => $guru,
+            'device' => $device,
+        ]);
+
     }
 
     public function printerstr(Request $request)
@@ -294,16 +368,16 @@ class pinjamController extends Controller
             'tanggal_peminjaman' => 'required',
             'nama' => 'required',
             'mata_pelajaran' => 'required',
-            'nomor_printer' => 'required',
+            'kode_device' => 'required',
             'mentoring_mapel' => 'required',
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamPrinter = new pinjamPrinter();
+        $pinjamPrinter = new peminjaman();
         $pinjamPrinter->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamPrinter->nama = $request->nama;
         $pinjamPrinter->mata_pelajaran = $request->mata_pelajaran;
-        $pinjamPrinter->nomor_printer = $request->nomor_printer;
+        $pinjamPrinter->kode_device = $request->kode_device;
         $pinjamPrinter->mentoring_mapel = $request->mentoring_mapel;
         $pinjamPrinter->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamPrinter->save();
@@ -314,7 +388,15 @@ class pinjamController extends Controller
     // HDMI
     public function hdmi()
     {
-        return view('hdmi.sp-hdmi');
+        $mapel = DB::table('mapel')->get();
+        $guru = DB::table('guru')->get();
+        $device = DB::table('device')->get();
+
+        return view('hdmi.sp-hdmi', [
+            'mapel' => $mapel,
+            'guru' => $guru,
+            'device' => $device,
+        ]);
     }
 
     public function hdmistr(Request $request)
@@ -323,16 +405,16 @@ class pinjamController extends Controller
             'tanggal_peminjaman' => 'required',
             'nama' => 'required',
             'mata_pelajaran' => 'required',
-            'nomor_hdmi' => 'required',
+            'kode_device' => 'required',
             'mentoring_mapel' => 'required',
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamHdmi = new pinjamHdmi();
+        $pinjamHdmi = new peminjaman();
         $pinjamHdmi->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamHdmi->nama = $request->nama;
         $pinjamHdmi->mata_pelajaran = $request->mata_pelajaran;
-        $pinjamHdmi->nomor_hdmi = $request->nomor_hdmi;
+        $pinjamHdmi->kode_device = $request->kode_device;
         $pinjamHdmi->mentoring_mapel = $request->mentoring_mapel;
         $pinjamHdmi->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamHdmi->save();
@@ -343,7 +425,15 @@ class pinjamController extends Controller
     // LAN
     public function lan()
     {
-        return view('lan.sp-lan');
+        $mapel = DB::table('mapel')->get();
+        $guru = DB::table('guru')->get();
+        $device = DB::table('device')->get();
+
+        return view('lan.sp-lan', [
+            'mapel' => $mapel,
+            'guru' => $guru,
+            'device' => $device,
+        ]);
     }
 
     public function lanstr(Request $request)
@@ -352,20 +442,27 @@ class pinjamController extends Controller
             'tanggal_peminjaman' => 'required',
             'nama' => 'required',
             'mata_pelajaran' => 'required',
-            'nomor_lan' => 'required',
+            'kode_device' => 'required',
             'mentoring_mapel' => 'required',
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamLan = new pinjamLan();
+        $pinjamLan = new peminjaman();
         $pinjamLan->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamLan->nama = $request->nama;
         $pinjamLan->mata_pelajaran = $request->mata_pelajaran;
-        $pinjamLan->nomor_lan = $request->nomor_lan;
+        $pinjamLan->kode_device = $request->kode_device;
         $pinjamLan->mentoring_mapel = $request->mentoring_mapel;
         $pinjamLan->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamLan->save();
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
+    }
+
+    public function show()
+    {
+        $peminjaman = DB::table('peminjaman')->get();
+
+        return view('peminjaman.read', ['peminjaman' => $peminjaman]);
     }
 }

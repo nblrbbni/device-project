@@ -217,12 +217,13 @@
 
                 <div class="mb-3">
                     <label class="form-label">Grade</label>
-                    <select id="class" class="form-control text-muted @error('class') is-invalid @enderror" name="class" value="{{ old('class') }}" required autocomplete="class" min="10" max="12">
+                    {{-- <select id="class" class="form-control text-muted @error('class') is-invalid @enderror" name="class" value="{{ old('class') }}" autocomplete="class" min="10" max="12">
                         <option class="text-muted">-- Please choose your grade --</option>
                         <option value="12" class="text-dark">12</option>
                         <option value="11" class="text-dark">11</option>
                         <option value="10" class="text-dark">10</option>
-                    </select>
+                    </select> --}}
+                    <input type="number" name="class" id="" class="form-control text-dark @error('class') is-invalid @enderror" value="{{ old('class') }}" required autocomplete="email" placeholder="Your grade (10-12)" min="10" max="12">
                 </div>
                 @error('class')
                     <span class="invalid-feedback" role="alert" style="color: red">
@@ -232,7 +233,7 @@
 
                 <div class="mb-3">
                     <label class="form-label">Email address</label>
-                    <input id="email" type="email" class="form-control text-dark @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="your@email.com">
+                    <input id="email" type="email" class="form-control text-dark @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="your@example.com">
                 </div>
                 @error('email')
                     <span class="invalid-feedback" role="alert" style="color: red">

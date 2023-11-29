@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\GuruController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\laptopController;
@@ -8,6 +10,7 @@ use App\Http\Controllers\tabletController;
 use App\Http\Controllers\flashdiskController;
 use App\Http\Controllers\printerController;
 use App\Http\Controllers\cameraController;
+use App\Http\Controllers\dataPeminjaman;
 use App\Http\Controllers\handphoneController;
 use App\Http\Controllers\PcController;
 use App\Http\Controllers\LanController;
@@ -15,6 +18,7 @@ use App\Http\Controllers\hdmiController;
 use App\Http\Controllers\projectorController;
 use App\Http\Controllers\hardiskController;
 use App\Http\Controllers\informationController;
+use App\Http\Controllers\MapelController;
 use App\Http\Controllers\pinjamController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,6 +40,46 @@ Route::get('/', function () {
 Route::get('/team', function () {
     return view('team');
 });
+
+Route::get('/data-peminjaman', [pinjamController::class, 'show']);
+
+Route::get('/laptop', [laptopController::class, 'show']);
+
+//CRUD Mapel
+//Create
+Route::get('/mapel/create' , [MapelController::class, 'create']);
+Route::post('/mapel', [MapelController::class, 'store']);
+//Read
+Route::get('/mapel', [MapelController::class, 'index']);
+//Update
+Route::get('/mapel/{mapel_id}/edit', [MapelController::class, 'edit']);
+Route::put('/mapel/{mapel_id}', [MapelController::class, 'update']);
+//Delete
+Route::get('/mapel/{mapel_id}/delete', [MapelController::class, 'delete']);
+
+//CRUD Guru
+//Create
+Route::get('/guru/create' , [GuruController::class, 'create']);
+Route::post('/guru', [GuruController::class, 'store']);
+//Read
+Route::get('/guru', [GuruController::class, 'index']);
+//Update
+Route::get('/guru/{guru_id}/edit', [GuruController::class, 'edit']);
+Route::put('/guru/{guru_id}', [GuruController::class, 'update']);
+//Delete
+Route::get('/guru/{guru_id}/delete', [GuruController::class, 'delete']);
+
+//CRUD Device
+//Create
+Route::get('/device/create' , [DeviceController::class, 'create']);
+Route::post('/device', [DeviceController::class, 'store']);
+//Read
+Route::get('/device', [DeviceController::class, 'index']);
+//Update
+Route::get('/device/{device_id}/edit', [DeviceController::class, 'edit']);
+Route::put('/device/{device_id}', [DeviceController::class, 'update']);
+//Delete
+Route::get('/device/{device_id}/delete', [DeviceController::class, 'delete']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('user/profile', [UserController::class, 'edit'])->name('user.edit-profile');

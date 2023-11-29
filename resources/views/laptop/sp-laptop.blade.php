@@ -1,5 +1,10 @@
 @extends('layout.master-2')
 
+@push('scripts-2')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+@endpush
+
 @section('content-2')
 <div class="balik">
     <a href="/electronic" class="next round" style="text-decoration: none;">
@@ -36,7 +41,7 @@
                     <th scope="col">Tanggal Peminjaman</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Mata Pelajaran</th>
-                    <th scope="col">Nomor Laptop</th>
+                    <th scope="col">Kode Device</th>
                     <th scope="col">Mentoring Mapel</th>
                     <th scope="col">Waktu Peminjaman</th>
                 </tr>
@@ -50,16 +55,29 @@
                         <input type="text" name="nama" value="{{ Auth::user()->name }}" readonly>
                     </td>
                     <td>
-                        <input type="text" name="mata_pelajaran" required>
+                        <select name="mata_pelajaran" id="mata_pelajaran" required>
+                            @foreach($mapel as $value)
+                                <option value="{{ $value->mapel }}">{{ $value->mapel }}</option>
+                            @endforeach
+                        </select>
                     </td>
                     <td>
-                        <input type="number" name="nomor_laptop" required>
+                        {{-- <select name="kode_device" id="kode_device" class="select2" required>
+                            @foreach($device as $value)
+                                <option value="{{ $value->nama_device }}">{{ $value->kode_device }}</option>
+                            @endforeach
+                        </select> --}}
+                        <input type="text" name="kode_device" id="kode_device">
                     </td>
                     <td>
-                        <input type="text" name="mentoring_mapel" required>
+                        <select name="mentoring_mapel" id="mentoring_mapel" required>
+                            @foreach($guru as $value)
+                                <option value="{{ $value->nama }}">{{ $value->nama }}</option>
+                            @endforeach
+                        </select>
                     </td>
                     <td>
-                        <input type="time" name="waktu_peminjaman" id="currentTime" readonly>
+                        <input type="time" name="waktu_peminjaman" id="inputTime" step="1" readonly>
                     </td>
                 </tr>
             </tbody>
@@ -75,14 +93,20 @@
 
 @push('scripts')
 <script>
-var now = new Date();
+function setInputTime() {
+ let currentTime = new Date();
+ let hours = currentTime.getHours();
+ let minutes = currentTime.getMinutes();
+ let seconds = currentTime.getSeconds();
 
-// Format the time as HH:mm (hours and minutes)
-var hours = now.getHours().toString().padStart(2, '0');
-var minutes = now.getMinutes().toString().padStart(2, '0');
-var currentTime = hours + ':' + minutes;
+ let formattedTime = hours.toString().padStart(2, '0') + ':' +
+                      minutes.toString().padStart(2, '0') + ':' +
+                      seconds.toString().padStart(2, '0');
 
-// Set the value of the input field
-document.getElementById('currentTime').value = currentTime;
+ // Set the value of the input field with id "inputTime"
+ document.getElementById('inputTime').value = formattedTime;
+}
+
+setInputTime();
 </script>
 @endpush

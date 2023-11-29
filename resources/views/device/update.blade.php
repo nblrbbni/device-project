@@ -1,14 +1,9 @@
 @extends('layout.master')
 
-@section('judul')
-Data Siswa
-@endsection
-
 @push('styles')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
 {{-- <link rel="stylesheet" href="{{ asset('style/style.css') }}"> --}}
-<link rel="stylesheet" href="{{ asset('js/java.js') }}">
 <link rel="stylesheet" href="{{ asset('style/responsive.css') }}">
 @endpush
 
@@ -30,7 +25,7 @@ Data Siswa
         <div class="row g-2 align-items-center">
           <div class="col">
             <h2 class="page-title">
-              Lihat Data Siswa
+              Perbarui Data Device
             </h2>
           </div>
         </div>
@@ -41,24 +36,25 @@ Data Siswa
       <div class="container-xl">
         <div class="card">
           <div class="card-body">
-            <form action="/student" method="POST">
+            <form action="/device/{{$device->id}}" method="POST">
                 @csrf
+                @method('PUT')
                 <div class="mb-3">
-                  <label class="form-label">Nama Siswa</label>
-                  <input type="text" name="name" class="form-control">
+                  <label class="form-label">Kode Device</label>
+                  <input type="text" name="kode_device" value="{{ $device->kode_device }}" class="form-control" required>
                 </div>
-                @error('name')
+                @error('kode_device')
                   <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
                 <div class="mb-3">
-                  <label for="quantity">Kelas</label>
-                  <input type="number" id="quantity" class="form-control" name="class" min="10" max="12">
+                  <label class="form-label">Nama Device</label>
+                  <input type="text" name="nama_device" value="{{ $device->nama_device }}" class="form-control" required>
                 </div>
-                @error('class')
+                @error('nama_device')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
-                <button type="submit" class="btn" style="background-color:#18244c; color:white">Submit</button>
-                <a href="/student" class="btn btn-primary">Back</a>
+                <button class="btn submit" style="background-color:#18244c; color:white" onclick="submitForm(event)">Submit</button>
+                <a href="/device" class="btn btn-primary">Back</a>
             </form>
           </div>
         </div>

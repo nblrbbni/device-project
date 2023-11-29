@@ -1,9 +1,5 @@
 @extends('layout.master')
 
-@section('judul')
-Data Siswa
-@endsection
-
 @push('styles')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
@@ -30,7 +26,7 @@ Data Siswa
         <div class="row g-2 align-items-center">
           <div class="col">
             <h2 class="page-title">
-              Lihat Data Siswa
+              Lihat Data Device
             </h2>
           </div>
         </div>
@@ -41,24 +37,24 @@ Data Siswa
       <div class="container-xl">
         <div class="card">
           <div class="card-body">
-            <form action="/student" method="POST">
+            <form action="/device" method="POST">
                 @csrf
                 <div class="mb-3">
-                  <label class="form-label">Nama Siswa</label>
-                  <input type="text" name="name" class="form-control">
+                  <label class="form-label">Kode Device</label>
+                  <input type="text" name="kode_device" class="form-control" required>
                 </div>
-                @error('name')
+                @error('kode_device')
                   <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
                 <div class="mb-3">
-                  <label for="quantity">Kelas</label>
-                  <input type="number" id="quantity" class="form-control" name="class" min="10" max="12">
+                  <label for="quantity">Nama Device</label>
+                  <input type="text" name="nama_device" class="form-control" required>
                 </div>
-                @error('class')
+                @error('nama_device')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
                 <button type="submit" class="btn" style="background-color:#18244c; color:white">Submit</button>
-                <a href="/student" class="btn btn-primary">Back</a>
+                <a href="/device" class="btn btn-primary">Back</a>
             </form>
           </div>
         </div>
