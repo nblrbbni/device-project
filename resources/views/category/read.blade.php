@@ -36,7 +36,7 @@
     <div class="page-body">
       <div class="container-xl">
         <h1>Halaman Tambah</h1>
-        <a href="/device/create" class="btn btn-primary mb-3">Tambah</a>
+        <a href="/category/create" class="btn btn-primary mb-3">Tambah</a>
         <div class="card">
           <div class="card-body">
             <table class="table table-striped" id="myTable">
@@ -45,25 +45,21 @@
                     <th scope="col">#</th>
                     <th scope="col">Kode Device</th>
                     <th scope="col">Nama Device</th>
-                    <th scope="col">Merk Device</th>
-                    <th scope="col">Status</th>
                     <th scope="col">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
-                    @forelse ($device as $key => $value)
+                    @forelse ($category as $key => $value)
                         <tr>
                             <td>{{ $key + 1 }}</td>
                             <td>{{ $value->kode_device }}</td>
                             <td>{{ $value->nama }}</td>
-                            <td>{{ $value->merk }}</td>
-                            <td>{{ $value->status }}</td>
                             <td>
                                 <form action="/device/{{ $value->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <a href="/device/{{ $value->id }}/edit" class="btn" style="background-color:#14274c; color:white">Edit</a>
-                                    <a href="#" class="btn btn-danger deletedevice" data-id="{{ $value->id }}" data-name="{{ $value->kode_device }}">Delete</a>
+                                    <a href="/category/{{ $value->id }}/edit" class="btn" style="background-color:#14274c; color:white">Edit</a>
+                                    <a href="#" class="btn btn-danger deletecategory" data-id="{{ $value->id }}" data-name="{{ $value->kode_device }}">Delete</a>
                                     {{-- <input type="submit" value="Delete" class="btn btn-danger delete" data-id="{{ $value->id }}"> --}}
                                 </form>
                             </td>

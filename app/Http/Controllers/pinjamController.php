@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\peminjaman;
+use App\Models\pinjamLaptop;
+
+use App\Models\Device;
 
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -45,11 +48,20 @@ class pinjamController extends Controller
         $pinjamLaptop->mentoring_mapel = $request->mentoring_mapel;
         $pinjamLaptop->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamLaptop->save();
+
+        DB::table('device')
+        ->where('kode_device', $request->kode_device)
+        ->update(
+            [
+                'status' => 'Dipinjam',
+            ],
+        );
+
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
     }
 
-    // Earphone
+    // Earphon
     public function headset()
     {
         $mapel = DB::table('mapel')->get();
@@ -82,6 +94,15 @@ class pinjamController extends Controller
         $pinjamEarphone->mentoring_mapel = $request->mentoring_mapel;
         $pinjamEarphone->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamEarphone->save();
+
+        DB::table('device')
+        ->where('kode_device', $request->kode_device)
+        ->update(
+            [
+                'status' => 'Dipinjam',
+            ],
+        );
+
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
     }
@@ -119,16 +140,25 @@ class pinjamController extends Controller
         $pinjamProjector->mentoring_mapel = $request->mentoring_mapel;
         $pinjamProjector->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamProjector->save();
+
+        DB::table('device')
+        ->where('kode_device', $request->kode_device)
+        ->update(
+            [
+                'status' => 'Dipinjam',
+            ],
+        );
+
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
     }
 
     // Tablet
     public function tablet()
-    {
-        $mapel = DB::table('mapel')->get();
+    {$mapel = DB::table('mapel')->get();
         $guru = DB::table('guru')->get();
-        $device = DB::table('device')->get();
+        $device = DB::table('device')->get(););
+        $guru = DB::table('guru')->get();
 
         return view('tablet.sp-tablet', [
             'mapel' => $mapel,
@@ -156,6 +186,15 @@ class pinjamController extends Controller
         $pinjamTablet->mentoring_mapel = $request->mentoring_mapel;
         $pinjamTablet->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamTablet->save();
+
+        DB::table('device')
+        ->where('kode_device', $request->kode_device)
+        ->update(
+            [
+                'status' => 'Dipinjam',
+            ],
+        );
+
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
     }
@@ -165,6 +204,7 @@ class pinjamController extends Controller
     {
         $mapel = DB::table('mapel')->get();
         $guru = DB::table('guru')->get();
+        $device = DB::table('device')->get();
         $device = DB::table('device')->get();
 
         return view('camera.sp-camera', [
@@ -193,6 +233,15 @@ class pinjamController extends Controller
         $pinjamCamera->mentoring_mapel = $request->mentoring_mapel;
         $pinjamCamera->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamCamera->save();
+
+        DB::table('device')
+        ->where('kode_device', $request->kode_device)
+        ->update(
+            [
+                'status' => 'Dipinjam',
+            ],
+        );
+
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
     }
@@ -230,6 +279,15 @@ class pinjamController extends Controller
         $pinjamHandphone->mentoring_mapel = $request->mentoring_mapel;
         $pinjamHandphone->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamHandphone->save();
+
+        DB::table('device')
+        ->where('kode_device', $request->kode_device)
+        ->update(
+            [
+                'status' => 'Dipinjam',
+            ],
+        );
+
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
     }
@@ -268,6 +326,15 @@ class pinjamController extends Controller
         $pinjamKomputer->mentoring_mapel = $request->mentoring_mapel;
         $pinjamKomputer->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamKomputer->save();
+
+        DB::table('device')
+        ->where('kode_device', $request->kode_device)
+        ->update(
+            [
+                'status' => 'Dipinjam',
+            ],
+        );
+
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
     }
@@ -305,6 +372,15 @@ class pinjamController extends Controller
         $pinjamFlashdisk->mentoring_mapel = $request->mentoring_mapel;
         $pinjamFlashdisk->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamFlashdisk->save();
+
+        DB::table('device')
+        ->where('kode_device', $request->kode_device)
+        ->update(
+            [
+                'status' => 'Dipinjam',
+            ],
+        );
+
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
     }
@@ -343,6 +419,15 @@ class pinjamController extends Controller
         $pinjamHardisk->mentoring_mapel = $request->mentoring_mapel;
         $pinjamHardisk->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamHardisk->save();
+
+        DB::table('device')
+        ->where('kode_device', $request->kode_device)
+        ->update(
+            [
+                'status' => 'Dipinjam',
+            ],
+        );
+
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
     }
@@ -381,6 +466,15 @@ class pinjamController extends Controller
         $pinjamPrinter->mentoring_mapel = $request->mentoring_mapel;
         $pinjamPrinter->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamPrinter->save();
+
+        DB::table('device')
+        ->where('kode_device', $request->kode_device)
+        ->update(
+            [
+                'status' => 'Dipinjam',
+            ],
+        );
+
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
     }
@@ -418,6 +512,15 @@ class pinjamController extends Controller
         $pinjamHdmi->mentoring_mapel = $request->mentoring_mapel;
         $pinjamHdmi->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamHdmi->save();
+
+        DB::table('device')
+        ->where('kode_device', $request->kode_device)
+        ->update(
+            [
+                'status' => 'Dipinjam',
+            ],
+        );
+
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
     }
@@ -455,6 +558,15 @@ class pinjamController extends Controller
         $pinjamLan->mentoring_mapel = $request->mentoring_mapel;
         $pinjamLan->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamLan->save();
+
+        DB::table('device')
+        ->where('kode_device', $request->kode_device)
+        ->update(
+            [
+                'status' => 'Dipinjam',
+            ],
+        );
+
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
     }

@@ -1,9 +1,13 @@
 @extends('layout.master-2')
 
+@push('styles')
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+@endpush
+
 @push('scripts-2')
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 @endpush
+
 
 @section('content-2')
 <div class="balik">
@@ -62,12 +66,12 @@
                         </select>
                     </td>
                     <td>
-                        {{-- <select name="kode_device" id="kode_device" class="select2" required>
+                        <select name="kode_device" id="kode_device" class="js-example-basic-single" required>
                             @foreach($device as $value)
-                                <option value="{{ $value->nama_device }}">{{ $value->kode_device }}</option>
+                                <option value="{{ $value->nama }}">{{ $value->kode_device }}</option>
                             @endforeach
-                        </select> --}}
-                        <input type="text" name="kode_device" id="kode_device">
+                        </select>
+                        {{-- <input type="text" name="kode_device" required> --}}
                     </td>
                     <td>
                         <select name="mentoring_mapel" id="mentoring_mapel" required>
@@ -108,5 +112,11 @@ function setInputTime() {
 }
 
 setInputTime();
+
+$(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 @endpush

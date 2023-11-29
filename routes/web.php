@@ -10,6 +10,7 @@ use App\Http\Controllers\tabletController;
 use App\Http\Controllers\flashdiskController;
 use App\Http\Controllers\printerController;
 use App\Http\Controllers\cameraController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\dataPeminjaman;
 use App\Http\Controllers\handphoneController;
 use App\Http\Controllers\PcController;
@@ -44,6 +45,10 @@ Route::get('/team', function () {
 Route::get('/data-peminjaman', [pinjamController::class, 'show']);
 
 Route::get('/laptop', [laptopController::class, 'show']);
+
+Route::get('/data-device', function () {
+    return view('datadevice');
+});
 
 //CRUD Mapel
 //Create
@@ -80,6 +85,18 @@ Route::get('/device/{device_id}/edit', [DeviceController::class, 'edit']);
 Route::put('/device/{device_id}', [DeviceController::class, 'update']);
 //Delete
 Route::get('/device/{device_id}/delete', [DeviceController::class, 'delete']);
+
+//CRUD Device
+//Create
+Route::get('/category/create' , [CategoryController::class, 'create']);
+Route::post('/category', [CategoryController::class, 'store']);
+//Read
+Route::get('/category', [CategoryController::class, 'index']);
+//Update
+Route::get('/category/{category_id}/edit', [CategoryController::class, 'edit']);
+Route::put('/category/{category_id}', [CategoryController::class, 'update']);
+//Delete
+Route::get('/category/{category_id}/delete', [DeviceController::class, 'delete']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('user/profile', [UserController::class, 'edit'])->name('user.edit-profile');

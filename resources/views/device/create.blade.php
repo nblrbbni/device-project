@@ -48,9 +48,16 @@
                 @enderror
                 <div class="mb-3">
                   <label for="quantity">Nama Device</label>
-                  <input type="text" name="nama_device" class="form-control" required>
+                  <input type="text" name="nama" class="form-control" required>
                 </div>
-                @error('nama_device')
+                @error('nama')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+                <div class="mb-3">
+                  <label for="quantity">Merk Device</label>
+                  <input type="text" name="merk" class="form-control" required>
+                </div>
+                @error('merk')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
                 <button type="submit" class="btn" style="background-color:#18244c; color:white">Submit</button>

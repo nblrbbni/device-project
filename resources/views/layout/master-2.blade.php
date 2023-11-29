@@ -14,6 +14,8 @@
     <link href="{{ asset('dist/css/demo.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('style/responsive.css') }}">
 
+    @stack('styles')
+
     @stack('scripts-2')
 
     {{-- Bootstrap --}}

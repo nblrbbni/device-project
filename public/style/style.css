@@ -542,3 +542,7 @@ aside a:hover {
     background: #14274C;
     color: white;
 }
+
+#kode_device {
+    width: 5rem;
+}
