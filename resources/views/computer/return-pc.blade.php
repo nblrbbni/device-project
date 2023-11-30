@@ -25,7 +25,7 @@
                 <div class="col-md-4">
                     <div class="single">
                         <img src="{{ asset('asset/picture/Gaming.png') }}" class="gambar" alt="..." />
-                        <p>Computer (PC)</p>
+                        <p>Computer (PC (LAB))</p>
                     </div>
                 </div>
             </div>

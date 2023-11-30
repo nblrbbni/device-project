@@ -33,6 +33,7 @@ class PcController extends Controller
         $PC = new pc;
         $PC->tanggal_peminjaman = $request->tanggal_peminjaman;
         $PC->nama = $request->nama;
+        $PC->kode_device = $request->kode_device;
         $PC->kondisi_mouse = $request->kondisi_mouse;
         $PC->kondisi_pc = $request->kondisi_pc;
         $PC->kondisi_keybohard = $request->kondisi_keybohard;
