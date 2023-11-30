@@ -217,13 +217,7 @@
 
                 <div class="mb-3">
                     <label class="form-label">Grade</label>
-                    {{-- <select id="class" class="form-control text-muted @error('class') is-invalid @enderror" name="class" value="{{ old('class') }}" autocomplete="class" min="10" max="12">
-                        <option class="text-muted">-- Please choose your grade --</option>
-                        <option value="12" class="text-dark">12</option>
-                        <option value="11" class="text-dark">11</option>
-                        <option value="10" class="text-dark">10</option>
-                    </select> --}}
-                    <input type="number" name="class" id="" class="form-control text-dark @error('class') is-invalid @enderror" value="{{ old('class') }}" required autocomplete="email" placeholder="Your grade (10-12)" min="10" max="12">
+                    <input type="number" name="class" id="" class="form-control text-dark @error('class') is-invalid @enderror" value="{{ old('class') }}" required autocomplete="class" placeholder="Your grade (10-12)" min="10" max="12">
                 </div>
                 @error('class')
                     <span class="invalid-feedback" role="alert" style="color: red">
