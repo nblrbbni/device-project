@@ -31,9 +31,7 @@
         <br>
         <input class="link" type="text" placeholder="Email" name="email">
     </div>
-    <div class="buttonSp text-center">
-        <input type="submit" class="btn btn-lg my-5" value="Submit" style="background-color: #14274c; color:white">
-    </div>
+    <input type="submit" value="Submit" class="submit">
 </form>
 <!-- script -->
 <script src="{{ asset('dist/js/tabler.min.js') }}" defer></script>
