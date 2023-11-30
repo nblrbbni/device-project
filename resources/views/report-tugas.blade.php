@@ -13,23 +13,29 @@
     <h1><b>Report Tugas</b</h1>
             <h2><b>Berikut ini :</b></h2>
             <div class="iconReturn"><br>
-                <img src="asset/picture/poto (1).png" alt="">
-                <img src="asset/picture/poto (2).png" alt="">
-                <img src="asset/picture/poto (3).png" alt="">
+                <img src="{{ asset('asset/picture/poto (1).png') }}" alt="">
+                <img src="{{ asset('asset/picture/poto (2).png') }}" alt="">
+                <img src="{{ asset('asset/picture/poto (3).png') }}" alt="">
             </div>
 </div><br><br>
 <form action="/report-tugas/store" method="post">
     @csrf
     <div class="labelGAP">
-        <label for="images" class="drop-container" id="dropcontainer">
-            <input type="file" id="images" accept="image/*" required name="foto">
-        </label>
+        <div class="col">
+            <label for="images" class="drop-container" id="dropcontainer">
+                <input type="file" id="images" accept="image/*" required name="foto">
+            </label>
+        </div>
         <br>
         <br>
-        <input class="link" type="text" placeholder="Link" name="link">
+        <div class="col">
+            <input class="link" type="text" placeholder="Link" name="link">
+        </div>
         <br>
         <br>
-        <input class="link" type="text" placeholder="Email" name="email">
+        <div class="col">
+            <input class="link" type="text" placeholder="Email" name="email">
+        </div>
     </div>
     <input type="submit" value="Submit" class="submit">
 </form>

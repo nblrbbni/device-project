@@ -590,7 +590,7 @@ aside a:hover {
 }
 
 input::placeholder {
-    margin-left: 90rem;
+    /* margin-left: 90rem; */
     color: rgba(0, 0, 0, 0.55);
     font-family: poppins;
     font-size: 18px;

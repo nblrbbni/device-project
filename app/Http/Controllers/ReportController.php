@@ -16,8 +16,8 @@ class ReportController extends Controller
     {
         $request->validate([
             'foto' => 'required',
-            'link' => 'required',
-            'email' => 'required',
+            'link' => '',
+            'email' => '',
         ]);
 
         $reportTugas = new reportTugas();
