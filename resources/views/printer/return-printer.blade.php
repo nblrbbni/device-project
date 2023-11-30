@@ -16,7 +16,7 @@
         <div class="col-md-4">
             <div class='single'>
                 <img src="{{ asset('asset/picture/Printer.png') }}" alt="...">
-                <p>Printer</p>
+                <p>Printer (PRN)</p>
             </div>
         </div>
     </div>
@@ -30,6 +30,7 @@
                 <tr>
                     <th scope="col">Tanggal Peminjaman</th>
                     <th scope="col">Nama</th>
+                    <th scope="col">Kode Device</th>
                     <th scope="col">Kondisi printer</th>
                     <th scope="col">Waktu pengembalian</th>
                 </tr>
@@ -41,6 +42,14 @@
                     </th>
                     <td>
                         <input type="text" name="nama" value="{{ Auth::user()->name }}" readonly>
+                    </td>
+                    <td>
+                        <select name="kode_device" id="kode_device" class="js-example-basic-single" required>
+                            @foreach($device as $value)
+                                <option value="{{ $value->kode_device }}">{{ $value->kode_device }}</option>
+                            @endforeach
+                        </select>
+                        {{-- <input type="text" name="kode_device" required> --}}
                     </td>
                     <td>
                         <input type="text" name="kondisi_printer" required>

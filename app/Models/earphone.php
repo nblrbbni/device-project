@@ -14,6 +14,7 @@ class earphone extends Model
     [
         'tanggal_peminjaman',
         'nama',
+        'kode_device',
         'kondisi_earphone',
         'kondisi_kardus',
         'kondisi_suara',

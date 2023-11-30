@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('_h_d_m_i_penembalian', function (Blueprint $table) {
             $table->id();
             $table->date("tanggal_peminjaman");
-            $table->string("nama");
-            $table->integer("nomor_HDMI");
+           $table->string("nama");
+            $table->string("kode_device");
             $table->string("kondisi_HDMI");
             $table->time("waktu_pengembalian");
             $table->timestamps();

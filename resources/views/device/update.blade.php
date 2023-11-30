@@ -54,7 +54,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
                 <div class="mb-3">
-                  <label class="form-label">Nama Device</label>
+                  <label class="form-label">Merk Device</label>
                   <input type="text" name="merk" value="{{ $device->merk }}" class="form-control" required>
                 </div>
                 @error('merk')

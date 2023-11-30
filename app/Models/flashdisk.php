@@ -13,7 +13,7 @@ class flashdisk extends Model
     [
         'tanggal_peminjaman',
         'nama',
-        'nomor_flashdisk',
+        'kode_device',
         'kondisi_flashdisk',
         'waktu_pengembalian',
     ];

@@ -13,6 +13,7 @@ class camera extends Model
     [
         'tanggal_peminjaman',
         'nama',
+        'kode_device',
         'kondisi_kamera',
         'kondisi_tempat_kamera',
         'kelengkapan_atribut',

@@ -1,5 +1,14 @@
 @extends('layout.master-2')
 
+@push('styles')
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+@endpush
+
+@push('scripts-2')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+@endpush
+
+
 @section('content-2')
 <div class="balik">
     <a href="/returndevice" class="next round" style="text-decoration: none;">
@@ -16,7 +25,7 @@
         <div class="col-md-4">
             <div class='single'>
                 <img src="{{ asset('asset/picture/Tablet.png') }}" class="gambar" alt="...">
-                <p>Tablet</p>
+                <p>Tablet (TAB)</p>
             </div>
         </div>
     </div>
@@ -30,6 +39,7 @@
                 <tr>
                     <th scope="col">Tanggal Peminjaman</th>
                     <th scope="col">Nama</th>
+                    <th scope="col">Kondisi Device</th>
                     <th scope="col">Kondisi tablet</th>
                     <th scope="col">Kondisi beterai</th>
                     <th scope="col">Kondisi charger</th>
@@ -43,6 +53,13 @@
                     </th>
                     <td>
                         <input type="text" name="nama" value="{{ Auth::user()->name }}" readonly>
+                    </td>
+                    <td>
+                        <select name="kode_device" id="kode_device" class="js-example-basic-single" required>
+                            @foreach($device as $value)
+                                <option value="{{ $value->kode_device }}">{{ $value->kode_device }}</option>
+                            @endforeach
+                        </select>
                     </td>
                     <td>
                         <input type="text" name="kondisi_tablet" required>
@@ -85,5 +102,11 @@ function setInputTime() {
 }
 
 setInputTime();
+
+$(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 @endpush

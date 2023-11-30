@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('hardisk_penembalian', function (Blueprint $table) {
             $table->id();
             $table->date("tanggal_peminjaman");
-            $table->string("nama");
-            $table->integer("nomor_hardisk");
+           $table->string("nama");
+            $table->string("kode_device");
             $table->string("kondisi_hardisk");
             $table->time("waktu_pengembalian");
             $table->timestamps();

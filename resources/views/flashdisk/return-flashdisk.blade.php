@@ -1,5 +1,13 @@
 @extends('layout.master-2')
 
+@push('styles')
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+@endpush
+
+@push('scripts-2')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+@endpush
+
 @section('content-2')
     <div class="balik">
         <a href="/returndevice" class="next round" style="text-decoration: none">
@@ -17,7 +25,7 @@
                 <div class="col-md-4">
                     <div class="single">
                         <img src="{{ asset('asset/picture/Flashdisk.png') }}" class="gambar" alt="..." />
-                        <p>Flashdisk</p>
+                        <p>Flashdisk (FD)</p>
                     </div>
                 </div>
             </div>
@@ -30,7 +38,7 @@
                     <tr>
                         <th scope="col">Tanggal Peminjaman</th>
                         <th scope="col">Nama</th>
-                        <th scope="col">Nomor Flashdisk</th>
+                        <th scope="col">Kode Device</th>
                         <th scope="col">Kondisi Flashdisk</th>
                         <th scope="col">Waktu pengembalian</th>
                     </tr>
@@ -44,7 +52,12 @@
                             <input type="text" name="nama" value="{{ Auth::user()->name }}" readonly>
                         </td>
                         <td>
-                            <input type="number" name="nomor_flashdisk" required>
+                            <select name="kode_device" id="kode_device" class="js-example-basic-single" required>
+                                @foreach($device as $value)
+                                    <option value="{{ $value->kode_device }}">{{ $value->kode_device }}</option>
+                                @endforeach
+                            </select>
+                            {{-- <input type="text" name="kode_device" required> --}}
                         </td>
                         <td>
                             <input type="text" name="kondisi_flashdisk" required>
@@ -80,5 +93,11 @@ function setInputTime() {
 }
 
 setInputTime();
+
+$(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 @endpush

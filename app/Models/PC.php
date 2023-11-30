@@ -13,6 +13,7 @@ class PC extends Model
     [
         'tanggal_peminjaman',
         'nama',
+        'kode_device',
         'kondisi_mouse',
         'kondisi_pc',
         'kondisi_keybohard',

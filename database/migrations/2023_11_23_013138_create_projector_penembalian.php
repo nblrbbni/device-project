@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('projector_penembalian', function (Blueprint $table) {
             $table->id();
             $table->date("tanggal_peminjaman");
-            $table->string("nama");
+           $table->string("nama");
+            $table->string("kode_device");
             $table->string("kondisi_projector");
             $table->string("kondisi_kabel_power");
             $table->string("kondisi_remote");

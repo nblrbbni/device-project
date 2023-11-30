@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('_p_c_penembalian', function (Blueprint $table) {
             $table->id();
             $table->date("tanggal_peminjaman");
-            $table->string("nama");
+           $table->string("nama");
+            $table->string("kode_device");
             $table->string("kondisi_mouse");
             $table->string("kondisi_pc");
             $table->string("kondisi_keybohard");

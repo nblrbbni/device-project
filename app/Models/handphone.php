@@ -13,6 +13,7 @@ class handphone extends Model
     [
         'tanggal_peminjaman',
         'nama',
+        'kode_device',
         'kondisi_handphone',
         'kondisi_baterai',
         'kondisi_charger',

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->date("tanggal_peminjaman");
             $table->string("nama");
+            $table->string("kode_device");
             $table->string("kondisi_earphone");
             $table->string("kondisi_kardus");
             $table->string("kondisi_suara");

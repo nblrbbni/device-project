@@ -76,7 +76,7 @@
     <div class="cardGrid">
         <div class="interGrid">
             <img src="{{ asset('asset/picture/Gaming.png') }}" alt="">
-            <p>PC</p>
+            <p>Computer</p>
         </div>
         <div class="cardButton">
             <a href="/return-computer" style="text-decoration: none;">Pilih</a>

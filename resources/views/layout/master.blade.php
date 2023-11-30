@@ -142,7 +142,31 @@
                 window.location = "/device/"+deviceid+"/delete"
                 Swal.fire({
                 title: "Dihapus!",
-                text: "Data tersebut berhasil dihap us!",
+                text: "Data tersebut berhasil dihapus!",
+                icon: "success"
+                });
+            }
+        });
+    });
+
+    $('.deletecategory').click( function(){
+        var categoryid = $(this).attr('data-id');
+        var categoryname = $(this).attr('data-name');
+
+        Swal.fire({
+            title: "Apakah anda yakin?",
+            text: "Device dengan kode "+categoryname+" akan dihapus!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#14274c",
+            confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+            if (result.isConfirmed) {
+                window.location = "/category/"+categoryid+"/delete"
+                Swal.fire({
+                title: "Dihapus!",
+                text: "Data tersebut berhasil dihapus!",
                 icon: "success"
                 });
             }

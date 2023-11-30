@@ -13,7 +13,7 @@ class lan extends Model
     [
         'tanggal_peminjaman',
         'nama',
-        'nomor_LAN',
+        'kode_device',
         'kondisi_LAN',
         'waktu_pengembalian',
     ];

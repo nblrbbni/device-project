@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('tablet_penembalian', function (Blueprint $table) {
             $table->id();
             $table->date("tanggal_peminjaman");
-            $table->string("nama");
+           $table->string("nama");
+            $table->string("kode_device");
             $table->string("kondisi_tablet");
             $table->string("kondisi_baterai");
             $table->string("kondisi_charger");

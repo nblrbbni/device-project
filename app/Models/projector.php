@@ -13,6 +13,7 @@ class projector extends Model
     [
         'tanggal_peminjaman',
         'nama',
+        'kode_device',
         'kondisi_projector',
         'kondisi_kabel_power',
         'kondisi_remote',

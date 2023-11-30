@@ -13,7 +13,7 @@ class hardisk extends Model
     [
         'tanggal_peminjaman',
         'nama',
-        'nomor_hardisk',
+        'kode_device',
         'kondisi_hardisk',
         'waktu_pengembalian',
     ];

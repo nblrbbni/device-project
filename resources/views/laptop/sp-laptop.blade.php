@@ -8,7 +8,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @endpush
 
-
 @section('content-2')
 <div class="balik">
     <a href="/electronic" class="next round" style="text-decoration: none;">
@@ -28,7 +27,7 @@
             <div class="col-md-4">
                 <div class='single'>
                     <img src="{{ asset('asset/picture/Laptop.png') }}" class="gambar" alt="...">
-                    <p>Laptop</p>
+                    <p>Laptop (LP)</p>
                 </div>
             </div>
             <div class="col-md-4">
@@ -68,7 +67,7 @@
                     <td>
                         <select name="kode_device" id="kode_device" class="js-example-basic-single" required>
                             @foreach($device as $value)
-                                <option value="{{ $value->nama }}">{{ $value->kode_device }}</option>
+                                <option value="{{ $value->kode_device }}">{{ $value->kode_device }}</option>
                             @endforeach
                         </select>
                         {{-- <input type="text" name="kode_device" required> --}}

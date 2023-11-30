@@ -157,7 +157,7 @@ class pinjamController extends Controller
     public function tablet()
     {$mapel = DB::table('mapel')->get();
         $guru = DB::table('guru')->get();
-        $device = DB::table('device')->get(););
+        $device = DB::table('device')->get();
         $guru = DB::table('guru')->get();
 
         return view('tablet.sp-tablet', [

@@ -13,7 +13,7 @@ class HDMI extends Model
     [
         'tanggal_peminjaman',
         'nama',
-        'nomor_HDMI',
+        'kode_device',
         'kondisi_HDMI',
         'waktu_pengembalian',
     ];

@@ -44,12 +44,6 @@ Route::get('/team', function () {
 
 Route::get('/data-peminjaman', [pinjamController::class, 'show']);
 
-Route::get('/laptop', [laptopController::class, 'show']);
-
-Route::get('/data-device', function () {
-    return view('datadevice');
-});
-
 //CRUD Mapel
 //Create
 Route::get('/mapel/create' , [MapelController::class, 'create']);
@@ -96,7 +90,7 @@ Route::get('/category', [CategoryController::class, 'index']);
 Route::get('/category/{category_id}/edit', [CategoryController::class, 'edit']);
 Route::put('/category/{category_id}', [CategoryController::class, 'update']);
 //Delete
-Route::get('/category/{category_id}/delete', [DeviceController::class, 'delete']);
+Route::get('/category/{category_id}/delete', [CategoryController::class, 'delete']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('user/profile', [UserController::class, 'edit'])->name('user.edit-profile');
