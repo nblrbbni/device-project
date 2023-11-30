@@ -16,6 +16,7 @@ Dashboard
 
 @section('content')
 <div>
+    <div class="cardCaroasel">
     <section style="margin-left: 30rem;">
         <div class="swiper mySwiper container">
             <div class="swiper-wrapper content">
@@ -124,6 +125,7 @@ Dashboard
         <div class="swiper-button-prev"></div>
         <div class="swiper-pagination"></div>
     </section>
+</div>
 </div>
 
     <div class="title">

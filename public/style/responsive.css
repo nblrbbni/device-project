@@ -15,6 +15,17 @@
         grid-template-columns: auto auto auto auto;
         padding: 70px;
     }
+    .cardCaroasel{
+        margin: 1px -200px;
+    }
+    .cardinfo{
+        margin: 1px 21rem;
+
+    }
+    .title{
+        margin: 1px -180px ;
+        
+    }
     .link{
         width: 70rem;
         margin-left: none;
@@ -103,6 +114,24 @@
     .sectionCard {
         margin: 10px;
         margin-left: 20rem;
+    }
+    .cardCaroasel{
+        margin: 1px 20rem;
+        display: none;
+    }
+    .swiper{
+        width: 750px;
+    }
+    .title{
+        display: none;
+    }
+    .cardinfo{
+        width: 750px;
+        display: none;
+        
+    }
+    table, tbody, tr, th{
+        display: none;
     }
     .drop-container{
         width: 50rem;
