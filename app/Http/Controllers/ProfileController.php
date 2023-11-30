@@ -32,7 +32,7 @@ class ProfileController extends Controller
             'password' => $request->password ? bcrypt($request->password) : $user->password,
         ]);
 
-        return redirect('/profile')->with('success', 'Profile updated successfully!');
+        return redirect('/profile')->with('success', 'Berhasil update Profile!');
     }
 
     // public function index(){
