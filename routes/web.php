@@ -1,24 +1,25 @@
     <?php
 
+use App\Models\post;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PcController;
+use App\Http\Controllers\LanController;
+use App\Http\Controllers\hdmiController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\cameraController;
+use App\Http\Controllers\laptopController;
+use App\Http\Controllers\pinjamController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\tabletController;
+use App\Http\Controllers\hardiskController;
+use App\Http\Controllers\printerController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\earphoneController;
 use App\Http\Controllers\flashdiskController;
 use App\Http\Controllers\handphoneController;
-use App\Http\Controllers\hardiskController;
-use App\Http\Controllers\hdmiController;
-use App\Models\post;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LanController;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\laptopController;
-use App\Http\Controllers\PcController;
-use App\Http\Controllers\pinjamController;
-use App\Http\Controllers\printerController;
 use App\Http\Controllers\projectorController;
-use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ReturnDeviceControll;
-use App\Http\Controllers\tabletController;
 
 /*
 |--------------------------------------------------------------------------
@@ -218,3 +219,7 @@ Route::post('/sp-hdmi/store', [pinjamController::class, 'hdmistr']);
 
 Route::get('/sp-lan', [pinjamController::class, 'lan']);
 Route::post('/sp-lan/store', [pinjamController::class, 'lanstr']);
+
+// Report Tugas
+Route::get('/report-tugas', [ReportController::class, 'tugas']);
+Route::post('/report-tugas/store', [ReportController::class, 'tugasstr']);
