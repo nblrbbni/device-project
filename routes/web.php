@@ -22,6 +22,7 @@ use App\Http\Controllers\informationController;
 use App\Http\Controllers\MapelController;
 use App\Http\Controllers\pinjamController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -197,6 +198,13 @@ Route::middleware(['auth'])->group(function () {
     //pinjam-hdmi
     Route::get('/select-hdmi', [pinjamController::class, 'hdmi']);
     Route::post('/select-hdmi/store', [pinjamController::class, 'hdmistr']);
+
+    // Route::resource('profile', ProfileController::class)->only(['index','update']);
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index')->middleware('auth');
+
+    // Rute untuk menampilkan formulir pembaruan profil dan menangani pembaruan
+    // Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('auth');
+    Route::PUT('/profile/update/', [ProfileController::class, 'update'])->name('profile.index')->middleware('auth');
 });
 
 //CRUD INFORMATION Admin

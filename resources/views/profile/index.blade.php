@@ -34,7 +34,7 @@ Profile
                 @method('PUT')
                 <div class="mb-3">
                   <label class="form-label">Nama Siswa</label>
-                  <input type="text" name="name" class="form-control" value="{{ Auth::user()->name }}">
+                  <input type="text" name="name" class="form-control" value="{{ $detailprofile->name }}">
                 </div>
                 @error('name')
                   <div class="alert alert-danger">{{ $message }}</div>
@@ -42,7 +42,7 @@ Profile
 
                 <div class="mb-3">
                   <label for="quantity">Kelas</label>
-                    <input type="number" name="class" id="class" class="form-control" min="10" max="12" value="{{ Auth::user()->class }}">
+                    <input type="number" name="class" id="class" class="form-control" min="10" max="12" value="{{ $detailprofile->class }}">
                 </div>
                 @error('class')
                     <div class="alert alert-danger">{{ $message }}</div>
@@ -50,7 +50,7 @@ Profile
 
                 <div class="mb-3">
                     <label class="form-label">Email</label>
-                    <input type="text" name="email" class="form-control" value="{{ Auth::user()->email }}">
+                    <input type="text" name="email" class="form-control" value="{{ $detailprofile->email }}">
                   </div>
                 @error('email')
                     <div class="alert alert-danger">{{ $message }}</div>
