@@ -15,13 +15,14 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'id' => 'required',
             'name' => 'required',
             'class' => 'required',
         ]);
 
         DB::table('student')->insert([
             'name' => $request['name'],
-            'class' => $request['class']
+            'class' => $request['class'],
         ]);
 
         return redirect('/student');

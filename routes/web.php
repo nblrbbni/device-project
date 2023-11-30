@@ -1,18 +1,14 @@
 <?php
 
 use App\Http\Controllers\StudentController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\laptopController;
 use App\Http\Controllers\earphoneController;
 use App\Http\Controllers\tabletController;
 use App\Http\Controllers\flashdiskController;
 use App\Http\Controllers\printerController;
 use App\Http\Controllers\cameraController;
-use App\Http\Controllers\handphoneController;
-use App\Http\Controllers\PcController;
-use App\Http\Controllers\LanController;
-use App\Http\Controllers\hdmiController;
-use App\Http\Controllers\projectorController;
+use App\Http\Controllers\informationController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -96,25 +92,15 @@ Route::middleware(['auth'])->group(function () {
         return view('camera.sp-camera');
     });
 
-    Route::get('user/profile', [UserController::class, 'edit'])->name('user.edit-profile');
-    Route::put('user/profile', [UserController::class, 'update'])->name('user.update-profile');
+    // Route::resource('profile', ProfileController::class)->only(['index','update']);
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index')->middleware('auth');
 
-    Route::get('/profile', function () {
-        return view('profile.index');
-    });
+    // Rute untuk menampilkan formulir pembaruan profil dan menangani pembaruan
+    // Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('auth');
+    Route::PUT('/profile/update/', [ProfileController::class, 'update'])->name('profile.index')->middleware('auth');
 });
+// update profile
 
-//CRUD Student
-//Create
-Route::get('/student/create' , [StudentController::class, 'create']);
-Route::post('/student', [StudentController::class, 'store']);
-//Read
-Route::get('/student', [StudentController::class, 'index']);
-//Update
-Route::get('/student/{student_id}/edit', [StudentController::class, 'edit']);
-Route::put('/student/{student_id}', [StudentController::class, 'update']);
-//Delete
-Route::get('/student/{student_id}/delete', [StudentController::class, 'delete']);
 
 //Return Device
 Route::get('/returndevice', function () {
@@ -133,16 +119,18 @@ Route::post('/return-tablet/store', [tabletController::class, 'tabletstr']);
 Route::get('/return-flasdisk', [flashdiskController::class, 'flasdisk']);
 Route::post('/return-flasdisk/store', [flashdiskController::class, 'flasdiskstr']);
 // return-printer
-Route::get('/return-printer', [printerController::class, 'printer']);
-Route::post('/return-printer/store', [printerController::class, 'printerstr']);
+// Route::get('/return-printer', [printerController::class, 'printer']);
+// Route::post('/return-printer/store', [printerController::class, 'printer']);
+// Route::get('/return-flasdisk', [printerController::class, 'flasdisk']);
+// Route::post('/return-flasdisk/store', [printerController::class, 'flasdiskstr']);
 // return-camera
 Route::get('/return-camera', [cameraController::class, 'camera']);
 Route::post('/return-camera/sotore', [cameraController::class, 'camerastr']);
 
 
 // return-hardisk
-Route::get('/return-hardisk', [hardiskController::class, 'hardisk']);
-Route::post('/return-hardisk/store', [hardiskController::class, 'hardiskstr']);
+// Route::get('/return-hardisk', [hardiskController::class, 'hardisk']);
+// Route::post('/return-hardisk/store', [hardiskController::class, 'hardiskstr']);
 
 
 
@@ -155,7 +143,7 @@ Route::post('/student', [StudentController::class, 'store']);
 Route::get('/student', [StudentController::class, 'index']);
 
 //Update
-Route::get('/student/{student_id}/edit', [StudentController::class, 'edit']);
+Route::put('/student/{student_id}/edit', [StudentController::class, 'edit']);
 Route::put('/student/{student_id}', [StudentController::class, 'update']);
 
 //Delet
@@ -163,3 +151,25 @@ Route::delete('/student/{student_id}', [StudentController::class, 'delete']);
 
 //pengembalian sistem
 // crate
+
+Auth::routes();
+//CRUD INFORMATION Admin
+//create
+//form information
+Route::get('/information/create', [informationController::class, 'create']);
+//kirim data ke database
+Route::post('/information', [informationController::class, 'store']);
+//Read
+//menampilkan semua data
+Route::get('/information', [informationController::class, 'index']);
+Route::get('/information/{information_id}', [informationController::class, 'show']);
+
+//update
+// form update
+Route::get('/information/{information_id}/edit', [informationController::class, 'edit']);
+Route::put('/information/{information_id}', [informationController::class, 'update']);
+// delete
+Route::delete('/information/{information_id}', [informationController::class, 'destroy']);
+
+// update data user
+// Route::resource('post', UserProfileControlller::class);
