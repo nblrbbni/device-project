@@ -145,7 +145,7 @@
                 @csrf
                 <div class="mb-3">
                     <label class="form-label">Email address</label>
-                    <input id="email" type="email" class="form-control text-dark @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"  placeholder="your@email.com">
+                    <input id="email" type="email" class="form-control text-dark @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="your@email.com">
                 </div>
                 @error('email')
                     <span class="invalid-feedback" role="alert" style="color: red">
@@ -182,7 +182,7 @@
                 </div>
             </form>
             <div class="text-center text-muted mt-3">
-                <span class="text-white">Don't have account yet?</span> <a href="/register" tabindex="-1">Sign up</a>
+                <span class="text-white">Don't have account yet?</span> <a class="text-info" href="/register" tabindex="-1">Sign up</a>
             </div>
         </div>
     </div>

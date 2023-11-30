@@ -10,7 +10,7 @@
 <br />
 
 <div class="title">
-    <h1><b>Report Tugas</b</h1>
+    <h1><b>Laporkan Tugas</b</h1>
             <h2><b>Berikut ini :</b></h2>
             <div class="iconReturn"><br>
                 <img src="{{ asset('asset/picture/poto (1).png') }}" alt="">
@@ -18,6 +18,8 @@
                 <img src="{{ asset('asset/picture/poto (3).png') }}" alt="">
             </div>
 </div><br><br>
+
+<p style="text-align: center" class="text-red">*Bisa memilih salah satu (1) atau lebih dari satu (1) untuk dilampirkan.</p>
 <form action="/report-tugas/store" method="post">
     @csrf
     <div class="labelGAP">

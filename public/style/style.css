@@ -589,7 +589,7 @@ aside a:hover {
     background-color: #00000000;
 }
 
-input::placeholder {
+input.link::placeholder {
     margin-left: 90rem;
     color: rgba(0, 0, 0, 0.55);
     font-family: poppins;

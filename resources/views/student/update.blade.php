@@ -48,12 +48,7 @@
                 @enderror
                 <div class="mb-3">
                   <label for="quantity">Kelas</label>
-                    <select id="class" class="form-control text-muted" name="class" value="{{ $student->class }}" required autocomplete="class" min="10" max="12">
-                        <option value="12" class="text-muted">-- Please choose your grade --</option>
-                        <option value="12" class="text-dark">12</option>
-                        <option value="11" class="text-dark">11</option>
-                        <option value="10" class="text-dark">10</option>
-                    </select>
+                    <input type="number" name="class" id="class" class="form-control" min="10" max="12" placeholder="Grade (10-12)">
                 </div>
                 @error('class')
                     <div class="alert alert-danger">{{ $message }}</div>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Student;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
@@ -32,7 +34,24 @@ class ProfileController extends Controller
             'password' => $request->password ? bcrypt($request->password) : $user->password,
         ]);
 
-        return redirect('/profile')->with('success', 'Berhasil update Profile!');
+        $student = Student::where('user_id', Auth::id())->first();
+
+        if ($student) {
+            $student->update([
+                'name' => $request->name,
+                'class' => $request->class,
+            ]);
+        } else {
+            // Create a student record if not exists
+            Student::create([
+                'name' => $request->name,
+                'class' => $request->class,
+                'user_id' => Auth::id(),
+            ]);
+        }
+
+        Alert::success('Berhasil!', 'Profile Anda sudah di update!');
+        return redirect('/profile');
     }
 
     // public function index(){
