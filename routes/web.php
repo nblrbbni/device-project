@@ -216,4 +216,3 @@ Route::put('/information/{information_id}', [informationController::class, 'upda
 // delete
 Route::delete('/information/{information_id}', [informationController::class, 'destroy']);
 
-Auth::routes();

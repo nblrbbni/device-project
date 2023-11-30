@@ -10,7 +10,7 @@
 <br />
 
 <div class="title">
-    <h1><b>Report Tugas</b</h1>
+    <h1><b>Report Tugas</b></h1>
             <h2><b>Berikut ini :</b></h2>
             <div class="iconReturn"><br>
                 <img src="asset/picture/poto (1).png" alt="">
