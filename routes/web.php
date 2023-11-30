@@ -21,6 +21,7 @@ use App\Http\Controllers\hardiskController;
 use App\Http\Controllers\informationController;
 use App\Http\Controllers\MapelController;
 use App\Http\Controllers\pinjamController;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,6 +44,9 @@ Route::get('/team', function () {
 });
 
 Route::get('/data-peminjaman', [pinjamController::class, 'show']);
+
+Route::get('/report-tugas', [ReportController::class, 'tugas']);
+Route::post('/report-tugas/store', [ReportController::class, 'tugasstr']);
 
 //CRUD Mapel
 //Create
