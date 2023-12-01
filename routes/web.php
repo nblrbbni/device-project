@@ -23,6 +23,7 @@ use App\Http\Controllers\MapelController;
 use App\Http\Controllers\pinjamController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReturnController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -118,9 +119,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/student/{student_id}/delete', [StudentController::class, 'delete']);
 
     //Return Device
-    Route::get('/returndevice', function () {
-        return view('returndevice');
-    });
+    Route::get('/returndevice', [ReturnController::class, 'return']);
     // return-laptop
     Route::get('/return-laptop', [laptopController::class, 'laptop']);
     Route::post('/return-laptop/store', [laptopController::class, 'laptopstr']);
