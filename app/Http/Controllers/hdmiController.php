@@ -31,6 +31,7 @@ class hdmiController extends Controller
         $HDMI = new HDMi;
         $HDMI->tanggal_peminjaman = $request->tanggal_peminjaman;
         $HDMI->nama = $request->nama;
+        $HDMI->kode_device = $request->kode_device;
         $HDMI->kondisi_HDMI = $request->kondisi_HDMI;
         $HDMI->waktu_pengembalian = $request->waktu_pengembalian;
         $HDMI->save();
