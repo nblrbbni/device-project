@@ -38,6 +38,7 @@
     <br>
     <br>
     <div class="table text-center">
+        <p style="text-align: center" class="text-red">*Harap isi kolom dengan benar.</p>
         <table class="table" id="return">
             <thead>
                 <tr>

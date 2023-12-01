@@ -49,6 +49,9 @@ class pinjamController extends Controller
         $pinjamLaptop->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamLaptop->save();
 
+        // Simpan kode device yang dipinjam dalam session
+        session(['kode_device_peminjaman' => $request->kode_device]);
+
         DB::table('device')
         ->where('kode_device', $request->kode_device)
         ->update(
