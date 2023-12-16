@@ -8,8 +8,10 @@ use Illuminate\Http\Request;
 
 class ReturnController extends Controller
 {
-    public function return(){
-        return view('returndevice');
-    }
+    public function showReturnForm()
+    {
+        $kode_device = DB::table('device')->get();
 
+        return view('returndevice', compact('kode_device'));
+    }
 }

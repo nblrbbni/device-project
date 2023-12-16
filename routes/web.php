@@ -119,7 +119,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/student/{student_id}/delete', [StudentController::class, 'delete']);
 
     //Return Device
-    Route::get('/returndevice', [ReturnController::class, 'return']);
+    Route::get('/returndevice', [ReturnController::class, 'showReturnForm']);
     // return-laptop
     Route::get('/return-laptop', [laptopController::class, 'laptop']);
     Route::post('/return-laptop/store', [laptopController::class, 'laptopstr']);
