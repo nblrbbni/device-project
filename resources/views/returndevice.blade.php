@@ -159,7 +159,7 @@
                 <p>Hardisk</p>
             </div>
             <div class="cardButton">
-                @if (str_contains(session('kode_device_peminjaman'), 'PRJ'))
+                @if (str_contains(session('kode_device_peminjaman'), 'HDD'))
                     <a href="/return-hardisk" style="text-decoration: none;">Pilih</a>
                 @else
                     <button type="button" class="btn" disabled>Pilih</button>
