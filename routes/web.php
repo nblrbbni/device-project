@@ -223,4 +223,19 @@ Route::put('/information/{information_id}', [informationController::class, 'upda
 // delete
 Route::delete('/information/{information_id}', [informationController::class, 'destroy']);
 
+// Data Device
+Route::get('/datadevice', function() {
+    return view('data-device.read');
+});
+// Data Laptop
+Route::get('/datalaptop/create', [laptopController::class, 'create']);
+Route::post('/datalaptop', [laptopController::class, 'store']);
+//Read
+Route::get('/datalaptop', [laptopController::class, 'index']);
+//Update
+Route::get('/datalaptop/{datalaptop_id}/edit', [laptopController::class, 'edit']);
+Route::put('/datalaptop/{datalaptop_id}', [laptopController::class, 'update']);
+//Delete
+Route::get('/datalaptop/{datalaptop_id}/delete', [laptopController::class, 'delete']);
+
 Auth::routes();

@@ -67,7 +67,7 @@
                     </td>
                     <td>
                         <select name="kode_device" id="kode_device" class="js-example-basic-single" required>
-                            @foreach($device as $value)
+                            @foreach($datalaptop as $value)
                                 <option value="{{ $value->kode_device }}">{{ $value->kode_device }}</option>
                             @endforeach
                         </select>

@@ -62,7 +62,7 @@
                     </td>
                     <td>
                         <select name="kode_device" id="kode_device" class="js-example-basic-single" required>
-                            @foreach($device as $value)
+                            @foreach($datalaptop as $value)
                                 <option value="{{ $value->kode_device }}" {{ (session('kode_device_peminjaman') == $value->kode_device) ? 'selected' : '' }}>{{ $value->kode_device }}</option>
                             @endforeach
                         </select>

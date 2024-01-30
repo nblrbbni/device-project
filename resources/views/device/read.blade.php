@@ -64,7 +64,6 @@
                                     @method('DELETE')
                                     <a href="/device/{{ $value->id }}/edit" class="btn" style="background-color:#14274c; color:white">Edit</a>
                                     <a href="#" class="btn btn-danger deletedevice" data-id="{{ $value->id }}" data-name="{{ $value->kode_device }}">Delete</a>
-                                    {{-- <input type="submit" value="Delete" class="btn btn-danger delete" data-id="{{ $value->id }}"> --}}
                                 </form>
                             </td>
                         </tr>
