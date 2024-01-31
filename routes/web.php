@@ -221,5 +221,11 @@ Route::delete('/information/{information_id}', [informationController::class, 'd
 
 // Admin
 Route::get('/admin', [adminContrller::class, 'admin']);
+Route::get('/data-siswa', [adminContrller::class, 'siswa']);
+Route::get('/data-device', [adminContrller::class, 'device']);
+Route::get('/laporan', [adminContrller::class, 'laporan']);
+Route::get('/Device', [adminContrller::class, 'Devicert']);
+Route::get('/tugas', [adminContrller::class, 'tugas']);
+Route::get('/calendar', [adminContrller::class, 'calendar']);
 
 Auth::routes();
