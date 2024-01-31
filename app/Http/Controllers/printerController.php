@@ -11,10 +11,10 @@ class printerController extends Controller
 {
     public function printer()
     {
-        $device = DB::table('device')->get();
+        $dataprinter = DB::table('dataprinter')->get();
 
         return view('printer.return-printer', [
-            'device' => $device,
+            'dataprinter' => $dataprinter,
         ]);
     }
 
@@ -37,7 +37,7 @@ class printerController extends Controller
         $printer->save();
 
 
-        DB::table('device')
+        DB::table('dataprinter')
         ->where('kode_device', $request->kode_device)
         ->update(
             [
@@ -49,5 +49,71 @@ class printerController extends Controller
         return redirect()->to('/');
     }
 
+    public function create()
+    {
+        return view('printer.create');
+    }
 
+    public function index()
+    {
+        $dataprinter = DB::table('dataprinter')->get();
+
+        return view('printer.read', ['dataprinter' => $dataprinter]);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'kode_device' => 'required',
+            'nama' => 'required',
+            'merk' => 'required',
+            'status'
+        ]);
+
+        DB::table('dataprinter')->insert([
+            'kode_device' => $request['kode_device'],
+            'nama' => $request['nama'],
+            'merk' => $request['merk'],
+            'status' => 'status',
+        ]);
+
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil ditambahkan!');
+        return redirect('/dataprinter');
+    }
+
+    public function edit($id)
+    {
+        $dataprinter = DB::table('dataprinter')->where('id', $id)->first();
+
+        return view('printer.update', ['dataprinter' => $dataprinter]);
+    }
+
+    public function update(Request $request, string $id)
+    {
+        $request->validate([
+            'kode_device' => 'required',
+            'nama' => 'required',
+            'merk' => 'required',
+        ]);
+
+        DB::table('dataprinter')
+        ->where('id', $id)
+            ->update(
+                [
+                    'kode_device' => $request->kode_device,
+                    'nama' => $request->nama,
+                    'merk' => $request->merk,
+                ],
+            );
+        Alert::success('Berhasil!', 'Data berhasil diupdate!');
+        return redirect('/dataprinter');
+    }
+
+    public function delete($id)
+    {
+        DB::table('dataprinter')->where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
+        return redirect('/dataprinter');
+    }
 }

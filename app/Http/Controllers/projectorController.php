@@ -12,10 +12,10 @@ class projectorController extends Controller
 {
     public function projector()
     {
-        $device = DB::table('device')->get();
+        $dataprojector = DB::table('dataprojector')->get();
 
         return view('projector.return-projector', [
-            'device' => $device,
+            'dataprojector' => $dataprojector,
         ]);
     }
 
@@ -41,7 +41,7 @@ class projectorController extends Controller
         $projector->waktu_pengembalian = $request->waktu_pengembalian;
         $projector->save();
 
-        DB::table('device')
+        DB::table('dataprojector')
         ->where('kode_device', $request->kode_device)
         ->update(
             [
@@ -52,5 +52,73 @@ class projectorController extends Controller
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dikembalikan!');
         return redirect()->to('/');
+    }
+
+    public function create()
+    {
+        return view('projector.create');
+    }
+
+    public function index()
+    {
+        $dataprojector = DB::table('dataprojector')->get();
+
+        return view('projector.read', ['dataprojector' => $dataprojector]);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'kode_device' => 'required',
+            'nama' => 'required',
+            'merk' => 'required',
+            'status'
+        ]);
+
+        DB::table('dataprojector')->insert([
+            'kode_device' => $request['kode_device'],
+            'nama' => $request['nama'],
+            'merk' => $request['merk'],
+            'status' => 'status',
+        ]);
+
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil ditambahkan!');
+        return redirect('/dataprojector');
+    }
+
+    public function edit($id)
+    {
+        $dataprojector = DB::table('dataprojector')->where('id', $id)->first();
+
+        return view('projector.update', ['dataprojector' => $dataprojector]);
+    }
+
+    public function update(Request $request, string $id)
+    {
+        $request->validate([
+            'kode_device' => 'required',
+            'nama' => 'required',
+            'merk' => 'required',
+        ]);
+
+        DB::table('dataprojector')
+            ->where('id', $id)
+            ->update(
+                [
+                    'kode_device' => $request->kode_device,
+                    'nama' => $request->nama,
+                    'merk' => $request->merk,
+                ],
+            );
+        Alert::success('Berhasil!', 'Data berhasil diupdate!');
+        return redirect('/dataprojector');
+    }
+
+    public function delete($id)
+    {
+        DB::table('dataprojector')->where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
+        return redirect('/dataprojector');
     }
 }

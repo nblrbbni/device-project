@@ -11,10 +11,10 @@ class handphoneController extends Controller
 {
     public function handphone()
     {
-        $device = DB::table('device')->get();
+        $datahandphone = DB::table('datahandphone')->get();
 
         return view('handphone.return-handphone', [
-            'device' => $device,
+            'datahandphone' => $datahandphone,
         ]);
     }
     public function handphonestr(Request $request)
@@ -39,7 +39,7 @@ class handphoneController extends Controller
         $handphone->waktu_pengembalian = $request->waktu_pengembalian;
         $handphone->save();
 
-        DB::table('device')
+        DB::table('datahandphone')
         ->where('kode_device', $request->kode_device)
         ->update(
             [
@@ -49,5 +49,72 @@ class handphoneController extends Controller
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dikembalikan!');
         return redirect()->to('/');
+    }
+    public function create()
+    {
+        return view('handphone.create');
+    }
+
+    public function index()
+    {
+        $datahandphone = DB::table('datahandphone')->get();
+
+        return view('handphone.read', ['datahandphone' => $datahandphone]);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'kode_device' => 'required',
+            'nama' => 'required',
+            'merk' => 'required',
+            'status'
+        ]);
+
+        DB::table('datahandphone')->insert([
+            'kode_device' => $request['kode_device'],
+            'nama' => $request['nama'],
+            'merk' => $request['merk'],
+            'status' => 'status',
+        ]);
+
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil ditambahkan!');
+        return redirect('/datahandphone');
+    }
+
+    public function edit($id)
+    {
+        $datahandphone = DB::table('datahandphone')->where('id', $id)->first();
+
+        return view('handphone.update', ['datahandphone' => $datahandphone]);
+    }
+
+    public function update(Request $request, string $id)
+    {
+        $request->validate([
+            'kode_device' => 'required',
+            'nama' => 'required',
+            'merk' => 'required',
+        ]);
+
+        DB::table('datahandphone')
+        ->where('id', $id)
+            ->update(
+                [
+                    'kode_device' => $request->kode_device,
+                    'nama' => $request->nama,
+                    'merk' => $request->merk,
+                ],
+            );
+        Alert::success('Berhasil!', 'Data berhasil diupdate!');
+        return redirect('/datahandphone');
+    }
+
+    public function delete($id)
+    {
+        DB::table('datahandphone')->where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
+        return redirect('/datahandphone');
     }
 }

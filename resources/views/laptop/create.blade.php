@@ -26,7 +26,7 @@
         <div class="row g-2 align-items-center">
           <div class="col">
             <h2 class="page-title">
-              Buat Data laptop
+              Buat Data Laptop
             </h2>
           </div>
         </div>

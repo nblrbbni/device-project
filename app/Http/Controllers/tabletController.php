@@ -12,10 +12,10 @@ class tabletController extends Controller
 {
     public function tablet()
     {
-        $device = DB::table('device')->get();
+        $datatablet = DB::table('datatablet')->get();
 
         return view('tablet.return-tablet', [
-            'device' => $device,
+            'datatablet' => $datatablet,
         ]);
     }
 
@@ -40,7 +40,7 @@ class tabletController extends Controller
     $tablet->waktu_pengembalian = $request->waktu_pengembalian;
     $tablet->save();
 
-    DB::table('device')
+    DB::table('datatablet')
     ->where('kode_device', $request->kode_device)
     ->update(
         [
@@ -53,4 +53,71 @@ class tabletController extends Controller
     return redirect()->to('/');
     }
 
+    public function create()
+    {
+        return view('tablet.create');
+    }
+
+    public function index()
+    {
+        $datatablet = DB::table('datatablet')->get();
+
+        return view('tablet.read', ['datatablet' => $datatablet]);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'kode_device' => 'required',
+            'nama' => 'required',
+            'merk' => 'required',
+            'status'
+        ]);
+
+        DB::table('datatablet')->insert([
+            'kode_device' => $request['kode_device'],
+            'nama' => $request['nama'],
+            'merk' => $request['merk'],
+            'status' => 'status',
+        ]);
+
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil ditambahkan!');
+        return redirect('/datatablet');
+    }
+
+    public function edit($id)
+    {
+        $datatablet = DB::table('datatablet')->where('id', $id)->first();
+
+        return view('tablet.update', ['datatablet' => $datatablet]);
+    }
+
+    public function update(Request $request, string $id)
+    {
+        $request->validate([
+            'kode_device' => 'required',
+            'nama' => 'required',
+            'merk' => 'required',
+        ]);
+
+        DB::table('datatablet')
+        ->where('id', $id)
+            ->update(
+                [
+                    'kode_device' => $request->kode_device,
+                    'nama' => $request->nama,
+                    'merk' => $request->merk,
+                ],
+            );
+        Alert::success('Berhasil!', 'Data berhasil diupdate!');
+        return redirect('/datatablet');
+    }
+
+    public function delete($id)
+    {
+        DB::table('datatablet')->where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
+        return redirect('/datatablet');
+    }
 }

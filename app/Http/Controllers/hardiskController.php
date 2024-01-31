@@ -11,10 +11,10 @@ class hardiskController extends Controller
 {
     public function hardisk()
     {
-        $device = DB::table('device')->get();
+        $datahardisk = DB::table('datahardisk')->get();
 
         return view('hardisk.return-hardisk', [
-            'device' => $device,
+            'datahardisk' => $datahardisk,
         ]);
     }
 
@@ -36,7 +36,7 @@ class hardiskController extends Controller
         $hardisk->waktu_pengembalian = $request->waktu_pengembalian;
         $hardisk->save();
 
-        DB::table('device')
+        DB::table('datahardisk')
         ->where('kode_device', $request->kode_device)
         ->update(
             [
@@ -47,5 +47,71 @@ class hardiskController extends Controller
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dikembalikan!');
         return redirect()->to('/');
     }
-}
+    public function create()
+    {
+        return view('hardisk.create');
+    }
 
+    public function index()
+    {
+        $datahardisk = DB::table('datahardisk')->get();
+
+        return view('hardisk.read', ['datahardisk' => $datahardisk]);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'kode_device' => 'required',
+            'nama' => 'required',
+            'merk' => 'required',
+            'status'
+        ]);
+
+        DB::table('datahardisk')->insert([
+            'kode_device' => $request['kode_device'],
+            'nama' => $request['nama'],
+            'merk' => $request['merk'],
+            'status' => 'status',
+        ]);
+
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil ditambahkan!');
+        return redirect('/datahardisk');
+    }
+
+    public function edit($id)
+    {
+        $datahardisk = DB::table('datahardisk')->where('id', $id)->first();
+
+        return view('hardisk.update', ['datahardisk' => $datahardisk]);
+    }
+
+    public function update(Request $request, string $id)
+    {
+        $request->validate([
+            'kode_device' => 'required',
+            'nama' => 'required',
+            'merk' => 'required',
+        ]);
+
+        DB::table('datahardisk')
+        ->where('id', $id)
+            ->update(
+                [
+                    'kode_device' => $request->kode_device,
+                    'nama' => $request->nama,
+                    'merk' => $request->merk,
+                ],
+            );
+        Alert::success('Berhasil!', 'Data berhasil diupdate!');
+        return redirect('/datahardisk');
+    }
+
+    public function delete($id)
+    {
+        DB::table('datahardisk')->where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
+        return redirect('/datahardisk');
+    }
+}

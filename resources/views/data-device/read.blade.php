@@ -30,7 +30,7 @@ Data Device
       <p>Headphone</p>
     </div>
     <div class="link-electronic">
-      <a href="/select-headphone">Pilih</a>
+      <a href="/dataheadphone">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
@@ -39,7 +39,7 @@ Data Device
       <p>Projector</p>
     </div>
     <div class="link-electronic">
-      <a href="/select-projector">Pilih</a>
+      <a href="/dataprojector">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
@@ -48,7 +48,7 @@ Data Device
       <p>Tablet</p>
     </div>
     <div class="link-electronic">
-      <a href="/select-tablet">Pilih</a>
+      <a href="/datatablet">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
@@ -57,7 +57,7 @@ Data Device
       <p>Camera</p>
     </div>
     <div class="link-electronic">
-      <a href="/select-camera">Pilih</a>
+      <a href="/datacamera">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
@@ -66,7 +66,7 @@ Data Device
       <p>Handphone</p>
     </div>
     <div class="link-electronic">
-      <a href="/select-handphone">Pilih</a>
+      <a href="/datahandphone">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
@@ -75,7 +75,7 @@ Data Device
       <p>Computer</p>
     </div>
     <div class="link-electronic">
-      <a href="/select-komputer">Pilih</a>
+      <a href="/datacomputer">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
@@ -84,7 +84,7 @@ Data Device
       <p>Flashdisk</p>
     </div>
     <div class="link-electronic">
-      <a href="/select-flashdisk">Pilih</a>
+      <a href="/dataflashdisk">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
@@ -93,7 +93,7 @@ Data Device
       <p>Hardisk</p>
     </div>
     <div class="link-electronic">
-      <a href="/select-hardisk">Pilih</a>
+      <a href="/datahardisk">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
@@ -102,7 +102,7 @@ Data Device
       <p>Printer</p>
     </div>
     <div class="link-electronic">
-      <a href="/select-printer">Pilih</a>
+      <a href="/dataprinter">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
@@ -111,7 +111,7 @@ Data Device
       <p>LAN</p>
     </div>
     <div class="link-electronic">
-      <a href="/select-lan">Pilih</a>
+      <a href="/datalan">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>
@@ -120,7 +120,7 @@ Data Device
       <p>HDMI</p>
     </div>
     <div class="link-electronic">
-      <a href="/select-hdmi">Pilih</a>
+      <a href="/datahdmi">Pilih</a>
     </div>
   </div>
 </div>

@@ -69,12 +69,12 @@ class pinjamController extends Controller
     {
         $mapel = DB::table('mapel')->get();
         $guru = DB::table('guru')->get();
-        $device = DB::table('device')->get();
+        $dataheadphone = DB::table('dataheadphone')->get();
 
         return view('headphone.sp-headphone', [
             'mapel' => $mapel,
             'guru' => $guru,
-            'device' => $device,
+            'dataheadphone' => $dataheadphone,
         ]);
     }
 
@@ -101,7 +101,7 @@ class pinjamController extends Controller
         // Simpan kode device yang dipinjam dalam session
         session(['kode_device_peminjaman' => $request->kode_device]);
 
-        DB::table('device')
+        DB::table('dataheadphone')
         ->where('kode_device', $request->kode_device)
         ->update(
             [
@@ -118,12 +118,12 @@ class pinjamController extends Controller
     {
         $mapel = DB::table('mapel')->get();
         $guru = DB::table('guru')->get();
-        $device = DB::table('device')->get();
+        $dataprojector = DB::table('dataprojector')->get();
 
         return view('projector.sp-projector', [
             'mapel' => $mapel,
             'guru' => $guru,
-            'device' => $device,
+            'dataprojector' => $dataprojector,
         ]);
     }
 
@@ -150,7 +150,7 @@ class pinjamController extends Controller
         // Simpan kode device yang dipinjam dalam session
         session(['kode_device_peminjaman' => $request->kode_device]);
 
-        DB::table('device')
+        DB::table('dataprojector')
         ->where('kode_device', $request->kode_device)
         ->update(
             [
@@ -166,13 +166,13 @@ class pinjamController extends Controller
     public function tablet()
     {$mapel = DB::table('mapel')->get();
         $guru = DB::table('guru')->get();
-        $device = DB::table('device')->get();
+        $datatablet = DB::table('datatablet')->get();
         $guru = DB::table('guru')->get();
 
         return view('tablet.sp-tablet', [
             'mapel' => $mapel,
             'guru' => $guru,
-            'device' => $device,
+            'datatablet' => $datatablet,
         ]);
     }
 
@@ -199,7 +199,7 @@ class pinjamController extends Controller
         // Simpan kode device yang dipinjam dalam session
         session(['kode_device_peminjaman' => $request->kode_device]);
 
-        DB::table('device')
+        DB::table('datatablet')
         ->where('kode_device', $request->kode_device)
         ->update(
             [
@@ -216,13 +216,12 @@ class pinjamController extends Controller
     {
         $mapel = DB::table('mapel')->get();
         $guru = DB::table('guru')->get();
-        $device = DB::table('device')->get();
-        $device = DB::table('device')->get();
+        $datacamera = DB::table('datacamera')->get();
 
         return view('camera.sp-camera', [
             'mapel' => $mapel,
             'guru' => $guru,
-            'device' => $device,
+            'datacamera' => $datacamera,
         ]);
     }
 
@@ -249,7 +248,7 @@ class pinjamController extends Controller
         // Simpan kode device yang dipinjam dalam session
         session(['kode_device_peminjaman' => $request->kode_device]);
 
-        DB::table('device')
+        DB::table('datacamera')
         ->where('kode_device', $request->kode_device)
         ->update(
             [
@@ -266,12 +265,12 @@ class pinjamController extends Controller
     {
         $mapel = DB::table('mapel')->get();
         $guru = DB::table('guru')->get();
-        $device = DB::table('device')->get();
+        $datahandphone = DB::table('datahandphone')->get();
 
         return view('handphone.sp-handphone', [
             'mapel' => $mapel,
             'guru' => $guru,
-            'device' => $device,
+            'datahandphone' => $datahandphone,
         ]);
     }
 
@@ -298,7 +297,7 @@ class pinjamController extends Controller
         // Simpan kode device yang dipinjam dalam session
         session(['kode_device_peminjaman' => $request->kode_device]);
 
-        DB::table('device')
+        DB::table('datahandphone')
         ->where('kode_device', $request->kode_device)
         ->update(
             [
@@ -315,12 +314,12 @@ class pinjamController extends Controller
     {
         $mapel = DB::table('mapel')->get();
         $guru = DB::table('guru')->get();
-        $device = DB::table('device')->get();
+        $datacomputer = DB::table('datacomputer')->get();
 
         return view('computer.sp-komputer', [
             'mapel' => $mapel,
             'guru' => $guru,
-            'device' => $device,
+            'datacomputer' => $datacomputer,
         ]);
     }
 
@@ -348,7 +347,7 @@ class pinjamController extends Controller
         // Simpan kode device yang dipinjam dalam session
         session(['kode_device_peminjaman' => $request->kode_device]);
 
-        DB::table('device')
+        DB::table('datacomputer')
         ->where('kode_device', $request->kode_device)
         ->update(
             [
@@ -365,12 +364,12 @@ class pinjamController extends Controller
     {
         $mapel = DB::table('mapel')->get();
         $guru = DB::table('guru')->get();
-        $device = DB::table('device')->get();
+        $dataflashdisk = DB::table('dataflashdisk')->get();
 
         return view('flashdisk.sp-flashdisk', [
             'mapel' => $mapel,
             'guru' => $guru,
-            'device' => $device,
+            'dataflashdisk' => $dataflashdisk,
         ]);
     }
 
@@ -397,7 +396,7 @@ class pinjamController extends Controller
         // Simpan kode device yang dipinjam dalam session
         session(['kode_device_peminjaman' => $request->kode_device]);
 
-        DB::table('device')
+        DB::table('dataflashdisk')
         ->where('kode_device', $request->kode_device)
         ->update(
             [
@@ -414,12 +413,12 @@ class pinjamController extends Controller
     {
         $mapel = DB::table('mapel')->get();
         $guru = DB::table('guru')->get();
-        $device = DB::table('device')->get();
+        $datahardisk = DB::table('datahardisk')->get();
 
         return view('hardisk.sp-hardisk', [
             'mapel' => $mapel,
             'guru' => $guru,
-            'device' => $device,
+            'datahardisk' => $datahardisk,
         ]);
 
     }
@@ -447,7 +446,7 @@ class pinjamController extends Controller
         // Simpan kode device yang dipinjam dalam session
         session(['kode_device_peminjaman' => $request->kode_device]);
 
-        DB::table('device')
+        DB::table('datahardisk')
         ->where('kode_device', $request->kode_device)
         ->update(
             [
@@ -464,12 +463,12 @@ class pinjamController extends Controller
     {
         $mapel = DB::table('mapel')->get();
         $guru = DB::table('guru')->get();
-        $device = DB::table('device')->get();
+        $dataprinter = DB::table('dataprinter')->get();
 
         return view('printer.sp-printer', [
             'mapel' => $mapel,
             'guru' => $guru,
-            'device' => $device,
+            'dataprinter' => $dataprinter,
         ]);
 
     }
@@ -497,7 +496,7 @@ class pinjamController extends Controller
         // Simpan kode device yang dipinjam dalam session
         session(['kode_device_peminjaman' => $request->kode_device]);
 
-        DB::table('device')
+        DB::table('dataprinter')
         ->where('kode_device', $request->kode_device)
         ->update(
             [
@@ -514,12 +513,12 @@ class pinjamController extends Controller
     {
         $mapel = DB::table('mapel')->get();
         $guru = DB::table('guru')->get();
-        $device = DB::table('device')->get();
+        $datahdmi = DB::table('datahdmi')->get();
 
         return view('hdmi.sp-hdmi', [
             'mapel' => $mapel,
             'guru' => $guru,
-            'device' => $device,
+            'datahdmi' => $datahdmi,
         ]);
     }
 
@@ -546,7 +545,7 @@ class pinjamController extends Controller
         // Simpan kode device yang dipinjam dalam session
         session(['kode_device_peminjaman' => $request->kode_device]);
 
-        DB::table('device')
+        DB::table('datahdmi')
         ->where('kode_device', $request->kode_device)
         ->update(
             [
@@ -563,12 +562,12 @@ class pinjamController extends Controller
     {
         $mapel = DB::table('mapel')->get();
         $guru = DB::table('guru')->get();
-        $device = DB::table('device')->get();
+        $datalan = DB::table('datalan')->get();
 
         return view('lan.sp-lan', [
             'mapel' => $mapel,
             'guru' => $guru,
-            'device' => $device,
+            'datalan' => $datalan,
         ]);
     }
 
@@ -595,7 +594,7 @@ class pinjamController extends Controller
         // Simpan kode device yang dipinjam dalam session
         session(['kode_device_peminjaman' => $request->kode_device]);
 
-        DB::table('device')
+        DB::table('datalan')
         ->where('kode_device', $request->kode_device)
         ->update(
             [

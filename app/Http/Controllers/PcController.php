@@ -11,10 +11,10 @@ class PcController extends Controller
 {
     public function computer()
     {
-        $device = DB::table('device')->get();
+        $datacomputer = DB::table('datacomputer')->get();
 
         return view('computer.return-pc', [
-            'device' => $device,
+            'datacomputer' => $datacomputer,
         ]);
     }
 
@@ -40,7 +40,7 @@ class PcController extends Controller
         $PC->waktu_pengembalian = $request->waktu_pengembalian;
         $PC->save();
 
-        DB::table('device')
+        DB::table('datacomputer')
         ->where('kode_device', $request->kode_device)
         ->update(
             [
@@ -51,5 +51,73 @@ class PcController extends Controller
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dikembalikan!');
         return redirect()->to('/');
 
+    }
+
+    public function create()
+    {
+        return view('computer.create');
+    }
+
+    public function index()
+    {
+        $datacomputer = DB::table('datacomputer')->get();
+
+        return view('computer.read', ['datacomputer' => $datacomputer]);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'kode_device' => 'required',
+            'nama' => 'required',
+            'merk' => 'required',
+            'status'
+        ]);
+
+        DB::table('datacomputer')->insert([
+            'kode_device' => $request['kode_device'],
+            'nama' => $request['nama'],
+            'merk' => $request['merk'],
+            'status' => 'status',
+        ]);
+
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil ditambahkan!');
+        return redirect('/datacomputer');
+    }
+
+    public function edit($id)
+    {
+        $datacomputer = DB::table('datacomputer')->where('id', $id)->first();
+
+        return view('computer.update', ['datacomputer' => $datacomputer]);
+    }
+
+    public function update(Request $request, string $id)
+    {
+        $request->validate([
+            'kode_device' => 'required',
+            'nama' => 'required',
+            'merk' => 'required',
+        ]);
+
+        DB::table('datacomputer')
+        ->where('id', $id)
+            ->update(
+                [
+                    'kode_device' => $request->kode_device,
+                    'nama' => $request->nama,
+                    'merk' => $request->merk,
+                ],
+            );
+        Alert::success('Berhasil!', 'Data berhasil diupdate!');
+        return redirect('/datacomputer');
+    }
+
+    public function delete($id)
+    {
+        DB::table('datacomputer')->where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
+        return redirect('/datacomputer');
     }
 }

@@ -11,10 +11,10 @@ class earphoneController extends Controller
 {
     public function earphone()
     {
-        $device = DB::table('device')->get();
+        $dataheadphone = DB::table('dataheadphone')->get();
 
         return view('headphone.return-headphone', [
-            'device' => $device,
+            'dataheadphone' => $dataheadphone,
         ]);
     }
 
@@ -40,7 +40,7 @@ class earphoneController extends Controller
         $earphone->waktu_pengembalian = $request->waktu_pengembalian;
         $earphone->save();
 
-        DB::table('device')
+        DB::table('dataheadphone')
         ->where('kode_device', $request->kode_device)
         ->update(
             [
@@ -50,5 +50,73 @@ class earphoneController extends Controller
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dikembalikan!');
         return redirect()->to('/');
+    }
+
+    public function create()
+    {
+        return view('headphone.create');
+    }
+
+    public function index()
+    {
+        $dataheadphone = DB::table('dataheadphone')->get();
+
+        return view('headphone.read', ['dataheadphone' => $dataheadphone]);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'kode_device' => 'required',
+            'nama' => 'required',
+            'merk' => 'required',
+            'status'
+        ]);
+
+        DB::table('dataheadphone')->insert([
+            'kode_device' => $request['kode_device'],
+            'nama' => $request['nama'],
+            'merk' => $request['merk'],
+            'status' => 'status',
+        ]);
+
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil ditambahkan!');
+        return redirect('/dataheadphone');
+    }
+
+    public function edit($id)
+    {
+        $dataheadphone = DB::table('dataheadphone')->where('id', $id)->first();
+
+        return view('headphone.update', ['dataheadphone' => $dataheadphone]);
+    }
+
+    public function update(Request $request, string $id)
+    {
+        $request->validate([
+            'kode_device' => 'required',
+            'nama' => 'required',
+            'merk' => 'required',
+        ]);
+
+        DB::table('dataheadphone')
+        ->where('id', $id)
+            ->update(
+                [
+                    'kode_device' => $request->kode_device,
+                    'nama' => $request->nama,
+                    'merk' => $request->merk,
+                ],
+            );
+        Alert::success('Berhasil!', 'Data berhasil diupdate!');
+        return redirect('/dataheadphone');
+    }
+
+    public function delete($id)
+    {
+        DB::table('dataheadphone')->where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');    
+        return redirect('/dataheadphone');
     }
 }

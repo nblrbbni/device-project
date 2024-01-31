@@ -11,10 +11,10 @@ class cameraController extends Controller
 {
     public function camera()
     {
-        $device = DB::table('device')->get();
+        $datacamera = DB::table('datacamera')->get();
 
         return view('camera.return-camera', [
-            'device' => $device,
+            'datacamera' => $datacamera,
         ]);
     }
 
@@ -40,7 +40,7 @@ class cameraController extends Controller
         $camera->waktu_pengembalian = $request->waktu_pengembalian;
         $camera->save();
 
-        DB::table('device')
+        DB::table('datacamera')
         ->where('kode_device', $request->kode_device)
         ->update(
             [
@@ -50,5 +50,72 @@ class cameraController extends Controller
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dikembalikan!');
         return redirect()->to('/');
+    }
+    public function create()
+    {
+        return view('camera.create');
+    }
+
+    public function index()
+    {
+        $datacamera = DB::table('datacamera')->get();
+
+        return view('camera.read', ['datacamera' => $datacamera]);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'kode_device' => 'required',
+            'nama' => 'required',
+            'merk' => 'required',
+            'status'
+        ]);
+
+        DB::table('datacamera')->insert([
+            'kode_device' => $request['kode_device'],
+            'nama' => $request['nama'],
+            'merk' => $request['merk'],
+            'status' => 'status',
+        ]);
+
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dikembalikan!');
+        return redirect('/datacamera');
+    }
+
+    public function edit($id)
+    {
+        $datacamera = DB::table('datacamera')->where('id', $id)->first();
+
+        return view('camera.update', ['datacamera' => $datacamera]);
+    }
+
+    public function update(Request $request, string $id)
+    {
+        $request->validate([
+            'kode_device' => 'required',
+            'nama' => 'required',
+            'merk' => 'required',
+        ]);
+
+        DB::table('datacamera')
+        ->where('id', $id)
+            ->update(
+                [
+                    'kode_device' => $request->kode_device,
+                    'nama' => $request->nama,
+                    'merk' => $request->merk,
+                ],
+            );
+        Alert::success('Berhasil!', 'Data berhasil diupdate!');
+        return redirect('/datacamera');
+    }
+
+    public function delete($id)
+    {
+        DB::table('datacamera')->where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
+        return redirect('/datacamera');
     }
 }

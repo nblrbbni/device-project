@@ -88,6 +88,7 @@ class laptopController extends Controller
             'status' => 'status',
         ]);
 
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil ditambahkan!');
         return redirect('/datalaptop');
     }
 
@@ -129,15 +130,8 @@ class laptopController extends Controller
     {
         DB::table('datalaptop')->where('id', $id)->delete();
 
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
         return redirect('/datalaptop');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 
     public function show()

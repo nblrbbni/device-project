@@ -11,10 +11,10 @@ class hdmiController extends Controller
 {
     public function HDMI()
     {
-        $device = DB::table('device')->get();
+        $datahdmi = DB::table('datahdmi')->get();
 
         return view('hdmi.return-hdmi', [
-            'device' => $device,
+            'datahdmi' => $datahdmi,
         ]);
     }
 
@@ -36,7 +36,7 @@ class hdmiController extends Controller
         $HDMI->waktu_pengembalian = $request->waktu_pengembalian;
         $HDMI->save();
 
-        DB::table('device')
+        DB::table('datahdmi')
         ->where('kode_device', $request->kode_device)
         ->update(
             [
@@ -47,5 +47,73 @@ class hdmiController extends Controller
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dikembalikan!');
         return redirect()->to('/');
+    }
+
+    public function create()
+    {
+        return view('hdmi.create');
+    }
+
+    public function index()
+    {
+        $datahdmi = DB::table('datahdmi')->get();
+
+        return view('hdmi.read', ['datahdmi' => $datahdmi]);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'kode_device' => 'required',
+            'nama' => 'required',
+            'merk' => 'required',
+            'status'
+        ]);
+
+        DB::table('datahdmi')->insert([
+            'kode_device' => $request['kode_device'],
+            'nama' => $request['nama'],
+            'merk' => $request['merk'],
+            'status' => 'status',
+        ]);
+
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil ditambahkan!');
+        return redirect('/datahdmi');
+    }
+
+    public function edit($id)
+    {
+        $datahdmi = DB::table('datahdmi')->where('id', $id)->first();
+
+        return view('hdmi.update', ['datahdmi' => $datahdmi]);
+    }
+
+    public function update(Request $request, string $id)
+    {
+        $request->validate([
+            'kode_device' => 'required',
+            'nama' => 'required',
+            'merk' => 'required',
+        ]);
+
+        DB::table('datahdmi')
+        ->where('id', $id)
+            ->update(
+                [
+                    'kode_device' => $request->kode_device,
+                    'nama' => $request->nama,
+                    'merk' => $request->merk,
+                ],
+            );
+        Alert::success('Berhasil!', 'Data berhasil diupdate!');
+        return redirect('/datahdmi');
+    }
+
+    public function delete($id)
+    {
+        DB::table('datahdmi')->where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
+        return redirect('/datahdmi');
     }
 }

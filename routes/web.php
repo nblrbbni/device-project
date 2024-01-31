@@ -74,19 +74,7 @@ Route::put('/guru/{guru_id}', [GuruController::class, 'update']);
 //Delete
 Route::get('/guru/{guru_id}/delete', [GuruController::class, 'delete']);
 
-//CRUD Device
-//Create
-Route::get('/device/create' , [DeviceController::class, 'create']);
-Route::post('/device', [DeviceController::class, 'store']);
-//Read
-Route::get('/device', [DeviceController::class, 'index']);
-//Update
-Route::get('/device/{device_id}/edit', [DeviceController::class, 'edit']);
-Route::put('/device/{device_id}', [DeviceController::class, 'update']);
-//Delete
-Route::get('/device/{device_id}/delete', [DeviceController::class, 'delete']);
-
-//CRUD Device
+//CRUD Category
 //Create
 Route::get('/category/create' , [CategoryController::class, 'create']);
 Route::post('/category', [CategoryController::class, 'store']);
@@ -237,5 +225,115 @@ Route::get('/datalaptop/{datalaptop_id}/edit', [laptopController::class, 'edit']
 Route::put('/datalaptop/{datalaptop_id}', [laptopController::class, 'update']);
 //Delete
 Route::get('/datalaptop/{datalaptop_id}/delete', [laptopController::class, 'delete']);
+// Data Headphone
+Route::get('/dataheadphone/create', [earphoneController::class, 'create']);
+Route::post('/dataheadphone', [earphoneController::class, 'store']);
+//Read
+Route::get('/dataheadphone', [earphoneController::class, 'index']);
+//Update
+Route::get('/dataheadphone/{dataheadphone_id}/edit', [earphoneController::class, 'edit']);
+Route::put('/dataheadphone/{dataheadphone_id}', [earphoneController::class, 'update']);
+//Delete
+Route::get('/dataheadphone/{dataheadphone_id}/delete', [earphoneController::class, 'delete']);
+// Data Projector
+Route::get('/dataprojector/create', [projectorController::class, 'create']);
+Route::post('/dataprojector', [projectorController::class, 'store']);
+//Read
+Route::get('/dataprojector', [projectorController::class, 'index']);
+//Update
+Route::get('/dataprojector/{dataprojector_id}/edit', [projectorController::class, 'edit']);
+Route::put('/dataprojector/{dataprojector_id}', [projectorController::class, 'update']);
+//Delete
+Route::get('/dataprojector/{dataprojector_id}/delete', [projectorController::class, 'delete']);
+// Data Tablet
+Route::get('/datatablet/create', [tabletController::class, 'create']);
+Route::post('/datatablet', [tabletController::class, 'store']);
+//Read
+Route::get('/datatablet', [tabletController::class, 'index']);
+//Update
+Route::get('/datatablet/{datatablet_id}/edit', [tabletController::class, 'edit']);
+Route::put('/datatablet/{datatablet_id}', [tabletController::class, 'update']);
+//Delete
+Route::get('/datatablet/{datatablet_id}/delete', [tabletController::class, 'delete']);
+// Data Camera
+Route::get('/datacamera/create', [cameraController::class, 'create']);
+Route::post('/datacamera', [cameraController::class, 'store']);
+//Read
+Route::get('/datacamera', [cameraController::class, 'index']);
+//Update
+Route::get('/datacamera/{datacamera_id}/edit', [cameraController::class, 'edit']);
+Route::put('/datacamera/{datacamera_id}', [cameraController::class, 'update']);
+//Delete
+Route::get('/datacamera/{datacamera_id}/delete', [cameraController::class, 'delete']);
+// Data Handphone
+Route::get('/datahandphone/create', [handphoneController::class, 'create']);
+Route::post('/datahandphone', [handphoneController::class, 'store']);
+//Read
+Route::get('/datahandphone', [handphoneController::class, 'index']);
+//Update
+Route::get('/datahandphone/{datahandphone_id}/edit', [handphoneController::class, 'edit']);
+Route::put('/datahandphone/{datahandphone_id}', [handphoneController::class, 'update']);
+//Delete
+Route::get('/datahandphone/{datahandphone_id}/delete', [handphoneController::class, 'delete']);
+// Data Computer
+Route::get('/datacomputer/create', [PcController::class, 'create']);
+Route::post('/datacomputer', [PcController::class, 'store']);
+//Read
+Route::get('/datacomputer', [PcController::class, 'index']);
+//Update
+Route::get('/datacomputer/{datacomputer_id}/edit', [PcController::class, 'edit']);
+Route::put('/datacomputer/{datacomputer_id}', [PcController::class, 'update']);
+//Delete
+Route::get('/datacomputer/{datacomputer_id}/delete', [PcController::class, 'delete']);
+// Data Flashdisk
+Route::get('/dataflashdisk/create', [flashdiskController::class, 'create']);
+Route::post('/dataflashdisk', [flashdiskController::class, 'store']);
+//Read
+Route::get('/dataflashdisk', [flashdiskController::class, 'index']);
+//Update
+Route::get('/dataflashdisk/{dataflashdisk_id}/edit', [flashdiskController::class, 'edit']);
+Route::put('/dataflashdisk/{dataflashdisk_id}', [flashdiskController::class, 'update']);
+//Delete
+Route::get('/dataflashdisk/{dataflashdisk_id}/delete', [flashdiskController::class, 'delete']);
+// Data Hardisk
+Route::get('/datahardisk/create', [hardiskController::class, 'create']);
+Route::post('/datahardisk', [hardiskController::class, 'store']);
+//Read
+Route::get('/datahardisk', [hardiskController::class, 'index']);
+//Update
+Route::get('/datahardisk/{datahardisk_id}/edit', [hardiskController::class, 'edit']);
+Route::put('/datahardisk/{datahardisk_id}', [hardiskController::class, 'update']);
+//Delete
+Route::get('/datahardisk/{datahardisk_id}/delete', [hardiskController::class, 'delete']);
+// Data Printer
+Route::get('/dataprinter/create', [printerController::class, 'create']);
+Route::post('/dataprinter', [printerController::class, 'store']);
+//Read
+Route::get('/dataprinter', [printerController::class, 'index']);
+//Update
+Route::get('/dataprinter/{dataprinter_id}/edit', [printerController::class, 'edit']);
+Route::put('/dataprinter/{dataprinter_id}', [printerController::class, 'update']);
+//Delete
+Route::get('/dataprinter/{dataprinter_id}/delete', [printerController::class, 'delete']);
+// Data LAN
+Route::get('/datalan/create', [LanController::class, 'create']);
+Route::post('/datalan', [LanController::class, 'store']);
+//Read
+Route::get('/datalan', [LanController::class, 'index']);
+//Update
+Route::get('/datalan/{datalan_id}/edit', [LanController::class, 'edit']);
+Route::put('/datalan/{datalan_id}', [LanController::class, 'update']);
+//Delete
+Route::get('/datalan/{datalan_id}/delete', [LanController::class, 'delete']);
+// Data HDMI
+Route::get('/datahdmi/create', [hdmiController::class, 'create']);
+Route::post('/datahdmi', [hdmiController::class, 'store']);
+//Read
+Route::get('/datahdmi', [hdmiController::class, 'index']);
+//Update
+Route::get('/datahdmi/{datahdmi_id}/edit', [hdmiController::class, 'edit']);
+Route::put('/datahdmi/{datahdmi_id}', [hdmiController::class, 'update']);
+//Delete
+Route::get('/datahdmi/{datahdmi_id}/delete', [hdmiController::class, 'delete']);
 
 Auth::routes();
