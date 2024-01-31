@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Mirza:wght@500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+.card {
+  width: 328px;
+  height: 207px;
+  flex-shrink: 0;
+  width: 328px;
+  height: 207px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.card img {
+  width: 100px;
+  margin-left: 110px;
+  margin-top: 15px;
+}
+.col a {
+  text-decoration: none;
+  color: black;
+}
+.card p {
+  font-size: 20px;
+  margin-top: 20px;
+}
+.ftCard {
+  width: 568px;
+  height: 650px;
+  flex-shrink: 0;
+  border-radius: 55px;
+  background: #fffeff;
+  box-shadow: 0px 4px 55px 0px rgba(0, 0, 0, 0.25);
+  justify-content: center;
+  margin: auto;
+  margin-top: 10rem;
+}
+.title h1 {
+  color: #14274c;
+  font-family: Poppins;
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-align: center;
+  padding: 50px;
+}
+#input {
+  width: 420px;
+  height: 75px;
+  flex-shrink: 0;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.25);
+  border: none;
+  margin-left: 80px;
+}
+input::placeholder {
+  color: #070707;
+  padding: 20px;
+  color: #dedede;
+  font-family: Poppins;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.submitButton button {
+  width: 420px;
+  height: 75px;
+  flex-shrink: 0;
+  border-radius: 22px;
+  background: #14274c;
+  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.25);
+  border: none;
+  margin-left: 80px;
+  margin-top: 50px;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.dataCard {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10rem;
+}
+.cardData {
+  width: 638px;
+  height: 328px;
+  flex-shrink: 0;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.25);
+}
+.cardData p {
+  text-align: center;
+  color: #000;
+  font-family: Poppins;
+  font-size: 33px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 49.5px */
+  letter-spacing: -1.98px;
+}
+.cardData img {
+  margin-top: 40px;
+}
+
+.button a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  background-color: #14274c;
+  padding: 10px 12rem;
+  font-family: Poppins;
+  text-align: center;
+  border-radius: 15px;
+  font-size: 20px;
+}
+.button {
+  margin-top: 50px;
+  text-align: center;
+}
+.button a:hover {
+  background-color: rgba(255, 255, 255, 0.404);
+  color: #14274c;
+  border: 1px solid #14274c;
+}
+table{
+  
+  border-radius: 10px 10px 0px 0px;
+background: #FFF;
+}
+.tableBack{
+  border-radius: 10px;
+background: #F3F3F3;
+box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+width: 1605px;
+height: 810px;
+flex-shrink: 0;
+}

@@ -47,9 +47,8 @@ class laptopController extends Controller
             'waktu_pengembalian' => 'required',
         ]);
 
-
+ 
         $laptopreturn = new laptopreturn;
-
         $laptopreturn->tanggal_peminjaman = $request->tanggal;
         $laptopreturn->nama = $request->nama;
         $laptopreturn->kode_device = $request->kode_device;

@@ -59,7 +59,7 @@ class MapelController extends Controller
     }
 
     public function delete($id)
-    {
+    {   
         DB::table('mapel')->where('id', $id)->delete();
 
         return redirect('/mapel');

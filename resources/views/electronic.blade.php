@@ -20,7 +20,7 @@ Electronic
       <img src="{{ asset('asset/picture/Laptop.png') }}" class="gambar" alt="...">
       <p>Laptop</p>
     </div>
-    <div class="link">
+    <div class="link-elektonik">
       <a href="/select-laptop">Pilih</a>
     </div>
   </div>
@@ -29,7 +29,7 @@ Electronic
       <img src="{{ asset('asset/picture/Headphones.png') }}" class="gambar" alt="...">
       <p>Headphone</p>
     </div>
-    <div class="link">
+    <div class="link-elektonik">
       <a href="/select-headphone">Pilih</a>
     </div>
   </div>
@@ -38,7 +38,7 @@ Electronic
       <img src="{{ asset('asset/picture/Projector.png') }}" class="gambar" alt="...">
       <p>Projector</p>
     </div>
-    <div class="link">
+    <div class="link-elektonik">
       <a href="/select-projector">Pilih</a>
     </div>
   </div>
@@ -47,7 +47,7 @@ Electronic
       <img src="{{ asset('asset/picture/Tablet.png') }}" class="gambar" alt="...">
       <p>Tablet</p>
     </div>
-    <div class="link">
+    <div class="link-elektonik">
       <a href="/select-tablet">Pilih</a>
     </div>
   </div>
@@ -56,7 +56,7 @@ Electronic
       <img src="{{ asset('asset/picture/Camera.png') }}" class="gambar" alt="...">
       <p>Camera</p>
     </div>
-    <div class="link">
+    <div class="link-elektonik">
       <a href="/select-camera">Pilih</a>
     </div>
   </div>
@@ -65,7 +65,7 @@ Electronic
       <img src="{{ asset('asset/picture/Smartphone.png') }}" class="gambar" alt="...">
       <p>Handphone</p>
     </div>
-    <div class="link">
+    <div class="link-elektonik">
       <a href="/select-handphone">Pilih</a>
     </div>
   </div>
@@ -74,7 +74,7 @@ Electronic
       <img src="{{ asset('asset/picture/Gaming.png') }}" class="gambar" alt="...">
       <p>Computer</p>
     </div>
-    <div class="link">
+    <div class="link-elektonik">
       <a href="/select-komputer">Pilih</a>
     </div>
   </div>
@@ -83,7 +83,7 @@ Electronic
       <img src="{{ asset('asset/picture/Flashdisk.png') }}" class="gambar" alt="...">
       <p>Flashdisk</p>
     </div>
-    <div class="link">
+    <div class="link-elektonik">
       <a href="/select-flashdisk">Pilih</a>
     </div>
   </div>
@@ -92,7 +92,7 @@ Electronic
       <img src="{{ asset('asset/picture/Hard disk.png') }}" class="gambar" alt="...">
       <p>Hardisk</p>
     </div>
-    <div class="link">
+    <div class="link-elektonik">
       <a href="/select-hardisk">Pilih</a>
     </div>
   </div>
@@ -101,7 +101,7 @@ Electronic
       <img src="{{ asset('asset/picture/Printer.png') }}" class="gambar" alt="...">
       <p>Printer</p>
     </div>
-    <div class="link">
+    <div class="link-elektonik">
       <a href="/select-printer">Pilih</a>
     </div>
   </div>
@@ -110,7 +110,7 @@ Electronic
       <img src="{{ asset('asset/picture/Rj45.png') }}" class="gambar" alt="...">
       <p>LAN</p>
     </div>
-    <div class="link">
+    <div class="link-elektonik">
       <a href="/select-lan">Pilih</a>
     </div>
   </div>
@@ -119,7 +119,7 @@ Electronic
       <img src="{{ asset('asset/picture/Hdmi.png') }}" class="gambar" alt="...">
       <p>HDMI</p>
     </div>
-    <div class="link">
+    <div class="link-elektonik">
       <a href="/select-hdmi">Pilih</a>
     </div>
   </div>
