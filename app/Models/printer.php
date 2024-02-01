@@ -9,7 +9,7 @@ class printer extends Model
 {
     use HasFactory;
     protected $table = 'printer_penembalian';
-    protected $fillable = 
+    protected $fillable =
     [
         'tanggal_peminjaman',
         'nama',
@@ -17,3 +17,4 @@ class printer extends Model
         'waktu_pengembalian',
     ];
 }
+

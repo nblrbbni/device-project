@@ -68,6 +68,7 @@
                 </span>
                 </a>
             </li>
+            @auth
             <hr>
             <li class="nav-item {{ 'electronic' == request()->path() ? 'active' : '' }}">
                 <a class="nav-link" href="/electronic">
@@ -88,6 +89,7 @@
                 </span>
                 </a>
             </li>
+            @endauth
             <hr>
             <li class="nav-item {{ 'information' == request()->path() ? 'active' : '' }}">
                 <a class="nav-link" href="/information">
@@ -127,7 +129,7 @@
                 </span>
                 </a>
             </li>
-
+            @auth
             <hr>
             <li class="nav-item">
                 <a class="nav-link" href="/report-tugas">
@@ -165,12 +167,23 @@
                 </a>
             </li>
             <hr>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+            <li class="nav-item {{ 'profile' == request()->path() ? 'active' : '' }}">
+                <a class="nav-link" href="/profile">
+                <span
+                    class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                    </svg>
+                </span>
+                <span class="nav-link-title">
+                    Profile
+                </span>
+                </a>
+            </li>
+            @endauth
+            <hr>
             <br>
             {{-- <li class="nav-item">
                 <a class="nav-link" href="login.html">

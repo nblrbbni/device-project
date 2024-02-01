@@ -9,10 +9,11 @@ class handphone extends Model
 {
     use HasFactory;
     protected $table = 'handphone_penembalian';
-    protected $fillable = 
+    protected $fillable =
     [
         'tanggal_peminjaman',
         'nama',
+        'kode_device',
         'kondisi_handphone',
         'kondisi_baterai',
         'kondisi_charger',

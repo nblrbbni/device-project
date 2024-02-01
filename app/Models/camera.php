@@ -9,13 +9,15 @@ class camera extends Model
 {
     use HasFactory;
     protected $table = 'camera_penembalian';
-    protected $fillable = 
+    protected $fillable =
     [
         'tanggal_peminjaman',
         'nama',
+        'kode_device',
         'kondisi_kamera',
         'kondisi_tempat_kamera',
         'kelengkapan_atribut',
         'waktu_pengembalian',
     ];
 }
+

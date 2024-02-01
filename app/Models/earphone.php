@@ -10,10 +10,11 @@ class earphone extends Model
 {
     use HasFactory;
     protected $table = 'earphone_penembalian';
-    protected $fillable = 
+    protected $fillable =
     [
         'tanggal_peminjaman',
         'nama',
+        'kode_device',
         'kondisi_earphone',
         'kondisi_kardus',
         'kondisi_suara',

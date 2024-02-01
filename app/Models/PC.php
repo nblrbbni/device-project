@@ -9,10 +9,11 @@ class PC extends Model
 {
     use HasFactory;
     protected $table = '_p_c_penembalian';
-    protected $fillable = 
+    protected $fillable =
     [
         'tanggal_peminjaman',
         'nama',
+        'kode_device',
         'kondisi_mouse',
         'kondisi_pc',
         'kondisi_keybohard',

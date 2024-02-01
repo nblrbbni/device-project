@@ -9,11 +9,11 @@ class hardisk extends Model
 {
     use HasFactory;
     protected $table = 'hardisk_penembalian';
-    protected $fillable = 
+    protected $fillable =
     [
         'tanggal_peminjaman',
         'nama',
-        'nomor_hardisk',
+        'kode_device',
         'kondisi_hardisk',
         'waktu_pengembalian',
     ];

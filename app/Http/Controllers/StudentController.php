@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
@@ -56,7 +57,7 @@ class StudentController extends Controller
                 'class' => $request->class
             ],
         );
-
+        Alert::success('Berhasil!', 'Data berhasil diupdate!');
         return redirect('/student');
     }
 

@@ -13,6 +13,7 @@ class tablet extends Model
     [
         'tanggal_peminjaman',
         'nama',
+        'kode_device',
         'tanggal_peminjaman',
         'kondisi_tablet',
         'kondisi_baterai',
@@ -20,3 +21,4 @@ class tablet extends Model
         'waktu_pengembalian',
     ];
 }
+

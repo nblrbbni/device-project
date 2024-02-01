@@ -9,12 +9,13 @@ class HDMI extends Model
 {
     use HasFactory;
     protected $table = '_h_d_m_i_penembalian';
-    protected $fillable = 
+    protected $fillable =
     [
         'tanggal_peminjaman',
         'nama',
-        'nomor_HDMI',
+        'kode_device',
         'kondisi_HDMI',
         'waktu_pengembalian',
     ];
 }
+

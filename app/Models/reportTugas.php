@@ -9,10 +9,11 @@ class reportTugas extends Model
 {
     use HasFactory;
     protected $table = 'report_tugas';
-    protected $fillable = 
+    protected $fillable =
     [
         'foto',
         'link',
         'email',
     ];
 }
+

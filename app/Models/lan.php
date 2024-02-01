@@ -9,11 +9,11 @@ class lan extends Model
 {
     use HasFactory;
     protected $table = 'lan_penembalian';
-    protected $fillable = 
+    protected $fillable =
     [
         'tanggal_peminjaman',
         'nama',
-        'nomor_LAN',
+        'kode_device',
         'kondisi_LAN',
         'waktu_pengembalian',
     ];

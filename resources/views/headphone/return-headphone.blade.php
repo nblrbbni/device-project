@@ -1,64 +1,110 @@
 @extends('layout.master-2')
 
-@section('content-2')
-    <div class="balik">
-        <a href="/returndevice" class="next round" style="text-decoration: none">
-            < </a>
-    </div>
+@push('styles')
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+@endpush
 
-    <br />
-    <br />
-    <div class="container text-center">
-        <div class="row row-card">
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
-                <div class="single">
-                    <img src="asset/picture/Headphones.png" class="gambar" alt="..." />
-                    <p>earphone</p>
-                </div>
+@push('scripts-2')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+@endpush
+
+@section('content-2')
+<div class="balik">
+    <a href="/returndevice" class="next round" style="text-decoration: none;">
+        < </a>
+</div>
+
+<br>
+<br>
+<div class="container text-center">
+    <div class="row row-card">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+            <div class='single'>
+                <img src="{{ asset('asset/picture/Headphones.png') }}"  alt="...">
+                <p>Headphone (HDPN)</p>
             </div>
         </div>
-    </div><br><br>
-    {{-- main content --}}
-    <form action="/return-headphone/store" method="post">
-        @csrf
-        <div class="table text-center">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Tanggal Peminjaman</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Kondisi earphone</th>
-                        <th scope="col">Kondisi kardus</th>
-                        <th scope="col">Kondisi suara</th>
-                        <th scope="col">Waktu pengembalian</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">
-                            <input type="date" name="tanggal_peminjaman"/>
-                        </th>
-                        <td>
-                            <input type="text" name="nama" />
-                        </td>
-                        <td>
-                            <input type="text" name="kondisi_earphone"/>
-                        </td>
-                        <td>
-                            <input type="text" name="kondisi_kardus"/>
-                        </td>
-                        <td><input type="text" name="kondisi_suara"/></td>
-                        <td>
-                            <input type="time" name="waktu_pengembalian"/>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <br />
-        <div class="buttonSp text-center">
-            <input type="submit" value="confirm">
-        </div>
-    </form>
+    </div>
+</div><br><br>
+{{-- main content --}}
+<form action="/return-headphone/store" method="post">
+    @csrf
+    <div class="table text-center">
+        <table class="table" id="return">
+            <thead>
+                <tr>
+                    <th scope="col">Tanggal Peminjaman</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Kode Device</th>
+                    <th scope="col">Kondisi Headphone</th>
+                    <th scope="col">Kondisi Kardus</th>
+                    <th scope="col">Kondisi Suara</th>
+                    <th scope="col">Waktu Pengembalian</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">
+                        <input type="date" name="tanggal_peminjaman" value="<?php echo date('Y-m-d'); ?>" readonly>
+                    </th>
+                    <td>
+                        <input type="text" name="nama" value="{{ Auth::user()->name }}" readonly>
+                    </td>
+                    <td>
+                        <select name="kode_device" id="kode_device" class="js-example-basic-single" required>
+                            @foreach($device as $value)
+                                <option value="{{ $value->kode_device }}">{{ $value->kode_device }}</option>
+                            @endforeach
+                        </select>
+                        {{-- <input type="text" name="kode_device" required> --}}
+                    </td>
+                    <td>
+                        <input type="text" name="kondisi_earphone" required>
+                    </td>
+                    <td>
+                        <input type="text" name="kondisi_kardus" required>
+                    </td>
+                    <td><input type="text" name="kondisi_suara" required>
+                    </td>
+                    <td>
+                        <input type="time" name="waktu_pengembalian" id="inputTime" step="1" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="buttonSp text-center">
+        <input type="submit" class="btn btn-lg" value="Confirm" style="background-color: #14274c; color:white">
+    </div>
+</form>
 @endsection
+
+@push('scripts')
+<script>
+function setInputTime() {
+ let currentTime = new Date();
+ let hours = currentTime.getHours();
+ let minutes = currentTime.getMinutes();
+ let seconds = currentTime.getSeconds();
+
+ let formattedTime = hours.toString().padStart(2, '0') + ':' +
+                      minutes.toString().padStart(2, '0') + ':' +
+                      seconds.toString().padStart(2, '0');
+
+ // Set the value of the input field with id "inputTime"
+ document.getElementById('inputTime').value = formattedTime;
+}
+
+setInputTime();
+
+$(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+@endpush
