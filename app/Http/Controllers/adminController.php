@@ -38,4 +38,52 @@ class adminController extends Controller
     {
         return view('admin.main.Form');
     }
+    public function laptop ()
+    {
+        return view('admin.main.data-laptop');
+    }
+    public function earphone ()
+    {
+        return view('admin.main.data-earphone');
+    }
+    public function tablet ()
+    {
+        return view('admin.main.data-tablet');
+    }
+    public function pc ()
+    {
+        return view('admin.main.data-pc');
+    }
+    public function handphone ()
+    {
+        return view('admin.main.data-handphone');
+    }
+    public function camera ()
+    {
+        return view('admin.main.data-camera');
+    }
+    public function flashdisk ()
+    {
+        return view('admin.main.data-flashdisk');
+    }
+    public function hardisk ()
+    {
+        return view('admin.main.data-hardisk');
+    }
+    public function printer ()
+    {
+        return view('admin.main.data-printer');
+    }
+    public function lan ()
+    {
+        return view('admin.main.data-lan');
+    }
+    public function hdmi ()
+    {
+        return view('admin.main.data-hdmi');
+    }
+    public function projector ()
+    {
+        return view('admin.main.data-projector');
+    }
 }

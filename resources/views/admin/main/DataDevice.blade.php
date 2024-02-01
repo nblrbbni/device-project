@@ -4,7 +4,7 @@
 <h1>Data Device</h1>
     <div class="row mx-auto">
         <div class="col-lg-3 col-md-6 mx-auto " id="card-device">
-            <a href="laptop.html">
+            <a href="/data-laptop">
                 <div class="card-admin mt-3 mx-auto">
                     <img src="/assets/picture/Laptop.png" alt="">
                     <p>Laptop</p>
@@ -12,7 +12,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 mx-auto " id="card-device">
-            <a href="earphone.html">
+            <a href="/data-earphone">
                 <div class="card-admin mt-3 mx-auto">
                     <img src="/assets/picture/Headphones.png" alt="">
                     <p>earphone</p>
@@ -20,7 +20,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 mx-auto " id="card-device">
-            <a href="tablet.html">
+            <a href="/data-tablet">
                 <div class="card-admin mt-3 mx-auto">
                     <img src="/assets/picture/Tablet.png" alt="">
                     <p>tablet</p>
@@ -28,7 +28,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 mx-auto " id="card-device">
-            <a href="PC.Html">
+            <a href="/data-pc">
                 <div class="card-admin mt-3 mx-auto">
                     <img src="/assets/picture/Gaming.png" alt="">
                     <p>PC</p>
@@ -36,7 +36,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 mx-auto" id="card-device">
-            <a href="handphone.html">
+            <a href="/data-handphone">
                 <div class="card-admin mt-5 mx-auto">
                     <img src="/assets/picture/Smartphone.png" alt="">
                     <p>Handphone</p>
@@ -44,7 +44,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 mx-auto" id="card-device">
-            <a href="camera.html">
+            <a href="/data-camera">
                 <div class="card-admin mt-5 mx-auto">
                     <img src="/assets/picture/Camera.png" alt="">
                     <p>Camera</p>
@@ -52,7 +52,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 mx-auto" id="card-device">
-            <a href="flasdisk.html">
+            <a href="/data-flashdisk">
                 <div class="card-admin mt-5 mx-auto">
                     <img src="/assets/picture/Flashdisk.png" alt="">
                     <p>Flashdisk</p>
@@ -60,7 +60,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 mx-auto" id="card-device">
-            <a href="hardisk.html">
+            <a href="/data-hardisk">
                 <div class="card-admin mt-5 mx-auto">
                     <img src="/assets/picture/Hard disk.png" alt="">
                     <p>Hardisk</p>
@@ -68,7 +68,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 mx-auto" id="card-device">
-            <a href="printer.html">
+            <a href="/data-printer">
                 <div class="card-admin mt-5 mx-auto">
                     <img src="/assets/picture/Printer.png" alt="">
                     <p>Printer</p>
@@ -76,7 +76,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 mx-auto" id="card-device">
-            <a href="lan.html">
+            <a href="/data-lan">
                 <div class="card-admin mt-5 mx-auto">
                     <img src="/assets/picture/Rj45.png" alt="">
                     <p>Lan</p>
@@ -84,7 +84,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 mx-auto" id="card-device">
-            <a href="HDMI.html">
+            <a href="/data-hdmi">
                 <div class="card-admin mt-5 mx-auto">
                     <img src="/assets/picture/Hdmi.png" alt="">
                     <p>HDMI</p>
@@ -92,7 +92,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 mx-auto" id="card-device">
-            <a href="Projector.html">
+            <a href="/data-projector">
                 <div class="card-admin mt-5 mx-auto">
                     <img src="/assets/picture/Projector.png" alt="">
                     <p>Projector</p>

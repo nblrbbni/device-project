@@ -229,5 +229,17 @@ Route::get('/Device', [adminController::class, 'Devicert']);
 Route::get('/tugas', [adminController::class, 'tugas']);
 Route::get('/calendar', [adminController::class, 'calendar']);
 Route::get('/Form', [adminController::class, 'Form']);
+Route::get('/data-laptop', [adminController::class, 'laptop']);
+Route::get('/data-earphone', [adminController::class, 'earphone']);
+Route::get('/data-tablet', [adminController::class, 'tablet']);
+Route::get('/data-pc', [adminController::class, 'pc']);
+Route::get('/data-handphone', [adminController::class, 'handphone']);
+Route::get('/data-camera', [adminController::class, 'camera']);
+Route::get('/data-flashdisk', [adminController::class, 'flashdisk']);
+Route::get('/data-hardisk', [adminController::class, 'hardisk']);
+Route::get('/data-printer', [adminController::class, 'printer']);
+Route::get('/data-lan', [adminController::class, 'lan']);
+Route::get('/data-hdmi', [adminController::class, 'hdmi']);
+Route::get('/data-projector', [adminController::class, 'projector']);
 
 Auth::routes();
