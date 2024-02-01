@@ -227,5 +227,6 @@ Route::get('/laporan', [adminContrller::class, 'laporan']);
 Route::get('/Device', [adminContrller::class, 'Devicert']);
 Route::get('/tugas', [adminContrller::class, 'tugas']);
 Route::get('/calendar', [adminContrller::class, 'calendar']);
+Route::get('/Form', [adminContrller::class, 'Form']);
 
 Auth::routes();

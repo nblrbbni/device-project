@@ -36,4 +36,9 @@ class adminContrller extends Controller
     {
         return view('admin.main.calendar');
     }
+
+   public function Form ()
+   {
+    return view('admin.main.Form');
+   }
 }
