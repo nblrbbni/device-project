@@ -2,25 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
-class adminContrller extends Controller
+class adminController extends Controller
 {
-    public function admin()
+    public function admin ()
     {
         return view('admin.main.dashboard');
     }
-
-    public function siswa()
+    public function siswa ()
     {
         return view('admin.main.DataSiswa');
     }
-    public function device()
+    public function device ()
     {
         return view('admin.main.DataDevice');
     }
-    public function laporan()
+    public function laporan ()
     {
         return view('admin.main.laporan');
     }
@@ -36,9 +34,8 @@ class adminContrller extends Controller
     {
         return view('admin.main.calendar');
     }
-
-   public function Form ()
-   {
-    return view('admin.main.Form');
-   }
+    public function Form ()
+    {
+        return view('admin.main.Form');
+    }
 }

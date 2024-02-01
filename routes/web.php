@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\adminContrller;
+use App\Http\Controllers\adminController;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PcController;
@@ -220,13 +221,13 @@ Route::delete('/information/{information_id}', [informationController::class, 'd
 
 
 // Admin
-Route::get('/admin', [adminContrller::class, 'admin']);
-Route::get('/data-siswa', [adminContrller::class, 'siswa']);
-Route::get('/data-device', [adminContrller::class, 'device']);
-Route::get('/laporan', [adminContrller::class, 'laporan']);
-Route::get('/Device', [adminContrller::class, 'Devicert']);
-Route::get('/tugas', [adminContrller::class, 'tugas']);
-Route::get('/calendar', [adminContrller::class, 'calendar']);
-Route::get('/Form', [adminContrller::class, 'Form']);
+Route::get('/admin', [adminController::class, 'admin']);
+Route::get('/data-siswa', [adminController::class, 'siswa']);
+Route::get('/data-device', [adminController::class, 'device']);
+Route::get('/laporan', [adminController::class, 'laporan']);
+Route::get('/Device', [adminController::class, 'Devicert']);
+Route::get('/tugas', [adminController::class, 'tugas']);
+Route::get('/calendar', [adminController::class, 'calendar']);
+Route::get('/Form', [adminController::class, 'Form']);
 
 Auth::routes();

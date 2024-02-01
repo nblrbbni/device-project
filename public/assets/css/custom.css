@@ -8,26 +8,26 @@
     height: 207px;
     flex-shrink: 0;
     text-align: center;
-    border-radius: 9px;
-    border: 1px solid rgba(0, 0, 0, 0);
-    background: #fff;
-    box-shadow: 0px 4px 22px 0px rgba(0, 0, 0, 0.25);
-}
-.col-lg-3 a{
-  text-decoration: none;
-  color: #000;
-  font-size: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    margin-bottom: 30px;
+    box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1),
+        0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1),
+        0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12),
+        0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1);
 }
 
-.card-admin img{
-  width: 100px;
-  margin-top: 30px;
-  margin-bottom: 10px;
-}
-.card img {
+.card-admin img {
     width: 100px;
-    margin-left: 110px;
-    margin-top: 15px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+#card-device a {
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
 }
 .col a {
     text-decoration: none;
@@ -68,16 +68,7 @@
     border: none;
     margin-left: 80px;
 }
-input::placeholder {
-    color: #070707;
-    padding: 20px;
-    color: #dedede;
-    font-family: Poppins;
-    /* font-size: 25px; */
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-}
+
 .submitButton button {
     width: 420px;
     height: 75px;
