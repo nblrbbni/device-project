@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('pinjam_lan', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('class');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
             $table->timestamps();
+            $table->date("tanggal_peminjaman");
+            $table->string("nama");
+            $table->string("mata_pelajaran");
+            $table->integer("nomor_lan");
+            $table->string("mentoring_mapel");
+            $table->time("waktu_peminjaman");
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('pinjam_lan');
     }
 };

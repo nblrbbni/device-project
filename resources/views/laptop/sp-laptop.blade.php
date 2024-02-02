@@ -120,7 +120,65 @@
             <div class="buttonSp text-center">
                 <input class="btn btn-lg" type="submit" value="Confirm" style="background-color:#18244c; color:white">
             </div>
-    </form>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="table text-center">
+        <p style="text-align: center" class="text-red">*Harap isi kolom dengan benar.</p>
+        <table class="table" id="return">
+            <thead>
+                <tr>
+                    <th scope="col">Tanggal Peminjaman</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Mata Pelajaran</th>
+                    <th scope="col">Kode Device</th>
+                    <th scope="col">Mentoring Mapel</th>
+                    <th scope="col">Waktu Peminjaman</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">
+                        <input type="date" name="tanggal_peminjaman" value="<?php echo date('Y-m-d'); ?>" readonly>
+                    </th>
+                    <td>
+                        <input type="text" name="nama" value="{{ Auth::user()->name }}" readonly>
+                    </td>
+                    <td>
+                        <select name="mata_pelajaran" id="mata_pelajaran" required>
+                            @foreach($mapel as $value)
+                                <option value="{{ $value->mapel }}">{{ $value->mapel }}</option>
+                            @endforeach
+                        </select>
+                    </td>
+                    <td>
+                        <select name="kode_device" id="kode_device" class="js-example-basic-single" required>
+                            @foreach($datalaptop as $value)
+                                <option value="{{ $value->kode_device }}">{{ $value->kode_device }}</option>
+                            @endforeach
+                        </select>
+                        {{-- <input type="text" name="kode_device" required> --}}
+                    </td>
+                    <td>
+                        <select name="mentoring_mapel" id="mentoring_mapel" required>
+                            @foreach($guru as $value)
+                                <option value="{{ $value->nama }}">{{ $value->nama }}</option>
+                            @endforeach
+                        </select>
+                    </td>
+                    <td>
+                        <input type="time" name="waktu_peminjaman" id="inputTime" step="1" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="buttonSp text-center">
+        <input class="btn btn-lg" type="submit" value="Confirm" style="background-color:#18244c; color:white">
+    </div>
+</form>
 @endsection
 
 

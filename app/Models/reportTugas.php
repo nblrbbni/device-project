@@ -11,6 +11,7 @@ class reportTugas extends Model
     protected $table = 'report_tugas';
     protected $fillable =
     [
+        'nama',
         'foto',
         'link',
         'email',

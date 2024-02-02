@@ -33,6 +33,7 @@ class cameraController extends Controller
         $camera = new camera;
         $camera->tanggal_peminjaman = $request->tanggal_peminjaman;
         $camera->nama = $request->nama;
+        $camera->kode_device     = $request->kode_device    ;
         $camera->kondisi_kamera = $request->kondisi_kamera;
         $camera->kondisi_tempat_kamera = $request->kondisi_tempat_kamera;
         $camera->kelengkapan_atribut = $request->kelengkapan_atribut;

@@ -31,6 +31,7 @@ class LanController extends Controller
         $lan = new lan;
         $lan->tanggal_peminjaman = $request->tanggal_peminjaman;
         $lan->nama = $request->nama;
+        $lan->kode_device = $request->kode_device;
         $lan->kondisi_LAN = $request->kondisi_LAN;
         $lan->waktu_pengembalian = $request->waktu_pengembalian;
         $lan->save();

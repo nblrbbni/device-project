@@ -17,13 +17,17 @@
     <br>
     <br>
 
-    <form action="/select-komputer/store" method="post">
-        @csrf
-        <div class="container text-center">
-            <div class='single'>
-                <img src="{{ asset('asset/picture/Gaming.png') }}" class="gambar" alt="...">
-                <p>Computer (PC)</p>
-            </div>
+  <form action="/select-komputer/store" method="post">
+    @csrf
+  <div class="container text-center">
+    <div class="row row-card">
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-4">
+        <div class='single'>
+          <img src="{{ asset('asset/picture/Gaming.png') }}" class="gambar" alt="...">
+          <p>Computer (PC (LAB))</p>
         </div>
         <br>
         <br>

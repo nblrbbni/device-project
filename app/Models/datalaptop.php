@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Student extends Model
+class datalaptop extends Model
 {
     use HasFactory;
-    protected $table = 'student';
-    protected $fillable = ['name', 'class', 'user_id'];
+    protected $table = 'datalaptop';
+    protected $fillable = ['kode_device', 'nama', 'merk', 'status'];
 }

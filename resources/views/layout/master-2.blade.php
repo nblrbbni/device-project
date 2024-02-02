@@ -27,10 +27,10 @@
 </head>
 <body>
     @include('sweetalert::alert')
-    <script src="{{ asset('dist/js/demo-theme.min.js') }}"></script>
     @yield('content-2')
 
     <!-- script -->
+    <script src="{{ asset('dist/js/demo-theme.min.js') }}"></script>
     <script src="{{ asset('dist/js/tabler.min.js') }}" defer></script>
     <script src="{{ asset('dist/js/demo.min.js') }}" defer></script>
 

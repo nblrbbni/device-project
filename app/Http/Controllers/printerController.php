@@ -31,7 +31,7 @@ class printerController extends Controller
         $printer = new printer;
         $printer->tanggal_peminjaman = $request->tanggal_peminjaman;
         $printer->nama = $request->nama;
-        $printer->kode_device    = $request->kode_device   ;
+        $printer->kode_device = $request->kode_device;
         $printer->kondisi_printer = $request->kondisi_printer;
         $printer->waktu_pengembalian = $request->waktu_pengembalian;
         $printer->save();

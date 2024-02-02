@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('report_tugas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string("nama");
             $table->string("foto");
             $table->string("link");
             $table->string("email");

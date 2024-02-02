@@ -12,6 +12,7 @@ class DeviceController extends Controller
     {
         return view('device.create');
     }
+    
     public function store(Request $request)
     {
         $request->validate([

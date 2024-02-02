@@ -102,12 +102,12 @@ header h1 {
     color: #14274c;
 }
 
-.link-elektonik {
+.link-electronic {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
-.link-elektonik a {
+.link-electronic a {
     text-decoration: none;
     background-color: #14274c;
     color: #ffffff;
@@ -115,11 +115,11 @@ header h1 {
     border-radius: 20px;
 }
 
-.sectionCard .link-elektonik>a {
+.sectionCard .link-electronic>a {
     text-decoration: none;
 }
 
-.link-elektonik a:hover {
+.link-electronic a:hover {
     border: 3px solid #14274c;
     color: #14274c;
     background-color: #ffffff;
@@ -378,7 +378,22 @@ aside a:hover {
 
 .cardButton {
     text-align: center;
-    margin-top: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    background-color: #14274c;
+    color: #fff;
+    padding: 10px 40px;
+    /*margin-top: 20px;
+    */border-radius: 60px;
+    text-align: center;
+    margin-top: -8px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 
 .cardButton a {
@@ -386,7 +401,7 @@ aside a:hover {
     background-color: #14274c;
     color: #fff;
     padding: 10px 40px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     border-radius: 20px;
 }
 
@@ -624,8 +639,8 @@ input[type=file]::file-selector-button {
     background-color: #00000000;
 }
 
-input::placeholder {
-    /* margin-left: 90rem; */
+input.link::placeholder {
+    margin-left: 90rem;
     color: rgba(0, 0, 0, 0.55);
     font-family: poppins;
     font-size: 18px;
@@ -649,6 +664,14 @@ input[type=file]::file-selector-button {
 input[type=file]::file-selector-button:hover {
     background: #0d45a5;
 }
-    
 
-
+.submit {
+    background-color: #14274C;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 20px;
+    margin-left: 56rem;
+    border-radius: 4px;
+    border: none;
+    margin-top: 30px;
+}

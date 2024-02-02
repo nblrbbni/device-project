@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('judul')
-Electronic
+Data Device
 @endsection
 
 @push('styles')
@@ -21,7 +21,7 @@ Electronic
       <p>Laptop</p>
     </div>
     <div class="link-electronic">
-      <a href="/select-laptop">Pilih</a>
+      <a href="/datalaptop">Pilih</a>
     </div>
   </div>
   <div id='rectangle71' class='rectangle71'>

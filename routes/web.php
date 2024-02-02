@@ -27,6 +27,12 @@ use App\Http\Controllers\flashdiskController;
 use App\Http\Controllers\handphoneController;
 use App\Http\Controllers\projectorController;
 use App\Http\Controllers\informationController;
+use App\Http\Controllers\MapelController;
+use App\Http\Controllers\pinjamController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReturnController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -121,9 +127,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/student/{student_id}/delete', [StudentController::class, 'delete']);
 
     //Return Device
-    Route::get('/returndevice', function () {
-        return view('returndevice');
-    });
+    Route::get('/returndevice', [ReturnController::class, 'showReturnForm']);
     // return-laptop
     Route::get('/return-laptop', [laptopController::class, 'laptop']);
     Route::post('/return-laptop/store', [laptopController::class, 'laptopstr']);
@@ -201,6 +205,13 @@ Route::middleware(['auth'])->group(function () {
     //pinjam-hdmi
     Route::get('/select-hdmi', [pinjamController::class, 'hdmi']);
     Route::post('/select-hdmi/store', [pinjamController::class, 'hdmistr']);
+
+    // Route::resource('profile', ProfileController::class)->only(['index','update']);
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index')->middleware('auth');
+
+    // Rute untuk menampilkan formulir pembaruan profil dan menangani pembaruan
+    // Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('auth');
+    Route::PUT('/profile/update/', [ProfileController::class, 'update'])->name('profile.index')->middleware('auth');
 });
 
 //CRUD INFORMATION Admin
@@ -220,28 +231,20 @@ Route::put('/information/{information_id}', [informationController::class, 'upda
 // delete
 Route::delete('/information/{information_id}', [informationController::class, 'destroy']);
 
-
-// Admin
-Route::get('/admin', [adminController::class, 'admin']);
-Route::get('/data-siswa', [adminController::class, 'siswa']);
-Route::get('/data-device', [adminController::class, 'device']);
-Route::get('/laporan', [adminController::class, 'laporan']);
-Route::get('/Device', [adminController::class, 'Devicert']);
-Route::get('/tugas', [adminController::class, 'tugas']);
-Route::get('/calendar', [adminController::class, 'calendar']);
-Route::get('/Form', [adminController::class, 'Form']);
-Route::get('/data-laptop', [adminController::class, 'laptop']);
-Route::get('/data-earphone', [adminController::class, 'earphone']);
-Route::get('/data-tablet', [adminController::class, 'tablet']);
-Route::get('/data-pc', [adminController::class, 'pc']);
-Route::get('/data-handphone', [adminController::class, 'handphone']);
-Route::get('/data-camera', [adminController::class, 'camera']);
-Route::get('/data-flashdisk', [adminController::class, 'flashdisk']);
-Route::get('/data-hardisk', [adminController::class, 'hardisk']);
-Route::get('/data-printer', [adminController::class, 'printer']);
-Route::get('/data-lan', [adminController::class, 'lan']);
-Route::get('/data-hdmi', [adminController::class, 'hdmi']);
-Route::get('/data-projector', [adminController::class, 'projector']);
+// Data Device
+Route::get('/datadevice', function() {
+    return view('data-device.read');
+});
+// Data Laptop
+Route::get('/datalaptop/create', [laptopController::class, 'create']);
+Route::post('/datalaptop', [laptopController::class, 'store']);
+//Read
+Route::get('/datalaptop', [laptopController::class, 'index']);
+//Update
+Route::get('/datalaptop/{datalaptop_id}/edit', [laptopController::class, 'edit']);
+Route::put('/datalaptop/{datalaptop_id}', [laptopController::class, 'update']);
+//Delete
+Route::get('/datalaptop/{datalaptop_id}/delete', [laptopController::class, 'delete']);
 
 Auth::routes();
 

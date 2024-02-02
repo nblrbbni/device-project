@@ -34,6 +34,7 @@ class projectorController extends Controller
         $projector = new projector;
         $projector->tanggal_peminjaman = $request->tanggal_peminjaman;
         $projector->nama = $request->nama;
+        $projector->kode_device = $request->kode_device;
         $projector->kondisi_projector = $request->kondisi_projector;
         $projector->kondisi_kabel_power = $request->kondisi_kabel_power;
         $projector->kondisi_remote = $request->kondisi_remote;

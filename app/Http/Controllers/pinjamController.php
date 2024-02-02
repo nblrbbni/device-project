@@ -20,12 +20,12 @@ class pinjamController extends Controller
     {
         $mapel = DB::table('mapel')->get();
         $guru = DB::table('guru')->get();
-        $device = DB::table('device')->get();
+        $datalaptop = DB::table('datalaptop')->get();
 
         return view('laptop.sp-laptop', [
             'mapel' => $mapel,
             'guru' => $guru,
-            'device' => $device,
+            'datalaptop' => $datalaptop,
         ]);
     }
 
@@ -49,7 +49,10 @@ class pinjamController extends Controller
         $pinjamLaptop->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamLaptop->save();
 
-        DB::table('device')
+        // Simpan kode device yang dipinjam dalam session
+        session(['kode_device_peminjaman' => $request->kode_device]);
+
+        DB::table('datalaptop')
         ->where('kode_device', $request->kode_device)
         ->update(
             [
@@ -94,6 +97,9 @@ class pinjamController extends Controller
         $pinjamEarphone->mentoring_mapel = $request->mentoring_mapel;
         $pinjamEarphone->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamEarphone->save();
+
+        // Simpan kode device yang dipinjam dalam session
+        session(['kode_device_peminjaman' => $request->kode_device]);
 
         DB::table('device')
         ->where('kode_device', $request->kode_device)
@@ -141,6 +147,9 @@ class pinjamController extends Controller
         $pinjamProjector->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamProjector->save();
 
+        // Simpan kode device yang dipinjam dalam session
+        session(['kode_device_peminjaman' => $request->kode_device]);
+
         DB::table('device')
         ->where('kode_device', $request->kode_device)
         ->update(
@@ -186,6 +195,9 @@ class pinjamController extends Controller
         $pinjamTablet->mentoring_mapel = $request->mentoring_mapel;
         $pinjamTablet->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamTablet->save();
+
+        // Simpan kode device yang dipinjam dalam session
+        session(['kode_device_peminjaman' => $request->kode_device]);
 
         DB::table('device')
         ->where('kode_device', $request->kode_device)
@@ -234,6 +246,9 @@ class pinjamController extends Controller
         $pinjamCamera->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamCamera->save();
 
+        // Simpan kode device yang dipinjam dalam session
+        session(['kode_device_peminjaman' => $request->kode_device]);
+
         DB::table('device')
         ->where('kode_device', $request->kode_device)
         ->update(
@@ -279,6 +294,9 @@ class pinjamController extends Controller
         $pinjamHandphone->mentoring_mapel = $request->mentoring_mapel;
         $pinjamHandphone->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamHandphone->save();
+
+        // Simpan kode device yang dipinjam dalam session
+        session(['kode_device_peminjaman' => $request->kode_device]);
 
         DB::table('device')
         ->where('kode_device', $request->kode_device)
@@ -327,6 +345,9 @@ class pinjamController extends Controller
         $pinjamKomputer->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamKomputer->save();
 
+        // Simpan kode device yang dipinjam dalam session
+        session(['kode_device_peminjaman' => $request->kode_device]);
+
         DB::table('device')
         ->where('kode_device', $request->kode_device)
         ->update(
@@ -372,6 +393,9 @@ class pinjamController extends Controller
         $pinjamFlashdisk->mentoring_mapel = $request->mentoring_mapel;
         $pinjamFlashdisk->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamFlashdisk->save();
+
+        // Simpan kode device yang dipinjam dalam session
+        session(['kode_device_peminjaman' => $request->kode_device]);
 
         DB::table('device')
         ->where('kode_device', $request->kode_device)
@@ -420,6 +444,9 @@ class pinjamController extends Controller
         $pinjamHardisk->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamHardisk->save();
 
+        // Simpan kode device yang dipinjam dalam session
+        session(['kode_device_peminjaman' => $request->kode_device]);
+
         DB::table('device')
         ->where('kode_device', $request->kode_device)
         ->update(
@@ -467,6 +494,9 @@ class pinjamController extends Controller
         $pinjamPrinter->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamPrinter->save();
 
+        // Simpan kode device yang dipinjam dalam session
+        session(['kode_device_peminjaman' => $request->kode_device]);
+
         DB::table('device')
         ->where('kode_device', $request->kode_device)
         ->update(
@@ -513,6 +543,9 @@ class pinjamController extends Controller
         $pinjamHdmi->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamHdmi->save();
 
+        // Simpan kode device yang dipinjam dalam session
+        session(['kode_device_peminjaman' => $request->kode_device]);
+
         DB::table('device')
         ->where('kode_device', $request->kode_device)
         ->update(
@@ -558,6 +591,9 @@ class pinjamController extends Controller
         $pinjamLan->mentoring_mapel = $request->mentoring_mapel;
         $pinjamLan->waktu_peminjaman = $request->waktu_peminjaman;
         $pinjamLan->save();
+
+        // Simpan kode device yang dipinjam dalam session
+        session(['kode_device_peminjaman' => $request->kode_device]);
 
         DB::table('device')
         ->where('kode_device', $request->kode_device)

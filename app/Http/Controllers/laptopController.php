@@ -15,24 +15,13 @@ class laptopController extends Controller
      */
     public function laptop()
     {
-        $device = DB::table('device')->get();
+        $datalaptop = DB::table('datalaptop')->get();
 
         return view('laptop.return-laptop', [
-            'device' => $device,
+            'datalaptop' => $datalaptop,
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function laptopstr(Request $request)
     {
         // return view('laptop.return-laptop');
@@ -58,7 +47,7 @@ class laptopController extends Controller
         $laptopreturn->waktu_pengembalian = $request->waktu_pengembalian;
         $laptopreturn->save();
 
-        DB::table('device')
+        DB::table('datalaptop')
         ->where('kode_device', $request->kode_device)
         ->update(
             [
@@ -68,16 +57,47 @@ class laptopController extends Controller
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dikembalikan!');
         return redirect()->to('/');
-
     }
 
+    public function create()
+    {
+        return view('laptop.create');
+    }
+
+    public function index()
+    {
+        $datalaptop = DB::table('datalaptop')->get();
+
+        return view('laptop.read', ['datalaptop' => $datalaptop]);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'kode_device' => 'required',
+            'nama' => 'required',
+            'merk' => 'required',
+            'status'
+        ]);
+
+        DB::table('datalaptop')->insert([
+            'kode_device' => $request['kode_device'],
+            'nama' => $request['nama'],
+            'merk' => $request['merk'],
+            'status' => 'status',
+        ]);
+
+        return redirect('/datalaptop');
+    }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $datalaptop = DB::table('datalaptop')->where('id', $id)->first();
+
+        return view('laptop.update', ['datalaptop' => $datalaptop]);
     }
 
     /**
@@ -85,7 +105,30 @@ class laptopController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'kode_device' => 'required',
+            'nama' => 'required',
+            'merk' => 'required',
+        ]);
+
+        DB::table('datalaptop')
+        ->where('id', $id)
+            ->update(
+                [
+                    'kode_device' => $request->kode_device,
+                    'nama' => $request->nama,
+                    'merk' => $request->merk,
+                ],
+            );
+        Alert::success('Berhasil!', 'Data berhasil diupdate!');
+        return redirect('/datalaptop');
+    }
+
+    public function delete($id)
+    {
+        DB::table('datalaptop')->where('id', $id)->delete();
+
+        return redirect('/datalaptop');
     }
 
     /**

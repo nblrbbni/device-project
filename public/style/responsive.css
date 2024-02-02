@@ -23,20 +23,11 @@
         grid-template-columns: auto auto auto auto;
         padding: 70px;
     }
-    .cardCaroasel {
-        margin: 1px -200px;
-    }
-    .cardinfo {
-        margin: 1px 21rem;
-    }
-    .title {
-        margin: 1px -180px;
-    }
-    .link {
+    .link{
         width: 70rem;
         margin-left: none;
     }
-    .drop-container {
+    .drop-container{
         width: 70rem;
     }
     .sectionCard {
@@ -108,26 +99,15 @@
         margin: 10px;
         margin-left: 20rem;
     }
-    
-    .cardCaroasel {
-        margin: 1px 20rem;
-        display: none;
-    }
-    .swiper {
-        width: 750px;
-    }
+    .drop-container{
+        width: 50rem;
+        margin: 1px 110px;
 
-    .cardinfo {
-        width: 750px;
-        display: none;
     }
-    .drop-container {
+    .link{
         width: 50rem;
         margin: 1px 110px;
-    }
-    .link {
-        width: 50rem;
-        margin: 1px 110px;
+
     }
     .grid-container {
         display: grid;
@@ -340,14 +320,16 @@
         grid-template-columns: auto auto;
         padding: 70px;
     }
-    .drop-container {
+    .drop-container{
         width: 40rem;
         margin: 1px 70px;
     }
-    .link {
+    .link{
         width: 40rem;
 
         margin: 1px 70px;
+
+
     }
     .teamTitle h1 {
         font-size: 60px;
@@ -488,13 +470,14 @@
         padding: 70px;
         margin-left: 20px;
     }
-    .drop-container {
+    .drop-container{
         width: 20rem;
         margin: 1px 50px;
     }
-    .link {
+    .link{
         width: 20rem;
         margin: 1px 50px;
+
     }
     .title h1 {
         font-size: 30px;
@@ -569,6 +552,13 @@
     .grid-container {
         margin-left: -5px;
     }
+    .drop-container{
+        margin: 1px 30px;
+    }
+    .link{
+        margin: 1px 30px;
+
+    }
     .teamTitle h1 {
         font-size: 30px;
         margin-left: -15rem;
@@ -642,6 +632,15 @@
     .grid-container {
         margin-left: -2rem;
     }
+    .drop-container{
+        /* margin: 1px 10px; */
+        width: 17rem;
+    }
+    .link{
+        /* margin: 1px 10px; */
+        width: 17rem;
+
+    }
     .teamTitle h1 {
         font-size: 30px;
         margin-left: -15rem;
@@ -704,3 +703,5 @@
         display: none;
     }
 }
+
+@media screen and (max-width: 280px) {}

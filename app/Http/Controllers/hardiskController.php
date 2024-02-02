@@ -31,6 +31,7 @@ class hardiskController extends Controller
         $hardisk = new hardisk;
         $hardisk->tanggal_peminjaman = $request->tanggal_peminjaman;
         $hardisk->nama = $request->nama;
+        $hardisk->kode_device = $request->kode_device;
         $hardisk->kondisi_hardisk = $request->kondisi_hardisk;
         $hardisk->waktu_pengembalian = $request->waktu_pengembalian;
         $hardisk->save();

@@ -32,6 +32,7 @@ class handphoneController extends Controller
         $handphone = new handphone;
         $handphone->tanggal_peminjaman = $request->tanggal_peminjaman;
         $handphone->nama = $request->nama;
+        $handphone->kode_device = $request->kode_device;
         $handphone->kondisi_handphone = $request->kondisi_handphone;
         $handphone->kondisi_baterai = $request->kondisi_baterai;
         $handphone->kondisi_charger = $request->kondisi_charger;
