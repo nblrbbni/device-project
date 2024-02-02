@@ -3,7 +3,6 @@
 use App\Http\Controllers\adminController;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PcController;
 use App\Http\Controllers\LanController;
 use App\Http\Controllers\dataPeminjaman;
@@ -15,7 +14,6 @@ use App\Http\Controllers\cameraController;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\laptopController;
 use App\Http\Controllers\pinjamController;
-use App\Http\Controllers\ReportController;
 use App\Http\Controllers\tabletController;
 use App\Http\Controllers\hardiskController;
 use App\Http\Controllers\printerController;
@@ -27,8 +25,6 @@ use App\Http\Controllers\flashdiskController;
 use App\Http\Controllers\handphoneController;
 use App\Http\Controllers\projectorController;
 use App\Http\Controllers\informationController;
-use App\Http\Controllers\MapelController;
-use App\Http\Controllers\pinjamController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReturnController;
@@ -286,5 +282,3 @@ Route::post('/sp-lan/store', [pinjamController::class, 'lanstr']);
 Route::get('/report-tugas', [ReportController::class, 'tugas']);
 Route::post('/report-tugas/store', [ReportController::class, 'tugasstr']);
 
-//Delete data
-Route::delete('/delete/{id}', [DataDeviceController::class, 'delete'])->name('laptop.delete');

@@ -20,12 +20,12 @@ class pinjamController extends Controller
     {
         $mapel = DB::table('mapel')->get();
         $guru = DB::table('guru')->get();
-        $datalaptop = DB::table('datalaptop')->get();
+        $device = DB::table('device')->get();
 
         return view('laptop.sp-laptop', [
             'mapel' => $mapel,
             'guru' => $guru,
-            'datalaptop' => $datalaptop,
+            'device' => $device,
         ]);
     }
 
@@ -52,7 +52,7 @@ class pinjamController extends Controller
         // Simpan kode device yang dipinjam dalam session
         session(['kode_device_peminjaman' => $request->kode_device]);
 
-        DB::table('datalaptop')
+        DB::table('device')
         ->where('kode_device', $request->kode_device)
         ->update(
             [
