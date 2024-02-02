@@ -56,6 +56,7 @@
                                 <td>Device 09</td>
 
                                 <td>
+                                    
                                     <a href="#" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>

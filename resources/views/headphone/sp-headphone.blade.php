@@ -24,12 +24,6 @@
                 <img src="{{ asset('asset/picture/Headphones.png') }}" class="gambar" alt="...">
                 <p>Headphone (HDPN)</p>
             </div>
-            <div class="col-md-4">
-                <div class='single'>
-                    <img src="{{ asset('asset/picture/Headphones.png') }}" class="gambar" alt="...">
-                    <p>Headphone</p>
-                </div>
-            </div>
         </div>
         <br>
         <br>

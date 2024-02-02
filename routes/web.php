@@ -21,6 +21,7 @@ use App\Http\Controllers\hardiskController;
 use App\Http\Controllers\printerController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DataDeviceController;
 use App\Http\Controllers\earphoneController;
 use App\Http\Controllers\flashdiskController;
 use App\Http\Controllers\handphoneController;
@@ -281,3 +282,6 @@ Route::post('/sp-lan/store', [pinjamController::class, 'lanstr']);
 // Report Tugas
 Route::get('/report-tugas', [ReportController::class, 'tugas']);
 Route::post('/report-tugas/store', [ReportController::class, 'tugasstr']);
+
+//Delete data
+Route::delete('/delete/{id}', [DataDeviceController::class, 'delete'])->name('laptop.delete');
