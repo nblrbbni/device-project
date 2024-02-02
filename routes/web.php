@@ -42,8 +42,8 @@ Route::get('/', function () {
 });
 
 Route::get('admin', function () {
-    return view('admin');
-})''
+    return view('admin.dashboard');
+});
 
 Route::get('/team', function () {
     return view('team');
