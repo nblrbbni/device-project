@@ -4,7 +4,7 @@
 <h1>Data Device</h1>
     <div class="row mx-auto">
         <div class="col-lg-3 col-md-6 mx-auto " id="card-device">
-            <a href="/data-laptop">
+            <a href="/data-peminjaman">
                 <div class="card-admin mt-3 mx-auto">
                     <img src="/assets/picture/Laptop.png" alt="">
                     <p>Laptop</p>

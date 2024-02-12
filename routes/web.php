@@ -282,3 +282,24 @@ Route::post('/sp-lan/store', [pinjamController::class, 'lanstr']);
 Route::get('/report-tugas', [ReportController::class, 'tugas']);
 Route::post('/report-tugas/store', [ReportController::class, 'tugasstr']);
 
+// Admin
+Route::get('/admin', [adminController::class, 'admin']);
+Route::get('/data-siswa', [adminController::class, 'siswa']);
+Route::get('/data-device', [adminController::class, 'device']);
+Route::get('/laporan', [adminController::class, 'laporan']);
+Route::get('/Device', [adminController::class, 'Devicert']);
+Route::get('/tugas', [ReportController::class, 'show']);
+Route::get('/calendar', [adminController::class, 'calendar']);
+Route::get('/Form', [adminController::class, 'Form']);
+Route::get('/data-laptop', [adminController::class, 'laptop']);
+Route::get('/data-earphone', [adminController::class, 'earphone']);
+Route::get('/data-tablet', [adminController::class, 'tablet']);
+Route::get('/data-pc', [adminController::class, 'pc']);
+Route::get('/data-handphone', [adminController::class, 'handphone']);
+Route::get('/data-camera', [adminController::class, 'camera']);
+Route::get('/data-flashdisk', [adminController::class, 'flashdisk']);
+Route::get('/data-hardisk', [adminController::class, 'hardisk']);
+Route::get('/data-printer', [adminController::class, 'printer']);
+Route::get('/data-lan', [adminController::class, 'lan']);
+Route::get('/data-hdmi', [adminController::class, 'hdmi']);
+Route::get('/data-projector', [adminController::class, 'projector']);

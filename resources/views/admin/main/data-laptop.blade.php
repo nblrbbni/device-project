@@ -17,49 +17,37 @@
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered table-md">
-                        <tbody>
+                        <thead>
                             <tr>
                                 <th>#</th>
                                 <th>Tanggal,Bulan,Tahun</th>
                                 <th>Nama Siswa</th>
-                                <th>Kelas Siswa</th>
-                                <th>Nomor device</th>
+                                <th>Mapel</th>
+                                <th>Kode Device</th>
+                                <th>Mentoring</th>
+                                <th>Waktu</th>
                                 <th>Action</th>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>22 - Desember - 2023</td>
-                                <td>Bintang Rizki Sulistyo</td>
-                                <td>XII</td>
-                                <td>Device 09</td>
-
-                                <td>
-                                    <a href="#" class="btn btn-danger">Delete</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>22 - Desember - 2023</td>
-                                <td>Bintang Rizki Sulistyo</td>
-                                <td>XII</td>
-                                <td>Device 09</td>
-
-                                <td>
-                                    <a href="#" class="btn btn-danger">Delete</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>22 - Desember - 2023</td>
-                                <td>Bintang Rizki Sulistyo</td>
-                                <td>XII</td>
-                                <td>Device 09</td>
-
-                                <td>
-                                    
-                                    <a href="#" class="btn btn-danger">Delete</a>
-                                </td>
-                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse ($pinjam_laptop as $key => $value)
+                                <tr>
+                                    <td>{{ $key + 1 }}</td>
+                                    <td>{{ $value->tanggal_peminjaman }}</td>
+                                    <td>{{ $value->nama }}</td>
+                                    <td>{{ $value->mata_pelajaran }}</td>
+                                    <td>{{ $value->kode_device }}</td>
+                                    <td>{{ $value->mentoring_mapel }}</td>
+                                    <td>{{ $value->waktu_peminjaman }}</td>
+                                    <td>
+                                        <a href="#" class="btn btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                                @empty
+                                <tr>
+                                    <td>Tidak Ada Data.</td>
+                                </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>

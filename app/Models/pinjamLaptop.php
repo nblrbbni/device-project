@@ -14,7 +14,7 @@ class pinjamLaptop extends Model
         'tanggal_peminjaman',
         'nama',
         'mata_pelajaran',
-        'nomor_laptop',
+        'kode_device',
         'mentoring_mapel',
         'waktu_pengembalian',
     ];

@@ -17,10 +17,9 @@ return new class extends Migration
             $table->date("tanggal_peminjaman");
             $table->string("nama");
             $table->string("mata_pelajaran");
-            $table->integer("nomor_laptop");
+            $table->string("kode_device");
             $table->string("mentoring_mapel");
-            $table->time("waktu_pengembalian");
-
+            $table->time("waktu_peminjaman");
 
         });
     }

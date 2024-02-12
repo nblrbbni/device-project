@@ -40,7 +40,7 @@ class pinjamController extends Controller
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamLaptop = new peminjaman();
+        $pinjamLaptop = new pinjamLaptop();
         $pinjamLaptop->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamLaptop->nama = $request->nama;
         $pinjamLaptop->mata_pelajaran = $request->mata_pelajaran;
@@ -609,8 +609,8 @@ class pinjamController extends Controller
 
     public function show()
     {
-        $peminjaman = DB::table('peminjaman')->get();
+        $pinjamLaptop = DB::table('pinjam_laptop')->get();
 
-        return view('peminjaman.read', ['peminjaman' => $peminjaman]);
+        return view('admin.main.data-laptop', ['pinjam_laptop' => $pinjamLaptop]);
     }
 }

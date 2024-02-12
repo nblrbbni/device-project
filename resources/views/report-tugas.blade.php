@@ -21,7 +21,7 @@
 
 <p style="text-align: center" class="text-red">*Bisa memilih salah satu (1) atau lebih dari satu (1) untuk dilampirkan.</p>
 <p style="text-align: center" class="text-red">*File Gambar wajib dilampirkan.</p>
-<form action="/report-tugas/store" method="post">
+<form action="/report-tugas/store" method="post" enctype="multipart/form-data">
     @csrf
     <div class="labelGAP">
         <div class="col">
