@@ -3,7 +3,7 @@
 @section('content')
     <section class="section">
         <div class="section-body">
-            <h1>Data pengempulan & pengembalian</h1><br><br>
+            <h1>Data Pengumpulan & Pengembalian</h1><br><br>
             <div class="dataCard">
                 <div class="cardData">
                     <img src="{{ asset('assets/picture/Devices.png') }}" class="rounded mx-auto d-block" alt="">
@@ -19,7 +19,7 @@
                         style="width: 120px;">
                     <p>Tugas</p>
                     <div class="button">
-                        <a href="/tugas">
+                        <a href="/report-tugas/show">
                             View
                         </a>
                     </div>

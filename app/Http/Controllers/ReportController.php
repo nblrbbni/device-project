@@ -6,6 +6,7 @@ use App\Models\reportTugas;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ReportController extends Controller
 {
@@ -33,4 +34,12 @@ class ReportController extends Controller
         Alert::success('Berhasil!', 'Tugas Anda sudah masuk!');
         return redirect()->to('/');
     }
+
+    public function index()
+    {
+        $report_tugas = DB::table('report_tugas')->get();
+
+        return view('admin.main.tugas.index', ['report_tugas' => $report_tugas]);
+    }
+
 }

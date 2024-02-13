@@ -20,7 +20,7 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Tahun-Bulan-Tanggal</th>
+                                <th>Tanggal-Bulan-Tahun</th>
                                 <th>Nama Siswa</th>
                                 <th>Kode Device</th>
                                 <th>Action</th>
@@ -30,7 +30,7 @@
                             @forelse ($pinjamflashdisk as $key => $value)
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
-                                    <td>{{ $value->tanggal_peminjaman }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($value->created_at)->format('d-m-Y') }}</td>
                                     <td>{{ $value->nama }}</td>
                                     <td>{{ $value->kode_device }}</td>
                                     <td>

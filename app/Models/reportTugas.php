@@ -17,4 +17,3 @@ class reportTugas extends Model
         'email',
     ];
 }
-

@@ -58,8 +58,10 @@ Route::get('/team', function () {
     return view('team');
 });
 
+// Report Tugas
 Route::get('/report-tugas', [ReportController::class, 'tugas']);
 Route::post('/report-tugas/store', [ReportController::class, 'tugasstr']);
+Route::get('/report-tugas/show', [ReportController::class, 'index']);
 
 //CRUD Mapel
 //Create
