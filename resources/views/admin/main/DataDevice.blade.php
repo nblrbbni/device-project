@@ -1,8 +1,19 @@
 @extends('admin.master')
 
 @section('content')
-<h1>Data Device</h1>
-    <div class="row mx-auto">
+    <div class="main d-flex">
+        <h1>Data Device</h1>
+    </div>
+    <div class="d-flex justify-content-end" id="create">
+        <a href="/data-all-device" class=" d-flex"><img src="{{ asset('assets/img/Search.png') }}" alt="" >
+            <h1 style="margin-right: 5rem">Data Device</h1>
+        </a>
+        <a href="" class=" d-flex"><img src="{{ asset('assets/img/Group 226.png') }}" alt="" >
+            <h1 style="margin-right: 5rem">Create Device</h1>
+        </a>
+    </div>
+
+    <div class="row mx-auto mt-4">
         <div class="col-lg-3 col-md-6 mx-auto " id="card-device">
             <a href="/data-laptop">
                 <div class="card-admin mt-3 mx-auto">

@@ -241,5 +241,6 @@ Route::get('/data-printer', [adminController::class, 'printer']);
 Route::get('/data-lan', [adminController::class, 'lan']);
 Route::get('/data-hdmi', [adminController::class, 'hdmi']);
 Route::get('/data-projector', [adminController::class, 'projector']);
+Route::get('/data-all-device', [adminController::class, 'all']);
 
 Auth::routes();

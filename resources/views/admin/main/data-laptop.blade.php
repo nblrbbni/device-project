@@ -3,14 +3,33 @@
 @section('content')
     <div class="section-body">
         <h1>Data device laptop</h1>
-        <div class="input-group" style="width:200px ;">
-            <input type="text" class="form-control" placeholder="Search" fdprocessedid="fk1xi8o">
-            <div class="input-group-btn">
-                <button class="btn btn-primary" style="height: 41px;" fdprocessedid="mluskc"><i
-                        class="fas fa-search"></i></button>
+        <div class="helper-button d-flex">
+            <div class="btn-group">
+                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Kelas
+                </button>
+                <div class="dropdown-menu" x-placement="bottom-start"
+                    style="position: absolute; transform: translate3d(0px, 35px, 0px); top: 0px; left: 0px; will-change: transform;">
+                    <a class="dropdown-item" href="#">X</a>
+                    <a class="dropdown-item" href="#">XI</a>
+                    <a class="dropdown-item" href="#">XII</a>
+                    <div class="dropdown-divider"></div>
+                </div>
             </div>
-        </div><br>
-        <div class="card">
+            <input type="number" class="form-control" placeholder="Jumlah" fdprocessedid="fk1xi8o" id="search-button"
+                style="input::placeholder{font-size:20px;}">
+
+            <div class="input-group justify-content-end" style="width:200px ;">
+                <input type="text" class="form-control" placeholder="Search" fdprocessedid="fk1xi8o">
+                <div class="input-group-btn">
+                    <button class="btn btn-primary" style="height: 41px;" fdprocessedid="mluskc" id="icon-search"><i
+                            class="fas fa-search"></i></button>
+                </div>
+            </div><br>
+            <a href="/calendar"><img src="assets/img/Calendar.png" alt="" style="width: 38px; height: 38px;"></a>
+        </div>
+        <div class="card mt-3">
             <div class="card-header">
                 <h4>Simple Table</h4>
             </div>
@@ -60,10 +79,19 @@
                                 </td>
                             </tr>
                         </tbody>
+
                     </table>
                 </div>
+                <nav aria-label=" justify-content-end">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
             </div>
-
         </div>
     </div>
 @endsection

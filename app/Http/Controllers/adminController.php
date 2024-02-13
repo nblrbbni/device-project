@@ -86,4 +86,8 @@ class adminController extends Controller
     {
         return view('admin.main.data-projector');
     }
+    public function all ()
+    {
+        return view('admin.main.data_all_device');
+    }
 }
