@@ -11,7 +11,7 @@ class MapelController extends Controller
 {
     public function create()
     {
-        return view('mapel.create');
+        return view('admin.main.mapel.index');
     }
 
     public function store(Request $request)
@@ -24,6 +24,7 @@ class MapelController extends Controller
             'mapel' => $request['mapel'],
         ]);
 
+        Alert::success('Berhasil!', 'Data berhasil ditambahkan!');
         return redirect('/mapel');
     }
 
@@ -31,14 +32,14 @@ class MapelController extends Controller
     {
         $mapel = DB::table('mapel')->get();
 
-        return view('mapel.read', ['mapel' => $mapel]);
+        return view('admin.main.mapel.index', ['mapel' => $mapel]);
     }
 
     public function edit($id)
     {
         $mapel = DB::table('mapel')->where('id', $id)->first();
 
-        return view('mapel.update', ['mapel' => $mapel]);
+        return view('admin.main.mapel.update', ['mapel' => $mapel]);
     }
 
     public function update(Request $request, $id)
@@ -62,6 +63,7 @@ class MapelController extends Controller
     {
         DB::table('mapel')->where('id', $id)->delete();
 
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
         return redirect('/mapel');
     }
 }

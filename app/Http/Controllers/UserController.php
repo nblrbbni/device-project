@@ -11,27 +11,8 @@ use Illuminate\Support\Facades\Schema;
 
 class UserController extends Controller
 {
-    // public function edit() {
-    //     return view('user.edit')->with('user', auth()->user());
-    // }
-
-    // public function update(UpdateProfileRequest $request) {
-    //     $user = auth()->user();
-
-    //     $user ->update([
-    //         'name' => $request->name,
-    //         'class' => $request->class,
-    //         'email' => $request->email
-    //     ]);
-
-    //     session()->flash('sucsess', 'User Update Sucsessfully');
-
-    //     return redirect()->back();
-    // }
-
-    // public function up() {
-    //     Schema::table('user', function (Blueprint $table) {
-    //         $table->text('password')->nullable();
-    //     });
-    // }
+    public function user()
+    {
+        return view('dashboard');
+    }
 }

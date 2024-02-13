@@ -3,10 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\peminjaman;
-use App\Models\pinjamLaptop;
 
 use App\Models\Device;
 
+use App\Models\pinjamcamera;
+use App\Models\pinjamcomputer;
+use App\Models\pinjamflashdisk;
+use App\Models\pinjamhandphone;
+use App\Models\pinjamhardisk;
+use App\Models\pinjamhdmi;
+use App\Models\pinjamheadphone;
+use App\Models\pinjamlan;
+use App\Models\pinjamlaptop;
+use App\Models\pinjamprinter;
+use App\Models\pinjamprojector;
+use App\Models\pinjamtablet;
 use RealRashid\SweetAlert\Facades\Alert;
 
 use Illuminate\Support\Facades\DB;
@@ -40,7 +51,7 @@ class pinjamController extends Controller
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamLaptop = new peminjaman();
+        $pinjamLaptop = new pinjamlaptop();
         $pinjamLaptop->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamLaptop->nama = $request->nama;
         $pinjamLaptop->mata_pelajaran = $request->mata_pelajaran;
@@ -89,7 +100,7 @@ class pinjamController extends Controller
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamEarphone = new peminjaman();
+        $pinjamEarphone = new pinjamheadphone();
         $pinjamEarphone->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamEarphone->nama = $request->nama;
         $pinjamEarphone->mata_pelajaran = $request->mata_pelajaran;
@@ -138,7 +149,7 @@ class pinjamController extends Controller
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamProjector = new peminjaman();
+        $pinjamProjector = new pinjamprojector();
         $pinjamProjector->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamProjector->nama = $request->nama;
         $pinjamProjector->mata_pelajaran = $request->mata_pelajaran;
@@ -187,7 +198,7 @@ class pinjamController extends Controller
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamTablet = new peminjaman();
+        $pinjamTablet = new pinjamtablet();
         $pinjamTablet->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamTablet->nama = $request->nama;
         $pinjamTablet->mata_pelajaran = $request->mata_pelajaran;
@@ -236,7 +247,7 @@ class pinjamController extends Controller
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamCamera = new peminjaman();
+        $pinjamCamera = new pinjamcamera();
         $pinjamCamera->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamCamera->nama = $request->nama;
         $pinjamCamera->mata_pelajaran = $request->mata_pelajaran;
@@ -285,7 +296,7 @@ class pinjamController extends Controller
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamHandphone = new peminjaman();
+        $pinjamHandphone = new pinjamhandphone();
         $pinjamHandphone->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamHandphone->nama = $request->nama;
         $pinjamHandphone->mata_pelajaran = $request->mata_pelajaran;
@@ -335,7 +346,7 @@ class pinjamController extends Controller
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamKomputer = new peminjaman();
+        $pinjamKomputer = new pinjamcomputer();
         $pinjamKomputer->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamKomputer->nama = $request->nama;
         $pinjamKomputer->mata_pelajaran = $request->mata_pelajaran;
@@ -384,7 +395,7 @@ class pinjamController extends Controller
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamFlashdisk = new peminjaman();
+        $pinjamFlashdisk = new pinjamflashdisk();
         $pinjamFlashdisk->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamFlashdisk->nama = $request->nama;
         $pinjamFlashdisk->mata_pelajaran = $request->mata_pelajaran;
@@ -434,7 +445,7 @@ class pinjamController extends Controller
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamHardisk = new peminjaman();
+        $pinjamHardisk = new pinjamhardisk();
         $pinjamHardisk->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamHardisk->nama = $request->nama;
         $pinjamHardisk->mata_pelajaran = $request->mata_pelajaran;
@@ -484,7 +495,7 @@ class pinjamController extends Controller
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamPrinter = new peminjaman();
+        $pinjamPrinter = new pinjamprinter();
         $pinjamPrinter->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamPrinter->nama = $request->nama;
         $pinjamPrinter->mata_pelajaran = $request->mata_pelajaran;
@@ -533,7 +544,7 @@ class pinjamController extends Controller
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamHdmi = new peminjaman();
+        $pinjamHdmi = new pinjamhdmi();
         $pinjamHdmi->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamHdmi->nama = $request->nama;
         $pinjamHdmi->mata_pelajaran = $request->mata_pelajaran;
@@ -582,7 +593,7 @@ class pinjamController extends Controller
             'waktu_peminjaman' => 'required',
         ]);
 
-        $pinjamLan = new peminjaman();
+        $pinjamLan = new pinjamlan();
         $pinjamLan->tanggal_peminjaman = $request->tanggal_peminjaman;
         $pinjamLan->nama = $request->nama;
         $pinjamLan->mata_pelajaran = $request->mata_pelajaran;
@@ -606,10 +617,89 @@ class pinjamController extends Controller
         return redirect()->to('/');
     }
 
-    public function show()
+    public function pinjamlaptop()
     {
-        $peminjaman = DB::table('peminjaman')->get();
+        $pinjamlaptop = DB::table('pinjamlaptop')->get();
 
-        return view('peminjaman.read', ['peminjaman' => $peminjaman]);
+        return view('admin.data-peminjaman.data-laptop', [
+            'pinjamlaptop' => $pinjamlaptop,
+        ]);
+    }
+
+    public function pinjamheadphone()
+    {
+        $pinjamheadphone = DB::table('pinjamheadphone')->get();
+
+        return view('admin.data-peminjaman.data-earphone', ['pinjamheadphone' => $pinjamheadphone]);
+    }
+
+    public function pinjamtablet()
+    {
+        $pinjamtablet = DB::table('pinjamtablet')->get();
+
+        return view('admin.data-peminjaman.data-tablet', ['pinjamtablet' => $pinjamtablet]);
+    }
+
+    public function pinjamcomputer()
+    {
+        $pinjamcomputer = DB::table('pinjamcomputer')->get();
+
+        return view('admin.data-peminjaman.data-pc', ['pinjamcomputer' => $pinjamcomputer]);
+    }
+
+    public function pinjamhandphone()
+    {
+        $pinjamhandphone = DB::table('pinjamhandphone')->get();
+
+        return view('admin.data-peminjaman.data-handphone', ['pinjamhandphone' => $pinjamhandphone]);
+    }
+
+    public function pinjamcamera()
+    {
+        $pinjamcamera = DB::table('pinjamcamera')->get();
+
+        return view('admin.data-peminjaman.data-camera', ['pinjamcamera' => $pinjamcamera]);
+    }
+
+    public function pinjamflashdisk()
+    {
+        $pinjamflashdisk = DB::table('pinjamflashdisk')->get();
+
+        return view('admin.data-peminjaman.data-flashdisk', ['pinjamflashdisk' => $pinjamflashdisk]);
+    }
+
+    public function pinjamhardisk()
+    {
+        $pinjamhardisk = DB::table('pinjamhardisk')->get();
+
+        return view('admin.data-peminjaman.data-hardisk', ['pinjamhardisk' => $pinjamhardisk]);
+    }
+
+    public function pinjamprinter()
+    {
+        $pinjamprinter = DB::table('pinjamprinter')->get();
+
+        return view('admin.data-peminjaman.data-printer', ['pinjamprinter' => $pinjamprinter]);
+    }
+
+    public function pinjamlan()
+    {
+        $pinjamlan = DB::table('pinjamlan')->get();
+
+        return view('admin.data-peminjaman.data-lan', ['pinjamlan' => $pinjamlan]);
+    }
+
+    public function pinjamhdmi()
+    {
+        $pinjamhdmi = DB::table('pinjamhdmi')->get();
+
+        return view('admin.data-peminjaman.data-hdmi', ['pinjamhdmi' => $pinjamhdmi]);
+    }
+
+    public function pinjamprojector()
+    {
+        $pinjamprojector = DB::table('pinjamprojector')->get();
+
+        return view('admin.data-peminjaman.data-projector', ['pinjamprojector' => $pinjamprojector]);
     }
 }

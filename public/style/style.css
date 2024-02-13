@@ -226,7 +226,7 @@ a {
     width: 500px;
     border-radius: 11px;
     border: 3px solid #14274c;
-    margin-left: -50px;
+    margin: auto;
 }
 
 .single img {

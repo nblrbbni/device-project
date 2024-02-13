@@ -10,8 +10,9 @@ class CategoryController extends Controller
 {
     public function create()
     {
-        return view('category.create');
+        return view('admin.main.category.index');
     }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -24,21 +25,22 @@ class CategoryController extends Controller
             'nama' => $request['nama'],
         ]);
 
-        return redirect('/category');
+        Alert::success('Berhasil!', 'Data berhasil ditambahkan!');
+        return redirect('/categories');
     }
 
     public function index()
     {
         $category = DB::table('category')->get();
 
-        return view('category.read', ['category' => $category]);
+        return view('admin.main.category.index', ['category' => $category]);
     }
 
     public function edit($id)
     {
         $category = DB::table('category')->where('id', $id)->first();
 
-        return view('category.update', ['category' => $category]);
+        return view('admin.main.category.update', ['category' => $category]);
     }
 
     public function update(Request $request, $id)
@@ -57,13 +59,14 @@ class CategoryController extends Controller
             ],
         );
         Alert::success('Berhasil!', 'Data berhasil diupdate!');
-        return redirect('/category');
+        return redirect('/categories');
     }
 
     public function delete($id)
     {
         DB::table('category')->where('id', $id)->delete();
 
-        return redirect('/category');
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/categories');
     }
 }

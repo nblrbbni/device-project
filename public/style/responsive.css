@@ -1,3 +1,8 @@
+@media screen and (min-width: 1827px) {
+    fieldset {
+        display: none;
+    }
+}
 @media screen and (min-width: 1440px) {
     h1.syahru {
         margin-top: 10px;
@@ -5,6 +10,9 @@
     h1.r {
         font-size: 18px;
         margin-top: -15px;
+    }
+    fieldset {
+        display: none;
     }
 }
 
@@ -49,24 +57,6 @@
     br #tablet {
         display: none;
     }
-    /* .contentCard #bintang {
-        display: none;
-    }
-    .contentCard #nabil {
-        display: none;
-    }
-    .contentCard #firman {
-        display: none;
-    }
-    .contentCard #ilham {
-        display: none;
-    }
-    .contentCard #syahru {
-        display: none;
-    }
-    .contentCard #vincent {
-        display: none;
-    } */
     .descCardTeam h1 {
         font-size: 18px;
     }
@@ -98,7 +88,12 @@
         margin-top: -15px;
     }
 }
-
+@media screen and (min-width:1024px) {
+    fieldset{
+        display: none;
+    }
+    
+}
 @media screen and (max-width: 1024px) {
     .sectionCard {
         margin: 10px;
@@ -160,24 +155,7 @@
     br #tablet {
         display: none;
     }
-    /* .contentCard #bintang {
-        display: none;
-    }
-    .contentCard #nabil {
-        display: none;
-    }
-    .contentCard #firman {
-        display: none;
-    }
-    .contentCard #ilham {
-        display: none;
-    }
-    .contentCard #syahru {
-        display: none;
-    }
-    .contentCard #vincent {
-        display: none;
-    } */
+
     .descCardTeam h1 {
         font-size: 18px;
     }
@@ -241,24 +219,7 @@
     br #tablet {
         display: none;
     }
-    /* .contentCard #bintang {
-        display: none;
-    }
-    .contentCard #nabil {
-        display: none;
-    }
-    .contentCard #firman {
-        display: none;
-    }
-    .contentCard #ilham {
-        display: none;
-    }
-    .contentCard #syahru {
-        display: none;
-    }
-    .contentCard #vincent {
-        display: none;
-    } */
+
     .descCardTeam h1 {
         font-size: 18px;
     }
@@ -314,24 +275,7 @@
     br #tablet {
         display: none;
     }
-    /* .contentCard #bintang {
-        display: none;
-    }
-    .contentCard #nabil {
-        display: none;
-    }
-    .contentCard #firman {
-        display: none;
-    }
-    .contentCard #ilham {
-        display: none;
-    }
-    .contentCard #syahru {
-        display: none;
-    }
-    .contentCard #vincent {
-        display: none;
-    } */
+
     .descCardTeam h1 {
         font-size: 18px;
     }
@@ -406,24 +350,7 @@
     br #tablet {
         display: none;
     }
-    /* .contentCard #bintang {
-        display: none;
-    }
-    .contentCard #nabil {
-        display: none;
-    }
-    .contentCard #firman {
-        display: none;
-    }
-    .contentCard #ilham {
-        display: none;
-    }
-    .contentCard #syahru {
-        display: none;
-    }
-    .contentCard #vincent {
-        display: none;
-    } */
+
     .descCardTeam h1 {
         font-size: 18px;
     }
@@ -453,6 +380,9 @@
     h1.r {
         font-size: 18px;
         margin-top: -15px;
+    }
+    table {
+        display: none;
     }
 }
 
@@ -516,6 +446,18 @@
 }
 
 @media screen and (max-width: 425px) {
+    .single {
+        width: 280px;
+    }
+    .single p {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+    .single img {
+        /* margin: auto; */
+        width: 150px;
+        height: 150px;
+    }
     .sectionCard {
         display: grid;
         grid-template-columns: auto;
@@ -621,6 +563,12 @@
         font-size: 30px;
         margin-left: -15rem;
     }
+    .drop-container {
+        margin: 1px 30px;
+    }
+    .link {
+        margin: 1px 30px;
+    }
     .cardTeam {
         grid-template-columns: auto;
         margin-left: -20px;
@@ -696,6 +644,14 @@
     .teamTitle h1 {
         font-size: 30px;
         margin-left: -15rem;
+    }
+    .drop-container {
+        /* margin: 1px 10px; */
+        width: 17rem;
+    }
+    .link {
+        /* margin: 1px 10px; */
+        width: 17rem;
     }
     .cardTeam {
         grid-template-columns: auto;

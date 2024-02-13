@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -42,6 +42,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
-        // 'password' => 'encrypted',
     ];
+
+    /**
+     * Determine whether the user has admin role.
+     *
+     * @return bool
+     */
+    public function isAdmin()
+    {
+        return strpos($this->email, '@admin.com') !== false;
+    }
+
 }

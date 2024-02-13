@@ -91,8 +91,8 @@
             </li>
             @endauth
             <hr>
-            <li class="nav-item {{ 'information' == request()->path() ? 'active' : '' }}">
-                <a class="nav-link" href="/information">
+            <li class="nav-item {{ 'information/show' == request()->path() ? 'active' : '' }}">
+                <a class="nav-link" href="/information/show">
                 <span
                     class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
@@ -223,8 +223,7 @@
             @auth
             <li class="nav-item bg-danger">
                 <a class="nav-link" href="{{ route('logout') }}"
-                onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 <span
                 class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"

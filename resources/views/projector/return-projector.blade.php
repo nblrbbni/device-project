@@ -74,6 +74,7 @@
                 </tbody>
             </table>
         </div>
+        
         <br />
         <div class="buttonSp text-center">
             <input type="submit" class="btn btn-lg" value="Confirm" style="background-color: #14274c; color:white">

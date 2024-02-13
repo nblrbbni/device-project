@@ -32,14 +32,14 @@ class StudentController extends Controller
     {
         $student = DB::table('student')->get();
 
-        return view('student.read', ['student' => $student]);
+        return view('admin.main.student.read', ['student' => $student]);
     }
 
     public function edit($id)
     {
         $student = DB::table('student')->where('id', $id)->first();
 
-        return view('student.update', ['student' => $student]);
+        return view('admin.main.student.update', ['student' => $student]);
     }
 
     public function update(Request $request, $id)

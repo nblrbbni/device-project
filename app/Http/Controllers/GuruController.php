@@ -10,7 +10,7 @@ class GuruController extends Controller
 {
     public function create()
     {
-        return view('guru.create');
+        return view('admin.main.guru.index');
     }
 
     public function store(Request $request)
@@ -23,6 +23,7 @@ class GuruController extends Controller
             'nama' => $request['nama'],
         ]);
 
+        Alert::success('Berhasil!', 'Data berhasil ditambahkan!');
         return redirect('/guru');
     }
 
@@ -30,14 +31,14 @@ class GuruController extends Controller
     {
         $guru = DB::table('guru')->get();
 
-        return view('guru.read', ['guru' => $guru]);
+        return view('admin.main.guru.index', ['guru' => $guru]);
     }
 
     public function edit($id)
     {
         $guru = DB::table('guru')->where('id', $id)->first();
 
-        return view('guru.update', ['guru' => $guru]);
+        return view('admin.main.guru.update', ['guru' => $guru]);
     }
 
     public function update(Request $request, $id)
@@ -61,6 +62,7 @@ class GuruController extends Controller
     {
         DB::table('guru')->where('id', $id)->delete();
 
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
         return redirect('/guru');
     }
 }
