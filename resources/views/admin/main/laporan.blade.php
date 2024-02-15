@@ -19,7 +19,7 @@
                         style="width: 120px;">
                     <p>Tugas</p>
                     <div class="button">
-                        <a href="/report-tugas/show">
+                        <a href="/report-tugas">
                             View
                         </a>
                     </div>

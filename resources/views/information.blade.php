@@ -10,10 +10,6 @@
     <link rel="stylesheet" href="{{ asset('style/responsive.css') }}">
 @endpush
 
-@push('styles-2')
-    <link rel="stylesheet" href="{{ asset('style/responsive.css') }}">
-@endpush
-
 @section('content')
     <br>
     <br>
@@ -59,6 +55,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 @endsection

@@ -17,29 +17,35 @@ class ReportController extends Controller
 
     public function tugasstr(Request $request)
     {
-        $request->validate([
-            'foto' => 'required',
-            'link' => '',
-            'email' => '',
+        $request->validate(['foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $nama  = Auth::user()->name;;
+        $nama = Auth::user()->name;
+        $fotoPath = $request->file('foto')->store('foto_tugas', 'public');
 
         $reportTugas = new reportTugas();
         $reportTugas->nama = $nama;
-        $reportTugas->foto = $request->foto;
-        $reportTugas->link = $request->link;
-        $reportTugas->email = $request->email;
+        $reportTugas->foto_path = $fotoPath;
+
+        // Cek dan simpan link jika diisi
+        if ($request->has('link')) {
+            $reportTugas->link = $request->link;
+        }
+
+        // Cek dan simpan email jika diisi
+        if ($request->has('email')) {
+            $reportTugas->email = $request->email;
+        }
+
         $reportTugas->save();
+
         Alert::success('Berhasil!', 'Tugas Anda sudah masuk!');
         return redirect()->to('/');
     }
-
     public function index()
     {
         $report_tugas = DB::table('report_tugas')->get();
 
         return view('admin.main.tugas.index', ['report_tugas' => $report_tugas]);
     }
-
 }

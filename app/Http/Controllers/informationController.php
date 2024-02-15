@@ -36,7 +36,7 @@ class informationController extends Controller
         return view('admin.main.information.index', ['information' =>   $information]);
     }
 
-    public function show($id)
+    public function show()
     {
         $information = DB::table('information')->get();
 

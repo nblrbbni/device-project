@@ -7,14 +7,14 @@
             <div class="input-group" style="width:200px ;">
                 <input type="text" class="form-control" placeholder="Search" fdprocessedid="9br7ph">
                 <div class="input-group-btn">
-                    <button class="btn btn-primary" style="height: 41px;" fdprocessedid="yen0ia"><i
+                    <button class="btn btn-primary" style="height: 41px;" fdprocessedid="wecprk"><i
                             class="fas fa-search"></i></button>
                     <a href="/calendar"><img src="assets/img/Calendar.png" alt=""
                             style="width: 38px; height: 38px;"></a>
                 </div>
             </div><br>
             <div class="card mt-5">
-                <div class="card-header ">
+                <div class="card-header">
                     <h4>Table data</h4>
                 </div>
                 <div class="card-body">
@@ -39,7 +39,7 @@
                                         <td>{{ $key + 1 }}</td>
                                         <td>{{ \Carbon\Carbon::parse($value->created_at)->format('d-m-Y') }}</td>
                                         <td>{{ $value->nama }}</td>
-                                        <td>{{ $value->foto }}</td>
+                                        <td><img src="{{ asset('storage/' . $value->foto_path) }}" alt="Gambar Tugas" style="max-width:100px; height:auto;"></td>
                                         <td>{{ $value->link }}</td>
                                         <td>{{ $value->email }}</td>
                                         <td>

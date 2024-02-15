@@ -59,9 +59,9 @@ Route::get('/team', function () {
 });
 
 // Report Tugas
-Route::get('/report-tugas', [ReportController::class, 'tugas']);
+Route::get('/report-tugas/post', [ReportController::class, 'tugas']);
 Route::post('/report-tugas/store', [ReportController::class, 'tugasstr']);
-Route::get('/report-tugas/show', [ReportController::class, 'index']);
+Route::get('/report-tugas', [ReportController::class, 'index']);
 
 //CRUD Mapel
 //Create
@@ -238,8 +238,8 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/information/create', [informationController::class, 'create']);
 Route::post('/information', [informationController::class, 'store']);
 //Read
-Route::get('/information', [informationController::class, 'index']);
-Route::get('/information/{information_id}', [informationController::class, 'show']);
+Route::get('/information/show', [informationController::class, 'index']);
+Route::get('/information', [informationController::class, 'show']);
 //update
 // form update
 Route::get('/information/{information_id}/edit', [informationController::class, 'edit']);

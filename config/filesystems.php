@@ -28,6 +28,8 @@ return [
     |
     */
 
+    'url' => env('APP_URL') . '/storage',
+
     'disks' => [
 
         'local' => [

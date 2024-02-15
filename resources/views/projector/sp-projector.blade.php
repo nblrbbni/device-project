@@ -48,7 +48,7 @@
                             <input type="text" name="nama" value="{{ Auth::user()->name }}" readonly>
                         </td>
                         <td>
-                            <select name="mata_pelajaran" id="mata_pelajaran" required>
+                            <select name="mata_pelajaran" id="mata_pelajaran" class="js-example-basic-single" required>
                                 @foreach ($mapel as $value)
                                     <option value="{{ $value->mapel }}">{{ $value->mapel }}</option>
                                 @endforeach
@@ -62,7 +62,7 @@
                             </select>
                         </td>
                         <td>
-                            <select name="mentoring_mapel" id="mentoring_mapel" required>
+                            <select name="mentoring_mapel" id="mentoring_mapel" class="js-example-basic-single"  required>
                                 @foreach ($guru as $value)
                                     <option value="{{ $value->nama }}">{{ $value->nama }}</option>
                                 @endforeach
@@ -74,7 +74,7 @@
                     </tr>
                 </tbody>
             </table>
-            <fieldset>
+            {{-- <fieldset>
                 <legend>Isi table</legend>
                 <div class="mb-3">
                     <label for="disabledTextInput" class="form-label">Tanggal Peminjaman</label>
@@ -109,7 +109,7 @@
                         @endforeach
                     </select>
                 </div>
-            </fieldset>
+            </fieldset> --}}
         </div>
 
         <br>

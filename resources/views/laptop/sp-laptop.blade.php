@@ -75,7 +75,7 @@
                 </tbody>
             </table>
 
-            <fieldset>
+            {{-- <fieldset>
                 <legend>Isi table</legend>
                 <div class="mb-3">
                     <label for="disabledTextInput" class="form-label">Tanggal Peminjaman</label>
@@ -104,17 +104,13 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-check-label" for="disabledFieldsetCheck">Mentoring Mapel</label>
-                    <select name="mentoring_mapel" id="mentoring_mapel" class="guru" required>
+                    <select name="mentoring_mapel" id="mentoring_mapel" required>
                         @foreach ($guru as $value)
                             <option value="{{ $value->nama }}">{{ $value->nama }}</option>
                         @endforeach
                     </select>
                 </div>
-                <div class="mb-3">
-                    <label class="form-check-label" for="disabledFieldsetCheck">Waktu Peminjaman</label>
-                    <input type="time" name="waktu_peminjaman" id="inputTime" step="1" readonly>
-                </div>
-            </fieldset>
+            </fieldset> --}}
         </div>
 
         <br>

@@ -65,8 +65,8 @@
                                                 @method('DELETE')
                                                 <a href="/datalaptop/{{ $value->id }}/edit" class="btn"
                                                     style="background-color:#14274c; color:white">Edit</a>
-                                                <a href="/datalaptop/{{ $value->id }}/delete" class="btn btn-danger" onclick="confirmation(event)"
-                                                    data-id="{{ $value->id }}"
+                                                <a href="/datalaptop/{{ $value->id }}/delete" class="btn btn-danger"
+                                                    onclick="confirmation(event)" data-id="{{ $value->id }}"
                                                     data-name="{{ $value->kode_device }}">Delete</a>
                                             </form>
                                         </td>
