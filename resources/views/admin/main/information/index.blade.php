@@ -16,7 +16,7 @@
                     @enderror
                     <div class="mb-3">
                         <label class="form-label">Deskripsi Pasal</label>
-                        <input type="text" name="descripsi" class="form-control" required>
+                        <textarea name="descripsi" class="form-label konten"></textarea>
                     </div>
                     @error('descripsi')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -87,3 +87,13 @@
         </div>
     </div>
 @endsection
+
+@push('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.8.3/tinymce.min.js"></script>
+
+<script>
+    tinymce.init({
+  selector: 'textarea.konten'
+});
+</script>
+@endpush
