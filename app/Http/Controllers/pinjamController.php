@@ -615,7 +615,7 @@ class pinjamController extends Controller
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
     }
-
+    // :aptop
     public function pinjamlaptop()
     {
         $pinjamlaptop = DB::table('pinjamlaptop')->get();
@@ -624,42 +624,81 @@ class pinjamController extends Controller
             'pinjamlaptop' => $pinjamlaptop,
         ]);
     }
+    public function deletelap($id)
+    {
+        DB::table('pinjamlaptop')->where('id', $id)->delete();
 
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/peminjaman-laptop');
+    }
+
+    // Headphone
     public function pinjamheadphone()
     {
         $pinjamheadphone = DB::table('pinjamheadphone')->get();
 
         return view('admin.data-peminjaman.data-earphone', ['pinjamheadphone' => $pinjamheadphone]);
     }
+    public function deletehead($id)
+    {
+        DB::table('pinjamheadphone')->where('id', $id)->delete();
 
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/peminjaman-headphone');
+    }
+
+    // Tablet
     public function pinjamtablet()
     {
         $pinjamtablet = DB::table('pinjamtablet')->get();
 
         return view('admin.data-peminjaman.data-tablet', ['pinjamtablet' => $pinjamtablet]);
     }
+    public function deletetab($id)
+    {
+        DB::table('pinjamtablet')->where('id', $id)->delete();
 
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/peminjaman-tablet');
+    }
+
+    // Computer
     public function pinjamcomputer()
     {
         $pinjamcomputer = DB::table('pinjamcomputer')->get();
 
         return view('admin.data-peminjaman.data-pc', ['pinjamcomputer' => $pinjamcomputer]);
     }
+    public function deletecom($id)
+    {
+        DB::table('pinjamcomputer')->where('id', $id)->delete();
 
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/peminjaman-computer');
+    }
+
+    // Handphone
     public function pinjamhandphone()
     {
         $pinjamhandphone = DB::table('pinjamhandphone')->get();
 
         return view('admin.data-peminjaman.data-handphone', ['pinjamhandphone' => $pinjamhandphone]);
     }
+    public function deletehand($id)
+    {
+        DB::table('pinjamhandphone')->where('id', $id)->delete();
 
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/peminjaman-handphone');
+    }
+
+    // Camera
     public function pinjamcamera()
     {
         $pinjamcamera = DB::table('pinjamcamera')->get();
 
         return view('admin.data-peminjaman.data-camera', ['pinjamcamera' => $pinjamcamera]);
     }
-
     public function deletecam($id)
     {
         DB::table('pinjamcamera')->where('id', $id)->delete();
@@ -668,45 +707,93 @@ class pinjamController extends Controller
         return redirect('/peminjaman-camera');
     }
 
+    // Flashdisk
     public function pinjamflashdisk()
     {
         $pinjamflashdisk = DB::table('pinjamflashdisk')->get();
 
         return view('admin.data-peminjaman.data-flashdisk', ['pinjamflashdisk' => $pinjamflashdisk]);
     }
+    public function deleteflash($id)
+    {
+        DB::table('pinjamflashdisk')->where('id', $id)->delete();
 
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/peminjaman-flashdisk');
+    }
+
+    // Hardisk
     public function pinjamhardisk()
     {
         $pinjamhardisk = DB::table('pinjamhardisk')->get();
 
         return view('admin.data-peminjaman.data-hardisk', ['pinjamhardisk' => $pinjamhardisk]);
     }
+    public function deletehard($id)
+    {
+        DB::table('pinjamhardisk')->where('id', $id)->delete();
 
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/peminjaman-hardisk');
+    }
+
+    // Printer
     public function pinjamprinter()
     {
         $pinjamprinter = DB::table('pinjamprinter')->get();
 
         return view('admin.data-peminjaman.data-printer', ['pinjamprinter' => $pinjamprinter]);
     }
+    public function deleteprint($id)
+    {
+        DB::table('pinjamprinter')->where('id', $id)->delete();
 
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/peminjaman-printer');
+    }
+
+    // LAN
     public function pinjamlan()
     {
         $pinjamlan = DB::table('pinjamlan')->get();
 
         return view('admin.data-peminjaman.data-lan', ['pinjamlan' => $pinjamlan]);
     }
+    public function deletelan($id)
+    {
+        DB::table('pinjamlan')->where('id', $id)->delete();
 
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/peminjaman-lan');
+    }
+
+    // HDMI
     public function pinjamhdmi()
     {
         $pinjamhdmi = DB::table('pinjamhdmi')->get();
 
         return view('admin.data-peminjaman.data-hdmi', ['pinjamhdmi' => $pinjamhdmi]);
     }
+    public function deletehdmi($id)
+    {
+        DB::table('pinjamhdmi')->where('id', $id)->delete();
 
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/peminjaman-hdmi');
+    }
+
+    // Projector
     public function pinjamprojector()
     {
         $pinjamprojector = DB::table('pinjamprojector')->get();
 
         return view('admin.data-peminjaman.data-projector', ['pinjamprojector' => $pinjamprojector]);
+    }
+    public function deleteproj($id)
+    {
+        DB::table('pinjamprojector')->where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/peminjaman-projector');
     }
 }

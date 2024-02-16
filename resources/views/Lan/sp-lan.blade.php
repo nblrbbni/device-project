@@ -50,7 +50,7 @@
                         <td>
                             <select name="mata_pelajaran" id="mata_pelajaran" class="js-example-basic-single" required>
                                 @foreach ($mapel as $value)
-                                    <option value="{{ $value->id }}">{{ $value->mapel }}</option>
+                                    <option value="{{ $value->mapel }}">{{ $value->mapel }}</option>
                                 @endforeach
                             </select>
                         </td>

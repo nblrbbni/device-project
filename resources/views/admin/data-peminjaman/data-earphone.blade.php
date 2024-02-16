@@ -2,42 +2,37 @@
 
 @section('content')
     <div class="section-body">
-        <h1>Data Device Headphone</h1>
-        <div class="input-group" style="width:200px ;">
-            <input type="text" class="form-control" placeholder="Search" fdprocessedid="fk1xi8o">
-            <div class="input-group-btn">
-                <button class="btn btn-primary" style="height: 41px;" fdprocessedid="mluskc"><i
-                        class="fas fa-search"></i></button>
-            </div>
-        </div><br>
+        <h1 class="mb-3">Data Device Headphone</h1>
         <div class="card">
             <div class="card-header">
                 <h4>Peminjaman Headphone</h4>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered table-md">
+                    <table class="table table-bordered table-hover text-center" id="myTable">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Tanggal-Bulan-Tahun</th>
-                                <th>Nama Siswa</th>
-                                <th>Kode Device</th>
-                                <th>Action</th>
+                                <th class="text-center">No</th>
+                                <th class="text-center">Tanggal-Bulan-Tahun</th>
+                                <th class="text-center">Nama Siswa</th>
+                                <th class="text-center">Kode Device</th>
+                                <th class="text-center">Mata Pelajaran</th>
+                                <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @forelse ($pinjamheadphone as $key => $value)
                                 <tr>
-                                    <td>{{ $key + 1 }}</td>
+                                    <td class="text-center">{{ $key + 1 }}</td>
                                     <td>{{ \Carbon\Carbon::parse($value->created_at)->format('d-m-Y') }}</td>
                                     <td>{{ $value->nama }}</td>
                                     <td>{{ $value->kode_device }}</td>
+                                    <td>{{ $value->mata_pelajaran }}</td>
                                     <td>
-                                        <form action="/datalaptop/{{ $value->id }}" method="POST">
+                                        <form action="/peminjaman-headphone/{{ $value->id }}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <a href="/datalaptop/{{ $value->id }}/delete" class="btn btn-danger"
+                                            <a href="/peminjaman-headphone/{{ $value->id }}/delete" class="btn btn-danger"
                                                 onclick="confirmation(event)" data-id="{{ $value->id }}"
                                                 data-name="{{ $value->kode_device }}">Delete</a>
                                         </form>
@@ -45,7 +40,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td>Tidak Ada Data.</td>
+                                    <td colspan="6" class="text-center">Tidak Ada Data.</td>
                                 </tr>
                             @endforelse
                         </tbody>
@@ -55,3 +50,14 @@
         </div>
     </div>
 @endsection
+
+@push('style')
+    <link href="https://cdn.datatables.net/v/bs5/dt-2.0.0/datatables.min.css" rel="stylesheet">
+@endpush
+
+@push('script')
+    <script src="https://cdn.datatables.net/v/bs5/dt-2.0.0/datatables.min.js"></script>
+    <script>
+        let table = new DataTable('#myTable');
+    </script>
+@endpush

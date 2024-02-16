@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="section-body">
-        <h1>Data Guru</h1>
+        <h1 class="mb-3">Data Guru</h1>
         <div class="card">
             <div class="card-body">
                 <form action="/guru" method="POST">
@@ -23,34 +23,21 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>Tabel Guru</h4>
-                        <div class="card-header-form">
-                            <form>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search" fdprocessedid="n3oxv">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-primary" fdprocessedid="17droi"><i
-                                                class="fas fa-search"></i></button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
                     </div>
-                    <div class="card-body p-0">
+                    <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped">
+                            <table class="table table-bordered table-hover text-center" id="myTable">
                                 <thead>
                                     <tr>
-                                        <th class="text-center"></th>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Nama Guru</th>
-                                        <th scope="col">Aksi</th>
+                                        <th class="text-center">No</th>
+                                        <th class="text-center">Nama Guru</th>
+                                        <th class="text-center">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @forelse ($guru as $key => $value)
                                         <tr>
-                                            <td class="text-center"></td>
-                                            <td>{{ $key + 1 }}</td>
+                                            <td class="text-center">{{ $key + 1 }}</td>
                                             <td>{{ $value->nama }}</td>
                                             <td>
                                                 <form action="/guru/{{ $value->id }}" method="POST">
@@ -58,15 +45,15 @@
                                                     @method('DELETE')
                                                     <a href="/guru/{{ $value->id }}/edit" class="btn"
                                                         style="background-color:#14274c; color:white">Edit</a>
-                                                    <a href="/guru/{{ $value->id }}/delete" class="btn btn-danger" onclick="confirmation(event)"
-                                                        data-id="{{ $value->id }}"
+                                                    <a href="/guru/{{ $value->id }}/delete" class="btn btn-danger"
+                                                        onclick="confirmation(event)" data-id="{{ $value->id }}"
                                                         data-name="{{ $value->nama }}">Delete</a>
                                                 </form>
                                             </td>
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td>Tidak Ada Data.</td>
+                                            <td colspan="3">Tidak Ada Data.</td>
                                         </tr>
                                     @endforelse
                                 </tbody>
@@ -78,3 +65,14 @@
         </div>
     </div>
 @endsection
+
+@push('style')
+    <link href="https://cdn.datatables.net/v/bs5/dt-2.0.0/datatables.min.css" rel="stylesheet">
+@endpush
+
+@push('script')
+    <script src="https://cdn.datatables.net/v/bs5/dt-2.0.0/datatables.min.js"></script>
+    <script>
+        let table = new DataTable('#myTable');
+    </script>
+@endpush

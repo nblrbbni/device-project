@@ -102,29 +102,40 @@ Route::get('/categories/{categories_id}/delete', [CategoryController::class, 'de
 // Data Peminjaman
 // Laptop
 Route::get('/peminjaman-laptop', [pinjamController::class, 'pinjamlaptop']);
+Route::get('/peminjaman-laptop/{peminjaman_laptop_id}/delete', [pinjamController::class, 'deletelap']);
 // Headphone
 Route::get('/peminjaman-headphone', [pinjamController::class, 'pinjamheadphone']);
+Route::get('/peminjaman-headphone/{peminjaman_headphone_id}/delete', [pinjamController::class, 'deletehead']);
 // Tablet
 Route::get('/peminjaman-tablet', [pinjamController::class, 'pinjamtablet']);
+Route::get('/peminjaman-tablet/{peminjaman_tablet_id}/delete', [pinjamController::class, 'deletetab']);
 // Computer
 Route::get('/peminjaman-computer', [pinjamController::class, 'pinjamcomputer']);
+Route::get('/peminjaman-computer/{peminjaman_computer_id}/delete', [pinjamController::class, 'deletecom']);
 // Handphone
 Route::get('/peminjaman-handphone', [pinjamController::class, 'pinjamhandphone']);
+Route::get('/peminjaman-handphone/{peminjaman_handphone_id}/delete', [pinjamController::class, 'deletehand']);
 // Camera
 Route::get('/peminjaman-camera', [pinjamController::class, 'pinjamcamera']);
 Route::get('/peminjaman-camera/{peminjaman_camera_id}/delete', [pinjamController::class, 'deletecam']);
 // Flashdisk
 Route::get('/peminjaman-flashdisk', [pinjamController::class, 'pinjamflashdisk']);
+Route::get('/peminjaman-flashdisk/{peminjaman_flashdisk_id}/delete', [pinjamController::class, 'deleteflash']);
 // Hardisk
 Route::get('/peminjaman-hardisk', [pinjamController::class, 'pinjamhardisk']);
+Route::get('/peminjaman-hardisk/{peminjaman_hardisk_id}/delete', [pinjamController::class, 'deletehard']);
 // Printer
 Route::get('/peminjaman-printer', [pinjamController::class, 'pinjamprinter']);
+Route::get('/peminjaman-printer/{peminjaman_printer_id}/delete', [pinjamController::class, 'deleteprint']);
 // Lan
 Route::get('/peminjaman-lan', [pinjamController::class, 'pinjamlan']);
+Route::get('/peminjaman-lan/{peminjaman_lan_id}/delete', [pinjamController::class, 'deletelan']);
 // Hdmi
 Route::get('/peminjaman-hdmi', [pinjamController::class, 'pinjamhdmi']);
+Route::get('/peminjaman-hdmi/{peminjaman_hdmi_id}/delete', [pinjamController::class, 'deletehdmi']);
 // Projector
 Route::get('/peminjaman-projector', [pinjamController::class, 'pinjamprojector']);
+Route::get('/peminjaman-projector/{peminjaman_projector_id}/delete', [pinjamController::class, 'deleteproj']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('user/profile', [UserController::class, 'edit'])->name('user.edit-profile');

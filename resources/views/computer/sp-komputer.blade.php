@@ -22,7 +22,7 @@
         <div class="container text-center">
             <div class='single'>
                 <img src="{{ asset('asset/picture/Gaming.png') }}" class="gambar" alt="...">
-                <p>Computer (PC)</p>
+                <p>Computer (PC (LAB))</p>
             </div>
         </div>
         <br>
