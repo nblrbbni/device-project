@@ -64,12 +64,12 @@ class pinjamController extends Controller
         session(['kode_device_peminjaman' => $request->kode_device]);
 
         DB::table('datalaptop')
-        ->where('kode_device', $request->kode_device)
-        ->update(
-            [
-                'status' => 'Dipinjam',
-            ],
-        );
+            ->where('kode_device', $request->kode_device)
+            ->update(
+                [
+                    'status' => 'Dipinjam',
+                ],
+            );
 
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
@@ -113,12 +113,12 @@ class pinjamController extends Controller
         session(['kode_device_peminjaman' => $request->kode_device]);
 
         DB::table('dataheadphone')
-        ->where('kode_device', $request->kode_device)
-        ->update(
-            [
-                'status' => 'Dipinjam',
-            ],
-        );
+            ->where('kode_device', $request->kode_device)
+            ->update(
+                [
+                    'status' => 'Dipinjam',
+                ],
+            );
 
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
@@ -162,12 +162,12 @@ class pinjamController extends Controller
         session(['kode_device_peminjaman' => $request->kode_device]);
 
         DB::table('dataprojector')
-        ->where('kode_device', $request->kode_device)
-        ->update(
-            [
-                'status' => 'Dipinjam',
-            ],
-        );
+            ->where('kode_device', $request->kode_device)
+            ->update(
+                [
+                    'status' => 'Dipinjam',
+                ],
+            );
 
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
@@ -175,7 +175,8 @@ class pinjamController extends Controller
 
     // Tablet
     public function tablet()
-    {$mapel = DB::table('mapel')->get();
+    {
+        $mapel = DB::table('mapel')->get();
         $guru = DB::table('guru')->get();
         $datatablet = DB::table('datatablet')->get();
         $guru = DB::table('guru')->get();
@@ -211,12 +212,12 @@ class pinjamController extends Controller
         session(['kode_device_peminjaman' => $request->kode_device]);
 
         DB::table('datatablet')
-        ->where('kode_device', $request->kode_device)
-        ->update(
-            [
-                'status' => 'Dipinjam',
-            ],
-        );
+            ->where('kode_device', $request->kode_device)
+            ->update(
+                [
+                    'status' => 'Dipinjam',
+                ],
+            );
 
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
@@ -260,12 +261,12 @@ class pinjamController extends Controller
         session(['kode_device_peminjaman' => $request->kode_device]);
 
         DB::table('datacamera')
-        ->where('kode_device', $request->kode_device)
-        ->update(
-            [
-                'status' => 'Dipinjam',
-            ],
-        );
+            ->where('kode_device', $request->kode_device)
+            ->update(
+                [
+                    'status' => 'Dipinjam',
+                ],
+            );
 
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
@@ -309,12 +310,12 @@ class pinjamController extends Controller
         session(['kode_device_peminjaman' => $request->kode_device]);
 
         DB::table('datahandphone')
-        ->where('kode_device', $request->kode_device)
-        ->update(
-            [
-                'status' => 'Dipinjam',
-            ],
-        );
+            ->where('kode_device', $request->kode_device)
+            ->update(
+                [
+                    'status' => 'Dipinjam',
+                ],
+            );
 
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
@@ -359,12 +360,12 @@ class pinjamController extends Controller
         session(['kode_device_peminjaman' => $request->kode_device]);
 
         DB::table('datacomputer')
-        ->where('kode_device', $request->kode_device)
-        ->update(
-            [
-                'status' => 'Dipinjam',
-            ],
-        );
+            ->where('kode_device', $request->kode_device)
+            ->update(
+                [
+                    'status' => 'Dipinjam',
+                ],
+            );
 
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
@@ -408,12 +409,12 @@ class pinjamController extends Controller
         session(['kode_device_peminjaman' => $request->kode_device]);
 
         DB::table('dataflashdisk')
-        ->where('kode_device', $request->kode_device)
-        ->update(
-            [
-                'status' => 'Dipinjam',
-            ],
-        );
+            ->where('kode_device', $request->kode_device)
+            ->update(
+                [
+                    'status' => 'Dipinjam',
+                ],
+            );
 
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
@@ -431,7 +432,6 @@ class pinjamController extends Controller
             'guru' => $guru,
             'datahardisk' => $datahardisk,
         ]);
-
     }
 
     public function hardiskstr(Request $request)
@@ -458,12 +458,12 @@ class pinjamController extends Controller
         session(['kode_device_peminjaman' => $request->kode_device]);
 
         DB::table('datahardisk')
-        ->where('kode_device', $request->kode_device)
-        ->update(
-            [
-                'status' => 'Dipinjam',
-            ],
-        );
+            ->where('kode_device', $request->kode_device)
+            ->update(
+                [
+                    'status' => 'Dipinjam',
+                ],
+            );
 
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
@@ -481,7 +481,6 @@ class pinjamController extends Controller
             'guru' => $guru,
             'dataprinter' => $dataprinter,
         ]);
-
     }
 
     public function printerstr(Request $request)
@@ -508,12 +507,12 @@ class pinjamController extends Controller
         session(['kode_device_peminjaman' => $request->kode_device]);
 
         DB::table('dataprinter')
-        ->where('kode_device', $request->kode_device)
-        ->update(
-            [
-                'status' => 'Dipinjam',
-            ],
-        );
+            ->where('kode_device', $request->kode_device)
+            ->update(
+                [
+                    'status' => 'Dipinjam',
+                ],
+            );
 
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
@@ -557,12 +556,12 @@ class pinjamController extends Controller
         session(['kode_device_peminjaman' => $request->kode_device]);
 
         DB::table('datahdmi')
-        ->where('kode_device', $request->kode_device)
-        ->update(
-            [
-                'status' => 'Dipinjam',
-            ],
-        );
+            ->where('kode_device', $request->kode_device)
+            ->update(
+                [
+                    'status' => 'Dipinjam',
+                ],
+            );
 
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
@@ -606,12 +605,12 @@ class pinjamController extends Controller
         session(['kode_device_peminjaman' => $request->kode_device]);
 
         DB::table('datalan')
-        ->where('kode_device', $request->kode_device)
-        ->update(
-            [
-                'status' => 'Dipinjam',
-            ],
-        );
+            ->where('kode_device', $request->kode_device)
+            ->update(
+                [
+                    'status' => 'Dipinjam',
+                ],
+            );
 
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
@@ -659,6 +658,14 @@ class pinjamController extends Controller
         $pinjamcamera = DB::table('pinjamcamera')->get();
 
         return view('admin.data-peminjaman.data-camera', ['pinjamcamera' => $pinjamcamera]);
+    }
+
+    public function deletecam($id)
+    {
+        DB::table('pinjamcamera')->where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/peminjaman-camera');
     }
 
     public function pinjamflashdisk()

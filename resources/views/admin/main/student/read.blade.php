@@ -8,38 +8,25 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>Tabel Siswa</h4>
-                        <div class="card-header-form">
-                            <form>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search" fdprocessedid="n3oxv">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-primary" fdprocessedid="17droi"><i
-                                                class="fas fa-search"></i></button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
                     </div>
-                    <div class="card-body p-0">
+                    <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped" id="myTable">
+                            <table class="table table-bordered table-hover" id="myTable">
                                 <thead>
                                     <tr>
-                                        <th class="text-center"></th>
-                                        <th>No</th>
-                                        <th>Nama Siswa</th>
-                                        <th>Kelas siwa</th>
-                                        <th>Action</th>
+                                        <th class="text-center">No</th>
+                                        <th class="text-center">Nama Siswa</th>
+                                        <th class="text-center">Kelas siwa</th>
+                                        <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @forelse ($student as $key => $value)
                                         <tr>
-                                            <td class="p-0 text-center"></td>
-                                            <td>{{ $key + 1 }}</td>
-                                            <td>{{ $value->name }}</td>
-                                            <td>{{ $value->class }}</td>
-                                            <td>
+                                            <td class="text-center">{{ $key + 1 }}</td>
+                                            <td class="text-center">{{ $value->name }}</td>
+                                            <td class="text-center">{{ $value->class }}</td>
+                                            <td class="text-center">
                                                 <form action="/student/{{ $value->id }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
@@ -52,11 +39,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td class="p-0 text-center"></td>
-                                            <td>Tidak Ada Data.</td>
-                                            <td>Tidak Ada Data.</td>
-                                            <td>Tidak Ada Data.</td>
-                                            <td>Tidak Ada Data.</td>
+                                            <td colspan="4" class="text-center">Tidak Ada Data.</td>
                                         </tr>
                                     @endforelse
                                 </tbody>
@@ -68,3 +51,14 @@
         </div>
     </div>
 @endsection
+
+@push('style')
+    <link href="https://cdn.datatables.net/v/bs5/dt-2.0.0/datatables.min.css" rel="stylesheet">
+@endpush
+
+@push('script')
+    <script src="https://cdn.datatables.net/v/bs5/dt-2.0.0/datatables.min.js"></script>
+    <script>
+        let table = new DataTable('#myTable');
+    </script>
+@endpush

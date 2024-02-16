@@ -112,6 +112,7 @@ Route::get('/peminjaman-computer', [pinjamController::class, 'pinjamcomputer']);
 Route::get('/peminjaman-handphone', [pinjamController::class, 'pinjamhandphone']);
 // Camera
 Route::get('/peminjaman-camera', [pinjamController::class, 'pinjamcamera']);
+Route::get('/peminjaman-camera/{peminjaman_camera_id}/delete', [pinjamController::class, 'deletecam']);
 // Flashdisk
 Route::get('/peminjaman-flashdisk', [pinjamController::class, 'pinjamflashdisk']);
 // Hardisk
