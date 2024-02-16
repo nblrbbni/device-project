@@ -133,10 +133,17 @@ class laptopController extends Controller
         return redirect('/datalaptop');
     }
 
-    public function show()
+    public function returnlap()
     {
         $laptop_penembalian = DB::table('laptop_penembalian')->get();
 
-        return view('laptop.read', ['laptop_penembalian' => $laptop_penembalian]);
+        return view('admin.data-pengembalian.data-laptop', ['laptop_penembalian' => $laptop_penembalian]);
+    }
+    public function deletelap($id)
+    {
+        DB::table('laptop_penembalian')->where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/return-laptop/show');
     }
 }

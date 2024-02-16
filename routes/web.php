@@ -44,6 +44,8 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
+Route::get('/returndevice/show', [adminController::class, 'Devicert']);
+
 Route::middleware(['auth', 'isAdmin'])->group(function () {
     // Rute untuk dashboard admin
     Route::get('/admin/dashboard', [AdminController::class, 'admin'])->name('admin.dashboard');
@@ -162,6 +164,9 @@ Route::middleware(['auth'])->group(function () {
     // return-laptop
     Route::get('/return-laptop', [laptopController::class, 'laptop']);
     Route::post('/return-laptop/store', [laptopController::class, 'laptopstr']);
+    Route::get('/return-laptop/show', [laptopController::class, 'returnlap']);
+    Route::get('/return-laptop/{return_laptop_id}/delete', [laptopController::class, 'deletelap']);
+
     // return-headphone
     Route::get('/return-headphone', [earphoneController::class, 'earphone']);
     Route::post('/return-headphone/store', [earphoneController::class, 'earphonestr']);
@@ -389,7 +394,6 @@ Route::get('/admin', [adminController::class, 'admin']);
 Route::get('/data-siswa', [adminController::class, 'siswa']);
 Route::get('/data-device', [adminController::class, 'device']);
 Route::get('/laporan', [adminController::class, 'laporan']);
-Route::get('/Device', [adminController::class, 'Devicert']);
 Route::get('/tugas', [adminController::class, 'tugas']);
 Route::get('/calendar', [adminController::class, 'calendar']);
 Route::get('/Form', [adminController::class, 'Form']);
