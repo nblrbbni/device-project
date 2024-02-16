@@ -25,9 +25,10 @@
                 <div class="input-group-btn">
                     <button class="btn btn-primary" style="height: 41px;" fdprocessedid="mluskc" id="icon-search"><i
                             class="fas fa-search"></i></button>
-                </div>
+                 </div>
             </div><br>
             <a href="/calendar"><img src="assets/img/Calendar.png" alt="" style="width: 38px; height: 38px;"></a>
+       
         </div>
         <div class="card mt-3">
             <div class="card-header">
@@ -35,6 +36,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
+                <a href="#" class="btn btn-info mb-3">Create Device</a>
                     <table class="table table-bordered table-md">
                         <tbody>
                             <tr>

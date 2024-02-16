@@ -8,9 +8,7 @@
         <a href="/data-all-device" class=" d-flex"><img src="{{ asset('assets/img/Search.png') }}" alt="" >
             <h1 style="margin-right: 5rem">Data Device</h1>
         </a>
-        <a href="" class=" d-flex"><img src="{{ asset('assets/img/Group 226.png') }}" alt="" >
-            <h1 style="margin-right: 5rem">Create Device</h1>
-        </a>
+      
     </div>
 
     <div class="row mx-auto mt-4">
