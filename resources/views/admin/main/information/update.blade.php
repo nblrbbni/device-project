@@ -17,14 +17,14 @@
                     @enderror
                     <div class="mb-3">
                         <label class="form-label">Update Nama Device</label>
-                        <input type="text" name="descripsi" value="{{ $information->descripsi }}" class="form-control">
+                        <textarea name="descripsi" class="form-control konten">{{ strip_tags($information->descripsi) }}</textarea>
                     </div>
                     @error('descripsi')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                     <button class="btn submit" style="background-color:#18244c; color:white"
                         onclick="submitForm(event)">Submit</button>
-                    <a href="/information" class="btn btn-primary">Back</a>
+                    <a href="/information/show" class="btn btn-primary">Back</a>
                 </form>
             </div>
         </div>
@@ -88,3 +88,13 @@
         </div> --}}
     </div>
 @endsection
+
+@push('script')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.8.3/tinymce.min.js"></script>
+
+    <script>
+        tinymce.init({
+            selector: 'textarea.konten'
+        });
+    </script>
+@endpush

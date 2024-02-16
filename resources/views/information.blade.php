@@ -43,7 +43,7 @@
                                     <div id="collapse-{{ $key + 1 }}" class="accordion-collapse collapse"
                                         data-bs-parent="#accordion-example">
                                         <div class="accordion-body pt-0">
-                                            {{ $information->descripsi }}
+                                            {{ strip_tags($information->descripsi) }}
                                         </div>
                                     </div>
                                 </div>

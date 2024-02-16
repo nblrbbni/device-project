@@ -26,7 +26,7 @@ class informationController extends Controller
         ]);
 
         Alert::success('Berhasil!', 'Data berhasil ditambahkan!');
-        return redirect('/information');
+        return redirect('/information/show');
     }
 
     public function index()
@@ -66,7 +66,7 @@ class informationController extends Controller
             );
 
         Alert::success('Berhasil!', 'Data berhasil diupdate!');
-        return redirect('/information');
+        return redirect('/information/show');
     }
 
     public function delete($id)
@@ -74,6 +74,6 @@ class informationController extends Controller
         DB::table('information')->where('id', $id)->delete();
 
         Alert::success('Berhasil!', 'Data berhasil dihapus!');
-        return redirect('/information');
+        return redirect('/information/show');
     }
 }

@@ -16,7 +16,7 @@
                     @enderror
                     <div class="mb-3">
                         <label class="form-label">Deskripsi Pasal</label>
-                        <textarea name="descripsi" class="form-label konten"></textarea>
+                        <textarea name="descripsi" class="form-control konten"></textarea>
                     </div>
                     @error('descripsi')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -60,7 +60,7 @@
                                             <td class="text-center"></td>
                                             <td>{{ $key + 1 }}</td>
                                             <td>{{ $value->nama_pasal }}</td>
-                                            <td>{{ Str::limit($value->descripsi, 100) }}</td>
+                                            <td>{{ Str::limit(strip_tags($value->descripsi), 100) }}</td>
                                             <td>
                                                 <form action="/information/{{ $value->id }}" method="POST">
                                                     @csrf
@@ -89,11 +89,11 @@
 @endsection
 
 @push('script')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.8.3/tinymce.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.8.3/tinymce.min.js"></script>
 
-<script>
-    tinymce.init({
-  selector: 'textarea.konten'
-});
-</script>
+    <script>
+        tinymce.init({
+            selector: 'textarea.konten'
+        });
+    </script>
 @endpush
