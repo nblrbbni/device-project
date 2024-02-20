@@ -51,14 +51,14 @@ class printerController extends Controller
 
     public function create()
     {
-        return view('printer.create');
+        return view('admin.data-device.printer.index');
     }
 
     public function index()
     {
         $dataprinter = DB::table('dataprinter')->get();
 
-        return view('printer.read', ['dataprinter' => $dataprinter]);
+        return view('admin.data-device.printer.index', ['dataprinter' => $dataprinter]);
     }
 
     public function store(Request $request)
@@ -78,14 +78,14 @@ class printerController extends Controller
         ]);
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil ditambahkan!');
-        return redirect('/dataprinter');
+        return redirect('/data-printer');
     }
 
     public function edit($id)
     {
         $dataprinter = DB::table('dataprinter')->where('id', $id)->first();
 
-        return view('printer.update', ['dataprinter' => $dataprinter]);
+        return view('admin.data-device.printer.update', ['dataprinter' => $dataprinter]);
     }
 
     public function update(Request $request, string $id)
@@ -106,7 +106,7 @@ class printerController extends Controller
                 ],
             );
         Alert::success('Berhasil!', 'Data berhasil diupdate!');
-        return redirect('/dataprinter');
+        return redirect('/data-printer');
     }
 
     public function delete($id)
@@ -114,6 +114,6 @@ class printerController extends Controller
         DB::table('dataprinter')->where('id', $id)->delete();
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
-        return redirect('/dataprinter');
+        return redirect('/data-printer');
     }
 }

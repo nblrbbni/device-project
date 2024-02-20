@@ -50,14 +50,14 @@ class LanController extends Controller
 
     public function create()
     {
-        return view('Lan.create');
+        return view('admin.data-device.lan.index');
     }
 
     public function index()
     {
         $datalan = DB::table('datalan')->get();
 
-        return view('Lan.read', ['datalan' => $datalan]);
+        return view('admin.data-device.lan.index', ['datalan' => $datalan]);
     }
 
     public function store(Request $request)
@@ -76,14 +76,14 @@ class LanController extends Controller
             'status' => 'status',
         ]);
 
-        return redirect('/datalan');
+        return redirect('/data-lan');
     }
 
     public function edit($id)
     {
         $datalan = DB::table('datalan')->where('id', $id)->first();
 
-        return view('Lan.update', ['datalan' => $datalan]);
+        return view('admin.data-device.lan.update', ['datalan' => $datalan]);
     }
 
     public function update(Request $request, string $id)
@@ -104,7 +104,7 @@ class LanController extends Controller
                 ],
             );
         Alert::success('Berhasil!', 'Data berhasil diupdate!');
-        return redirect('/datalan');
+        return redirect('/data-lan');
     }
 
     public function delete($id)
@@ -112,6 +112,6 @@ class LanController extends Controller
         DB::table('datalan')->where('id', $id)->delete();
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
-        return redirect('/datalan');
+        return redirect('/data-lan');
     }
 }

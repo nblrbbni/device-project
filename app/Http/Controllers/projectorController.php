@@ -56,14 +56,14 @@ class projectorController extends Controller
 
     public function create()
     {
-        return view('projector.create');
+        return view('admin.data-device.projector.index');
     }
 
     public function index()
     {
         $dataprojector = DB::table('dataprojector')->get();
 
-        return view('projector.read', ['dataprojector' => $dataprojector]);
+        return view('admin.data-device.projector.index', ['dataprojector' => $dataprojector]);
     }
 
     public function store(Request $request)
@@ -83,14 +83,14 @@ class projectorController extends Controller
         ]);
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil ditambahkan!');
-        return redirect('/dataprojector');
+        return redirect('/data-projector');
     }
 
     public function edit($id)
     {
         $dataprojector = DB::table('dataprojector')->where('id', $id)->first();
 
-        return view('projector.update', ['dataprojector' => $dataprojector]);
+        return view('admin.data-device.projector.update', ['dataprojector' => $dataprojector]);
     }
 
     public function update(Request $request, string $id)
@@ -111,7 +111,7 @@ class projectorController extends Controller
                 ],
             );
         Alert::success('Berhasil!', 'Data berhasil diupdate!');
-        return redirect('/dataprojector');
+        return redirect('/data-projector');
     }
 
     public function delete($id)
@@ -119,6 +119,6 @@ class projectorController extends Controller
         DB::table('dataprojector')->where('id', $id)->delete();
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
-        return redirect('/dataprojector');
+        return redirect('/data-projector');
     }
 }

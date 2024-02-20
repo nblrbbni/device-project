@@ -61,14 +61,14 @@ class laptopController extends Controller
 
     public function create()
     {
-        return view('laptop.create');
+        return view('admin.data-device.laptop.index');
     }
 
     public function index()
     {
         $datalaptop = DB::table('datalaptop')->get();
 
-        return view('laptop.read', ['datalaptop' => $datalaptop]);
+        return view('admin.data-device.laptop.index', ['datalaptop' => $datalaptop]);
     }
 
     public function store(Request $request)
@@ -88,7 +88,7 @@ class laptopController extends Controller
         ]);
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil ditambahkan!');
-        return redirect('/datalaptop');
+        return redirect('/data-laptop');
     }
 
     /**
@@ -98,7 +98,7 @@ class laptopController extends Controller
     {
         $datalaptop = DB::table('datalaptop')->where('id', $id)->first();
 
-        return view('laptop.update', ['datalaptop' => $datalaptop]);
+        return view('admin.data-device.laptop.update', ['datalaptop' => $datalaptop]);
     }
 
     /**
@@ -122,7 +122,7 @@ class laptopController extends Controller
                 ],
             );
         Alert::success('Berhasil!', 'Data berhasil diupdate!');
-        return redirect('/datalaptop');
+        return redirect('/data-laptop');
     }
 
     public function delete($id)
@@ -130,7 +130,7 @@ class laptopController extends Controller
         DB::table('datalaptop')->where('id', $id)->delete();
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
-        return redirect('/datalaptop');
+        return redirect('/data-laptop');
     }
 
     public function returnlap()

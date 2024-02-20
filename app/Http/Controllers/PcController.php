@@ -55,14 +55,14 @@ class PcController extends Controller
 
     public function create()
     {
-        return view('computer.create');
+        return view('admin.data-device.computer.index');
     }
 
     public function index()
     {
         $datacomputer = DB::table('datacomputer')->get();
 
-        return view('computer.read', ['datacomputer' => $datacomputer]);
+        return view('admin.data-device.computer.index', ['datacomputer' => $datacomputer]);
     }
 
     public function store(Request $request)
@@ -71,6 +71,7 @@ class PcController extends Controller
             'kode_device' => 'required',
             'nama' => 'required',
             'merk' => 'required',
+            'laboratorium' => 'required',
             'status'
         ]);
 
@@ -78,18 +79,19 @@ class PcController extends Controller
             'kode_device' => $request['kode_device'],
             'nama' => $request['nama'],
             'merk' => $request['merk'],
+            'laboratorium' => $request['laboratorium'],
             'status' => 'status',
         ]);
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil ditambahkan!');
-        return redirect('/datacomputer');
+        return redirect('/data-computer');
     }
 
     public function edit($id)
     {
         $datacomputer = DB::table('datacomputer')->where('id', $id)->first();
 
-        return view('computer.update', ['datacomputer' => $datacomputer]);
+        return view('admin.data-device.computer.update', ['datacomputer' => $datacomputer]);
     }
 
     public function update(Request $request, string $id)
@@ -98,6 +100,7 @@ class PcController extends Controller
             'kode_device' => 'required',
             'nama' => 'required',
             'merk' => 'required',
+            'laboratorium' => 'required',
         ]);
 
         DB::table('datacomputer')
@@ -107,10 +110,11 @@ class PcController extends Controller
                     'kode_device' => $request->kode_device,
                     'nama' => $request->nama,
                     'merk' => $request->merk,
+                    'laboratorium' => $request->laboratorium,
                 ],
             );
         Alert::success('Berhasil!', 'Data berhasil diupdate!');
-        return redirect('/datacomputer');
+        return redirect('/data-computer');
     }
 
     public function delete($id)
@@ -118,6 +122,6 @@ class PcController extends Controller
         DB::table('datacomputer')->where('id', $id)->delete();
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
-        return redirect('/datacomputer');
+        return redirect('/data-computer');
     }
 }

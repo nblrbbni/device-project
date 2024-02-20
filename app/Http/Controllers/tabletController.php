@@ -55,14 +55,14 @@ class tabletController extends Controller
 
     public function create()
     {
-        return view('tablet.create');
+        return view('admin.data-device.tablet.index');
     }
 
     public function index()
     {
         $datatablet = DB::table('datatablet')->get();
 
-        return view('tablet.read', ['datatablet' => $datatablet]);
+        return view('admin.data-device.tablet.index', ['datatablet' => $datatablet]);
     }
 
     public function store(Request $request)
@@ -82,14 +82,14 @@ class tabletController extends Controller
         ]);
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil ditambahkan!');
-        return redirect('/datatablet');
+        return redirect('/data-tablet');
     }
 
     public function edit($id)
     {
         $datatablet = DB::table('datatablet')->where('id', $id)->first();
 
-        return view('tablet.update', ['datatablet' => $datatablet]);
+        return view('admin.data-device.tablet.update', ['datatablet' => $datatablet]);
     }
 
     public function update(Request $request, string $id)
@@ -110,7 +110,7 @@ class tabletController extends Controller
                 ],
             );
         Alert::success('Berhasil!', 'Data berhasil diupdate!');
-        return redirect('/datatablet');
+        return redirect('/data-tablet');
     }
 
     public function delete($id)
@@ -118,6 +118,6 @@ class tabletController extends Controller
         DB::table('datatablet')->where('id', $id)->delete();
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
-        return redirect('/datatablet');
+        return redirect('/data-tablet');
     }
 }

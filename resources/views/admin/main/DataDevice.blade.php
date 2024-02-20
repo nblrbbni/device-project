@@ -4,7 +4,7 @@
 <h1>Data Device</h1>
     <div class="row mx-auto">
         <div class="col-lg-3 col-md-6 mx-auto " id="card-device">
-            <a href="/peminjaman-laptop">
+            <a href="/data-laptop">
                 <div class="card-admin mt-3 mx-auto">
                     <img src="/assets/picture/Laptop.png" alt="">
                     <p>Laptop</p>
@@ -12,7 +12,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 mx-auto " id="card-device">
-            <a href="/peminjaman-headphone">
+            <a href="/data-headphone">
                 <div class="card-admin mt-3 mx-auto">
                     <img src="/assets/picture/Headphones.png" alt="">
                     <p>Headphone</p>
@@ -20,7 +20,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 mx-auto " id="card-device">
-            <a href="/peminjaman-tablet">
+            <a href="/data-tablet">
                 <div class="card-admin mt-3 mx-auto">
                     <img src="/assets/picture/Tablet.png" alt="">
                     <p>Tablet</p>
@@ -28,7 +28,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 mx-auto " id="card-device">
-            <a href="/peminjaman-computer">
+            <a href="/data-computer">
                 <div class="card-admin mt-3 mx-auto">
                     <img src="/assets/picture/Gaming.png" alt="">
                     <p>Computer</p>
@@ -36,7 +36,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 mx-auto" id="card-device">
-            <a href="/peminjaman-handphone">
+            <a href="/data-handphone">
                 <div class="card-admin mt-5 mx-auto">
                     <img src="/assets/picture/Smartphone.png" alt="">
                     <p>Handphone</p>
@@ -44,7 +44,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 mx-auto" id="card-device">
-            <a href="/peminjaman-camera">
+            <a href="/data-camera">
                 <div class="card-admin mt-5 mx-auto">
                     <img src="/assets/picture/Camera.png" alt="">
                     <p>Camera</p>
@@ -52,7 +52,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 mx-auto" id="card-device">
-            <a href="/peminjaman-flashdisk">
+            <a href="/data-flashdisk">
                 <div class="card-admin mt-5 mx-auto">
                     <img src="/assets/picture/Flashdisk.png" alt="">
                     <p>Flashdisk</p>
@@ -60,7 +60,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 mx-auto" id="card-device">
-            <a href="/peminjaman-hardisk">
+            <a href="/data-hardisk">
                 <div class="card-admin mt-5 mx-auto">
                     <img src="/assets/picture/Hard disk.png" alt="">
                     <p>Hardisk</p>
@@ -68,7 +68,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 mx-auto" id="card-device">
-            <a href="/peminjaman-printer">
+            <a href="/data-printer">
                 <div class="card-admin mt-5 mx-auto">
                     <img src="/assets/picture/Printer.png" alt="">
                     <p>Printer</p>
@@ -76,7 +76,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 mx-auto" id="card-device">
-            <a href="/peminjaman-lan">
+            <a href="/data-lan">
                 <div class="card-admin mt-5 mx-auto">
                     <img src="/assets/picture/Rj45.png" alt="">
                     <p>LAN</p>
@@ -84,7 +84,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 mx-auto" id="card-device">
-            <a href="/peminjaman-hdmi">
+            <a href="/data-hdmi">
                 <div class="card-admin mt-5 mx-auto">
                     <img src="/assets/picture/Hdmi.png" alt="">
                     <p>HDMI</p>
@@ -92,7 +92,7 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-6 mx-auto" id="card-device">
-            <a href="/peminjaman-projector">
+            <a href="/data-projector">
                 <div class="card-admin mt-5 mx-auto">
                     <img src="/assets/picture/Projector.png" alt="">
                     <p>Projector</p>

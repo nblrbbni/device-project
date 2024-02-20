@@ -49,14 +49,14 @@ class hardiskController extends Controller
     }
     public function create()
     {
-        return view('hardisk.create');
+        return view('admin.data-device.hardisk.index');
     }
 
     public function index()
     {
         $datahardisk = DB::table('datahardisk')->get();
 
-        return view('hardisk.read', ['datahardisk' => $datahardisk]);
+        return view('admin.data-device.hardisk.index', ['datahardisk' => $datahardisk]);
     }
 
     public function store(Request $request)
@@ -76,14 +76,14 @@ class hardiskController extends Controller
         ]);
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil ditambahkan!');
-        return redirect('/datahardisk');
+        return redirect('/data-hardisk');
     }
 
     public function edit($id)
     {
         $datahardisk = DB::table('datahardisk')->where('id', $id)->first();
 
-        return view('hardisk.update', ['datahardisk' => $datahardisk]);
+        return view('admin.data-device.hardisk.update', ['datahardisk' => $datahardisk]);
     }
 
     public function update(Request $request, string $id)
@@ -104,7 +104,7 @@ class hardiskController extends Controller
                 ],
             );
         Alert::success('Berhasil!', 'Data berhasil diupdate!');
-        return redirect('/datahardisk');
+        return redirect('/data-hardisk');
     }
 
     public function delete($id)
@@ -112,6 +112,6 @@ class hardiskController extends Controller
         DB::table('datahardisk')->where('id', $id)->delete();
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
-        return redirect('/datahardisk');
+        return redirect('/data-hardisk');
     }
 }

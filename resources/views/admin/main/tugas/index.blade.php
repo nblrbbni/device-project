@@ -28,7 +28,7 @@
                                         <td class="text-center">{{ $key + 1 }}</td>
                                         <td>{{ \Carbon\Carbon::parse($value->created_at)->format('d-m-Y') }}</td>
                                         <td>{{ $value->nama }}</td>
-                                        <td><img src="{{ asset('storage/' . $value->foto_path) }}" alt="Gambar Tugas" style="max-width:100px; height:auto;"></td>
+                                        <td class="text-center"><img src="{{ asset('storage/' . $value->foto_path) }}" alt="Gambar Tugas" style="max-width:100px; height:auto;"></td>
                                         <td>{{ $value->link }}</td>
                                         <td>{{ $value->email }}</td>
                                         <td>

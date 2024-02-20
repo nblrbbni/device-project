@@ -54,14 +54,14 @@ class earphoneController extends Controller
 
     public function create()
     {
-        return view('headphone.create');
+        return view('admin.data-device.headphone.index');
     }
 
     public function index()
     {
         $dataheadphone = DB::table('dataheadphone')->get();
 
-        return view('headphone.read', ['dataheadphone' => $dataheadphone]);
+        return view('admin.data-device.headphone.index', ['dataheadphone' => $dataheadphone]);
     }
 
     public function store(Request $request)
@@ -81,14 +81,14 @@ class earphoneController extends Controller
         ]);
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil ditambahkan!');
-        return redirect('/dataheadphone');
+        return redirect('/data-headphone');
     }
 
     public function edit($id)
     {
         $dataheadphone = DB::table('dataheadphone')->where('id', $id)->first();
 
-        return view('headphone.update', ['dataheadphone' => $dataheadphone]);
+        return view('admin.data-device.headphone.update', ['dataheadphone' => $dataheadphone]);
     }
 
     public function update(Request $request, string $id)
@@ -109,14 +109,14 @@ class earphoneController extends Controller
                 ],
             );
         Alert::success('Berhasil!', 'Data berhasil diupdate!');
-        return redirect('/dataheadphone');
+        return redirect('/data-headphone');
     }
 
     public function delete($id)
     {
         DB::table('dataheadphone')->where('id', $id)->delete();
 
-        Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');    
-        return redirect('/dataheadphone');
+        Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
+        return redirect('/data-headphone');
     }
 }

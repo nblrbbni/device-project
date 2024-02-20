@@ -52,14 +52,14 @@ class handphoneController extends Controller
     }
     public function create()
     {
-        return view('handphone.create');
+        return view('admin.data-device.handphone.index');
     }
 
     public function index()
     {
         $datahandphone = DB::table('datahandphone')->get();
 
-        return view('handphone.read', ['datahandphone' => $datahandphone]);
+        return view('admin.data-device.handphone.index', ['datahandphone' => $datahandphone]);
     }
 
     public function store(Request $request)
@@ -79,14 +79,14 @@ class handphoneController extends Controller
         ]);
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil ditambahkan!');
-        return redirect('/datahandphone');
+        return redirect('/data-handphone');
     }
 
     public function edit($id)
     {
         $datahandphone = DB::table('datahandphone')->where('id', $id)->first();
 
-        return view('handphone.update', ['datahandphone' => $datahandphone]);
+        return view('admin.data-device.handphone.update', ['datahandphone' => $datahandphone]);
     }
 
     public function update(Request $request, string $id)
@@ -107,7 +107,7 @@ class handphoneController extends Controller
                 ],
             );
         Alert::success('Berhasil!', 'Data berhasil diupdate!');
-        return redirect('/datahandphone');
+        return redirect('/data-handphone');
     }
 
     public function delete($id)
@@ -115,6 +115,6 @@ class handphoneController extends Controller
         DB::table('datahandphone')->where('id', $id)->delete();
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
-        return redirect('/datahandphone');
+        return redirect('/data-handphone');
     }
 }

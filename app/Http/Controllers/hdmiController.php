@@ -51,14 +51,14 @@ class hdmiController extends Controller
 
     public function create()
     {
-        return view('hdmi.create');
+        return view('admin.data-device.hdmi.index');
     }
 
     public function index()
     {
         $datahdmi = DB::table('datahdmi')->get();
 
-        return view('hdmi.read', ['datahdmi' => $datahdmi]);
+        return view('admin.data-device.hdmi.index', ['datahdmi' => $datahdmi]);
     }
 
     public function store(Request $request)
@@ -78,14 +78,14 @@ class hdmiController extends Controller
         ]);
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil ditambahkan!');
-        return redirect('/datahdmi');
+        return redirect('/data-hdmi');
     }
 
     public function edit($id)
     {
         $datahdmi = DB::table('datahdmi')->where('id', $id)->first();
 
-        return view('hdmi.update', ['datahdmi' => $datahdmi]);
+        return view('admin.data-device.hdmi.update', ['datahdmi' => $datahdmi]);
     }
 
     public function update(Request $request, string $id)
@@ -106,7 +106,7 @@ class hdmiController extends Controller
                 ],
             );
         Alert::success('Berhasil!', 'Data berhasil diupdate!');
-        return redirect('/datahdmi');
+        return redirect('/data-hdmi');
     }
 
     public function delete($id)
@@ -114,6 +114,6 @@ class hdmiController extends Controller
         DB::table('datahdmi')->where('id', $id)->delete();
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
-        return redirect('/datahdmi');
+        return redirect('/data-hdmi');
     }
 }

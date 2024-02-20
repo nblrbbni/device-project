@@ -51,14 +51,14 @@ class flashdiskController extends Controller
 
     public function create()
     {
-        return view('flashdisk.create');
+        return view('admin.data-device.flashdisk.index');
     }
 
     public function index()
     {
         $dataflashdisk = DB::table('dataflashdisk')->get();
 
-        return view('flashdisk.read', ['dataflashdisk' => $dataflashdisk]);
+        return view('admin.data-device.flashdisk.index', ['dataflashdisk' => $dataflashdisk]);
     }
 
     public function store(Request $request)
@@ -78,14 +78,14 @@ class flashdiskController extends Controller
         ]);
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil ditambahkan!');
-        return redirect('/dataflashdisk');
+        return redirect('/data-flashdisk');
     }
 
     public function edit($id)
     {
         $dataflashdisk = DB::table('dataflashdisk')->where('id', $id)->first();
 
-        return view('flashdisk.update', ['dataflashdisk' => $dataflashdisk]);
+        return view('admin.data-device.flashdisk.update', ['dataflashdisk' => $dataflashdisk]);
     }
 
     public function update(Request $request, string $id)
@@ -106,7 +106,7 @@ class flashdiskController extends Controller
                 ],
             );
         Alert::success('Berhasil!', 'Data berhasil diupdate!');
-        return redirect('/dataflashdisk');
+        return redirect('/data-flashdisk');
     }
 
     public function delete($id)
@@ -114,6 +114,6 @@ class flashdiskController extends Controller
         DB::table('dataflashdisk')->where('id', $id)->delete();
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
-        return redirect('/dataflashdisk');
+        return redirect('/data-flashdisk');
     }
 }

@@ -53,14 +53,14 @@ class cameraController extends Controller
     }
     public function create()
     {
-        return view('camera.create');
+        return view('admin.data-device.camera.index');
     }
 
     public function index()
     {
         $datacamera = DB::table('datacamera')->get();
 
-        return view('camera.read', ['datacamera' => $datacamera]);
+        return view('admin.data-device.camera.index', ['datacamera' => $datacamera]);
     }
 
     public function store(Request $request)
@@ -80,14 +80,14 @@ class cameraController extends Controller
         ]);
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dikembalikan!');
-        return redirect('/datacamera');
+        return redirect('/data-camera');
     }
 
     public function edit($id)
     {
         $datacamera = DB::table('datacamera')->where('id', $id)->first();
 
-        return view('camera.update', ['datacamera' => $datacamera]);
+        return view('admin.data-device.camera.update', ['datacamera' => $datacamera]);
     }
 
     public function update(Request $request, string $id)
@@ -108,7 +108,7 @@ class cameraController extends Controller
                 ],
             );
         Alert::success('Berhasil!', 'Data berhasil diupdate!');
-        return redirect('/datacamera');
+        return redirect('/data-camera');
     }
 
     public function delete($id)
@@ -116,6 +116,6 @@ class cameraController extends Controller
         DB::table('datacamera')->where('id', $id)->delete();
 
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
-        return redirect('/datacamera');
+        return redirect('/data-camera');
     }
 }
