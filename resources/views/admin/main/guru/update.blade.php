@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="section-body">
-        <h1>Data Guru</h1>
+        <h1 class="mb-3">Data Guru</h1>
         <div class="card">
             <div class="card-body">
                 <form action="/guru/{{ $guru->id }}" method="POST">

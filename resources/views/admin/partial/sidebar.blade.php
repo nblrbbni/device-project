@@ -42,7 +42,7 @@
             <li class="dropdown {{ Request::is('laporan*') ? 'active' : '' }}">
                 <a href="/laporan" class="nav-link">
                     <i class="far fa-file"></i>
-                    <span>Laporan pengembalian</span></a>
+                    <span>Laporan</span></a>
             </li>
         </ul>
     </aside>

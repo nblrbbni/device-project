@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="section-body">
-        <h1>Data Mata Pelajaran</h1>
+        <h1 class="mb-3">Data Mata Pelajaran</h1>
         <div class="card">
             <div class="card-body">
                 <form action="/mapel/{{ $mapel->id }}" method="POST">
