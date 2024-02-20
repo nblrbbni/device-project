@@ -170,18 +170,28 @@ Route::middleware(['auth'])->group(function () {
     // return-headphone
     Route::get('/return-headphone', [earphoneController::class, 'earphone']);
     Route::post('/return-headphone/store', [earphoneController::class, 'earphonestr']);
+    Route::get('/return-headphone/show', [earphoneController::class, 'returnhead']);
+    Route::get('/return-headphone/{return_headphone_id}/delete', [earphoneController::class, 'deletehead']);
     // return-tablet
     Route::get('/return-tablet', [tabletController::class, 'tablet']);
     Route::post('/return-tablet/store', [tabletController::class, 'tabletstr']);
+    Route::get('/return-tablet/show', [tabletController::class, 'returntab']);
+    Route::get('/return-tablet/{tablet}/delete', [tabletController::class, 'deletetab']);
     // return-flashdisk
-    Route::get('/return-flasdisk', [flashdiskController::class, 'flasdisk']);
-    Route::post('/return-flasdisk/store', [flashdiskController::class, 'flasdiskstr']);
+    Route::get('/return-flashdisk', [flashdiskController::class, 'flasdisk']);
+    Route::post('/return-flashdisk/store', [flashdiskController::class, 'flasdiskstr']);
+    Route::get('/return-flashdisk/show', [flashdiskController::class, 'returnflash']);
+    Route::get('/return-flashdisk/{flasdisk}/delete', [flashdiskController::class, 'deleteflash']);
     // return-printer
     Route::get('/return-printer', [printerController::class, 'printer']);
     Route::post('/return-printer/store', [printerController::class, 'printerstr']);
+    Route::get('/return-printer/show', [printerController::class, 'returnprint']);
+    Route::get('/return-printer/{printer}/delete', [printerController::class, 'deleteprint']);
     // return-camera
     Route::get('/return-camera', [cameraController::class, 'camera']);
     Route::post('/return-camera/sotore', [cameraController::class, 'camerastr']);
+    Route::get('/return-camera/show', [cameraController::class, 'returncam']);
+    Route::get('/return-camera/{camera}/delete', [cameraController::class, 'deletecam']);
     // return-hp
     Route::get('/return-hp', [handphoneController::class, 'handphone']);
     Route::post('/return-hp/store', [handphoneController::class, 'handphonestr']);

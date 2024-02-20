@@ -119,4 +119,18 @@ class earphoneController extends Controller
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
         return redirect('/data-headphone');
     }
+
+    public function returnhead()
+    {
+        $earphone_penembalian = DB::table('earphone_penembalian')->get();
+
+        return view('admin.data-pengembalian.data-headphone', ['earphone_penembalian' => $earphone_penembalian]);
+    }
+    public function deletehead($id)
+    {
+        DB::table('earphone_penembalian')->where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/return-headphone/show');
+    }
 }

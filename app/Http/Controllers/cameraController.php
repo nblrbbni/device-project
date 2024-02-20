@@ -118,4 +118,18 @@ class cameraController extends Controller
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
         return redirect('/data-camera');
     }
+
+    public function returncam()
+    {
+        $camera_penembalian = DB::table('camera_penembalian')->get();
+
+        return view('admin.data-pengembalian.data-camera', ['camera_penembalian' => $camera_penembalian]);
+    }
+    public function deletecam($id)
+    {
+        DB::table('camera_penembalian')->where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/return-camera/show');
+    }
 }

@@ -56,7 +56,7 @@
             </div>
             <div class="cardButton">
                 @if (str_contains(session('kode_device_peminjaman'), 'FD'))
-                    <a href="/return-flasdisk" style="text-decoration: none;">Pilih</a>
+                    <a href="/return-flashdisk" style="text-decoration: none;">Pilih</a>
                 @else
                     <button type="button" class="btn" disabled>Pilih</button>
                 @endif

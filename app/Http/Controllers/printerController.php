@@ -116,4 +116,18 @@ class printerController extends Controller
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
         return redirect('/data-printer');
     }
+
+    public function returnprint()
+    {
+        $printer_penembalian = DB::table('printer_penembalian')->get();
+
+        return view('admin.data-pengembalian.data-printer', ['printer_penembalian' => $printer_penembalian]);
+    }
+    public function deleteprint($id)
+    {
+        DB::table('printer_penembalian')->where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/return-printer/show');
+    }
 }

@@ -17,7 +17,7 @@
     <br />
     <br />
     {{-- main content --}}
-    <form action="/return-flasdisk/store" method="post">
+    <form action="/return-flashdisk/store" method="post">
         @csrf
         <div class="container text-center">
             <div class="row row-card">

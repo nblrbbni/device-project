@@ -116,4 +116,18 @@ class flashdiskController extends Controller
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
         return redirect('/data-flashdisk');
     }
+
+    public function returnflash()
+    {
+        $flasdisk_penembalian = DB::table('flasdisk_penembalian')->get();
+
+        return view('admin.data-pengembalian.data-flashdisk', ['flasdisk_penembalian' => $flasdisk_penembalian]);
+    }
+    public function deleteflash($id)
+    {
+        DB::table('flasdisk_penembalian')->where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/return-flashdisk/show');
+    }
 }

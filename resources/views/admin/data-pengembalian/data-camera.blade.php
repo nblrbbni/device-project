@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="section-body">
-        <h1 class="mb-3">Data Pengembalian Device Laptop</h1>
+        <h1 class="mb-3">Data Pengembalian Device Camera</h1>
         <div class="card">
             <div class="card-header">
-                <h4>Pengembalian Laptop</h4>
+                <h4>Pengembalian Camera</h4>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -16,29 +16,29 @@
                                 <th class="text-center">Tanggal Peminjaman</th>
                                 <th class="text-center">Nama Siswa</th>
                                 <th class="text-center">Kode Device</th>
-                                <th class="text-center">Kondisi Laptop</th>
-                                <th class="text-center">Kondisi Mouse</th>
-                                <th class="text-center">Kondisi Keyboard</th>
+                                <th class="text-center">Kondisi Kamera</th>
+                                <th class="text-center">Kondisi Tempat Kamera</th>
+                                <th class="text-center">Kelengkapan Atribut</th>
                                 <th class="text-center">Waktu Pengembalian</th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($laptop_penembalian as $key => $value)
+                            @forelse ($camera_penembalian as $key => $value)
                                 <tr>
                                     <td class="text-center">{{ $key + 1 }}</td>
                                     <td>{{ \Carbon\Carbon::parse($value->tanggal_peminjaman)->format('d-m-Y') }}</td>
                                     <td>{{ $value->nama }}</td>
                                     <td>{{ $value->kode_device }}</td>
-                                    <td>{{ $value->kondisi_laptop }}</td>
-                                    <td>{{ $value->kondisi_mouse }}</td>
-                                    <td>{{ $value->kondisi_keybohard }}</td>
+                                    <td>{{ $value->kondisi_kamera }}</td>
+                                    <td>{{ $value->kondisi_tempat_kamera }}</td>
+                                    <td>{{ $value->kelengkapan_atribut }}</td>
                                     <td>{{ $value->waktu_pengembalian }}</td>
                                     <td>
-                                        <form action="/return-laptop/{{ $value->id }}/delete" method="POST">
+                                        <form action="/return-camera/{{ $value->id }}/delete" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <a href="/return-laptop/{{ $value->id }}/delete" class="btn btn-danger" onclick="confirmation(event)"
+                                            <a href="/return-camera/{{ $value->id }}/delete" class="btn btn-danger" onclick="confirmation(event)"
                                                 data-id="{{ $value->id }}"
                                                 data-name="{{ $value->kode_device }}">Delete</a>
                                         </form>
