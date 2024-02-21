@@ -615,7 +615,7 @@ class pinjamController extends Controller
         Alert::success('Berhasil!', 'Jangan lupa kembalikan Perangkat Anda!');
         return redirect()->to('/');
     }
-    // :aptop
+    // Laptop
     public function pinjamlaptop()
     {
         $pinjamlaptop = DB::table('pinjamlaptop')->get();

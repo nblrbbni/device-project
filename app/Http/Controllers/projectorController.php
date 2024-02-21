@@ -121,4 +121,18 @@ class projectorController extends Controller
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
         return redirect('/data-projector');
     }
+
+    public function returnprj()
+    {
+        $projector_penembalian = DB::table('projector_penembalian')->get();
+
+        return view('admin.data-pengembalian.data-projector', ['projector_penembalian' => $projector_penembalian]);
+    }
+    public function deleteprj($id)
+    {
+        DB::table('projector_penembalian')->where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/return-projector/show');
+    }
 }

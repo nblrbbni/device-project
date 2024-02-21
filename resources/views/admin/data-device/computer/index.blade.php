@@ -2,24 +2,14 @@
 
 @section('content')
     <div class="section-body">
-        <h1 class="mb-3">Data Device Computer (PC)</h1>
+        <h1 class="mb-3">Data Device Computer (PC (LAB))</h1>
         <div class="card">
             <div class="card-body">
                 <form action="/data-computer" method="POST">
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Kode Device</label>
-                        <input type="text" name="kode_device" class="form-control" placeholder="Contoh: PC-1" required>
-                    </div>
-                    @error('kode_device')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-                    <div class="mb-3">
-                        <label class="form-label">Laboratorium</label>
-                        <select name="laboratorium" class="form-control">
-                            <option value="LAB-1">LAB-1</option>
-                            <option value="LAB-2">LAB-2</option>
-                        </select>
+                        <input type="text" name="kode_device" class="form-control" placeholder="Contoh: PC-1 (1)" required>
                     </div>
                     @error('kode_device')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -55,7 +45,6 @@
                             <tr>
                                 <th class="text-center">No</th>
                                 <th scope="col">Kode Device</th>
-                                <th scope="col">Laboratorium</th>
                                 <th scope="col">Nama Device</th>
                                 <th scope="col">Merk Device</th>
                                 <th scope="col">Status</th>
@@ -67,7 +56,6 @@
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
                                     <td>{{ $value->kode_device }}</td>
-                                    <td>{{ $value->laboratorium }}</td>
                                     <td>{{ $value->nama }}</td>
                                     <td>{{ $value->merk }}</td>
                                     <td>{{ $value->status }}</td>

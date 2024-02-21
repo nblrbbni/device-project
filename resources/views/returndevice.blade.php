@@ -6,7 +6,7 @@
             < </a>
     </div>
     <div class="title">
-        <h1><b>Kembalikan Perangkat</b</h1>
+        <h1><b>Kembalikan Perangkat</b< /h1>
                 <h2><b>Berikut ini :</b></h2>
     </div>
     <div class="grid-container">
@@ -16,11 +16,7 @@
                 <p>Laptop</p>
             </div>
             <div class="cardButton">
-                @if (str_contains(session('kode_device_peminjaman'), 'LP'))
-                    <a href="/return-laptop" style="text-decoration: none;">Pilih</a>
-                @else
-                    <button type="button" class="btn" disabled>Pilih</button>
-                @endif
+                <a href="/return-laptop" style="text-decoration: none;">Pilih</a>
             </div>
         </div>
         <div class="cardGrid">
@@ -29,11 +25,7 @@
                 <p>Headphone</p>
             </div>
             <div class="cardButton">
-                @if (str_contains(session('kode_device_peminjaman'), 'HDPN'))
-                    <a href="/return-headphone" style="text-decoration: none;">Pilih</a>
-                @else
-                    <button type="button" class="btn" disabled>Pilih</button>
-                @endif
+                <a href="/return-headphone" style="text-decoration: none;">Pilih</a>
             </div>
         </div>
         <div class="cardGrid">
@@ -42,11 +34,7 @@
                 <p>Tablet</p>
             </div>
             <div class="cardButton">
-                @if (str_contains(session('kode_device_peminjaman'), 'TAB'))
-                    <a href="/return-tablet" style="text-decoration: none;">Pilih</a>
-                @else
-                    <button type="button" class="btn" disabled>Pilih</button>
-                @endif
+                <a href="/return-tablet" style="text-decoration: none;">Pilih</a>
             </div>
         </div>
         <div class="cardGrid">
@@ -55,11 +43,7 @@
                 <p>Flashdisk</p>
             </div>
             <div class="cardButton">
-                @if (str_contains(session('kode_device_peminjaman'), 'FD'))
-                    <a href="/return-flashdisk" style="text-decoration: none;">Pilih</a>
-                @else
-                    <button type="button" class="btn" disabled>Pilih</button>
-                @endif
+                <a href="/return-flashdisk" style="text-decoration: none;">Pilih</a>
             </div>
         </div>
         <div class="cardGrid">
@@ -68,11 +52,7 @@
                 <p>Printer</p>
             </div>
             <div class="cardButton">
-                @if (str_contains(session('kode_device_peminjaman'), 'PRN'))
-                    <a href="/return-printer" style="text-decoration: none;">Pilih</a>
-                @else
-                    <button type="button" class="btn" disabled>Pilih</button>
-                @endif
+                <a href="/return-printer" style="text-decoration: none;">Pilih</a>
             </div>
         </div>
         <div class="cardGrid">
@@ -81,11 +61,7 @@
                 <p>Camera</p>
             </div>
             <div class="cardButton">
-                @if (str_contains(session('kode_device_peminjaman'), 'CAM'))
-                    <a href="/return-camera" style="text-decoration: none;">Pilih</a>
-                @else
-                    <button type="button" class="btn" disabled>Pilih</button>
-                @endif
+                <a href="/return-camera" style="text-decoration: none;">Pilih</a>
             </div>
         </div>
         <div class="cardGrid">
@@ -94,11 +70,7 @@
                 <p>Handphone</p>
             </div>
             <div class="cardButton">
-                @if (str_contains(session('kode_device_peminjaman'), 'HP'))
-                    <a href="/return-hp" style="text-decoration: none;">Pilih</a>
-                @else
-                    <button type="button" class="btn" disabled>Pilih</button>
-                @endif
+                <a href="/return-hp" style="text-decoration: none;">Pilih</a>
             </div>
         </div>
         <div class="cardGrid">
@@ -107,11 +79,7 @@
                 <p>Computer</p>
             </div>
             <div class="cardButton">
-                @if (str_contains(session('kode_device_peminjaman'), 'PC'))
-                    <a href="/return-computer" style="text-decoration: none;">Pilih</a>
-                @else
-                    <button type="button" class="btn" disabled>Pilih</button>
-                @endif
+                <a href="/return-computer" style="text-decoration: none;">Pilih</a>
             </div>
         </div>
         <div class="cardGrid">
@@ -120,11 +88,7 @@
                 <p>LAN</p>
             </div>
             <div class="cardButton">
-                @if (str_contains(session('kode_device_peminjaman'), 'LAN'))
-                    <a href="/return-lan" style="text-decoration: none;">Pilih</a>
-                @else
-                    <button type="button" class="btn" disabled>Pilih</button>
-                @endif
+                <a href="/return-lan" style="text-decoration: none;">Pilih</a>
             </div>
         </div>
         <div class="cardGrid">
@@ -133,11 +97,7 @@
                 <p>HDMI</p>
             </div>
             <div class="cardButton">
-                @if (str_contains(session('kode_device_peminjaman'), 'HDMI'))
-                    <a href="/return-HDMI" style="text-decoration: none;">Pilih</a>
-                @else
-                    <button type="button" class="btn" disabled>Pilih</button>
-                @endif
+                <a href="/return-HDMI" style="text-decoration: none;">Pilih</a>
             </div>
         </div>
         <div class="cardGrid">
@@ -146,11 +106,7 @@
                 <p>Projector</p>
             </div>
             <div class="cardButton">
-                @if (str_contains(session('kode_device_peminjaman'), 'PRJ'))
-                    <a href="/return-projector" style="text-decoration: none;">Pilih</a>
-                @else
-                    <button type="button" class="btn" disabled>Pilih</button>
-                @endif
+                <a href="/return-projector" style="text-decoration: none;">Pilih</a>
             </div>
         </div>
         <div class="cardGrid">
@@ -159,11 +115,12 @@
                 <p>Hardisk</p>
             </div>
             <div class="cardButton">
-                @if (str_contains(session('kode_device_peminjaman'), 'HDD'))
+                {{-- @if (str_contains(session('kode_device_peminjaman'), 'HDD'))
                     <a href="/return-hardisk" style="text-decoration: none;">Pilih</a>
                 @else
                     <button type="button" class="btn" disabled>Pilih</button>
-                @endif
+                @endif --}}
+                <a href="/return-projector" style="text-decoration: none;">Pilih</a>
             </div>
         </div>
     </div>

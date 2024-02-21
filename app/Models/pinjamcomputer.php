@@ -15,7 +15,6 @@ class pinjamcomputer extends Model
         'nama',
         'mata_pelajaran',
         'kode_device',
-        'laboratorium',
         'mentoring_mapel',
         'waktu_peminjaman',
     ];

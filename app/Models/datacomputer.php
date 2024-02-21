@@ -9,5 +9,5 @@ class datacomputer extends Model
 {
     use HasFactory;
     protected $table = 'datacomputer';
-    protected $fillable = ['kode_device', 'laboratorium', 'nama', 'merk', 'status'];
+    protected $fillable = ['kode_device', 'nama', 'merk', 'status'];
 }

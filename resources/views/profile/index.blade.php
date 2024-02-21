@@ -80,7 +80,7 @@
                             <div class="mb-3">
                                 <label class="form-label">Password</label>
                                 <div class="input-group input-group-flat">
-                                    <input id="password" type="password" class="form-control" name="password"
+                                    <input id="password" class="form-control" name="password"
                                         placeholder="Masukkan password baru Anda">
                                     <span class="input-group-text" style="cursor:pointer"
                                         onclick="password_show_hide('password');">

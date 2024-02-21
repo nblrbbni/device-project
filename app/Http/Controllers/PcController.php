@@ -71,7 +71,6 @@ class PcController extends Controller
             'kode_device' => 'required',
             'nama' => 'required',
             'merk' => 'required',
-            'laboratorium' => 'required',
             'status'
         ]);
 
@@ -79,7 +78,6 @@ class PcController extends Controller
             'kode_device' => $request['kode_device'],
             'nama' => $request['nama'],
             'merk' => $request['merk'],
-            'laboratorium' => $request['laboratorium'],
             'status' => 'status',
         ]);
 
@@ -100,7 +98,6 @@ class PcController extends Controller
             'kode_device' => 'required',
             'nama' => 'required',
             'merk' => 'required',
-            'laboratorium' => 'required',
         ]);
 
         DB::table('datacomputer')
@@ -110,7 +107,6 @@ class PcController extends Controller
                     'kode_device' => $request->kode_device,
                     'nama' => $request->nama,
                     'merk' => $request->merk,
-                    'laboratorium' => $request->laboratorium,
                 ],
             );
         Alert::success('Berhasil!', 'Data berhasil diupdate!');

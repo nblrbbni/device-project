@@ -114,4 +114,18 @@ class hardiskController extends Controller
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
         return redirect('/data-hardisk');
     }
+
+    public function returnhard()
+    {
+        $hardisk_penembalian = DB::table('hardisk_penembalian')->get();
+
+        return view('admin.data-pengembalian.data-hardisk', ['hardisk_penembalian' => $hardisk_penembalian]);
+    }
+    public function deletehard($id)
+    {
+        DB::table('hardisk_penembalian')->where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/return-hardisk/show');
+    }
 }

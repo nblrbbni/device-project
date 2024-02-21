@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class adminController extends Controller
 {
+
     public function admin ()
     {
-        return view('admin.main.dashboard');
+        $pinjamcomputer = DB::table('pinjamcomputer')->get();
+
+        return view('admin.main.dashboard', ['pinjamcomputer' => $pinjamcomputer]);
     }
     public function siswa ()
     {
@@ -25,6 +29,10 @@ class adminController extends Controller
     public function Devicert ()
     {
         return view('admin.main.device');
+    }
+    public function peminjaman()
+    {
+        return view('admin.main.peminjaman');
     }
     public function tugas ()
     {

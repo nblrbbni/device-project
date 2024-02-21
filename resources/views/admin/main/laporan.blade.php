@@ -9,7 +9,7 @@
                     <img src="{{ asset('assets/picture/Devices.png') }}" class="rounded mx-auto d-block" alt="">
                     <p>Peminjaman Device</p>
                     <div class="button">
-                        <a href="/returndevice/show">
+                        <a href="/peminjaman/show">
                             Lihat
                         </a>
                     </div>

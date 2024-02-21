@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('datacomputer', function (Blueprint $table) {
             $table->id();
             $table->string('kode_device');
-            $table->string('laboratorium');
             $table->string('nama');
             $table->string('merk');
             $table->string('status');

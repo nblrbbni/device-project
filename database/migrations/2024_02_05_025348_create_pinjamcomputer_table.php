@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string("nama");
             $table->string("mata_pelajaran");
             $table->string("kode_device");
-            $table->string("laboratorium");
             $table->string("mentoring_mapel");
             $table->time("waktu_peminjaman");
         });

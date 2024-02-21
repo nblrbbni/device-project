@@ -11,23 +11,25 @@
                 <div class="table-responsive">
                     <table class="table table-bordered table-hover text-center" id="myTable">
                         <thead>
-                            <tr>
+                             <tr>
                                 <th class="text-center">No</th>
                                 <th class="text-center">Tanggal-Bulan-Tahun</th>
                                 <th class="text-center">Nama Siswa</th>
                                 <th class="text-center">Kode Device</th>
                                 <th class="text-center">Mata Pelajaran</th>
+                                <th class="text-center">Waktu Peminjaman</th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @forelse ($pinjamflashdisk as $key => $value)
                                 <tr>
-                                    <td class="text-center">{{ $key + 1 }}</td>
+                                    <td  class="text-center">{{ $key + 1 }}</td>
                                     <td>{{ \Carbon\Carbon::parse($value->created_at)->format('d-m-Y') }}</td>
                                     <td>{{ $value->nama }}</td>
                                     <td>{{ $value->kode_device }}</td>
                                     <td>{{ $value->mata_pelajaran }}</td>
+                                    <td>{{ $value->waktu_peminjaman }}</td>
                                     <td>
                                         <form action="/peminjaman-flashdisk/{{ $value->id }}" method="POST">
                                             @csrf
@@ -40,7 +42,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="6" class="text-center">Tidak Ada Data.</td>
+                                    <td colspan="7" class="text-center">Tidak Ada Data.</td>
                                 </tr>
                             @endforelse
                         </tbody>

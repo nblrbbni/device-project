@@ -2,47 +2,48 @@
 
 @section('content')
     <div class="section-body">
-        <h1 class="mb-3">Data Device HDMI</h1>
+        <h1 class="mb-3">Data Pengembalian Device Hardisk</h1>
         <div class="card">
             <div class="card-header">
-                <h4>Peminjaman HDMI</h4>
+                <h4>Pengembalian Hardisk</h4>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered table-hover text-center" id="myTable">
                         <thead>
-                             <tr>
+                            <tr>
                                 <th class="text-center">No</th>
-                                <th class="text-center">Tanggal-Bulan-Tahun</th>
+                                <th class="text-center">Tanggal Peminjaman</th>
                                 <th class="text-center">Nama Siswa</th>
                                 <th class="text-center">Kode Device</th>
-                                <th class="text-center">Mata Pelajaran</th>
-                                <th class="text-center">Waktu Peminjaman</th>
+                                <th class="text-center">Kondisi Hardisk</th>
+                                <th class="text-center">Waktu Pengembalian</th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($pinjamhdmi as $key => $value)
-                               <tr>
-                                    <td  class="text-center">{{ $key + 1 }}</td>
-                                    <td>{{ \Carbon\Carbon::parse($value->created_at)->format('d-m-Y') }}</td>
+                            @forelse ($hardisk_penembalian as $key => $value)
+                                <tr>
+                                    <td class="text-center">{{ $key + 1 }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($value->tanggal_peminjaman)->format('d-m-Y') }}</td>
                                     <td>{{ $value->nama }}</td>
                                     <td>{{ $value->kode_device }}</td>
-                                    <td>{{ $value->mata_pelajaran }}</td>
-                                    <td>{{ $value->waktu_peminjaman }}</td>
+                                    <td>{{ $value->kondisi_hardisk }}</td>
+                                    <td>{{ $value->waktu_pengembalian }}</td>
                                     <td>
-                                        <form action="/peminjaman-hdmi/{{ $value->id }}" method="POST">
+                                        <form action="/return-hardisk/{{ $value->id }}/delete" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <a href="/peminjaman-hdmi/{{ $value->id }}/delete" class="btn btn-danger"
-                                                onclick="confirmation(event)" data-id="{{ $value->id }}"
+                                            <a href="/return-hardisk/{{ $value->id }}/delete" class="btn btn-danger" onclick="confirmation(event)"
+                                                data-id="{{ $value->id }}"
                                                 data-name="{{ $value->kode_device }}">Delete</a>
                                         </form>
+
                                     </td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="7" class="text-center">Tidak Ada Data.</td>
+                                    <td colspan="7">Tidak Ada Data.</td>
                                 </tr>
                             @endforelse
                         </tbody>

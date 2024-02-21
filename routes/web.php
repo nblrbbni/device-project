@@ -44,174 +44,51 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::get('/returndevice/show', [adminController::class, 'Devicert']);
-
-Route::middleware(['auth', 'isAdmin'])->group(function () {
-    // Rute untuk dashboard admin
-    Route::get('/admin/dashboard', [AdminController::class, 'admin'])->name('admin.dashboard');
-});
-
-Route::middleware(['auth'])->group(function () {
-    // Rute untuk dashboard pengguna biasa
-    Route::get('/dashboard', [UserController::class, 'user'])->name('user.dashboard');
-});
+Route::get('/information', [informationController::class, 'show']);
 
 Route::get('/team', function () {
     return view('team');
 });
 
-// Report Tugas
-Route::get('/report-tugas/post', [ReportController::class, 'tugas']);
-Route::post('/report-tugas/store', [ReportController::class, 'tugasstr']);
-Route::get('/report-tugas', [ReportController::class, 'index']);
-
-//CRUD Mapel
-//Create
-Route::get('/mapel/create', [MapelController::class, 'create']);
-Route::post('/mapel', [MapelController::class, 'store']);
-//Read
-Route::get('/mapel', [MapelController::class, 'index']);
-//Update
-Route::get('/mapel/{mapel_id}/edit', [MapelController::class, 'edit']);
-Route::put('/mapel/{mapel_id}', [MapelController::class, 'update']);
-//Delete
-Route::get('/mapel/{mapel_id}/delete', [MapelController::class, 'delete']);
-
-//CRUD Guru
-//Create
-Route::get('/guru/create', [GuruController::class, 'create']);
-Route::post('/guru', [GuruController::class, 'store']);
-//Read
-Route::get('/guru', [GuruController::class, 'index']);
-//Update
-Route::get('/guru/{guru_id}/edit', [GuruController::class, 'edit']);
-Route::put('/guru/{guru_id}', [GuruController::class, 'update']);
-//Delete
-Route::get('/guru/{guru_id}/delete', [GuruController::class, 'delete']);
-
-//CRUD Category
-//Create
-Route::get('/categories/create' , [CategoryController::class, 'create']);
-Route::post('/categories', [CategoryController::class, 'store']);
-//Read
-Route::get('/categories', [CategoryController::class, 'index']);
-//Update
-Route::get('/categories/{categories_id}/edit', [CategoryController::class, 'edit']);
-Route::put('/categories/{categories_id}', [CategoryController::class, 'update']);
-//Delete
-Route::get('/categories/{categories_id}/delete', [CategoryController::class, 'delete']);
-
-// Data Peminjaman
-// Laptop
-Route::get('/peminjaman-laptop', [pinjamController::class, 'pinjamlaptop']);
-Route::get('/peminjaman-laptop/{peminjaman_laptop_id}/delete', [pinjamController::class, 'deletelap']);
-// Headphone
-Route::get('/peminjaman-headphone', [pinjamController::class, 'pinjamheadphone']);
-Route::get('/peminjaman-headphone/{peminjaman_headphone_id}/delete', [pinjamController::class, 'deletehead']);
-// Tablet
-Route::get('/peminjaman-tablet', [pinjamController::class, 'pinjamtablet']);
-Route::get('/peminjaman-tablet/{peminjaman_tablet_id}/delete', [pinjamController::class, 'deletetab']);
-// Computer
-Route::get('/peminjaman-computer', [pinjamController::class, 'pinjamcomputer']);
-Route::get('/peminjaman-computer/{peminjaman_computer_id}/delete', [pinjamController::class, 'deletecom']);
-// Handphone
-Route::get('/peminjaman-handphone', [pinjamController::class, 'pinjamhandphone']);
-Route::get('/peminjaman-handphone/{peminjaman_handphone_id}/delete', [pinjamController::class, 'deletehand']);
-// Camera
-Route::get('/peminjaman-camera', [pinjamController::class, 'pinjamcamera']);
-Route::get('/peminjaman-camera/{peminjaman_camera_id}/delete', [pinjamController::class, 'deletecam']);
-// Flashdisk
-Route::get('/peminjaman-flashdisk', [pinjamController::class, 'pinjamflashdisk']);
-Route::get('/peminjaman-flashdisk/{peminjaman_flashdisk_id}/delete', [pinjamController::class, 'deleteflash']);
-// Hardisk
-Route::get('/peminjaman-hardisk', [pinjamController::class, 'pinjamhardisk']);
-Route::get('/peminjaman-hardisk/{peminjaman_hardisk_id}/delete', [pinjamController::class, 'deletehard']);
-// Printer
-Route::get('/peminjaman-printer', [pinjamController::class, 'pinjamprinter']);
-Route::get('/peminjaman-printer/{peminjaman_printer_id}/delete', [pinjamController::class, 'deleteprint']);
-// Lan
-Route::get('/peminjaman-lan', [pinjamController::class, 'pinjamlan']);
-Route::get('/peminjaman-lan/{peminjaman_lan_id}/delete', [pinjamController::class, 'deletelan']);
-// Hdmi
-Route::get('/peminjaman-hdmi', [pinjamController::class, 'pinjamhdmi']);
-Route::get('/peminjaman-hdmi/{peminjaman_hdmi_id}/delete', [pinjamController::class, 'deletehdmi']);
-// Projector
-Route::get('/peminjaman-projector', [pinjamController::class, 'pinjamprojector']);
-Route::get('/peminjaman-projector/{peminjaman_projector_id}/delete', [pinjamController::class, 'deleteproj']);
-
 Route::middleware(['auth'])->group(function () {
-    Route::get('user/profile', [UserController::class, 'edit'])->name('user.edit-profile');
-    Route::put('user/profile', [UserController::class, 'update'])->name('user.update-profile');
+    Route::get('/dashboard', [UserController::class, 'user'])->name('user.dashboard');
 
     Route::get('/profile', function () {
         return view('profile.index');
     });
-
-    //CRUD Student
-    //Create
-    Route::get('/student/create', [StudentController::class, 'create']);
-    Route::post('/student', [StudentController::class, 'store']);
-    //Read
-    Route::get('/student', [StudentController::class, 'index']);
-    //Update
-    Route::get('/student/{student_id}/edit', [StudentController::class, 'edit']);
-    Route::put('/student/{student_id}', [StudentController::class, 'update']);
-    //Delete
-    Route::get('/student/{student_id}/delete', [StudentController::class, 'delete']);
 
     //Return Device
     Route::get('/returndevice', [ReturnController::class, 'showReturnForm']);
     // return-laptop
     Route::get('/return-laptop', [laptopController::class, 'laptop']);
     Route::post('/return-laptop/store', [laptopController::class, 'laptopstr']);
-    Route::get('/return-laptop/show', [laptopController::class, 'returnlap']);
-    Route::get('/return-laptop/{return_laptop_id}/delete', [laptopController::class, 'deletelap']);
-
     // return-headphone
     Route::get('/return-headphone', [earphoneController::class, 'earphone']);
     Route::post('/return-headphone/store', [earphoneController::class, 'earphonestr']);
-    Route::get('/return-headphone/show', [earphoneController::class, 'returnhead']);
-    Route::get('/return-headphone/{return_headphone_id}/delete', [earphoneController::class, 'deletehead']);
     // return-tablet
     Route::get('/return-tablet', [tabletController::class, 'tablet']);
     Route::post('/return-tablet/store', [tabletController::class, 'tabletstr']);
-    Route::get('/return-tablet/show', [tabletController::class, 'returntab']);
-    Route::get('/return-tablet/{tablet}/delete', [tabletController::class, 'deletetab']);
     // return-flashdisk
     Route::get('/return-flashdisk', [flashdiskController::class, 'flasdisk']);
     Route::post('/return-flashdisk/store', [flashdiskController::class, 'flasdiskstr']);
-    Route::get('/return-flashdisk/show', [flashdiskController::class, 'returnflash']);
-    Route::get('/return-flashdisk/{flasdisk}/delete', [flashdiskController::class, 'deleteflash']);
     // return-printer
     Route::get('/return-printer', [printerController::class, 'printer']);
     Route::post('/return-printer/store', [printerController::class, 'printerstr']);
-    Route::get('/return-printer/show', [printerController::class, 'returnprint']);
-    Route::get('/return-printer/{printer}/delete', [printerController::class, 'deleteprint']);
     // return-camera
     Route::get('/return-camera', [cameraController::class, 'camera']);
     Route::post('/return-camera/sotore', [cameraController::class, 'camerastr']);
-    Route::get('/return-camera/show', [cameraController::class, 'returncam']);
-    Route::get('/return-camera/{camera}/delete', [cameraController::class, 'deletecam']);
     // return-hp
     Route::get('/return-hp', [handphoneController::class, 'handphone']);
     Route::post('/return-hp/store', [handphoneController::class, 'handphonestr']);
-    Route::get('/return-hp/show', [handphoneController::class, 'returnhp']);
-    Route::get('/return-hp/{hp}/delete', [handphoneController::class, 'deletehp']);
     // return-pc
     Route::get('/return-computer', [PcController::class, 'computer']);
     Route::post('/return-computer/store', [PcController::class, 'computerstr']);
-    Route::get('/return-computer/show', [PcController::class, 'returnpc']);
-    Route::get('/return-computer/{computer}/delete', [PcController::class, 'deletepc']);
     // return-lan
     Route::get('/return-lan', [LanController::class, 'lan']);
     Route::post('/return-lan/store', [LanController::class, 'lanstr']);
-    Route::get('/return-lan/show', [LanController::class, 'returnlan']);
-    Route::get('/return-lan/{lan}/delete', [LanController::class, 'deletelan']);
     // return-hdmi
     Route::get('/return-HDMI', [hdmiController::class, 'HDMI']);
     Route::post('/return-HDMI/store', [hdmiController::class, 'HDMIstr']);
-    Route::get('/return-HDMI/show', [hdmiController::class, 'returnhdmi']);
-    Route::get('/return-HDMI/{HDMI}/delete', [hdmiController::class, 'deletehdmi']);
     // return-projector
     Route::get('/return-projector', [projectorController::class, 'projector']);
     Route::post('/return-projector/store', [projectorController::class, 'projectorstr']);
@@ -260,6 +137,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/select-hdmi', [pinjamController::class, 'hdmi']);
     Route::post('/select-hdmi/store', [pinjamController::class, 'hdmistr']);
 
+    // Report Tugas
+    Route::get('/report-tugas/post', [ReportController::class, 'tugas']);
+    Route::post('/report-tugas/store', [ReportController::class, 'tugasstr']);
+
     // Route::resource('profile', ProfileController::class)->only(['index','update']);
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index')->middleware('auth');
 
@@ -268,147 +149,265 @@ Route::middleware(['auth'])->group(function () {
     Route::PUT('/profile/update/', [ProfileController::class, 'update'])->name('profile.index')->middleware('auth');
 });
 
-//CRUD INFORMATION Admin
-//Create
-Route::get('/information/create', [informationController::class, 'create']);
-Route::post('/information', [informationController::class, 'store']);
-//Read
-Route::get('/information/show', [informationController::class, 'index']);
-Route::get('/information', [informationController::class, 'show']);
-//update
-// form update
-Route::get('/information/{information_id}/edit', [informationController::class, 'edit']);
-Route::put('/information/{information_id}', [informationController::class, 'update']);
-// delete
-Route::get('/information/{information_id}/delete', [informationController::class, 'delete']);
+Route::middleware(['auth', 'isAdmin'])->group(function () {
+    // Rute untuk dashboard admin
+    Route::get('/admin/dashboard', [AdminController::class, 'admin'])->name('admin.dashboard');
+});
 
-// Data Device
-Route::get('/data-device', [adminController::class, 'device']);
-// Data Laptop
-Route::get('/data-laptop/create', [laptopController::class, 'create']);
-Route::post('/data-laptop', [laptopController::class, 'store']);
-//Read
-Route::get('/data-laptop', [laptopController::class, 'index']);
-//Update
-Route::get('/data-laptop/{datalaptop_id}/edit', [laptopController::class, 'edit']);
-Route::put('/data-laptop/{datalaptop_id}', [laptopController::class, 'update']);
-//Delete
-Route::get('/data-laptop/{datalaptop_id}/delete', [laptopController::class, 'delete']);
-// Data Headphone
-Route::get('/data-headphone/create', [earphoneController::class, 'create']);
-Route::post('/data-headphone', [earphoneController::class, 'store']);
-//Read
-Route::get('/data-headphone', [earphoneController::class, 'index']);
-//Update
-Route::get('/data-headphone/{dataheadphone_id}/edit', [earphoneController::class, 'edit']);
-Route::put('/data-headphone/{dataheadphone_id}', [earphoneController::class, 'update']);
-//Delete
-Route::get('/data-headphone/{dataheadphone_id}/delete', [earphoneController::class, 'delete']);
-// Data Projector
-Route::get('/data-projector/create', [projectorController::class, 'create']);
-Route::post('/data-projector', [projectorController::class, 'store']);
-//Read
-Route::get('/data-projector', [projectorController::class, 'index']);
-//Update
-Route::get('/data-projector/{dataprojector_id}/edit', [projectorController::class, 'edit']);
-Route::put('/data-projector/{dataprojector_id}', [projectorController::class, 'update']);
-//Delete
-Route::get('/data-projector/{dataprojector_id}/delete', [projectorController::class, 'delete']);
-// Data Tablet
-Route::get('/data-tablet/create', [tabletController::class, 'create']);
-Route::post('/data-tablet', [tabletController::class, 'store']);
-//Read
-Route::get('/data-tablet', [tabletController::class, 'index']);
-//Update
-Route::get('/data-tablet/{datatablet_id}/edit', [tabletController::class, 'edit']);
-Route::put('/data-tablet/{datatablet_id}', [tabletController::class, 'update']);
-//Delete
-Route::get('/data-tablet/{datatablet_id}/delete', [tabletController::class, 'delete']);
-// Data Camera
-Route::get('/data-camera/create', [cameraController::class, 'create']);
-Route::post('/data-camera', [cameraController::class, 'store']);
-//Read
-Route::get('/data-camera', [cameraController::class, 'index']);
-//Update
-Route::get('/data-camera/{datacamera_id}/edit', [cameraController::class, 'edit']);
-Route::put('/data-camera/{datacamera_id}', [cameraController::class, 'update']);
-//Delete
-Route::get('/data-camera/{datacamera_id}/delete', [cameraController::class, 'delete']);
-// Data Handphone
-Route::get('/data-handphone/create', [handphoneController::class, 'create']);
-Route::post('/data-handphone', [handphoneController::class, 'store']);
-//Read
-Route::get('/data-handphone', [handphoneController::class, 'index']);
-//Update
-Route::get('/data-handphone/{datahandphone_id}/edit', [handphoneController::class, 'edit']);
-Route::put('/data-handphone/{datahandphone_id}', [handphoneController::class, 'update']);
-//Delete
-Route::get('/data-handphone/{datahandphone_id}/delete', [handphoneController::class, 'delete']);
-// Data Computer
-Route::get('/data-computer/create', [PcController::class, 'create']);
-Route::post('/data-computer', [PcController::class, 'store']);
-//Read
-Route::get('/data-computer', [PcController::class, 'index']);
-//Update
-Route::get('/data-computer/{datacomputer_id}/edit', [PcController::class, 'edit']);
-Route::put('/data-computer/{datacomputer_id}', [PcController::class, 'update']);
-//Delete
-Route::get('/data-computer/{datacomputer_id}/delete', [PcController::class, 'delete']);
-// Data Flashdisk
-Route::get('/data-flashdisk/create', [flashdiskController::class, 'create']);
-Route::post('/data-flashdisk', [flashdiskController::class, 'store']);
-//Read
-Route::get('/data-flashdisk', [flashdiskController::class, 'index']);
-//Update
-Route::get('/data-flashdisk/{dataflashdisk_id}/edit', [flashdiskController::class, 'edit']);
-Route::put('/data-flashdisk/{dataflashdisk_id}', [flashdiskController::class, 'update']);
-//Delete
-Route::get('/data-flashdisk/{dataflashdisk_id}/delete', [flashdiskController::class, 'delete']);
-// Data Hardisk
-Route::get('/data-hardisk/create', [hardiskController::class, 'create']);
-Route::post('/data-hardisk', [hardiskController::class, 'store']);
-//Read
-Route::get('/data-hardisk', [hardiskController::class, 'index']);
-//Update
-Route::get('/data-hardisk/{datahardisk_id}/edit', [hardiskController::class, 'edit']);
-Route::put('/data-hardisk/{datahardisk_id}', [hardiskController::class, 'update']);
-//Delete
-Route::get('/data-hardisk/{datahardisk_id}/delete', [hardiskController::class, 'delete']);
-// Data Printer
-Route::get('/data-printer/create', [printerController::class, 'create']);
-Route::post('/data-printer', [printerController::class, 'store']);
-//Read
-Route::get('/data-printer', [printerController::class, 'index']);
-//Update
-Route::get('/data-printer/{dataprinter_id}/edit', [printerController::class, 'edit']);
-Route::put('/data-printer/{dataprinter_id}', [printerController::class, 'update']);
-//Delete
-Route::get('/data-printer/{dataprinter_id}/delete', [printerController::class, 'delete']);
-// Data LAN
-Route::get('/data-lan/create', [LanController::class, 'create']);
-Route::post('/data-lan', [LanController::class, 'store']);
-//Read
-Route::get('/data-lan', [LanController::class, 'index']);
-//Update
-Route::get('/data-lan/{datalan_id}/edit', [LanController::class, 'edit']);
-Route::put('/data-lan/{datalan_id}', [LanController::class, 'update']);
-//Delete
-Route::get('/data-lan/{datalan_id}/delete', [LanController::class, 'delete']);
-// Data HDMI
-Route::get('/data-hdmi/create', [hdmiController::class, 'create']);
-Route::post('/data-hdmi', [hdmiController::class, 'store']);
-//Read
-Route::get('/data-hdmi', [hdmiController::class, 'index']);
-//Update
-Route::get('/data-hdmi/{datahdmi_id}/edit', [hdmiController::class, 'edit']);
-Route::put('/data-hdmi/{datahdmi_id}', [hdmiController::class, 'update']);
-//Delete
-Route::get('/data-hdmi/{datahdmi_id}/delete', [hdmiController::class, 'delete']);
+Route::middleware(['auth', 'admin'])->group(function () {
+    //CRUD Student
+    Route::get('/student', [StudentController::class, 'index']);
+    //Update
+    Route::get('/student/{student_id}/edit', [StudentController::class, 'edit']);
+    Route::put('/student/{student_id}', [StudentController::class, 'update']);
+    //Delete
+    Route::get('/student/{student_id}/delete', [StudentController::class, 'delete']);
+
+    // Data Device
+    Route::get('/data-device', [adminController::class, 'device']);
+    // Data Laptop
+    Route::get('/data-laptop/create', [laptopController::class, 'create']);
+    Route::post('/data-laptop', [laptopController::class, 'store']);
+    //Read
+    Route::get('/data-laptop', [laptopController::class, 'index']);
+    //Update
+    Route::get('/data-laptop/{datalaptop_id}/edit', [laptopController::class, 'edit']);
+    Route::put('/data-laptop/{datalaptop_id}', [laptopController::class, 'update']);
+    //Delete
+    Route::get('/data-laptop/{datalaptop_id}/delete', [laptopController::class, 'delete']);
+    // Data Headphone
+    Route::get('/data-headphone/create', [earphoneController::class, 'create']);
+    Route::post('/data-headphone', [earphoneController::class, 'store']);
+    //Read
+    Route::get('/data-headphone', [earphoneController::class, 'index']);
+    //Update
+    Route::get('/data-headphone/{dataheadphone_id}/edit', [earphoneController::class, 'edit']);
+    Route::put('/data-headphone/{dataheadphone_id}', [earphoneController::class, 'update']);
+    //Delete
+    Route::get('/data-headphone/{dataheadphone_id}/delete', [earphoneController::class, 'delete']);
+    // Data Projector
+    Route::get('/data-projector/create', [projectorController::class, 'create']);
+    Route::post('/data-projector', [projectorController::class, 'store']);
+    //Read
+    Route::get('/data-projector', [projectorController::class, 'index']);
+    //Update
+    Route::get('/data-projector/{dataprojector_id}/edit', [projectorController::class, 'edit']);
+    Route::put('/data-projector/{dataprojector_id}', [projectorController::class, 'update']);
+    //Delete
+    Route::get('/data-projector/{dataprojector_id}/delete', [projectorController::class, 'delete']);
+    // Data Tablet
+    Route::get('/data-tablet/create', [tabletController::class, 'create']);
+    Route::post('/data-tablet', [tabletController::class, 'store']);
+    //Read
+    Route::get('/data-tablet', [tabletController::class, 'index']);
+    //Update
+    Route::get('/data-tablet/{datatablet_id}/edit', [tabletController::class, 'edit']);
+    Route::put('/data-tablet/{datatablet_id}', [tabletController::class, 'update']);
+    //Delete
+    Route::get('/data-tablet/{datatablet_id}/delete', [tabletController::class, 'delete']);
+    // Data Camera
+    Route::get('/data-camera/create', [cameraController::class, 'create']);
+    Route::post('/data-camera', [cameraController::class, 'store']);
+    //Read
+    Route::get('/data-camera', [cameraController::class, 'index']);
+    //Update
+    Route::get('/data-camera/{datacamera_id}/edit', [cameraController::class, 'edit']);
+    Route::put('/data-camera/{datacamera_id}', [cameraController::class, 'update']);
+    //Delete
+    Route::get('/data-camera/{datacamera_id}/delete', [cameraController::class, 'delete']);
+    // Data Handphone
+    Route::get('/data-handphone/create', [handphoneController::class, 'create']);
+    Route::post('/data-handphone', [handphoneController::class, 'store']);
+    //Read
+    Route::get('/data-handphone', [handphoneController::class, 'index']);
+    //Update
+    Route::get('/data-handphone/{datahandphone_id}/edit', [handphoneController::class, 'edit']);
+    Route::put('/data-handphone/{datahandphone_id}', [handphoneController::class, 'update']);
+    //Delete
+    Route::get('/data-handphone/{datahandphone_id}/delete', [handphoneController::class, 'delete']);
+    // Data Computer
+    Route::get('/data-computer/create', [PcController::class, 'create']);
+    Route::post('/data-computer', [PcController::class, 'store']);
+    //Read
+    Route::get('/data-computer', [PcController::class, 'index']);
+    //Update
+    Route::get('/data-computer/{datacomputer_id}/edit', [PcController::class, 'edit']);
+    Route::put('/data-computer/{datacomputer_id}', [PcController::class, 'update']);
+    //Delete
+    Route::get('/data-computer/{datacomputer_id}/delete', [PcController::class, 'delete']);
+    // Data Flashdisk
+    Route::get('/data-flashdisk/create', [flashdiskController::class, 'create']);
+    Route::post('/data-flashdisk', [flashdiskController::class, 'store']);
+    //Read
+    Route::get('/data-flashdisk', [flashdiskController::class, 'index']);
+    //Update
+    Route::get('/data-flashdisk/{dataflashdisk_id}/edit', [flashdiskController::class, 'edit']);
+    Route::put('/data-flashdisk/{dataflashdisk_id}', [flashdiskController::class, 'update']);
+    //Delete
+    Route::get('/data-flashdisk/{dataflashdisk_id}/delete', [flashdiskController::class, 'delete']);
+    // Data Hardisk
+    Route::get('/data-hardisk/create', [hardiskController::class, 'create']);
+    Route::post('/data-hardisk', [hardiskController::class, 'store']);
+    //Read
+    Route::get('/data-hardisk', [hardiskController::class, 'index']);
+    //Update
+    Route::get('/data-hardisk/{datahardisk_id}/edit', [hardiskController::class, 'edit']);
+    Route::put('/data-hardisk/{datahardisk_id}', [hardiskController::class, 'update']);
+    //Delete
+    Route::get('/data-hardisk/{datahardisk_id}/delete', [hardiskController::class, 'delete']);
+    // Data Printer
+    Route::get('/data-printer/create', [printerController::class, 'create']);
+    Route::post('/data-printer', [printerController::class, 'store']);
+    //Read
+    Route::get('/data-printer', [printerController::class, 'index']);
+    //Update
+    Route::get('/data-printer/{dataprinter_id}/edit', [printerController::class, 'edit']);
+    Route::put('/data-printer/{dataprinter_id}', [printerController::class, 'update']);
+    //Delete
+    Route::get('/data-printer/{dataprinter_id}/delete', [printerController::class, 'delete']);
+    // Data LAN
+    Route::get('/data-lan/create', [LanController::class, 'create']);
+    Route::post('/data-lan', [LanController::class, 'store']);
+    //Read
+    Route::get('/data-lan', [LanController::class, 'index']);
+    //Update
+    Route::get('/data-lan/{datalan_id}/edit', [LanController::class, 'edit']);
+    Route::put('/data-lan/{datalan_id}', [LanController::class, 'update']);
+    //Delete
+    Route::get('/data-lan/{datalan_id}/delete', [LanController::class, 'delete']);
+    // Data HDMI
+    Route::get('/data-hdmi/create', [hdmiController::class, 'create']);
+    Route::post('/data-hdmi', [hdmiController::class, 'store']);
+    //Read
+    Route::get('/data-hdmi', [hdmiController::class, 'index']);
+    //Update
+    Route::get('/data-hdmi/{datahdmi_id}/edit', [hdmiController::class, 'edit']);
+    Route::put('/data-hdmi/{datahdmi_id}', [hdmiController::class, 'update']);
+    //Delete
+    Route::get('/data-hdmi/{datahdmi_id}/delete', [hdmiController::class, 'delete']);
+
+    //CRUD Mapel
+    //Create
+    Route::get('/mapel/create', [MapelController::class, 'create']);
+    Route::post('/mapel', [MapelController::class, 'store']);
+    //Read
+    Route::get('/mapel', [MapelController::class, 'index']);
+    //Update
+    Route::get('/mapel/{mapel_id}/edit', [MapelController::class, 'edit']);
+    Route::put('/mapel/{mapel_id}', [MapelController::class, 'update']);
+    //Delete
+    Route::get('/mapel/{mapel_id}/delete', [MapelController::class, 'delete']);
+
+    //CRUD Guru
+    //Create
+    Route::get('/guru/create', [GuruController::class, 'create']);
+    Route::post('/guru', [GuruController::class, 'store']);
+    //Read
+    Route::get('/guru', [GuruController::class, 'index']);
+    //Update
+    Route::get('/guru/{guru_id}/edit', [GuruController::class, 'edit']);
+    Route::put('/guru/{guru_id}', [GuruController::class, 'update']);
+    //Delete
+    Route::get('/guru/{guru_id}/delete', [GuruController::class, 'delete']);
+
+    //CRUD Category
+    //Create
+    Route::get('/categories/create', [CategoryController::class, 'create']);
+    Route::post('/categories', [CategoryController::class, 'store']);
+    //Read
+    Route::get('/categories', [CategoryController::class, 'index']);
+    //Update
+    Route::get('/categories/{categories_id}/edit', [CategoryController::class, 'edit']);
+    Route::put('/categories/{categories_id}', [CategoryController::class, 'update']);
+    //Delete
+    Route::get('/categories/{categories_id}/delete', [CategoryController::class, 'delete']);
+
+    //CRUD INFORMATION Admin
+    //Create
+    Route::get('/information/create', [informationController::class, 'create']);
+    Route::post('/information', [informationController::class, 'store']);
+    // Read
+    Route::get('/information/show', [informationController::class, 'index']);
+    // Update
+    // form update
+    Route::get('/information/{information_id}/edit', [informationController::class, 'edit']);
+    Route::put('/information/{information_id}', [informationController::class, 'update']);
+    // delete
+    Route::get('/information/{information_id}/delete', [informationController::class, 'delete']);
+
+    // Pengembalian Device
+    Route::get('/returndevice/show', [adminController::class, 'Devicert']);
+    Route::get('/return-laptop/show', [laptopController::class, 'returnlap']);
+    Route::get('/return-laptop/{return_laptop_id}/delete', [laptopController::class, 'deletelap']);
+    Route::get('/return-headphone/show', [earphoneController::class, 'returnhead']);
+    Route::get('/return-headphone/{return_headphone_id}/delete', [earphoneController::class, 'deletehead']);
+    Route::get('/return-tablet/show', [tabletController::class, 'returntab']);
+    Route::get('/return-tablet/{tablet}/delete', [tabletController::class, 'deletetab']);
+    Route::get('/return-flashdisk/show', [flashdiskController::class, 'returnflash']);
+    Route::get('/return-flashdisk/{flasdisk}/delete', [flashdiskController::class, 'deleteflash']);
+    Route::get('/return-printer/show', [printerController::class, 'returnprint']);
+    Route::get('/return-printer/{printer}/delete', [printerController::class, 'deleteprint']);
+    Route::get('/return-camera/show', [cameraController::class, 'returncam']);
+    Route::get('/return-camera/{camera}/delete', [cameraController::class, 'deletecam']);
+    Route::get('/return-hp/show', [handphoneController::class, 'returnhp']);
+    Route::get('/return-hp/{hp}/delete', [handphoneController::class, 'deletehp']);
+    Route::get('/return-computer/show', [PcController::class, 'returnpc']);
+    Route::get('/return-computer/{computer}/delete', [PcController::class, 'deletepc']);
+    Route::get('/return-HDMI/show', [hdmiController::class, 'returnhdmi']);
+    Route::get('/return-HDMI/{HDMI}/delete', [hdmiController::class, 'deletehdmi']);
+    Route::get('/return-projector/show', [projectorController::class, 'returnprj']);
+    Route::get('/return-projector/{projector}/delete', [projectorController::class, 'deleteprj']);
+    Route::get('/return-hardisk/show', [hardiskController::class, 'returnhard']);
+    Route::get('/return-hardisk/{hardisk}/delete', [hardiskController::class, 'deletehard']);
+    Route::get('/return-lan/show', [LanController::class, 'returnlan']);
+    Route::get('/return-lan/{lan}/delete', [LanController::class, 'deletelan']);
+
+    // Data Peminjaman
+    // Laptop
+    Route::get('/peminjaman/show', [adminController::class, 'peminjaman']);
+    Route::get('/peminjaman-laptop', [pinjamController::class, 'pinjamlaptop']);
+    Route::get('/peminjaman-laptop/{peminjaman_laptop_id}/delete', [pinjamController::class, 'deletelap']);
+    // Headphone
+    Route::get('/peminjaman-headphone', [pinjamController::class, 'pinjamheadphone']);
+    Route::get('/peminjaman-headphone/{peminjaman_headphone_id}/delete', [pinjamController::class, 'deletehead']);
+    // Tablet
+    Route::get('/peminjaman-tablet', [pinjamController::class, 'pinjamtablet']);
+    Route::get('/peminjaman-tablet/{peminjaman_tablet_id}/delete', [pinjamController::class, 'deletetab']);
+    // Computer
+    Route::get('/peminjaman-computer', [pinjamController::class, 'pinjamcomputer']);
+    Route::get('/peminjaman-computer/{peminjaman_computer_id}/delete', [pinjamController::class, 'deletecom']);
+    // Handphone
+    Route::get('/peminjaman-handphone', [pinjamController::class, 'pinjamhandphone']);
+    Route::get('/peminjaman-handphone/{peminjaman_handphone_id}/delete', [pinjamController::class, 'deletehand']);
+    // Camera
+    Route::get('/peminjaman-camera', [pinjamController::class, 'pinjamcamera']);
+    Route::get('/peminjaman-camera/{peminjaman_camera_id}/delete', [pinjamController::class, 'deletecam']);
+    // Flashdisk
+    Route::get('/peminjaman-flashdisk', [pinjamController::class, 'pinjamflashdisk']);
+    Route::get('/peminjaman-flashdisk/{peminjaman_flashdisk_id}/delete', [pinjamController::class, 'deleteflash']);
+    // Hardisk
+    Route::get('/peminjaman-hardisk', [pinjamController::class, 'pinjamhardisk']);
+    Route::get('/peminjaman-hardisk/{peminjaman_hardisk_id}/delete', [pinjamController::class, 'deletehard']);
+    // Printer
+    Route::get('/peminjaman-printer', [pinjamController::class, 'pinjamprinter']);
+    Route::get('/peminjaman-printer/{peminjaman_printer_id}/delete', [pinjamController::class, 'deleteprint']);
+    // Lan
+    Route::get('/peminjaman-lan', [pinjamController::class, 'pinjamlan']);
+    Route::get('/peminjaman-lan/{peminjaman_lan_id}/delete', [pinjamController::class, 'deletelan']);
+    // Hdmi
+    Route::get('/peminjaman-hdmi', [pinjamController::class, 'pinjamhdmi']);
+    Route::get('/peminjaman-hdmi/{peminjaman_hdmi_id}/delete', [pinjamController::class, 'deletehdmi']);
+    // Projector
+    Route::get('/peminjaman-projector', [pinjamController::class, 'pinjamprojector']);
+    Route::get('/peminjaman-projector/{peminjaman_projector_id}/delete', [pinjamController::class, 'deleteproj']);
+
+    // Report Tugas
+    Route::get('/report-tugas', [ReportController::class, 'index']);
+});
 
 // Admin
 Route::get('/admin', [adminController::class, 'admin']);
 Route::get('/data-siswa', [adminController::class, 'siswa']);
-Route::get('/data-device', [adminController::class, 'device']);
 Route::get('/laporan', [adminController::class, 'laporan']);
 Route::get('/tugas', [adminController::class, 'tugas']);
 Route::get('/calendar', [adminController::class, 'calendar']);
