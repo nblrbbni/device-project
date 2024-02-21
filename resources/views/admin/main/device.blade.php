@@ -38,7 +38,7 @@
                     </a>
                 </div>
                 <div class="col-lg-3 col-md-6 mx-auto" id="card-device">
-                    <a href="/return-handphone/show">
+                    <a href="/return-hp/show">
                         <div class="card-admin mt-5 mx-auto">
                             <img src="/assets/picture/Smartphone.png" alt="">
                             <p>Handphone</p>
@@ -86,7 +86,7 @@
                     </a>
                 </div>
                 <div class="col-lg-3 col-md-6 mx-auto" id="card-device">
-                    <a href="/return-hdmi/show">
+                    <a href="/return-HDMI/show">
                         <div class="card-admin mt-5 mx-auto">
                             <img src="/assets/picture/Hdmi.png" alt="">
                             <p>HDMI</p>

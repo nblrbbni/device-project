@@ -124,4 +124,18 @@ class PcController extends Controller
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
         return redirect('/data-computer');
     }
+
+    public function returnpc()
+    {
+        $_p_c_penembalian = DB::table('_p_c_penembalian')->get();
+
+        return view('admin.data-pengembalian.data-computer', ['_p_c_penembalian' => $_p_c_penembalian]);
+    }
+    public function deletepc($id)
+    {
+        DB::table('_p_c_penembalian')->where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/return-computer/show');
+    }
 }

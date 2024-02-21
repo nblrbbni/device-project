@@ -114,4 +114,18 @@ class LanController extends Controller
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
         return redirect('/data-lan');
     }
+
+    public function returnlan()
+    {
+        $lan_penembalian = DB::table('lan_penembalian')->get();
+
+        return view('admin.data-pengembalian.data-lan', ['lan_penembalian' => $lan_penembalian]);
+    }
+    public function deletelan($id)
+    {
+        DB::table('lan_penembalian')->where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/return-lan/show');
+    }
 }

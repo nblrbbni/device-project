@@ -116,4 +116,18 @@ class hdmiController extends Controller
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
         return redirect('/data-hdmi');
     }
+
+    public function returnhdmi()
+    {
+        $_h_d_m_i_penembalian = DB::table('_h_d_m_i_penembalian')->get();
+
+        return view('admin.data-pengembalian.data-hdmi', ['_h_d_m_i_penembalian' => $_h_d_m_i_penembalian]);
+    }
+    public function deletehdmi($id)
+    {
+        DB::table('_h_d_m_i_penembalian')->where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/return-HDMI/show');
+    }
 }

@@ -195,15 +195,23 @@ Route::middleware(['auth'])->group(function () {
     // return-hp
     Route::get('/return-hp', [handphoneController::class, 'handphone']);
     Route::post('/return-hp/store', [handphoneController::class, 'handphonestr']);
+    Route::get('/return-hp/show', [handphoneController::class, 'returnhp']);
+    Route::get('/return-hp/{hp}/delete', [handphoneController::class, 'deletehp']);
     // return-pc
     Route::get('/return-computer', [PcController::class, 'computer']);
     Route::post('/return-computer/store', [PcController::class, 'computerstr']);
+    Route::get('/return-computer/show', [PcController::class, 'returnpc']);
+    Route::get('/return-computer/{computer}/delete', [PcController::class, 'deletepc']);
     // return-lan
     Route::get('/return-lan', [LanController::class, 'lan']);
     Route::post('/return-lan/store', [LanController::class, 'lanstr']);
+    Route::get('/return-lan/show', [LanController::class, 'returnlan']);
+    Route::get('/return-lan/{lan}/delete', [LanController::class, 'deletelan']);
     // return-hdmi
     Route::get('/return-HDMI', [hdmiController::class, 'HDMI']);
     Route::post('/return-HDMI/store', [hdmiController::class, 'HDMIstr']);
+    Route::get('/return-HDMI/show', [hdmiController::class, 'returnhdmi']);
+    Route::get('/return-HDMI/{HDMI}/delete', [hdmiController::class, 'deletehdmi']);
     // return-projector
     Route::get('/return-projector', [projectorController::class, 'projector']);
     Route::post('/return-projector/store', [projectorController::class, 'projectorstr']);

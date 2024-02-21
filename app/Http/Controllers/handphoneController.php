@@ -117,4 +117,18 @@ class handphoneController extends Controller
         Alert::success('Berhasil!', 'Perangkat Anda berhasil dihapus!');
         return redirect('/data-handphone');
     }
+
+    public function returnhp()
+    {
+        $handphone_penembalian = DB::table('handphone_penembalian')->get();
+
+        return view('admin.data-pengembalian.data-handphone', ['handphone_penembalian' => $handphone_penembalian]);
+    }
+    public function deletehp($id)
+    {
+        DB::table('handphone_penembalian')->where('id', $id)->delete();
+
+        Alert::success('Berhasil!', 'Data berhasil dihapus!');
+        return redirect('/return-hp/show');
+    }
 }
